@@ -1,0 +1,8 @@
+[Desktop Entry]
+_Name=Accomplishments Viewer
+_Comment=AccomplishmentsViewer application
+Categories=GNOME;Utility;
+Exec=accomplishments-viewer
+Icon=accomplishments-viewer
+Terminal=false
+Type=Application

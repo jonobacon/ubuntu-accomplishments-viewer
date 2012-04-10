@@ -1,0 +1,3 @@
+project = accomplishments-viewer
+version = 12.03
+template = ubuntu-application
