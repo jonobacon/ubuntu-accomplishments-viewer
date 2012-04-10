@@ -1,0 +1,319 @@
+a {
+  color: #dd4814;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+#accomplishment {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background: #fff;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	padding: 0
+}
+
+#accomplishment .block {
+	margin-top: 10px
+}
+
+#accomplishment-badge {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background: #DD4814;
+	border: 0;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: left
+}
+
+#accomplishment-badge .icon {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background-color: #fff;
+	border-radius: 4px;
+	float: left;
+	height: 100px;
+	margin: 10px;
+	padding: 10px
+}
+
+#accomplishment-badge p {
+	font-size: 80%
+}
+
+#accomplishment-badge ul {
+	margin-left: -40px
+}
+
+#accomplishment-more {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+  background: #fff;
+  border: 1px solid #eee;
+	border-radius: 4px;
+	padding: 0
+}
+
+#accomplishment-more {
+  background: #fff url("../media/circle.png") no-repeat -20px -30px;
+}
+
+#divider {
+	border-right: 1px dotted #333
+}
+
+#tipspitfalls {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background-color: #eee;
+	border: 0;
+	border-radius: 4px;
+	font-style: italic;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0
+}
+
+.alpha {
+	margin-left: 0
+}
+
+.clear {
+	clear: both;
+	display: block;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0
+}
+
+.clearfix:after {
+	clear: both
+}
+
+.clearfix:before,.clearfix:after {
+	content: '\00020';
+	display: block;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0
+}
+
+.container_8 {
+	margin-left: auto;
+	margin-right: auto;
+	width: 696px
+}
+
+.container_8 .grid_1 {
+	width: 67px
+}
+
+.container_8 .grid_2 {
+	width: 154px
+}
+
+.container_8 .grid_3 {
+	width: 241px
+}
+
+.container_8 .grid_4 {
+	width: 328px
+}
+
+.container_8 .grid_5 {
+	width: 415px
+}
+
+.container_8 .grid_6 {
+	width: 502px
+}
+
+.container_8 .grid_7 {
+	width: 589px
+}
+
+.container_8 .grid_8 {
+	width: 676px
+}
+
+.container_8 .prefix_1 {
+	padding-left: 87px
+}
+
+.container_8 .prefix_2 {
+	padding-left: 174px
+}
+
+.container_8 .prefix_3 {
+	padding-left: 261px
+}
+
+.container_8 .prefix_4 {
+	padding-left: 348px
+}
+
+.container_8 .prefix_5 {
+	padding-left: 435px
+}
+
+.container_8 .prefix_6 {
+	padding-left: 522px
+}
+
+.container_8 .prefix_7 {
+	padding-left: 609px
+}
+
+.container_8 .pull_1 {
+	left: -87px
+}
+
+.container_8 .pull_2 {
+	left: -174px
+}
+
+.container_8 .pull_3 {
+	left: -261px
+}
+
+.container_8 .pull_4 {
+	left: -348px
+}
+
+.container_8 .pull_5 {
+	left: -435px
+}
+
+.container_8 .pull_6 {
+	left: -522px
+}
+
+.container_8 .pull_7 {
+	left: -609px
+}
+
+.container_8 .push_1 {
+	left: 87px
+}
+
+.container_8 .push_2 {
+	left: 174px
+}
+
+.container_8 .push_3 {
+	left: 261px
+}
+
+.container_8 .push_4 {
+	left: 348px
+}
+
+.container_8 .push_5 {
+	left: 435px
+}
+
+.container_8 .push_6 {
+	left: 522px
+}
+
+.container_8 .push_7 {
+	left: 609px
+}
+
+.container_8 .suffix_1 {
+	padding-right: 87px
+}
+
+.container_8 .suffix_2 {
+	padding-right: 174px
+}
+
+.container_8 .suffix_3 {
+	padding-right: 261px
+}
+
+.container_8 .suffix_4 {
+	padding-right: 348px
+}
+
+.container_8 .suffix_5 {
+	padding-right: 435px
+}
+
+.container_8 .suffix_6 {
+	padding-right: 522px
+}
+
+.container_8 .suffix_7 {
+	padding-right: 609px
+}
+
+.grid_1,.grid_2,.grid_3,.grid_4,.grid_5,.grid_6,.grid_7,.grid_8 {
+	display: inline;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	position: relative
+}
+
+.left {
+	float: left;
+	margin-bottom: -1000px;
+	padding-bottom: 1000px
+}
+
+.omega {
+	margin-right: 0
+}
+
+.push_1,.pull_1,.push_2,.pull_2,.push_3,.pull_3,.push_4,.pull_4,.push_5,.pull_5,.push_6,.pull_6,.push_7,.pull_7,.push_8,.pull_8
+	{
+	position: relative
+}
+
+body {
+	color: #333;
+	font-family: Ubuntu, Times, serif;
+	min-width: 696px
+}
+
+h2 {
+	text-decoration: underline dotted
+}
+
+ol {
+	font-size: 80%;
+	padding: 5px 20px;
+}
+
+li {
+    padding-bottom: 5px;
+}
+ul {
+	font-size: 80%;
+	font-style: italic
+}
+
+ul.none {
+	list-style-type: none
+}
+
+div#howto ol{
+  padding-top: 20px;
+}
+
+div#howto i{
+  color: #fff;
+  float: left;
+  font-size: 3em;
+}
+
+div#howto h2{
+  margin-left: 100px;
+}

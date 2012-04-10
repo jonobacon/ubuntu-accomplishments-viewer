@@ -1,0 +1,27 @@
+Source: accomplishments-viewer
+Section: python
+Priority: extra
+Build-Depends: cdbs (>= 0.4.43),
+ debhelper (>= 6),
+ python (>= 2.6.6-3~),
+ python-distutils-extra (>= 2.10)
+Maintainer: Jono Bacon <jono@ubuntu.com>
+Standards-Version: 3.8.3
+XS-Python-Version: current
+
+Package: accomplishments-viewer
+Architecture: all
+XB-Python-Version: ${python:Versions}
+Depends: ${misc:Depends},
+ ${python:Depends},
+ gir1.2-gtk-3.0,
+ python-dbus,
+ gir1.2-glib-2.0,
+ gir1.2-unity-5.0,
+ accomplishments-daemon,
+ gir1.2-gdkpixbuf-2.0,
+ gir1.2-webkit-3.0,
+ gir1.2-launchpad-integration-3.0,
+ yelp
+Description: Ubuntu Accomplishments opportunities and trophies viewer.
+ Ubuntu Accomplishments opportunities and trophies viewer.

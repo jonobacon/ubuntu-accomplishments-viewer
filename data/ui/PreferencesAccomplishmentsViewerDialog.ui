@@ -4,8 +4,8 @@
   <!-- interface-requires preferences_accomplishments_viewer_dialog 1.0 -->
   <object class="PreferencesAccomplishmentsViewerDialog" id="preferences_accomplishments_viewer_dialog">
     <property name="can_focus">False</property>
-    <property name="title" translatable="yes">Accomplishments Viewer Preferences</property>
-    <property name="icon">../media/accomplishments-viewer.svg</property>
+    <property name="title" translatable="yes">Accomplishments Preferences</property>
+    <property name="icon">../media/trophyinfo.svg</property>
     <property name="type_hint">normal</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox1">
@@ -21,6 +21,7 @@
             <child>
               <object class="GtkButton" id="btn_help">
                 <property name="label">gtk-help</property>
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -37,6 +38,7 @@
             <child>
               <object class="GtkButton" id="btn_close">
                 <property name="label">gtk-close</property>
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -58,49 +60,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkGrid" id="table1">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="row_spacing">6</property>
-            <property name="column_spacing">6</property>
-            <property name="n_rows">1</property>
-            <property name="n_columns">2</property>
-            <child>
-              <object class="GtkEntry" id="example_entry">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="hexpand">True</property>
-                <property name="invisible_char">•</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">0</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="example_entry_label">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="xalign">0</property>
-                <property name="label" translatable="yes">_Example entry:</property>
-                <property name="use_underline">True</property>
-                <property name="mnemonic_widget">example_entry</property>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
+          <placeholder/>
         </child>
       </object>
     </child>

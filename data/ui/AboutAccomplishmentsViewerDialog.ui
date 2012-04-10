@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires about_accomplishments_viewer_dialog 1.0 -->
   <!-- interface-requires gtk+ 3.0 -->
+  <!-- interface-requires about_accomplishments_viewer_dialog 1.0 -->
   <object class="AboutAccomplishmentsViewerDialog" id="about_accomplishments_viewer_dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
-    <property name="icon">../media/accomplishments-viewer.svg</property>
+    <property name="icon">../media/trophyinfo.svg</property>
     <property name="type_hint">normal</property>
-    <property name="program_name">Accomplishments Viewer</property>
-    <property name="authors"></property>
-    <property name="logo">../media/accomplishments-viewer.svg</property>
+    <property name="program_name">Accomplishments Information</property>
+    <property name="version">0.1</property>
+    <property name="website">http://wiki.ubuntu.com/Accomplishments</property>
+    <property name="license" translatable="yes">GNU Public License</property>
+    <property name="authors">Jono Bacon &lt;jono@ubuntu.com&gt;
+Stuart Langridge &lt;sil@kryogenix.org&gt;
+Rafal Cieślak &lt;rafalcieslak256@gmail.com &gt;</property>
+    <property name="logo">../media/trophyinfo.svg</property>
+    <property name="license_type">gpl-3-0</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox1">
         <property name="visible">True</property>

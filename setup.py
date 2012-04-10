@@ -77,12 +77,12 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
 DistUtilsExtra.auto.setup(
     name='accomplishments-viewer',
     version='0.1',
-    #license='GPL-3',
-    #author='Your Name',
-    #author_email='email@ubuntu.com',
-    #description='UI for managing …',
-    #long_description='Here a longer description',
-    #url='https://launchpad.net/accomplishments-viewer',
+    license='GPL-3',
+    author='Jono Bacon',
+    author_email='jono@ubuntu.com',
+    description='Ubuntu Accomplishments opportunities and trophies viewer.',
+    long_description='Ubuntu Accomplishments opportunities and trophies viewer.',
+    url='https://launchpad.net/ubuntu-accomplishments-viewer',
     cmdclass={'install': InstallAndUpdateDataDirectory}
     )
 
