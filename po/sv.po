@@ -1,0 +1,235 @@
+# Swedish translation for ubuntu-accomplishments-viewer
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the ubuntu-accomplishments-viewer package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubuntu-accomplishments-viewer\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-04-09 11:16-0700\n"
+"PO-Revision-Date: 2012-04-09 20:51+0000\n"
+"Last-Translator: Daniel Nylander <yeager@ubuntu.com>\n"
+"Language-Team: Swedish <sv@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2012-04-10 17:20+0000\n"
+"X-Generator: Launchpad (build 15070)\n"
+
+#. # summary table
+#: ../viewer/gui/TrophyinfoWindow.py:670
+msgid "Opportunity Information"
+msgstr "Information om möjlighet"
+
+#: ../viewer/gui/TrophyinfoWindow.py:678
+msgid "No information available."
+msgstr "Ingen information tillgänglig."
+
+#: ../viewer/gui/TrophyinfoWindow.py:688
+msgid "Getting Help"
+msgstr "Få hjälp"
+
+#: ../viewer/gui/TrophyinfoWindow.py:697
+msgid "No help available."
+msgstr "Ingen hjälp finns tillgänglig."
+
+#: ../viewer/gui/TrophyinfoWindow.py:721
+msgid "This opportunity is locked. You need to complete"
+msgstr "Denna möjlighet är låst. Du måste färdigställa"
+
+#: ../viewer/gui/TrophyinfoWindow.py:721
+msgid "from"
+msgstr "från"
+
+#: ../viewer/gui/TrophyinfoWindow.py:721
+msgid "first"
+msgstr "första"
+
+#. achieved
+#: ../viewer/gui/TrophyinfoWindow.py:726
+msgid "This trophy <strong>was awarded</strong>"
+msgstr "Denna trofé <strong>tilldelades</strong>"
+
+#: ../viewer/gui/TrophyinfoWindow.py:730
+msgid "on"
+msgstr "den"
+
+#: ../viewer/gui/TrophyinfoWindow.py:736
+msgid "using the following credentials"
+msgstr "med följande uppgifter"
+
+#: ../viewer/gui/TrophyinfoWindow.py:746
+msgid "This trophy has been verified"
+msgstr "Denna trofé har verifierats"
+
+#: ../viewer/gui/TrophyinfoWindow.py:753
+msgid "This opportunity requires verification"
+msgstr "Denna möjlighet kräver verifiering"
+
+#: ../viewer/gui/TrophyinfoWindow.py:775
+msgid "How to accomplish this opportunity"
+msgstr "Hur man fullbordar denna möjlighet"
+
+#: ../viewer/gui/TrophyinfoWindow.py:789
+msgid "Tips and Tricks"
+msgstr "Tips och tricks"
+
+#: ../viewer/gui/TrophyinfoWindow.py:800
+msgid "Pitfalls To Avoid"
+msgstr "Fallgropar att undvika"
+
+#: ../viewer/gui/TrophyinfoWindow.py:814
+msgid "Further Reading"
+msgstr "Ytterligare läsning"
+
+#: ../data/ui/PreferencesTrophyinfoDialog.ui.h:1
+msgid "Accomplishments Preferences"
+msgstr "Inställningar för bedrifter"
+
+#: ../data/ui/EditExtrainfoDialog.ui.h:1
+msgid "Extra information required..."
+msgstr "Ytterligare information krävs..."
+
+#: ../data/ui/EditExtrainfoDialog.ui.h:2
+msgid ""
+"<b>The following information is required to verify your "
+"accomplishments.</b>\n"
+"\n"
+"Please ensure that this data is accurate and up to date."
+msgstr ""
+"<b>Följande information krävs för att verifiera dina bedrifter.</b>\n"
+"\n"
+"Försäkra dig om att detta data är korrekt och uppdaterat."
+
+#: ../data/ui/AboutTrophyinfoDialog.ui.h:1
+msgid "GNU Public License"
+msgstr "GNU Public License"
+
+#: ../accomplishments-viewer.desktop.in.h:1
+msgid "Accomplishments Information"
+msgstr "Information om bedrifter"
+
+#: ../accomplishments-viewer.desktop.in.h:2
+msgid "Accomplishments Information application"
+msgstr "Information om bedrifter"
+
+#: ../viewer/util/__init__.py:88
+msgid "Show debug messages"
+msgstr "Visa felsökningsmeddelanden"
+
+#: ../viewer/util/__init__.py:91
+msgid "Clear your trophies collection"
+msgstr "Töm din trofésamling"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:1
+msgid "Accomplishment Information"
+msgstr "Information om bedrift"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:2
+msgid "_File"
+msgstr "_Arkiv"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:3
+msgid "_Edit"
+msgstr "R_edigera"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:4
+msgid "_Help"
+msgstr "_Hjälp"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:5
+msgid "Contents"
+msgstr "Innehåll"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:6
+msgid "My Trophies"
+msgstr "Mina troféer"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:7
+msgid "Opportunities"
+msgstr "Möjligheter"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:8
+msgid ""
+"<b>Some opportunities need additional information to verify their "
+"completion.</b>\n"
+"\n"
+"You can edit this data anytime later using: <i>Edit->Identification...</i>"
+msgstr ""
+"<b>Några bedrifter kräver ytterligare information för att verifiera "
+"dem.</b>\n"
+"\n"
+"Du kan redigera detta data när som helst genom att: <i>Redigera-"
+">Identifiering...</i>"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:11
+msgid "Edit credentials"
+msgstr "Redigera uppgifter"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:12
+msgid "Later"
+msgstr "Senare"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:13
+msgid "Additional information required..."
+msgstr "Ytterligare information krävs..."
+
+#: ../data/ui/TrophyinfoWindow.ui.h:14
+msgid ""
+"Some opportunities require verification when completed. To do this you will "
+"need an Ubuntu One account and agree to have those opportunities verified."
+msgstr ""
+"Några möjligheter kräver verifiering när de är uppnådda. Du måste ha ett "
+"Ubuntu One-konto för att göra detta och godkänna att dessa möjligheter "
+"verifieras."
+
+#: ../data/ui/TrophyinfoWindow.ui.h:15
+msgid ""
+"Ubuntu One is a online service that is Free to use for syncing files and "
+"other features. It is neatly integrated into your Ubuntu desktop.\n"
+"\n"
+"When Ubuntu Accomplishments detects you have accomplished something new the "
+"trophy will be sent to a verification server using Ubuntu one. This is "
+"simple, safe to use, and the only information that is shared with the server "
+"is the information you can see in Edit -> Identification - this information "
+"is not shared with others or given to companies."
+msgstr ""
+"Ubuntu One är en nättjänst som är gratis att använda för att synkronisera "
+"filer och andra funktioner. Det är snyggt integrerat i ditt Ubuntu-"
+"skrivbord.\n"
+"\n"
+"När Ubuntu Accomplishments upptäcker att du har åstadkommit något nytt så "
+"kommer troféen att skickas till en verifieringsserver med hjälp av Ubuntu "
+"One. Detta är enkelt och säkert att använda, och den enda information som "
+"delas med servern är den information som du kan se i Redigera -> "
+"Identifiering - denna information delas inte med andra eller ges ut till "
+"företag."
+
+#: ../data/ui/TrophyinfoWindow.ui.h:18
+msgid "Learn more..."
+msgstr "Läs mer..."
+
+#: ../data/ui/TrophyinfoWindow.ui.h:19
+msgid "Ubuntu One account required"
+msgstr "Ubuntu One-konto krävs"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:20
+msgid "Get Started"
+msgstr "Kom igång"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:21
+msgid "Show me"
+msgstr "Visa mig"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:22
+msgid "accomplishments"
+msgstr "bedrifter"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:23
+msgid "opportunities for"
+msgstr "möjligheter för"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:24
+msgid "Show Locked"
+msgstr "Visa låsta"

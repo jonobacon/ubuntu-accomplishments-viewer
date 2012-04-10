@@ -1,0 +1,232 @@
+# Spanish translation for ubuntu-accomplishments-viewer
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the ubuntu-accomplishments-viewer package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubuntu-accomplishments-viewer\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-04-09 11:16-0700\n"
+"PO-Revision-Date: 2012-04-09 22:07+0000\n"
+"Last-Translator: JD Evora <jdevora@mail.com>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2012-04-10 17:20+0000\n"
+"X-Generator: Launchpad (build 15070)\n"
+
+#. # summary table
+#: ../viewer/gui/TrophyinfoWindow.py:670
+msgid "Opportunity Information"
+msgstr "Informacion de Oportunidad"
+
+#: ../viewer/gui/TrophyinfoWindow.py:678
+msgid "No information available."
+msgstr "Sin información disponible."
+
+#: ../viewer/gui/TrophyinfoWindow.py:688
+msgid "Getting Help"
+msgstr "Consiguiendo ayuda"
+
+#: ../viewer/gui/TrophyinfoWindow.py:697
+msgid "No help available."
+msgstr "No hay ayuda disponible."
+
+#: ../viewer/gui/TrophyinfoWindow.py:721
+msgid "This opportunity is locked. You need to complete"
+msgstr "Esta oportunidad se encuentra bloqueada. Necesita completarla"
+
+#: ../viewer/gui/TrophyinfoWindow.py:721
+msgid "from"
+msgstr "desde"
+
+#: ../viewer/gui/TrophyinfoWindow.py:721
+msgid "first"
+msgstr "primero"
+
+#. achieved
+#: ../viewer/gui/TrophyinfoWindow.py:726
+msgid "This trophy <strong>was awarded</strong>"
+msgstr "Este trofeo <strong>fue otorgado</strong>"
+
+#: ../viewer/gui/TrophyinfoWindow.py:730
+msgid "on"
+msgstr "encender"
+
+#: ../viewer/gui/TrophyinfoWindow.py:736
+msgid "using the following credentials"
+msgstr "usar las siguientes credenciales"
+
+#: ../viewer/gui/TrophyinfoWindow.py:746
+msgid "This trophy has been verified"
+msgstr "Este trofeo ha sido verificado"
+
+#: ../viewer/gui/TrophyinfoWindow.py:753
+msgid "This opportunity requires verification"
+msgstr "Esta oportunidad necesita verificación"
+
+#: ../viewer/gui/TrophyinfoWindow.py:775
+msgid "How to accomplish this opportunity"
+msgstr "Como lograr esta oportunidad"
+
+#: ../viewer/gui/TrophyinfoWindow.py:789
+msgid "Tips and Tricks"
+msgstr "Trucos y consejos"
+
+#: ../viewer/gui/TrophyinfoWindow.py:800
+msgid "Pitfalls To Avoid"
+msgstr "Dificultades a evitar"
+
+#: ../viewer/gui/TrophyinfoWindow.py:814
+msgid "Further Reading"
+msgstr "Lecturas recomendadas"
+
+#: ../data/ui/PreferencesTrophyinfoDialog.ui.h:1
+msgid "Accomplishments Preferences"
+msgstr "Preferencias de logros"
+
+#: ../data/ui/EditExtrainfoDialog.ui.h:1
+msgid "Extra information required..."
+msgstr "Se requiere información adicional..."
+
+#: ../data/ui/EditExtrainfoDialog.ui.h:2
+msgid ""
+"<b>The following information is required to verify your "
+"accomplishments.</b>\n"
+"\n"
+"Please ensure that this data is accurate and up to date."
+msgstr ""
+"<b>La siguiente información es necesaria para verificar sus logros</b>"
+
+#: ../data/ui/AboutTrophyinfoDialog.ui.h:1
+msgid "GNU Public License"
+msgstr "Licencia Pública de GNU"
+
+#: ../accomplishments-viewer.desktop.in.h:1
+msgid "Accomplishments Information"
+msgstr "Información de logros"
+
+#: ../accomplishments-viewer.desktop.in.h:2
+msgid "Accomplishments Information application"
+msgstr "Solicitud de información de logros"
+
+#: ../viewer/util/__init__.py:88
+msgid "Show debug messages"
+msgstr "Muestra mensajes de depuración"
+
+#: ../viewer/util/__init__.py:91
+msgid "Clear your trophies collection"
+msgstr "Limpiar su colección de trofeos"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:1
+msgid "Accomplishment Information"
+msgstr "Información de logros"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:2
+msgid "_File"
+msgstr "_Archivo"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:3
+msgid "_Edit"
+msgstr "_Editar"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:4
+msgid "_Help"
+msgstr "_Ayuda"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:5
+msgid "Contents"
+msgstr "Contenido"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:6
+msgid "My Trophies"
+msgstr "Mis trofeos"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:7
+msgid "Opportunities"
+msgstr "Oportunidades"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:8
+msgid ""
+"<b>Some opportunities need additional information to verify their "
+"completion.</b>\n"
+"\n"
+"You can edit this data anytime later using: <i>Edit->Identification...</i>"
+msgstr ""
+"<b>Algunas oportunidades necesitan información adicional para verificar su "
+"culminación.</b>\n"
+"\n"
+"Uste puede editar estos datos en cualquier momento despues usando: <i>Editar-"
+">Identificación...</i>"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:11
+msgid "Edit credentials"
+msgstr "Editar credenciales"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:12
+msgid "Later"
+msgstr "Más tarde"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:13
+msgid "Additional information required..."
+msgstr "Información adicional requerida..."
+
+#: ../data/ui/TrophyinfoWindow.ui.h:14
+msgid ""
+"Some opportunities require verification when completed. To do this you will "
+"need an Ubuntu One account and agree to have those opportunities verified."
+msgstr ""
+"Algunas oportunidades necesitan verificación al ser completadas. Para hacer "
+"esto necesitará una cuenta de Ubuntu One y estar de acuerdo en la "
+"verificación de esas oportunidades."
+
+#: ../data/ui/TrophyinfoWindow.ui.h:15
+msgid ""
+"Ubuntu One is a online service that is Free to use for syncing files and "
+"other features. It is neatly integrated into your Ubuntu desktop.\n"
+"\n"
+"When Ubuntu Accomplishments detects you have accomplished something new the "
+"trophy will be sent to a verification server using Ubuntu one. This is "
+"simple, safe to use, and the only information that is shared with the server "
+"is the information you can see in Edit -> Identification - this information "
+"is not shared with others or given to companies."
+msgstr ""
+"Ubuntu One es un servicio en línea que es de uso libre para sincronizar "
+"archivos y otras características. Esta elegantemente integrado dentro de su "
+"escritorio de Ubuntu\n"
+"\n"
+"Cuando los logros de Ubuntu detectan que usted ha logrado algo nuevo el "
+"trofeo será enviado a un servidor de verificación usando Ubuntu One. Esto es "
+"simple, seguro de usar, y la única información que se comparte con el "
+"servidor es la información que puede ver en Editar -> Identificación - esta "
+"información no es compartida con otros o suministrada a las empresas."
+
+#: ../data/ui/TrophyinfoWindow.ui.h:18
+msgid "Learn more..."
+msgstr "Aprender más..."
+
+#: ../data/ui/TrophyinfoWindow.ui.h:19
+msgid "Ubuntu One account required"
+msgstr "Se requiere una cuenta Ubuntu One"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:20
+msgid "Get Started"
+msgstr "Empezar"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:21
+msgid "Show me"
+msgstr "Muéstrame"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:22
+msgid "accomplishments"
+msgstr "logros"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:23
+msgid "opportunities for"
+msgstr "oportunidades para"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:24
+msgid "Show Locked"
+msgstr "Mostrar Bloqueado"

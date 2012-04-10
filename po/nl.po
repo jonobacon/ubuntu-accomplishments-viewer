@@ -1,0 +1,214 @@
+# Dutch translation for ubuntu-accomplishments-viewer
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the ubuntu-accomplishments-viewer package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubuntu-accomplishments-viewer\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-04-09 11:16-0700\n"
+"PO-Revision-Date: 2012-04-10 14:21+0000\n"
+"Last-Translator: Yop Spanjers <Unknown>\n"
+"Language-Team: Dutch <nl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2012-04-10 17:20+0000\n"
+"X-Generator: Launchpad (build 15070)\n"
+
+#. # summary table
+#: ../viewer/gui/TrophyinfoWindow.py:670
+msgid "Opportunity Information"
+msgstr ""
+
+#: ../viewer/gui/TrophyinfoWindow.py:678
+msgid "No information available."
+msgstr "Geen informatie beschikbaar."
+
+#: ../viewer/gui/TrophyinfoWindow.py:688
+msgid "Getting Help"
+msgstr "Hulp krijgen"
+
+#: ../viewer/gui/TrophyinfoWindow.py:697
+msgid "No help available."
+msgstr "Geen hulp beschikbaar"
+
+#: ../viewer/gui/TrophyinfoWindow.py:721
+msgid "This opportunity is locked. You need to complete"
+msgstr ""
+
+#: ../viewer/gui/TrophyinfoWindow.py:721
+msgid "from"
+msgstr "van"
+
+#: ../viewer/gui/TrophyinfoWindow.py:721
+msgid "first"
+msgstr "eerste"
+
+#. achieved
+#: ../viewer/gui/TrophyinfoWindow.py:726
+msgid "This trophy <strong>was awarded</strong>"
+msgstr "Deze trofee <strong>is uitgereikt</strong>"
+
+#: ../viewer/gui/TrophyinfoWindow.py:730
+msgid "on"
+msgstr "ingeschakeld"
+
+#: ../viewer/gui/TrophyinfoWindow.py:736
+msgid "using the following credentials"
+msgstr ""
+
+#: ../viewer/gui/TrophyinfoWindow.py:746
+msgid "This trophy has been verified"
+msgstr "Deze trofee is geverifieerd"
+
+#: ../viewer/gui/TrophyinfoWindow.py:753
+msgid "This opportunity requires verification"
+msgstr ""
+
+#: ../viewer/gui/TrophyinfoWindow.py:775
+msgid "How to accomplish this opportunity"
+msgstr ""
+
+#: ../viewer/gui/TrophyinfoWindow.py:789
+msgid "Tips and Tricks"
+msgstr "Tips en trucs"
+
+#: ../viewer/gui/TrophyinfoWindow.py:800
+msgid "Pitfalls To Avoid"
+msgstr "Te voorkomen valkuilen"
+
+#: ../viewer/gui/TrophyinfoWindow.py:814
+msgid "Further Reading"
+msgstr "Verder lezen"
+
+#: ../data/ui/PreferencesTrophyinfoDialog.ui.h:1
+msgid "Accomplishments Preferences"
+msgstr ""
+
+#: ../data/ui/EditExtrainfoDialog.ui.h:1
+msgid "Extra information required..."
+msgstr "Extra informatie vereist..."
+
+#: ../data/ui/EditExtrainfoDialog.ui.h:2
+msgid ""
+"<b>The following information is required to verify your "
+"accomplishments.</b>\n"
+"\n"
+"Please ensure that this data is accurate and up to date."
+msgstr ""
+
+#: ../data/ui/AboutTrophyinfoDialog.ui.h:1
+msgid "GNU Public License"
+msgstr "GNU Public License"
+
+#: ../accomplishments-viewer.desktop.in.h:1
+msgid "Accomplishments Information"
+msgstr ""
+
+#: ../accomplishments-viewer.desktop.in.h:2
+msgid "Accomplishments Information application"
+msgstr ""
+
+#: ../viewer/util/__init__.py:88
+msgid "Show debug messages"
+msgstr ""
+
+#: ../viewer/util/__init__.py:91
+msgid "Clear your trophies collection"
+msgstr "Uw trofeeverzameling leegmaken"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:1
+msgid "Accomplishment Information"
+msgstr ""
+
+#: ../data/ui/TrophyinfoWindow.ui.h:2
+msgid "_File"
+msgstr "_Bestand"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:3
+msgid "_Edit"
+msgstr "Be_werken"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:4
+msgid "_Help"
+msgstr "_Hulp"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:5
+msgid "Contents"
+msgstr "Inhoud"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:6
+msgid "My Trophies"
+msgstr "Mijn trofeeën"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:7
+msgid "Opportunities"
+msgstr ""
+
+#: ../data/ui/TrophyinfoWindow.ui.h:8
+msgid ""
+"<b>Some opportunities need additional information to verify their "
+"completion.</b>\n"
+"\n"
+"You can edit this data anytime later using: <i>Edit->Identification...</i>"
+msgstr ""
+
+#: ../data/ui/TrophyinfoWindow.ui.h:11
+msgid "Edit credentials"
+msgstr "Aanmeldgegevens wijzigen"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:12
+msgid "Later"
+msgstr "Later"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:13
+msgid "Additional information required..."
+msgstr "Aanvullende gegevens vereist…"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:14
+msgid ""
+"Some opportunities require verification when completed. To do this you will "
+"need an Ubuntu One account and agree to have those opportunities verified."
+msgstr ""
+
+#: ../data/ui/TrophyinfoWindow.ui.h:15
+msgid ""
+"Ubuntu One is a online service that is Free to use for syncing files and "
+"other features. It is neatly integrated into your Ubuntu desktop.\n"
+"\n"
+"When Ubuntu Accomplishments detects you have accomplished something new the "
+"trophy will be sent to a verification server using Ubuntu one. This is "
+"simple, safe to use, and the only information that is shared with the server "
+"is the information you can see in Edit -> Identification - this information "
+"is not shared with others or given to companies."
+msgstr ""
+
+#: ../data/ui/TrophyinfoWindow.ui.h:18
+msgid "Learn more..."
+msgstr ""
+
+#: ../data/ui/TrophyinfoWindow.ui.h:19
+msgid "Ubuntu One account required"
+msgstr "Ubuntu One-account vereist"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:20
+msgid "Get Started"
+msgstr "Aan de slag"
+
+#: ../data/ui/TrophyinfoWindow.ui.h:21
+msgid "Show me"
+msgstr ""
+
+#: ../data/ui/TrophyinfoWindow.ui.h:22
+msgid "accomplishments"
+msgstr ""
+
+#: ../data/ui/TrophyinfoWindow.ui.h:23
+msgid "opportunities for"
+msgstr ""
+
+#: ../data/ui/TrophyinfoWindow.ui.h:24
+msgid "Show Locked"
+msgstr ""
