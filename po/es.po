@@ -7,85 +7,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-04-09 11:16-0700\n"
+"POT-Creation-Date: 2012-04-10 10:34-0700\n"
 "PO-Revision-Date: 2012-04-09 22:07+0000\n"
 "Last-Translator: JD Evora <jdevora@mail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-10 17:20+0000\n"
+"X-Launchpad-Export-Date: 2012-04-11 05:02+0000\n"
 "X-Generator: Launchpad (build 15070)\n"
 
-#. # summary table
-#: ../viewer/gui/TrophyinfoWindow.py:670
-msgid "Opportunity Information"
-msgstr "Informacion de Oportunidad"
+#. Code for other initialization actions should be added here.
+#: ../accomplishments-viewer.desktop.in.h:1
+msgid "Accomplishments Viewer"
+msgstr ""
 
-#: ../viewer/gui/TrophyinfoWindow.py:678
-msgid "No information available."
-msgstr "Sin información disponible."
-
-#: ../viewer/gui/TrophyinfoWindow.py:688
-msgid "Getting Help"
-msgstr "Consiguiendo ayuda"
-
-#: ../viewer/gui/TrophyinfoWindow.py:697
-msgid "No help available."
-msgstr "No hay ayuda disponible."
-
-#: ../viewer/gui/TrophyinfoWindow.py:721
-msgid "This opportunity is locked. You need to complete"
-msgstr "Esta oportunidad se encuentra bloqueada. Necesita completarla"
-
-#: ../viewer/gui/TrophyinfoWindow.py:721
-msgid "from"
-msgstr "desde"
-
-#: ../viewer/gui/TrophyinfoWindow.py:721
-msgid "first"
-msgstr "primero"
-
-#. achieved
-#: ../viewer/gui/TrophyinfoWindow.py:726
-msgid "This trophy <strong>was awarded</strong>"
-msgstr "Este trofeo <strong>fue otorgado</strong>"
-
-#: ../viewer/gui/TrophyinfoWindow.py:730
-msgid "on"
-msgstr "encender"
-
-#: ../viewer/gui/TrophyinfoWindow.py:736
-msgid "using the following credentials"
-msgstr "usar las siguientes credenciales"
-
-#: ../viewer/gui/TrophyinfoWindow.py:746
-msgid "This trophy has been verified"
-msgstr "Este trofeo ha sido verificado"
-
-#: ../viewer/gui/TrophyinfoWindow.py:753
-msgid "This opportunity requires verification"
-msgstr "Esta oportunidad necesita verificación"
-
-#: ../viewer/gui/TrophyinfoWindow.py:775
-msgid "How to accomplish this opportunity"
-msgstr "Como lograr esta oportunidad"
-
-#: ../viewer/gui/TrophyinfoWindow.py:789
-msgid "Tips and Tricks"
-msgstr "Trucos y consejos"
-
-#: ../viewer/gui/TrophyinfoWindow.py:800
-msgid "Pitfalls To Avoid"
-msgstr "Dificultades a evitar"
-
-#: ../viewer/gui/TrophyinfoWindow.py:814
-msgid "Further Reading"
-msgstr "Lecturas recomendadas"
-
-#: ../data/ui/PreferencesTrophyinfoDialog.ui.h:1
-msgid "Accomplishments Preferences"
-msgstr "Preferencias de logros"
+#: ../accomplishments-viewer.desktop.in.h:2
+msgid "AccomplishmentsViewer application"
+msgstr ""
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
@@ -100,55 +39,118 @@ msgid ""
 msgstr ""
 "<b>La siguiente información es necesaria para verificar sus logros</b>"
 
-#: ../data/ui/AboutTrophyinfoDialog.ui.h:1
+#: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "GNU Public License"
 msgstr "Licencia Pública de GNU"
 
-#: ../accomplishments-viewer.desktop.in.h:1
-msgid "Accomplishments Information"
-msgstr "Información de logros"
+#: ../accomplishments_viewer/__init__.py:23
+msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
+msgstr ""
 
-#: ../accomplishments-viewer.desktop.in.h:2
-msgid "Accomplishments Information application"
-msgstr "Solicitud de información de logros"
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
+msgid "Accomplishments Preferences"
+msgstr "Preferencias de logros"
 
-#: ../viewer/util/__init__.py:88
-msgid "Show debug messages"
-msgstr "Muestra mensajes de depuración"
+#. # summary table
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:673
+msgid "Opportunity Information"
+msgstr "Informacion de Oportunidad"
 
-#: ../viewer/util/__init__.py:91
-msgid "Clear your trophies collection"
-msgstr "Limpiar su colección de trofeos"
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:681
+msgid "No information available."
+msgstr "Sin información disponible."
 
-#: ../data/ui/TrophyinfoWindow.ui.h:1
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:691
+msgid "Getting Help"
+msgstr "Consiguiendo ayuda"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:700
+msgid "No help available."
+msgstr "No hay ayuda disponible."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
+msgid "This opportunity is locked. You need to complete"
+msgstr "Esta oportunidad se encuentra bloqueada. Necesita completarla"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
+msgid "from"
+msgstr "desde"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
+msgid "first"
+msgstr "primero"
+
+#. achieved
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
+msgid "This trophy <strong>was awarded</strong>"
+msgstr "Este trofeo <strong>fue otorgado</strong>"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:732
+msgid "on"
+msgstr "encender"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:738
+msgid "using the following credentials"
+msgstr "usar las siguientes credenciales"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:748
+msgid "This trophy has been verified"
+msgstr "Este trofeo ha sido verificado"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:755
+msgid "This opportunity requires verification"
+msgstr "Esta oportunidad necesita verificación"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:777
+msgid "How to accomplish this opportunity"
+msgstr "Como lograr esta oportunidad"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:812
+msgid "Tips and Tricks"
+msgstr "Trucos y consejos"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:822
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:842
+msgid "None."
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:832
+msgid "Pitfalls To Avoid"
+msgstr "Dificultades a evitar"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:855
+msgid "Further Reading"
+msgstr "Lecturas recomendadas"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
 msgstr "Información de logros"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:2
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:2
 msgid "_File"
 msgstr "_Archivo"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:3
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "_Edit"
 msgstr "_Editar"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:4
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Help"
 msgstr "_Ayuda"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:5
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "Contents"
 msgstr "Contenido"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:6
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "My Trophies"
 msgstr "Mis trofeos"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:7
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "Opportunities"
 msgstr "Oportunidades"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:8
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid ""
 "<b>Some opportunities need additional information to verify their "
 "completion.</b>\n"
@@ -161,19 +163,19 @@ msgstr ""
 "Uste puede editar estos datos en cualquier momento despues usando: <i>Editar-"
 ">Identificación...</i>"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:11
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
 msgid "Edit credentials"
 msgstr "Editar credenciales"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:12
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid "Later"
 msgstr "Más tarde"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:13
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:13
 msgid "Additional information required..."
 msgstr "Información adicional requerida..."
 
-#: ../data/ui/TrophyinfoWindow.ui.h:14
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:14
 msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
@@ -182,7 +184,7 @@ msgstr ""
 "esto necesitará una cuenta de Ubuntu One y estar de acuerdo en la "
 "verificación de esas oportunidades."
 
-#: ../data/ui/TrophyinfoWindow.ui.h:15
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
 msgid ""
 "Ubuntu One is a online service that is Free to use for syncing files and "
 "other features. It is neatly integrated into your Ubuntu desktop.\n"
@@ -203,30 +205,30 @@ msgstr ""
 "servidor es la información que puede ver en Editar -> Identificación - esta "
 "información no es compartida con otros o suministrada a las empresas."
 
-#: ../data/ui/TrophyinfoWindow.ui.h:18
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid "Learn more..."
 msgstr "Aprender más..."
 
-#: ../data/ui/TrophyinfoWindow.ui.h:19
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid "Ubuntu One account required"
 msgstr "Se requiere una cuenta Ubuntu One"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:20
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid "Get Started"
 msgstr "Empezar"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:21
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
 msgid "Show me"
 msgstr "Muéstrame"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:22
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "accomplishments"
 msgstr "logros"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:23
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "opportunities for"
 msgstr "oportunidades para"
 
-#: ../data/ui/TrophyinfoWindow.ui.h:24
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Show Locked"
 msgstr "Mostrar Bloqueado"
