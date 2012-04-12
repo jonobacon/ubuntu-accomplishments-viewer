@@ -1,4 +1,4 @@
-# Arabic translation for ubuntu-accomplishments-viewer
+# Japanese translation for ubuntu-accomplishments-viewer
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the ubuntu-accomplishments-viewer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-10 10:34-0700\n"
-"PO-Revision-Date: 2012-04-12 03:55+0000\n"
-"Last-Translator: hanynowsky <Unknown>\n"
-"Language-Team: Arabic <ar@li.org>\n"
+"PO-Revision-Date: 2012-04-11 16:04+0000\n"
+"Last-Translator: Fumihito YOSHIDA <hito@kugutsu.org>\n"
+"Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,15 +20,15 @@ msgstr ""
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
-msgstr "عارض الإنجازات"
+msgstr "Accomplishmentsビューアー"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "AccomplishmentsViewer application"
-msgstr "طلب عارض الإنجازات"
+msgstr "Accomplishmentsビューアーアプリケーション"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
-msgstr "معلومات اضافية مطلوبة ..."
+msgstr "追加の情報が必要です..."
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:2
 msgid ""
@@ -37,120 +37,120 @@ msgid ""
 "\n"
 "Please ensure that this data is accurate and up to date."
 msgstr ""
-"<b/>مطلوب المعلومات التالية للتحقق من الإنجازات الخاصة بك.<b>\n"
+"<b>あなたが達成した内容を証明するために、次の情報が必要です。</b>\n"
 "\n"
-"الرجاء التأكد من أن هذه البيانات دقيقة ومحدثة."
+"情報が正しいか、また、最新のものかどうか確認してください。"
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "GNU Public License"
-msgstr "رخصة جنو العمومية (GNU Public License)"
+msgstr "GNU Public License"
 
 #: ../accomplishments_viewer/__init__.py:23
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
-msgstr "عرض رسائل كشف الأخطاء (أيضا -vv debugs accomplishments_viewer_lib)"
+msgstr "デバッグメッセージを表示(-vv debugs accomplishments_viewer_lib 同等)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
-msgstr "تفضيلات الإنجازات"
+msgstr "Accomplishmentsの設定"
 
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:673
 msgid "Opportunity Information"
-msgstr "معلومات عن الفرص"
+msgstr "チャレンジの情報"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:681
 msgid "No information available."
-msgstr "لا تتوفر أي معلومات."
+msgstr "情報はありません。"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:691
 msgid "Getting Help"
-msgstr "الحصول على مساعدة"
+msgstr "助けを得るには"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:700
 msgid "No help available."
-msgstr "لا تتوفر أي مساعدة"
+msgstr "ヘルプ情報はありません。"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
 msgid "This opportunity is locked. You need to complete"
-msgstr "فرصة مقفلة . تحتاج إلى إكمال"
+msgstr "チャレンジ項目はロックされています。完了させる必要があります。"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
 msgid "from"
-msgstr "من"
+msgstr "から"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
 msgid "first"
-msgstr "الأوّل"
+msgstr "最初の"
 
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
 msgid "This trophy <strong>was awarded</strong>"
-msgstr "هذه الجائزة </strong>منحت<strong>"
+msgstr "このトロフィーは<strong>次の項目を成し遂げた証です</strong>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:732
 msgid "on"
-msgstr "بتاريخ"
+msgstr "："
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:738
 msgid "using the following credentials"
-msgstr "باستخدام عناصر اعتماد المصداقية التالية"
+msgstr "以下のクレデンシャルを利用した行動です"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:748
 msgid "This trophy has been verified"
-msgstr "تم التحقق من هذا الكأس"
+msgstr "トロフィーは認定されています。"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:755
 msgid "This opportunity requires verification"
-msgstr "يتطلب التحقق من هذه الفرصة"
+msgstr "このチャレンジは認定される必要があります"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:777
 msgid "How to accomplish this opportunity"
-msgstr "كيفية إنجاز هذه الفرصة"
+msgstr "このチャレンジを達成するには"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:812
 msgid "Tips and Tricks"
-msgstr "نصائح وخدع"
+msgstr "ヒントやコツ"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:822
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:842
 msgid "None."
-msgstr "لا احد"
+msgstr "ありません。"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:832
 msgid "Pitfalls To Avoid"
-msgstr "لتجنب المزالق"
+msgstr "避けるべき落とし穴"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:855
 msgid "Further Reading"
-msgstr "لمزيد من القراءة"
+msgstr "さらに詳しく知るために"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
-msgstr "معلومات عن الإنجاز"
+msgstr "Accomplishment情報"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:2
 msgid "_File"
-msgstr "_ملف"
+msgstr "ファイル(_F)"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "_Edit"
-msgstr "_حرر"
+msgstr "編集(_E)"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Help"
-msgstr "_مساعدة"
+msgstr "ヘルプ(_H)"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "Contents"
-msgstr "محتويات"
+msgstr "内容"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "My Trophies"
-msgstr "كأوسي"
+msgstr "自分のトロフィー"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "Opportunities"
-msgstr "الفرص"
+msgstr "チャレンジ"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid ""
@@ -159,30 +159,27 @@ msgid ""
 "\n"
 "You can edit this data anytime later using: <i>Edit->Identification...</i>"
 msgstr ""
-"</b>بعض الفرص في حاجة إلى معلومات إضافية للتأكد من إنجازها.<b>\n"
+"<b>いくつかのチャレンジ項目を達成するには、追加の情報が必要です</b>\n"
 "\n"
-"يمكنك تحرير هذه البيانات في أي وقت لاحقا باستخدام: <i>تحرير-> تحديد الهوية "
-"...</i>"
+"追加の情報は、次の操作で修正できます: <i>編集→Identification...</i>"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
 msgid "Edit credentials"
-msgstr "تحرير معلومات الهوية"
+msgstr "クレデンシャルの編集"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid "Later"
-msgstr "لاحقاً"
+msgstr "後で"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:13
 msgid "Additional information required..."
-msgstr "معلومات إضافية مطلوبة ..."
+msgstr "追加の情報が必要です..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:14
 msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
-msgstr ""
-"بعض الفرص تتطلب التحقق عند اكتمالها. للقيام بذلك ستحتاج إلى حساب \"أوبونتو "
-"وان\" وأن توافق على أن يكون التحقق من تلك الفرص."
+msgstr "いくつかのチャレンジ項目は、完了には認定が必要です。チャレンジ項目の認定には、Ubuntu Oneアカウントが必要になるでしょう。"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
 msgid ""
@@ -195,39 +192,36 @@ msgid ""
 "is the information you can see in Edit -> Identification - this information "
 "is not shared with others or given to companies."
 msgstr ""
-"\"أوبونتو وان\" هو خدمة أنترنت حرة الإستخدام لمزامنة الملفات وغيرها من "
-"الميزات. تم دمج هذا بدقة إلى مكتبك  الخاص بأوبونتو.\n"
+"Ubuntu Oneは、ファイルの同期などの多くの機能を備えた無料のオンラインサービスです。 機能はUbuntuデスクトップに統合されています。\n"
 "\n"
-"وعندما \"إنجازات أوبونتو\" يكشف عن شيئ جديد أنجزته ترسل الكأس إلى مزود "
-"التحقق باستخدام أوبونتو وان. \"إنجازات أوبونتو\"  بسيط وآمن الاستخدام، "
-"والمعلومات الوحيدة التي يتم مشاركتها مع المزود هي المعلومات التي يمكن أن "
-"تراها في تحرير -> تحديد الهوية لا تتم مشاركة هذه المعلومات مع الآخرين أو  "
-"للشركات."
+"Ubuntu Accomplishmentsは、新しいトロフィーが獲得されようとしているときに、Ubuntu "
+"Oneを用いて認定サーバーと通信することで達成を確認します。これはとても簡単で、安全に利用できます。情報をサーバーと同期する設定は、編集 -> "
+"Identification から行います。この情報は、他のユーザーや企業と共有されることはありません。"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid "Learn more..."
-msgstr "اعرف المزيد..."
+msgstr "もっと詳しく..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid "Ubuntu One account required"
-msgstr "حساب أوبونتو وان مطلوب"
+msgstr "Ubuntu Oneアカウントが必要です"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid "Get Started"
-msgstr "انطلاقة"
+msgstr "ここから始める"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
 msgid "Show me"
-msgstr "أرني"
+msgstr "表示対象："
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "accomplishments"
-msgstr "الإنجازات"
+msgstr "accomplishments"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "opportunities for"
-msgstr "الفرص المتاحة ل"
+msgstr "チャレンジ項目："
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Show Locked"
-msgstr "عرض مغلق"
+msgstr "ロック項目を表示"

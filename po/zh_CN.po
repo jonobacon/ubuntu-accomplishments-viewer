@@ -1,4 +1,4 @@
-# Arabic translation for ubuntu-accomplishments-viewer
+# Chinese (Simplified) translation for ubuntu-accomplishments-viewer
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the ubuntu-accomplishments-viewer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-10 10:34-0700\n"
-"PO-Revision-Date: 2012-04-12 03:55+0000\n"
-"Last-Translator: hanynowsky <Unknown>\n"
-"Language-Team: Arabic <ar@li.org>\n"
+"PO-Revision-Date: 2012-04-11 15:43+0000\n"
+"Last-Translator: Wang Dianjin <Unknown>\n"
+"Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,15 +20,15 @@ msgstr ""
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
-msgstr "عارض الإنجازات"
+msgstr "成就查看器"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "AccomplishmentsViewer application"
-msgstr "طلب عارض الإنجازات"
+msgstr "成就查看器应用程序"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
-msgstr "معلومات اضافية مطلوبة ..."
+msgstr "需要额外信息..."
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:2
 msgid ""
@@ -37,120 +37,120 @@ msgid ""
 "\n"
 "Please ensure that this data is accurate and up to date."
 msgstr ""
-"<b/>مطلوب المعلومات التالية للتحقق من الإنجازات الخاصة بك.<b>\n"
+"<b>需要下列信息以验证您的成就。</b>\n"
 "\n"
-"الرجاء التأكد من أن هذه البيانات دقيقة ومحدثة."
+"请确保该数据准确且为最新。"
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "GNU Public License"
-msgstr "رخصة جنو العمومية (GNU Public License)"
+msgstr "GNU 公共许可证"
 
 #: ../accomplishments_viewer/__init__.py:23
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
-msgstr "عرض رسائل كشف الأخطاء (أيضا -vv debugs accomplishments_viewer_lib)"
+msgstr "显示调试信息(-vv 也可调试 accomplishments_viewer_lib)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
-msgstr "تفضيلات الإنجازات"
+msgstr "成就查看器首选项"
 
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:673
 msgid "Opportunity Information"
-msgstr "معلومات عن الفرص"
+msgstr "机会信息"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:681
 msgid "No information available."
-msgstr "لا تتوفر أي معلومات."
+msgstr "无可用信息。"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:691
 msgid "Getting Help"
-msgstr "الحصول على مساعدة"
+msgstr "获取帮助"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:700
 msgid "No help available."
-msgstr "لا تتوفر أي مساعدة"
+msgstr "无可用帮助。"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
 msgid "This opportunity is locked. You need to complete"
-msgstr "فرصة مقفلة . تحتاج إلى إكمال"
+msgstr "该机会被锁定。您需要完成才行"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
 msgid "from"
-msgstr "من"
+msgstr "来自"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
 msgid "first"
-msgstr "الأوّل"
+msgstr "第一个"
 
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
 msgid "This trophy <strong>was awarded</strong>"
-msgstr "هذه الجائزة </strong>منحت<strong>"
+msgstr "该奖杯<strong>已颁发</strong>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:732
 msgid "on"
-msgstr "بتاريخ"
+msgstr "在"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:738
 msgid "using the following credentials"
-msgstr "باستخدام عناصر اعتماد المصداقية التالية"
+msgstr "使用下面证件"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:748
 msgid "This trophy has been verified"
-msgstr "تم التحقق من هذا الكأس"
+msgstr "该奖杯已通过验证"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:755
 msgid "This opportunity requires verification"
-msgstr "يتطلب التحقق من هذه الفرصة"
+msgstr "本机会需要验证"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:777
 msgid "How to accomplish this opportunity"
-msgstr "كيفية إنجاز هذه الفرصة"
+msgstr "如何完成该机会"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:812
 msgid "Tips and Tricks"
-msgstr "نصائح وخدع"
+msgstr "提示与技巧"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:822
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:842
 msgid "None."
-msgstr "لا احد"
+msgstr "无。"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:832
 msgid "Pitfalls To Avoid"
-msgstr "لتجنب المزالق"
+msgstr "避免陷阱"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:855
 msgid "Further Reading"
-msgstr "لمزيد من القراءة"
+msgstr "深入阅读"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
-msgstr "معلومات عن الإنجاز"
+msgstr "成就信息"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:2
 msgid "_File"
-msgstr "_ملف"
+msgstr "文件(_F)"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "_Edit"
-msgstr "_حرر"
+msgstr "编辑(_E)"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Help"
-msgstr "_مساعدة"
+msgstr "帮助(_H)"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "Contents"
-msgstr "محتويات"
+msgstr "内容"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "My Trophies"
-msgstr "كأوسي"
+msgstr "我的奖杯"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "Opportunities"
-msgstr "الفرص"
+msgstr "机会"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid ""
@@ -159,30 +159,27 @@ msgid ""
 "\n"
 "You can edit this data anytime later using: <i>Edit->Identification...</i>"
 msgstr ""
-"</b>بعض الفرص في حاجة إلى معلومات إضافية للتأكد من إنجازها.<b>\n"
+"<b>一些机会需要额外信息以验证它们是否完成。</b>\n"
 "\n"
-"يمكنك تحرير هذه البيانات في أي وقت لاحقا باستخدام: <i>تحرير-> تحديد الهوية "
-"...</i>"
+"您稍后可用下面的选项编辑该数据：<i>编辑证书...</i>"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
 msgid "Edit credentials"
-msgstr "تحرير معلومات الهوية"
+msgstr "编辑证书"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid "Later"
-msgstr "لاحقاً"
+msgstr "稍候"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:13
 msgid "Additional information required..."
-msgstr "معلومات إضافية مطلوبة ..."
+msgstr "需要额外信息..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:14
 msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
-msgstr ""
-"بعض الفرص تتطلب التحقق عند اكتمالها. للقيام بذلك ستحتاج إلى حساب \"أوبونتو "
-"وان\" وأن توافق على أن يكون التحقق من تلك الفرص."
+msgstr "一些机会当完成时需要验证。为此，您需要一个 Ubuntu One 帐户并同意对这些机会进行验证。"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
 msgid ""
@@ -195,39 +192,35 @@ msgid ""
 "is the information you can see in Edit -> Identification - this information "
 "is not shared with others or given to companies."
 msgstr ""
-"\"أوبونتو وان\" هو خدمة أنترنت حرة الإستخدام لمزامنة الملفات وغيرها من "
-"الميزات. تم دمج هذا بدقة إلى مكتبك  الخاص بأوبونتو.\n"
+"Ubuntu One 是一项可免费同步文件和提供其他功能的在线服务.它现在已完美移植到了您的 Ubuntu 桌面。\n"
 "\n"
-"وعندما \"إنجازات أوبونتو\" يكشف عن شيئ جديد أنجزته ترسل الكأس إلى مزود "
-"التحقق باستخدام أوبونتو وان. \"إنجازات أوبونتو\"  بسيط وآمن الاستخدام، "
-"والمعلومات الوحيدة التي يتم مشاركتها مع المزود هي المعلومات التي يمكن أن "
-"تراها في تحرير -> تحديد الهوية لا تتم مشاركة هذه المعلومات مع الآخرين أو  "
-"للشركات."
+"当 Ubuntu 成就检测到您已完成某些新机会时，奖杯将自动发送到一台使用 Ubuntu One "
+"的验证服务器。此步骤简单、安全，服务器分享的单一信息就是您在 编辑 -> 验证 - 本信息 处看到的，它不会共享给他人或公司。"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid "Learn more..."
-msgstr "اعرف المزيد..."
+msgstr "了解更多..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid "Ubuntu One account required"
-msgstr "حساب أوبونتو وان مطلوب"
+msgstr "需要 Ubuntu One 帐户"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid "Get Started"
-msgstr "انطلاقة"
+msgstr "开始"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
 msgid "Show me"
-msgstr "أرني"
+msgstr "显示"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "accomplishments"
-msgstr "الإنجازات"
+msgstr "成就"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "opportunities for"
-msgstr "الفرص المتاحة ل"
+msgstr "机会之"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Show Locked"
-msgstr "عرض مغلق"
+msgstr "显示已锁定"
