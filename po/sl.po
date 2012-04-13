@@ -8,27 +8,27 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-10 10:34-0700\n"
-"PO-Revision-Date: 2012-04-09 20:20+0000\n"
-"Last-Translator: David Klasinc <bigwhale@lubica.net>\n"
+"PO-Revision-Date: 2012-04-12 06:40+0000\n"
+"Last-Translator: Andrej Znidarsic <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-11 05:02+0000\n"
+"X-Launchpad-Export-Date: 2012-04-13 14:57+0000\n"
 "X-Generator: Launchpad (build 15070)\n"
 
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
-msgstr ""
+msgstr "Pregledovalnik dosežkov"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "AccomplishmentsViewer application"
-msgstr ""
+msgstr "Program pregledovalnika dosežkov"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
-msgstr "Potrebne so dodatne informacije..."
+msgstr "Zahtevani so dodatni podatki ..."
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:2
 msgid ""
@@ -37,7 +37,7 @@ msgid ""
 "\n"
 "Please ensure that this data is accurate and up to date."
 msgstr ""
-"<b>Za preverjanje dosežka so potrebne sledeče informacije.</b>\n"
+"<b>Za preverjanje dosežka so potrebne naslednji podatki.</b>\n"
 "\n"
 "Zagotovite, da bodo podatki pravilni in osveženi."
 
@@ -48,6 +48,8 @@ msgstr "GNU Prosta Licenca"
 #: ../accomplishments_viewer/__init__.py:23
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
 msgstr ""
+"Pokaži sporočila razhroščevanja (-vv razhrošči tudi "
+"accomplishments_viewer_lib)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
@@ -68,7 +70,7 @@ msgstr "Kako do pomoči"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:700
 msgid "No help available."
-msgstr ""
+msgstr "Pomoč ni na voljo"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
 msgid "This opportunity is locked. You need to complete"
@@ -93,7 +95,7 @@ msgstr "na"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:738
 msgid "using the following credentials"
-msgstr "z uporabo sledečih poveril"
+msgstr "z uporabo naslednjih poveril"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:748
 msgid "This trophy has been verified"
@@ -114,11 +116,11 @@ msgstr "Triki in nasveti"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:822
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:842
 msgid "None."
-msgstr ""
+msgstr "Brez."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:832
 msgid "Pitfalls To Avoid"
-msgstr "Izogibajte se pasti"
+msgstr "Pasti za izogibanje"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:855
 msgid "Further Reading"
@@ -138,7 +140,7 @@ msgstr "Ur_edi"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Help"
-msgstr "Po_moč"
+msgstr "Pomo_č"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "Contents"
@@ -159,10 +161,10 @@ msgid ""
 "\n"
 "You can edit this data anytime later using: <i>Edit->Identification...</i>"
 msgstr ""
-"<b>Za nekatere priložnosti potrebujete dodatne informacije o zaključku.</b>\n"
+"<b>Za nekatere priložnosti potrebujete dodatne podatke s katerimi boste "
+"potrdili njihov zaključek.</b>\n"
 "\n"
-"Te informacije lahko kadarkoli urejate z uporabo<i>Uredi-"
-">Identifikacija...</i>"
+"Te podatke lahko kadarkoli urejate z uporabo<i>Uredi->Identifikacija ...</i>"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
 msgid "Edit credentials"
@@ -170,19 +172,19 @@ msgstr "Uredi poverila"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid "Later"
-msgstr "Kasneje"
+msgstr "Pozneje"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:13
 msgid "Additional information required..."
-msgstr "Manjkajo dodatne informacije..."
+msgstr "Manjkajo dodatni podatki ..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:14
 msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
 msgstr ""
-"Nekatere priložnosti potrebujejo overitev. Za to boste potrebovali račun na "
-"Ubuntu One in potrditev overitve teh priložnosti."
+"Nekatere priložnosti po dokončanju zahtevajo overitev. Za to boste "
+"potrebovali račun na Ubuntu One in potrditev overitve teh priložnosti."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
 msgid ""
@@ -195,22 +197,22 @@ msgid ""
 "is the information you can see in Edit -> Identification - this information "
 "is not shared with others or given to companies."
 msgstr ""
-"Ubuntu One je internetna storitev za brezplačni sinhronizacijo datotek. "
-"Prikladno je povezana z Ubuntu namizjem.\n"
+"Ubuntu One je internetna storitev za brezplačno usklajevanje datotek. "
+"Prikladno je povezana z namizjem Ubuntu.\n"
 "\n"
-"Ubuntu Accomplishments ugotovijo, da ste nekaj dosegli in nova trofeja bo "
-"poslana na strežnik za overjenje s pomočjo Ubuntu One. To je preprost in "
-"varen način in podatke, ki jih vidi strežnik lahko preveriti v Uredi -> "
-"Identifikacija. Do teh podatkov nima dostopa nihče drug, prav tako se jih ne "
-"izroča tretjim osebam."
+"Ko program Ubuntu Accomplishments ugotovi, da ste nekaj dosegli, bo nova "
+"trofeja poslana na strežnik za overjenje s pomočjo Ubuntu One. To je "
+"preprost in varen način. Podatke, ki jih vidi strežnik, lahko preverite v "
+"Uredi -> Identifikacija. Do teh podatkov nima dostopa nihče drug, prav tako "
+"se jih ne izroča tretjim osebam."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid "Learn more..."
-msgstr "Povej več..."
+msgstr "Izvedi več ..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid "Ubuntu One account required"
-msgstr "Potreben je Ubuntu One račun"
+msgstr "Zahtevan je račun Ubuntu One"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid "Get Started"
