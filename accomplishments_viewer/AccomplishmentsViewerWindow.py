@@ -678,7 +678,7 @@ class AccomplishmentsViewerWindow(Window):
             description = a[0]["description"]
             html = html + description
         else:
-            html = html + _("No information available.")
+            html = html + _("No information available.").decode('utf-8')
                 
                 
         html = html + "</li> \
@@ -697,7 +697,7 @@ class AccomplishmentsViewerWindow(Window):
                 for l in help.split('\n'):
                     html = html + "<li>" + l + "</li>"
             else:
-                html = html + "<li>" + _("No help available.") + "</li>"
+                html = html + "<li>" + _("No help available.").decode('utf-8') + "</li>"
             
             html = html + "</ul></div>"
 
@@ -720,12 +720,12 @@ class AccomplishmentsViewerWindow(Window):
                             for depa in self.accomdb:
                                 if depapp == depa["application"] and depaccom == depa["accomplishment"]:
                                     print depa["title"]
-                                    html = html + "<li ><i class='icon-key icon-large'></i>" + _("This opportunity is locked. You need to complete") + "<strong>" + depa["title"] + "</strong> " + _("from") +" <strong>" + depa["application-human"] + "</strong> " + _("first") + ".</li>"
+                                    html = html + "<li ><i class='icon-key icon-large'></i>" + _("This opportunity is locked. You need to complete").decode('utf-8') + "<strong>" + depa["title"] + "</strong> " + _("from").decode('utf-8') +" <strong>" + depa["application-human"] + "</strong> " + _("first").decode('utf-8') + ".</li>"
 
         if achieved is 1:
             #achieved
             
-            html = html + "<li><img src='" + str(get_media_file("verify-icon.png")) + "' height='20' />" + _("This trophy <strong>was awarded</strong>")
+            html = html + "<li><img src='" + str(get_media_file("verify-icon.png")) + "' height='20' />" + _("This trophy <strong>was awarded</strong>").decode('utf-8')
 
             if "date-accomplished" in a[0]:
                 date = a[0]["date-accomplished"]
@@ -735,7 +735,7 @@ class AccomplishmentsViewerWindow(Window):
                 extrainfo = a[0]["needs-information"]
                 extralist = []
                 extralist.append(a[0]["needs-information"])
-                html = html + ", " + _("using the following credentials") + ":</li><li><ul class='big'>"
+                html = html + ", " + _("using the following credentials").decode('utf-8') + ":</li><li><ul class='big'>"
                 for i in extralist:
                     e = self.libaccom.getExtraInformation(a[0]["application"],i)
                     html = html + "<li>" + e[0]["label"] + ": " + e[0][i] + "</li>"
@@ -745,14 +745,14 @@ class AccomplishmentsViewerWindow(Window):
 
             if "needs-signing" in a[0]:
                 if a[0]["needs-signing"] == "true":
-                    html = html + "<li><img src='" + str(get_media_file("verify-icon.png")) + "' height='20' />" + _("This trophy has been verified") + ".</li>"
+                    html = html + "<li><img src='" + str(get_media_file("verify-icon.png")) + "' height='20' />" + _("This trophy has been verified").decode('utf-8') + ".</li>"
             #end of "if achieved"
 
         else:
             #not achieved
             if "needs-signing" in a[0]:
                 if a[0]["needs-signing"] == "true":
-                    html = html + "<li><i class='icon-trophy icon-large'></i>" + _("This opportunity requires verification") + ".</li> \
+                    html = html + "<li><i class='icon-trophy icon-large'></i>" + _("This opportunity requires verification").decode('utf-8') + ".</li> \
                         </ul>"
                         
 
@@ -774,7 +774,7 @@ class AccomplishmentsViewerWindow(Window):
 
                 html = html + "<div id='howto' class='grid_8'> \
                     <i class='icon-list'></i> \
-                    <h2>" + _("How to accomplish this opportunity") + "</h2> \
+                    <h2>" + _("How to accomplish this opportunity").decode('utf-8') + "</h2> \
                     <ol>"
                 
                 steps = a[0]["steps"]
@@ -809,7 +809,7 @@ class AccomplishmentsViewerWindow(Window):
                     
             if showtipspitfalls == True:
                 html = html + "<div class='grid_4 block left' id='tips'>"
-                html = html + "<h2>" + _("Tips and Tricks") + ":</h2>"
+                html = html + "<h2>" + _("Tips and Tricks").decode('utf-8') + ":</h2>"
                 
                 if hastips == True:
                     tips = a[0]["tips"]
@@ -819,7 +819,7 @@ class AccomplishmentsViewerWindow(Window):
                 html = html + "<ul>"
 
                 if tips == None:
-                    html = html + "<li class='icon-ok'>" + _("None.") + "</li>"
+                    html = html + "<li class='icon-ok'>" + _("None.").decode('utf-8') + "</li>"
                 else:
                     for t in tips.split('\n'):
                         html = html + "<li class='icon-ok'>" + t + "</li>"
@@ -829,7 +829,7 @@ class AccomplishmentsViewerWindow(Window):
 
                 html = html + "<div id='divider' class='left'>&nbsp;</div>"
                 html = html + "<div class='grid_3 block left' id='pitfals'>"
-                html = html + "<h2>" + _("Pitfalls To Avoid") + ":</h2>"
+                html = html + "<h2>" + _("Pitfalls To Avoid").decode('utf-8') + ":</h2>"
                 
                 if haspitfalls == True:
                     pitfalls = a[0]["pitfalls"]
@@ -839,7 +839,7 @@ class AccomplishmentsViewerWindow(Window):
                 html = html + "<ul>"
 
                 if pitfalls == None:
-                    html = html + "<li class='icon-ok'>" + _("None.") + "</li>"
+                    html = html + "<li class='icon-ok'>" + _("None.").decode('utf-8') + "</li>"
                 else:
                     for p in pitfalls.split('\n'):
                         html = html + "<li class='icon-ok'>" + p + "</li>"
@@ -852,7 +852,7 @@ class AccomplishmentsViewerWindow(Window):
             if "links" in a[0]:
                 links = a[0]["links"]
                 html = html + "<div id='furtherreading' class='grid_8'> \
-                    <h2>" + _("Further Reading") + "</h2>"
+                    <h2>" + _("Further Reading").decode('utf-8') + "</h2>"
                 html = html + "<ul>"
                 for l in links.split('\n'):
                     html = html + "<li><a href='" + l + "'><i class='icon-external-link icon-large'></i>" + l + "</a></li>"
