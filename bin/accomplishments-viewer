@@ -15,6 +15,17 @@ gettext.textdomain('accomplishments-viewer')
 PROJECT_ROOT_DIRECTORY = os.path.abspath(
     os.path.dirname(os.path.dirname(os.path.realpath(sys.argv[0]))))
 
+# Prepate paths for importing modules
+sys.path.insert(0,os.path.join(PROJECT_ROOT_DIRECTORY,'lib/python2.7/site-packages'))
+sys.path.insert(0,os.path.join(PROJECT_ROOT_DIRECTORY,'lib/python2.7/dist-packages'))
+os.environ["PYTHONPATH"] = "$PYTHONPATH:."
+os.environ['PYTHONPATH'] = os.path.join(PROJECT_ROOT_DIRECTORY,'lib/python2.7/site-packages') + ":" + os.environ['PYTHONPATH']
+os.environ['PYTHONPATH'] = os.path.join(PROJECT_ROOT_DIRECTORY,'lib/python2.7/dist-packages') + ":" + os.environ['PYTHONPATH']
+      
+# Original code, left for convenience. Reasons why it is discarted:
+# - It supports installation only in /opt/extras.ubuntu.com/accomplishments-viewer
+# - It does not set site-packages directory, which seems to be nessesary
+"""
 python_path = []
 if os.path.abspath(__file__).startswith('/opt'):
     syspath = sys.path[:] # copy to avoid infinite loop in pending objects
@@ -28,6 +39,7 @@ if (os.path.exists(os.path.join(PROJECT_ROOT_DIRECTORY, 'accomplishments_viewer'
     sys.path.insert(0, PROJECT_ROOT_DIRECTORY)
 if python_path:
     os.putenv('PYTHONPATH', "%s:%s" % (os.getenv('PYTHONPATH', ''), ':'.join(python_path))) # for subprocesses
+"""
 
 import accomplishments_viewer
 accomplishments_viewer.main()
