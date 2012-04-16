@@ -670,7 +670,7 @@ class AccomplishmentsViewerWindow(Window):
         <div id='accomplishment-badge' class='grid_8 clearfix'> \
             <img class='icon' src='" + str(iconpath) + "'> \
             <div class='grid_3 block'> \
-            <h4>" + _("Opportunity Information") + ":</h4> \
+            <h4>" + _("Opportunity Information").decode('utf-8') + ":</h4> \
             <ul class='none'> \
                 <li>"
 
