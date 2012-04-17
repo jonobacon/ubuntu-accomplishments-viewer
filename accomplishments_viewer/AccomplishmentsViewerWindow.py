@@ -28,6 +28,7 @@ from accomplishments_viewer.EditExtrainfoDialog import EditExtrainfoDialog
 from accomplishments_viewer.PreferencesAccomplishmentsViewerDialog import PreferencesAccomplishmentsViewerDialog
 
 from accomplishments.daemon import dbusapi
+from accomplishments.util.paths import daemon_exec_dir
 from accomplishments_viewer_lib.helpers import get_media_file
 from accomplishments_viewer_lib.accomplishments_viewerconfig import get_data_path
 
@@ -241,8 +242,9 @@ class AccomplishmentsViewerWindow(Window):
     def run_daemon(self):
         """Starts the daemon process"""
         
-        #XXX following may need adjusments for packaging
-        os.system("twistd -y bin/daemon &")
+        command = "twistd -y " + daemon_exec_dir + "/accomplishments-daemon"
+        print ("Starting the daemon using command `%s`" % command)
+        os.system(command)
         #apparently as that process daemonizes it will not get killed when one closes the client
         
         self.statusbar.set_text("Starting the daemon...")
