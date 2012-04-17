@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-15 21:35-0700\n"
-"PO-Revision-Date: 2012-04-16 05:02+0000\n"
+"PO-Revision-Date: 2012-04-16 13:09+0000\n"
 "Last-Translator: Constantinos Koniaris <kostas291@yahoo.com>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-16 05:24+0000\n"
+"X-Launchpad-Export-Date: 2012-04-17 05:37+0000\n"
 "X-Generator: Launchpad (build 15099)\n"
 
 #. Code for other initialization actions should be added here.
@@ -59,7 +59,7 @@ msgstr "Ρυθμίσεις Επιτευγμάτων"
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:673
 msgid "Opportunity Information"
-msgstr "Πληροφορίες Ευκαιριών"
+msgstr "Πληροφορίες Ευκαιρίας"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:681
 msgid "No information available."
@@ -202,7 +202,7 @@ msgid ""
 msgstr ""
 "Το Ubuntu One είναι μια ελεύθερη προς χρήση διαδικτυακή υπηρεσία που "
 "χρησιμοποιείται για τον συγχρονισμό αρχείων και για άλλες λειτουργίες, και "
-"είναι ωραία ενσωματωμένη στη επιφάνεια εργασίας του Ubuntu.\n"
+"είναι καλά ενσωματωμένη στη επιφάνεια εργασίας του Ubuntu.\n"
 "\n"
 "Κάθε φορά που τα Επιτεύγματα του Ubuntu διαπιστώνει ότι επιτύχατε κάτι νέο "
 "τότε το τρόπαιο στέλνεται σε έναν διακομιστή για επαλήθευση χρησιμοποιώντας "
