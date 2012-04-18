@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-15 21:35-0700\n"
-"PO-Revision-Date: 2012-04-10 06:07+0000\n"
+"PO-Revision-Date: 2012-04-17 06:03+0000\n"
 "Last-Translator: zsorzs <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-17 05:37+0000\n"
-"X-Generator: Launchpad (build 15099)\n"
+"X-Launchpad-Export-Date: 2012-04-18 09:13+0000\n"
+"X-Generator: Launchpad (build 15108)\n"
 
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
@@ -37,14 +37,16 @@ msgid ""
 "\n"
 "Please ensure that this data is accurate and up to date."
 msgstr ""
+"A következő információk szükségesek, hogy hitelesítsd az eredményeidet\n"
+"Győződj meg róla, hogy az adataid helyesek és napra készek"
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "GNU Public License"
-msgstr ""
+msgstr "GNU Általános Nyilvános Licenc"
 
 #: ../accomplishments_viewer/__init__.py:23
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
-msgstr ""
+msgstr "Hibakeresési üzenet megtekintése"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
@@ -53,7 +55,7 @@ msgstr ""
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:673
 msgid "Opportunity Information"
-msgstr ""
+msgstr "Inofrmáció a lehetőségekről"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:681
 msgid "No information available."
@@ -65,11 +67,11 @@ msgstr "Segítségkérés"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:700
 msgid "No help available."
-msgstr ""
+msgstr "Nincs elérhető súgó"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
 msgid "This opportunity is locked. You need to complete"
-msgstr ""
+msgstr "Ez a lehetőség zárolva van. Teljesítened kell"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
 msgid "from"
@@ -82,27 +84,27 @@ msgstr "első"
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
 msgid "This trophy <strong>was awarded</strong>"
-msgstr ""
+msgstr "Ezt a trófeát kaptad"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:732
 msgid "on"
-msgstr ""
+msgstr "ekkor:"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:738
 msgid "using the following credentials"
-msgstr ""
+msgstr "A következő adatok leszenk használva"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:748
 msgid "This trophy has been verified"
-msgstr ""
+msgstr "Ez a trófea igazolva lett"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:755
 msgid "This opportunity requires verification"
-msgstr ""
+msgstr "Ez a lehetőség ellenőrzést igényel"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:777
 msgid "How to accomplish this opportunity"
-msgstr ""
+msgstr "Hogyan teljesítsd ezt a lehetőséget"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:812
 msgid "Tips and Tricks"
@@ -111,11 +113,11 @@ msgstr "Tippek és trükkök"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:822
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:842
 msgid "None."
-msgstr ""
+msgstr "Nincs."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:832
 msgid "Pitfalls To Avoid"
-msgstr ""
+msgstr "Elkerülendő buktatók"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:855
 msgid "Further Reading"
@@ -123,31 +125,31 @@ msgstr "További olvasmányok"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
-msgstr ""
+msgstr "Teljesítmény információk"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:2
 msgid "_File"
-msgstr ""
+msgstr "_Fájl"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "_Edit"
-msgstr ""
+msgstr "_Szerkesztés"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Help"
-msgstr ""
+msgstr "_Súgó"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "Contents"
-msgstr ""
+msgstr "Tartalom"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "My Trophies"
-msgstr ""
+msgstr "Trófeáim"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "Opportunities"
-msgstr ""
+msgstr "Lehetőségek"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid ""
@@ -156,18 +158,21 @@ msgid ""
 "\n"
 "You can edit this data anytime later using: <i>Edit->Identification...</i>"
 msgstr ""
+"Néhány lehetőség számára több információ szükséges az igazoláshoz\n"
+"Ezeket az adatokat később is módosíthatod itt: <i>Szerkesztés-"
+">Azonosítás...</i>"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
 msgid "Edit credentials"
-msgstr ""
+msgstr "Szemályes adatok módosítása"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid "Later"
-msgstr ""
+msgstr "Később"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:13
 msgid "Additional information required..."
-msgstr ""
+msgstr "További információk szükségesek"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:14
 msgid ""
@@ -189,23 +194,23 @@ msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid "Learn more..."
-msgstr ""
+msgstr "További információ..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid "Ubuntu One account required"
-msgstr ""
+msgstr "Ubuntu One hozzáférés szükséges"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid "Get Started"
-msgstr ""
+msgstr "Kezdjük"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
 msgid "Show me"
-msgstr ""
+msgstr "Mutasd"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "accomplishments"
-msgstr ""
+msgstr "eredmények"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "opportunities for"
@@ -213,4 +218,4 @@ msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Show Locked"
-msgstr ""
+msgstr "Zárolt elemek mutatása"
