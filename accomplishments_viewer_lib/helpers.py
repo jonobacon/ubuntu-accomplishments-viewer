@@ -10,8 +10,11 @@ import os
 from . accomplishments_viewerconfig import get_data_file
 from . Builder import Builder
 
-import gettext
+import gettext, locale
 from gettext import gettext as _
+from accomplishments.util.paths import locale_dir
+locale.bindtextdomain('accomplishments-viewer', locale_dir)
+gettext.bindtextdomain('accomplishments-viewer',locale_dir)
 gettext.textdomain('accomplishments-viewer')
 
 def get_builder(builder_file_name):

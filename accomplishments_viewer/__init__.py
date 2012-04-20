@@ -5,8 +5,11 @@
 
 import optparse
 
-import gettext
+import gettext, locale
 from gettext import gettext as _
+from accomplishments.util.paths import locale_dir
+locale.bindtextdomain('accomplishments-viewer', locale_dir)
+gettext.bindtextdomain('accomplishments-viewer',locale_dir)
 gettext.textdomain('accomplishments-viewer')
 
 from gi.repository import Gtk # pylint: disable=E0611
@@ -20,7 +23,7 @@ def parse_options():
     parser = optparse.OptionParser(version="%%prog %s" % get_version())
     parser.add_option(
         "-v", "--verbose", action="count", dest="verbose",
-        help=_("Show debug messages (-vv debugs accomplishments_viewer_lib also)"))
+        help=_("Show debug messages (-vv debugs accomplishments_viewer_lib also)").decode('utf-8'))
     (options, args) = parser.parse_args()
 
     set_up_logging(options)

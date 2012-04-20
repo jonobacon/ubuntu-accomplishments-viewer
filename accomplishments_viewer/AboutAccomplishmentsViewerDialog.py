@@ -3,8 +3,11 @@
 # This file is in the public domain
 ### END LICENSE
 
-import gettext
+import gettext, locale
 from gettext import gettext as _
+from accomplishments.util.paths import locale_dir
+locale.bindtextdomain('accomplishments-viewer', locale_dir)
+gettext.bindtextdomain('accomplishments-viewer',locale_dir)
 gettext.textdomain('accomplishments-viewer')
 
 import logging
