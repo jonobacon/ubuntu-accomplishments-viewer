@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-20 19:11+0200\n"
+"POT-Creation-Date: 2012-04-15 21:35-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,39 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#. Code for other initialization actions should be added here.
+#: ../accomplishments-viewer.desktop.in.h:1
+msgid "Accomplishments Viewer"
+msgstr ""
+
+#: ../accomplishments-viewer.desktop.in.h:2
+msgid "AccomplishmentsViewer application"
+msgstr ""
+
+#: ../data/ui/EditExtrainfoDialog.ui.h:1
+msgid "Extra information required..."
+msgstr ""
+
+#: ../data/ui/EditExtrainfoDialog.ui.h:2
+msgid ""
+"<b>The following information is required to verify your accomplishments.</"
+"b>\n"
+"\n"
+"Please ensure that this data is accurate and up to date."
+msgstr ""
+
+#: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
+msgid "GNU Public License"
+msgstr ""
+
+#: ../accomplishments_viewer/__init__.py:23
+msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
+msgstr ""
+
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
+msgid "Accomplishments Preferences"
+msgstr ""
 
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:673
@@ -86,38 +119,6 @@ msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:855
 msgid "Further Reading"
-msgstr ""
-
-#: ../accomplishments-viewer.desktop.in.h:1
-msgid "Accomplishments Viewer"
-msgstr ""
-
-#: ../accomplishments-viewer.desktop.in.h:2
-msgid "AccomplishmentsViewer application"
-msgstr ""
-
-#: ../data/ui/EditExtrainfoDialog.ui.h:1
-msgid "Extra information required..."
-msgstr ""
-
-#: ../data/ui/EditExtrainfoDialog.ui.h:2
-msgid ""
-"<b>The following information is required to verify your accomplishments.</"
-"b>\n"
-"\n"
-"Please ensure that this data is accurate and up to date."
-msgstr ""
-
-#: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
-msgid "GNU Public License"
-msgstr ""
-
-#: ../accomplishments_viewer/__init__.py:23
-msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
-msgstr ""
-
-#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
-msgid "Accomplishments Preferences"
 msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1

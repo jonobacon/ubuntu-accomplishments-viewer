@@ -50,7 +50,7 @@ class EditExtrainfoDialog(Gtk.Dialog):
         self.libaccom = libaccom
         
         i = self.libaccom.getAllExtraInformation()
-        print i
+        
         self.entries_map = {}
         
         #remove all widgets that are contained in the auth_box
