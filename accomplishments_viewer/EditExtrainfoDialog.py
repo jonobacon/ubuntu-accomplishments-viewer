@@ -53,9 +53,17 @@ class EditExtrainfoDialog(Gtk.Dialog):
         
         self.entries_map = {}
         
+        #remove all widgets that are contained in the auth_box
+        #they will be there since the previous prepare() call
+        c = self.auth_box.get_child()
+        if c is not None:
+            self.auth_box.remove(c)
+            
         if len(i) is not 0:
             #there what to ask for
-                
+            self.main_box = Gtk.VBox()
+            self.auth_box.add(self.main_box)
+                    
             #essential. It ensures we'll append items to section_dict, in an unchanging order.
             infoneeded = sorted(i, key=itemgetter('application'))
             
@@ -91,14 +99,6 @@ class EditExtrainfoDialog(Gtk.Dialog):
                     rev_section_dict[d].append(i)
                            
             #print rev_section_dict  
-            
-            #remove all widgets that are contained in the auth_box
-            #they will be there since the previous prepare() call
-            c = self.auth_box.get_child()
-            if c is not None:
-                self.auth_box.remove(c)
-            self.main_box = Gtk.VBox()
-            self.auth_box.add(self.main_box)
             
             for i in sorted(rev_section_dict.keys(), reverse=True, key=len):
                 #the gui code is here - done for every GROUP of entry fields
@@ -183,7 +183,7 @@ class EditExtrainfoDialog(Gtk.Dialog):
             #no point in asking at all
             label = Gtk.Label("<i>(no extra-information is required, most likely there is something wrong with your installtion)</i>")
             label.set_use_markup(True)
-            self.auth_box.pack_start(label,True,True,0)
+            self.auth_box.add(label)
             self.auth_box.show_all()
         return
 
