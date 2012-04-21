@@ -18,6 +18,7 @@ PROJECT_ROOT_DIRECTORY = os.path.abspath(
 # Prepate paths for importing modules
 sys.path.insert(0,os.path.join(PROJECT_ROOT_DIRECTORY,'lib/python2.7/site-packages'))
 sys.path.insert(0,os.path.join(PROJECT_ROOT_DIRECTORY,'lib/python2.7/dist-packages'))
+sys.path.insert(0,PROJECT_ROOT_DIRECTORY) # When the viewer is run from branch prefer modules provided by branch over these that are installed in yout system.
 os.environ["PYTHONPATH"] = "$PYTHONPATH:."
 os.environ['PYTHONPATH'] = os.path.join(PROJECT_ROOT_DIRECTORY,'lib/python2.7/site-packages') + ":" + os.environ['PYTHONPATH']
 os.environ['PYTHONPATH'] = os.path.join(PROJECT_ROOT_DIRECTORY,'lib/python2.7/dist-packages') + ":" + os.environ['PYTHONPATH']
