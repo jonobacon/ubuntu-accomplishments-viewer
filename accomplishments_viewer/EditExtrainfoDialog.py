@@ -9,8 +9,11 @@ from operator import itemgetter
 from accomplishments_viewer_lib.helpers import get_builder
 from accomplishments.daemon import dbusapi
 
-import gettext
+import gettext, locale
 from gettext import gettext as _
+from accomplishments.util.paths import locale_dir
+locale.bindtextdomain('accomplishments-viewer', locale_dir)
+gettext.bindtextdomain('accomplishments-viewer',locale_dir)
 gettext.textdomain('accomplishments-viewer')
        
         
