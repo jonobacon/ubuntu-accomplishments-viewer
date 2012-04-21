@@ -6,7 +6,7 @@ Build-Depends: cdbs (>= 0.4.43),
  python (>= 2.6.6-3~),
  python-distutils-extra (>= 2.10)
 Maintainer: Jono Bacon <jono@ubuntu.com>
-Standards-Version: 3.8.3
+Standards-Version: 3.9.3
 XS-Python-Version: current
 
 Package: accomplishments-viewer
@@ -18,7 +18,6 @@ Depends: ${misc:Depends},
  python-dbus,
  gir1.2-glib-2.0,
  gir1.2-unity-5.0,
- accomplishments-daemon,
  gir1.2-gdkpixbuf-2.0,
  gir1.2-webkit-3.0,
  gir1.2-launchpad-integration-3.0,
