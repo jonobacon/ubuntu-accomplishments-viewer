@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-04-15 21:35-0700\n"
+"POT-Creation-Date: 2012-04-21 15:53-0700\n"
 "PO-Revision-Date: 2012-04-13 12:08+0000\n"
 "Last-Translator: Sune Keller <Unknown>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-17 05:37+0000\n"
-"X-Generator: Launchpad (build 15099)\n"
+"X-Launchpad-Export-Date: 2012-04-22 05:16+0000\n"
+"X-Generator: Launchpad (build 15120)\n"
 
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
@@ -45,7 +45,7 @@ msgstr ""
 msgid "GNU Public License"
 msgstr "GNU Public License"
 
-#: ../accomplishments_viewer/__init__.py:23
+#: ../accomplishments_viewer/__init__.py:26
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
 msgstr ""
 "Vis fejlretningsbeskeder (-vv fejlretter også accomplishments_viewer_lib)"
@@ -55,73 +55,73 @@ msgid "Accomplishments Preferences"
 msgstr "Bedriftsindstillinger"
 
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:673
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:678
 msgid "Opportunity Information"
 msgstr "Oplysninger om muligheder"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:681
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:686
 msgid "No information available."
 msgstr "Ingen information tilgængelig."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:691
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:696
 msgid "Getting Help"
 msgstr "Få hjælp"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:700
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:705
 msgid "No help available."
 msgstr "Ingen tilgængelig hjælp."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
 msgid "This opportunity is locked. You need to complete"
 msgstr "Denne mulighed er låst. Du skal færdiggøre"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
 msgid "from"
 msgstr "fra"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
 msgid "first"
 msgstr "først"
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:733
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "Dette trofæ <strong>blev tildelt</strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:732
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:737
 msgid "on"
 msgstr "på"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:738
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:743
 msgid "using the following credentials"
 msgstr "ved hjælp af de følgende legitimationsoplysninger"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:748
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:753
 msgid "This trophy has been verified"
 msgstr "Dette trofæ er blevet bekræftet"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:755
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:760
 msgid "This opportunity requires verification"
 msgstr "Denne mulighed kræver bekræftelse"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:777
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:782
 msgid "How to accomplish this opportunity"
 msgstr "Hvordan man opnår denne mulighed"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:812
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:817
 msgid "Tips and Tricks"
 msgstr "Tips og tricks"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:822
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:842
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:827
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:847
 msgid "None."
 msgstr "Ingen."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:832
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:837
 msgid "Pitfalls To Avoid"
 msgstr "Faldgrupper man kan undgå"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:855
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:860
 msgid "Further Reading"
 msgstr "Læs mere"
 
