@@ -857,10 +857,10 @@ class AccomplishmentsViewerWindow(Window):
                 html = html + "<ul>"
 
                 if pitfalls == None:
-                    html = html + "<li class='icon-ok'>" + _("None.").decode('utf-8') + "</li>"
+                    html = html + "<li class='icon-remove'>" + _("None.").decode('utf-8') + "</li>"
                 else:
                     for p in pitfalls.split('\n'):
-                        html = html + "<li class='icon-ok'>" + p + "</li>"
+                        html = html + "<li class='icon-remove'>" + p + "</li>"
 
                 html = html + "</ul>"
                 html = html + "</div>"
