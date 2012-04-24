@@ -18,13 +18,15 @@
     <property name="can_focus">False</property>
     <property name="stock">gtk-edit</property>
   </object>
-  <object class="GtkListStore" id="mytrophies_list"/>
   <object class="AccomplishmentsViewerWindow" id="accomplishments_viewer_window">
-    <property name="height_request">520</property>
+    <property name="height_request">270</property>
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Accomplishment Information</property>
     <property name="window_position">center</property>
+    <property name="default_width">600</property>
+    <property name="default_height">450</property>
     <property name="icon_name">distributor-logo</property>
+    <signal name="check-resize" handler="on_window_resized" swapped="no"/>
     <child>
       <object class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
@@ -664,7 +666,7 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                       <object class="GtkScrolledWindow" id="scrolledwindow2">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="hscrollbar_policy">never</property>
+                        <property name="hscrollbar_policy">always</property>
                         <property name="shadow_type">in</property>
                         <child>
                           <object class="GtkIconView" id="trophy_icon">
@@ -835,7 +837,7 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                       <object class="GtkScrolledWindow" id="scrolledwindow1">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="hscrollbar_policy">never</property>
+                        <property name="hscrollbar_policy">always</property>
                         <property name="shadow_type">in</property>
                         <child>
                           <object class="GtkIconView" id="opp_icon">
@@ -945,4 +947,5 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
       </object>
     </child>
   </object>
+  <object class="GtkListStore" id="mytrophies_list"/>
 </interface>
