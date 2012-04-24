@@ -59,7 +59,8 @@ class AccomplishmentsViewerWindow(Window):
         self.PreferencesDialog = PreferencesAccomplishmentsViewerDialog
         self.EditExtraDialog = EditExtrainfoDialog()
         self.EditExtraDialog.parent = self
-
+        self.curr_height = 0
+        self.curr_width = 0
         # Code for other initialization actions should be added here.
 
         # self.accomdb provides a collection of all accomplishments
@@ -396,6 +397,18 @@ class AccomplishmentsViewerWindow(Window):
 
         self.u1_button.show()
         self.additional_ubuntu1.set_visible(True)
+
+    def on_window_resized(self,widget):
+        # get the new size
+        new_width = widget.get_size()[0]
+        new_height = widget.get_size()[1]
+        # if the size has changed...
+        if(new_width != self.curr_width or new_height != self.curr_height):
+            # remember new size
+            self.curr_width = new_width
+            self.curr_height = new_height
+            # and refill iconviews with icons to adjust columns number
+            self.update_views(widget)
 
     def update_views(self, widget):
         """Update all of the views to reflect the current state of Trophies and Opportunities."""
