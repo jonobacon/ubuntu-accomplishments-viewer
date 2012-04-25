@@ -52,7 +52,7 @@ class EditExtrainfoDialog(Gtk.Dialog):
         # use self.parent.connected to check if connected to daemon
         self.libaccom = libaccom
         
-        i = self.libaccom.getAllExtraInformation()
+        i = self.libaccom.get_all_extra_information()
         
         self.entries_map = {}
         
@@ -125,18 +125,18 @@ class EditExtrainfoDialog(Gtk.Dialog):
                 #temporarily we'll use an ugly name
                 n = len(i)
                 if n is 1:
-                    name = self.libaccom.getApplicationFullName(i[0])
+                    name = self.libaccom.get_application_full_name(i[0])
                 elif n is 2:
-                    name = self.libaccom.getApplicationFullName(i[0]) + " and " + self.libaccom.getApplicationFullName(i[1])
+                    name = self.libaccom.get_application_full_name(i[0]) + " and " + self.libaccom.get_application_full_name(i[1])
                 else:
                     name = ""
                     for k in range(0,n):
                         if n-k > 2:
-                            name = name + self.libaccom.getApplicationFullName(i[k]) + ", "
+                            name = name + self.libaccom.get_application_full_name(i[k]) + ", "
                         elif n-k is 2:
-                            name = name + self.libaccom.getApplicationFullName(i[k]) + " and "
+                            name = name + self.libaccom.get_application_full_name(i[k]) + " and "
                         elif n-k is 1:
-                            name = name + self.libaccom.getApplicationFullName(i[k])
+                            name = name + self.libaccom.get_application_full_name(i[k])
                            
                 g_uplabel = Gtk.Label("<big><b>" + name + "</b></big>")
                 g_uplabel.set_use_markup(True)
@@ -212,8 +212,8 @@ class EditExtrainfoDialog(Gtk.Dialog):
             else:
                 #print "value " + f + " changed"
                 anything_changed = True
-                self.libaccom.saveExtraInformationFile("__any__",f,newvalue)
-                self.libaccom.invalidateExtraInformation(f)
+                self.libaccom.write_extra_information_file("__any__",f,newvalue)
+                self.libaccom.invalidate_extra_information(f)
                 
         if anything_changed:
             self.libaccom.run_scripts(True)

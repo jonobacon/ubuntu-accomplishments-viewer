@@ -187,8 +187,8 @@ class AccomplishmentsViewerWindow(Window):
         if self.connected is False:
             return
     
-        self.has_u1 = self.libaccom.getConfigValue("config", "has_u1")
-        self.has_verif = self.libaccom.getConfigValue("config", "has_verif")
+        self.has_u1 = self.libaccom.get_config_value("config", "has_u1")
+        self.has_verif = self.libaccom.get_config_value("config", "has_verif")
 
         if bool(self.has_u1) is False:
             self.approve_u1_trophies()
@@ -355,14 +355,14 @@ class AccomplishmentsViewerWindow(Window):
         self.verify_u1_account()
 
     def verify_u1_account(self):
-        ver = self.libaccom.verifyU1Account()
+        ver = self.libaccom.verify_ubuntu_one_account()
 
         if bool(ver) == True:
             self.u1_button.disconnect(self.u1_button_sig)
             self.u1_button.set_label("Click here to confirm your Ubuntu One account")
             self.u1_button_sig = self.u1_button.connect("clicked", self.register_with_verif)
             self.has_u1 = True
-            self.libaccom.setConfigValue("config", "has_u1", True)
+            self.libaccom.write_config_file_item("config", "has_u1", True)
 
         else:
             print ""
@@ -371,10 +371,10 @@ class AccomplishmentsViewerWindow(Window):
         self.additional_ubuntu1.set_visible(False)
 
     def create_trophy_share(self, widget):
-        trophydir = self.libaccom.getConfigValue("config", "trophypath")
+        trophydir = self.libaccom.get_config_value("config", "trophypath")
 
         self.has_verif = True
-        self.libaccom.setConfigValue("config", "has_verif", True)
+        self.libaccom.write_config_file_item("config", "has_verif", True)
 
         res = self.libaccom.register_trophy_dir(trophydir)
 
@@ -594,7 +594,7 @@ class AccomplishmentsViewerWindow(Window):
     def check_for_extra_info_required(self):
         """Check if the installed accomplishments require additional information to be gathered from the user."""
         
-        infoneeded = self.libaccom.getAllExtraInformationRequired()
+        infoneeded = self.libaccom.get_all_extra_information_required()
 
         if len(infoneeded) == 0:
             self.notebook.set_current_page(0)
@@ -617,7 +617,7 @@ class AccomplishmentsViewerWindow(Window):
         # clear the local cache of accomplishments
         self.accomdb = []
             
-        for acc in self.libaccom.listAllAccomplishmentsAndStatus():
+        for acc in self.libaccom.get_all_accomplishments_and_status():
             if "category" in acc:
                 self.accomdb.append({'title' : unicode(acc["title"]), 'accomplished' : str(acc["accomplished"]), 'iconpath' : str(acc["iconpath"]), 'locked' : bool(acc["locked"]), 'application' : str(acc["application"]), 'application-human' : str(acc["application-human"]), 'category' : str(acc["category"]), 'accomplishment' : str(acc["accomplishment"])})
             else:
@@ -646,9 +646,9 @@ class AccomplishmentsViewerWindow(Window):
         a = []
         
         if achieved == 1:
-            a = self.libaccom.listTrophyInfo(accomplishment)
+            a = self.libaccom.get_trophy_information(accomplishment)
         else:
-            a = self.libaccom.listAccomplishmentInfo(accomplishment)
+            a = self.libaccom.get_accomplishment_information(accomplishment)
         
         title = None
         description = None
@@ -727,7 +727,7 @@ class AccomplishmentsViewerWindow(Window):
             
         if "depends" in a[0]:
             # check if it is locked
-            for acc in self.libaccom.listAllAccomplishmentsAndStatus():
+            for acc in self.libaccom.get_all_accomplishments_and_status():
                 if accomplishment in acc["accomplishment"]:
                     if acc["locked"] == 1:
                         dep = str(a[0]["depends"])
@@ -755,7 +755,7 @@ class AccomplishmentsViewerWindow(Window):
                 extralist.append(a[0]["needs-information"])
                 html = html + ", " + _("using the following credentials").decode('utf-8') + ":</li><li><ul class='big'>"
                 for i in extralist:
-                    e = self.libaccom.getExtraInformation(a[0]["application"],i)
+                    e = self.libaccom.get_extra_information(a[0]["application"],i)
                     html = html + "<li>" + e[0]["label"] + ": " + e[0][i] + "</li>"
                 html = html + "</ul></li>"
             else:       
