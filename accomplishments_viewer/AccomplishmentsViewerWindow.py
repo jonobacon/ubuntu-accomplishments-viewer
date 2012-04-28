@@ -14,6 +14,7 @@ import traceback
 import os
 import sys
 import webbrowser
+import xdg.BaseDirectory
 
 import dbus
 import dbus.service
@@ -145,6 +146,13 @@ class AccomplishmentsViewerWindow(Window):
         self.u1_button_sig = None
         self.verif_box.pack_start(self.u1_button, False, False, 0)
 
+        # set up logging
+        self.dir_cache = os.path.join(
+            xdg.BaseDirectory.xdg_cache_home, "accomplishments")
+
+        if not os.path.exists(self.dir_cache):
+            os.makedirs(self.dir_cache)
+
         if self.connected is True:
             self.check_and_ask_for_info()
 
@@ -246,7 +254,7 @@ class AccomplishmentsViewerWindow(Window):
     def run_daemon(self):
         """Starts the daemon process"""
         
-        command = "twistd -y " + daemon_exec_dir + "/accomplishments-daemon"
+        command = "twistd -noy " + daemon_exec_dir + "/accomplishments-daemon --logfile=" + os.path.join(self.dir_cache, "logs", "daemon.log") + " &"
         print ("Starting the daemon using command `%s`" % command)
         os.system(command)
         #apparently as that process daemonizes it will not get killed when one closes the client
