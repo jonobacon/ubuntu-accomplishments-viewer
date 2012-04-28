@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-21 15:53-0700\n"
-"PO-Revision-Date: 2012-04-16 13:09+0000\n"
-"Last-Translator: Constantinos Koniaris <kostas291@yahoo.com>\n"
+"PO-Revision-Date: 2012-04-25 21:14+0000\n"
+"Last-Translator: Simos Xenitellis <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-25 05:25+0000\n"
-"X-Generator: Launchpad (build 15139)\n"
+"X-Launchpad-Export-Date: 2012-04-26 05:19+0000\n"
+"X-Generator: Launchpad (build 15149)\n"
 
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
@@ -24,11 +24,11 @@ msgstr "Προβολή επιτευγμάτων"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "AccomplishmentsViewer application"
-msgstr "Η εφαρμογή ΠροβολέαςΕπιτευγμάτων"
+msgstr "Η εφαρμογή AccomplishmentsViewer"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
-msgstr "Απαιτούνται επιπλέον πληροφορίες..."
+msgstr "Απαιτούνται επιπλέον πληροφορίες…"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:2
 msgid ""
@@ -54,12 +54,12 @@ msgstr ""
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
-msgstr "Ρυθμίσεις Επιτευγμάτων"
+msgstr "Ρυθμίσεις επιτευγμάτων"
 
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:678
 msgid "Opportunity Information"
-msgstr "Πληροφορίες Ευκαιρίας"
+msgstr "Πληροφορίες ευκαιρίας"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:686
 msgid "No information available."
@@ -67,7 +67,7 @@ msgstr "Δεν υπάρχουν διαθέσιμες πληροφορίες."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:696
 msgid "Getting Help"
-msgstr "Λήψη Βοήθειας"
+msgstr "Λήψη βοήθειας"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:705
 msgid "No help available."
@@ -112,7 +112,7 @@ msgstr "Πως θα επιτευχθεί η ευκαιρία"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:817
 msgid "Tips and Tricks"
-msgstr "Συμβουλές και Κόλπα"
+msgstr "Συμβουλές και κολπάκια"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:827
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:847
@@ -129,11 +129,11 @@ msgstr "Περαιτέρω ανάγνωση"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
-msgstr "Πληροφορίες Επιτευγμάτων"
+msgstr "Πληροφορίες επιτευγμάτων"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:2
 msgid "_File"
-msgstr "_Αρχείο"
+msgstr "Α_ρχείο"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "_Edit"
@@ -237,4 +237,4 @@ msgstr "ευκαιρίες για"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Show Locked"
-msgstr "Προβολή Κλειδωμένων"
+msgstr "Προβολή κλειδωμένων"

@@ -1,4 +1,4 @@
-# Portuguese translation for ubuntu-accomplishments-viewer
+# English (Canada) translation for ubuntu-accomplishments-viewer
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the ubuntu-accomplishments-viewer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-21 15:53-0700\n"
-"PO-Revision-Date: 2012-04-25 12:07+0000\n"
+"PO-Revision-Date: 2012-04-25 12:04+0000\n"
 "Last-Translator: Sylver_51 <Sylver_51@yahoo.com.br>\n"
-"Language-Team: Portuguese <pt@li.org>\n"
+"Language-Team: English (Canada) <en_CA@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,7 +28,7 @@ msgstr "Aplicação Visualizador de Feitos"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
-msgstr "Informação extra necessária..."
+msgstr "Necessária informação extra"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:2
 msgid ""
@@ -37,10 +37,9 @@ msgid ""
 "\n"
 "Please ensure that this data is accurate and up to date."
 msgstr ""
-"<b>A seguinte informação é necessária para verificar as suas "
-"realizações.</b>\n"
+"<b>A Informação seguinte é necessária para verificar os seus feitos</b>\n"
 "\n"
-"É favor certificar-se que esta informação está correcta e actualizada."
+"Certifique-se de que a informação é coerente e está actualizada."
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "GNU Public License"
@@ -49,12 +48,12 @@ msgstr "Licença Pública GNU"
 #: ../accomplishments_viewer/__init__.py:26
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
 msgstr ""
-"Mostrar mensagens de depuração (-vv dupura também a "
+"Mostra mensagens de depuração (-vv depura também a "
 "accomplishments_viewer_lib)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
-msgstr "Preferências dos Feitos"
+msgstr "Preferências Feitos"
 
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:678
@@ -63,7 +62,7 @@ msgstr "Informação de Oportunidade"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:686
 msgid "No information available."
-msgstr "Informação não disponível."
+msgstr "Sem informação disponível"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:696
 msgid "Getting Help"
@@ -71,11 +70,11 @@ msgstr "Obter Ajuda"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:705
 msgid "No help available."
-msgstr "Não existe ajuda disponível."
+msgstr "Sem ajuda disponível"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
 msgid "This opportunity is locked. You need to complete"
-msgstr "Esta oportunidade está bloqueada. Necissita de completar"
+msgstr "Esta oportunidade está trancada. É necessário completar"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
 msgid "from"
@@ -88,11 +87,11 @@ msgstr "primeiro"
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:733
 msgid "This trophy <strong>was awarded</strong>"
-msgstr "Este troféu <strong>foi concedido</strong>"
+msgstr "O troféu <strong>foi atribuído</strong>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:737
 msgid "on"
-msgstr "no"
+msgstr "em"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:743
 msgid "using the following credentials"
@@ -108,28 +107,28 @@ msgstr "Esta oportunidade requer verificação"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:782
 msgid "How to accomplish this opportunity"
-msgstr "Como realizar esta oportunidade"
+msgstr "Como para conseguir esta oportunidade"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:817
 msgid "Tips and Tricks"
-msgstr "Dicas e Truques"
+msgstr "Truques e Dicas"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:827
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:847
 msgid "None."
-msgstr "Nenhum."
+msgstr "Nada"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:837
 msgid "Pitfalls To Avoid"
-msgstr "Armadilhas A Evitar"
+msgstr "Armadilhas a evitar"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:860
 msgid "Further Reading"
-msgstr "Leitura Complementar"
+msgstr "Leitura"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
-msgstr "Informação das Realizações"
+msgstr "Informações Feitos"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:2
 msgid "_File"
@@ -141,15 +140,15 @@ msgstr "_Editar"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Help"
-msgstr "Ajuda (_H)"
+msgstr "_Ajuda"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "Contents"
-msgstr "Conteúdos"
+msgstr "Conteúdo"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "My Trophies"
-msgstr "Os Meus Troféus"
+msgstr "Os meus Troféus"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "Opportunities"
@@ -162,10 +161,10 @@ msgid ""
 "\n"
 "You can edit this data anytime later using: <i>Edit->Identification...</i>"
 msgstr ""
-"<b>Algumas oportunidades necessitam de informação adicional para verificar "
-"que se encontram concluídas.</b>\n"
+"<b>Algumas oportunidades necessitam de informação extra para se verificar a "
+"sua conclusão.</b>\n"
 "\n"
-"Pode editar estes dados em qualquer altura utilizando: <i>Editar-"
+"Pode alterar esta informação em qualquer altura utilizando: <i>Editar-"
 ">Identificação...</i>"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
@@ -185,8 +184,8 @@ msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
 msgstr ""
-"Algumas oportunidades necessitam de verificação quando completadas. Para "
-"isso, será necessária uma conta Ubuntu One e aceitar que essas oportunidades "
+"Algumas oportunidades requerem verificação quando completadas. Para fazer "
+"isto necessita de uma conta no Ubuntu One e aceitar que essas oportunidades "
 "sejam verificadas."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
@@ -200,15 +199,15 @@ msgid ""
 "is the information you can see in Edit -> Identification - this information "
 "is not shared with others or given to companies."
 msgstr ""
-"Ubuntu One é um serviço online gratuito utilizado para sincronizar ficheiros "
-"e outras funcionalidades. Está destramente integrado com o seu ambiente de "
-"trabalho Ubuntu.\n"
+"Ubuntu One é um serviço online gratuito que é utilizado para alojamento de "
+"ficheiros entre outras funcionalidades. Encontra-se integrado no seu Ubuntu "
+"desktop.\n"
 "\n"
-"Quando o Realizações Ubuntu detecta que que realizou algo novo, o troféu é "
-"enviado para o servidor de verificação utilizando o Ubuntu One. Isto é "
-"simples, seguro, e a única informação partilhada como o servidor pode ser "
-"visualizada no Editar -> Identificação - esta informação não é partilhada "
-"com outros ou oferecida a empresas."
+"Quando o Ubuntu Feitos detecta que tem novos feitos novos troféus serão "
+"enviados para um servidor de verificação utilizando o Ubuntu One. Isto é "
+"simples e seguro de utilizar e a única informação que é partilhada com o "
+"servidor é a a informação que pode ver em Editar -> Identificação - esta "
+"informação não é partilhada com outros ou entregue a empresas."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid "Learn more..."
@@ -216,19 +215,19 @@ msgstr "Aprender mais..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid "Ubuntu One account required"
-msgstr "Conta Ubuntu One necessária"
+msgstr "É necessária uma conta no Ubuntu One."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid "Get Started"
-msgstr "Iniciação"
+msgstr "Iniciar"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
 msgid "Show me"
-msgstr "Mostra-me"
+msgstr "Mostrar"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "accomplishments"
-msgstr "realizações"
+msgstr "Feitos"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "opportunities for"
@@ -236,4 +235,4 @@ msgstr "oportunidades para"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Show Locked"
-msgstr "Mostrar Bloqueados"
+msgstr "Mostrar Trancados"
