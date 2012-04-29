@@ -1,4 +1,4 @@
-# Greek translation for ubuntu-accomplishments-viewer
+# Russian translation for ubuntu-accomplishments-viewer
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the ubuntu-accomplishments-viewer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-21 15:53-0700\n"
-"PO-Revision-Date: 2012-04-25 21:14+0000\n"
-"Last-Translator: Simos Xenitellis <Unknown>\n"
-"Language-Team: Greek <el@li.org>\n"
+"PO-Revision-Date: 2012-04-29 01:58+0000\n"
+"Last-Translator: Alexander Semyonov <Unknown>\n"
+"Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,15 +20,15 @@ msgstr ""
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
-msgstr "Προβολή επιτευγμάτων"
+msgstr "Просмотр достижений"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "AccomplishmentsViewer application"
-msgstr "Η εφαρμογή AccomplishmentsViewer"
+msgstr "Приложение просмотра достижений"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
-msgstr "Απαιτούνται επιπλέον πληροφορίες…"
+msgstr "Необходима дополнительная информация…"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:2
 msgid ""
@@ -37,123 +37,122 @@ msgid ""
 "\n"
 "Please ensure that this data is accurate and up to date."
 msgstr ""
-"<b>Οι ακόλουθες πληροφορίες απαιτούνται για την επαλήθευση των επιτευγμάτων "
-"σας.</b>\n"
+"<b>Для проверки достижения необходима следующая информация.</b>\n"
 "\n"
-"Παρακαλώ σιγουρευτείτε ότι οι πληροφορίες είναι ακριβείς και επίκαιρες."
+"Пожалуйста, удостоверьтесь, что информация верна и актуальна."
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "GNU Public License"
-msgstr "Άδεια χρήσης GNU"
+msgstr "GNU Public License"
 
 #: ../accomplishments_viewer/__init__.py:26
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
 msgstr ""
-"Προβολή μηνυμάτων αποσφαλμάτωσης (το -w αποσφαλματώνει και το "
+"Показывать сообщения отладки (-vv показывает также сообщения "
 "accomplishments_daemon_lib)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
-msgstr "Ρυθμίσεις επιτευγμάτων"
+msgstr "Настройка Достижений"
 
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:678
 msgid "Opportunity Information"
-msgstr "Πληροφορίες ευκαιρίας"
+msgstr "Информация о возможностях"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:686
 msgid "No information available."
-msgstr "Δεν υπάρχουν διαθέσιμες πληροφορίες."
+msgstr "Информация недоступна."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:696
 msgid "Getting Help"
-msgstr "Λήψη βοήθειας"
+msgstr "Получение помощи"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:705
 msgid "No help available."
-msgstr "Μη διαθέσιμη βοήθεια."
+msgstr "Помощь недоступна."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
 msgid "This opportunity is locked. You need to complete"
-msgstr "Το επίτευγμα είναι κλειδωμένο. Απαιτείται η ολοκλήρωση"
+msgstr "Эта возможность заблокирована. Вам необходимо завершить"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
 msgid "from"
-msgstr "από"
+msgstr "от"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
 msgid "first"
-msgstr "πρώτο"
+msgstr "первые"
 
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:733
 msgid "This trophy <strong>was awarded</strong>"
-msgstr "Το τρόπαιο <strong>έχει απονεμηθεί</strong>"
+msgstr "Этот трофей <strong>был получен</strong>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:737
 msgid "on"
-msgstr "στις"
+msgstr "на"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:743
 msgid "using the following credentials"
-msgstr "χρησιμοποιώντας τα ακόλουθα διαπιστευτήρια"
+msgstr "используя следующие данные входа"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:753
 msgid "This trophy has been verified"
-msgstr "Το τρόπαιο επαληθεύτηκε"
+msgstr "Этот трофей уже проверен"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:760
 msgid "This opportunity requires verification"
-msgstr "Η ευκαιρία αυτή απαιτεί επαλήθευση"
+msgstr "Необходима проверка этой возможности"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:782
 msgid "How to accomplish this opportunity"
-msgstr "Πως θα επιτευχθεί η ευκαιρία"
+msgstr "Как исполнить эту возможность"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:817
 msgid "Tips and Tricks"
-msgstr "Συμβουλές και κολπάκια"
+msgstr "Полезные советы"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:827
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:847
 msgid "None."
-msgstr "Κανένα."
+msgstr "Нет."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:837
 msgid "Pitfalls To Avoid"
-msgstr "Παγίδες προς αποφυγή"
+msgstr "Чтобы избежать ошибок"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:860
 msgid "Further Reading"
-msgstr "Περαιτέρω ανάγνωση"
+msgstr "Дополнительная информация"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
-msgstr "Πληροφορίες επιτευγμάτων"
+msgstr "Информация о достижениях"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:2
 msgid "_File"
-msgstr "Α_ρχείο"
+msgstr "_Файл"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "_Edit"
-msgstr "_Επεξεργασία"
+msgstr "_Правка"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Help"
-msgstr "_Βοήθεια"
+msgstr "_Помощь"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "Contents"
-msgstr "Περιεχόμενα"
+msgstr "Содержимое"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "My Trophies"
-msgstr "Τα τρόπαιά μου"
+msgstr "Мои трофеи"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "Opportunities"
-msgstr "Ευκαιρίες"
+msgstr "Возможности"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid ""
@@ -162,32 +161,30 @@ msgid ""
 "\n"
 "You can edit this data anytime later using: <i>Edit->Identification...</i>"
 msgstr ""
-"<b>Κάποιες ευκαιρίες απαιτούν επιπλέον πληροφορίες για να πραγματοποιηθεί η "
-"επαλήθευση της ολοκλήρωσής τους.</b>\n"
+"<b>Чтобы проверить исполнение некоторых возможностей, необходима "
+"дополнительная информация.</b>\n"
 "\n"
-"Είναι δυνατή η επεξεργασία των πληροφοριών αυτών σε μετέπειτα χρόνο μέσω: "
-"<i>Επεξεργασία->Ταυτοποίηση...</i>"
+"Вы можете отредактировать это позже: <i>Правка->Идентификация…</i>"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
 msgid "Edit credentials"
-msgstr "Επεξεργασία διαπιστευτηρίων"
+msgstr "Редактирование данных входа"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid "Later"
-msgstr "Αργότερα"
+msgstr "Позже"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:13
 msgid "Additional information required..."
-msgstr "Απαιτούνται επιπλέον πληροφορίες..."
+msgstr "Необходима дополнительная информация…"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:14
 msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
 msgstr ""
-"Κάποιες ευκαιρίες απαιτούν επαλήθευση αμέσως μετά την ολοκλήρωση τους. Για "
-"να γίνει αυτό χρειάζεται να έχετε λογαριασμό Ubuntu One και να αποδεχθείτε "
-"την πραγματοποίηση της επαλήθευσης των ευκαιριών αυτών."
+"Достижение некоторых возможностей нужно проверить. Для этого вам нужен "
+"аккаунт Ubuntu One и согласие на проверку достижения возможностей."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
 msgid ""
@@ -200,41 +197,39 @@ msgid ""
 "is the information you can see in Edit -> Identification - this information "
 "is not shared with others or given to companies."
 msgstr ""
-"Το Ubuntu One είναι μια ελεύθερη προς χρήση διαδικτυακή υπηρεσία που "
-"χρησιμοποιείται για τον συγχρονισμό αρχείων και για άλλες λειτουργίες, και "
-"είναι καλά ενσωματωμένη στη επιφάνεια εργασίας του Ubuntu.\n"
+"Ubuntu One — это бесплатный сервис для синхронизации файлов и многого "
+"другого. Он аккуратно встраивается в ваше рабочее окружение Ubuntu.\n"
 "\n"
-"Κάθε φορά που τα Επιτεύγματα του Ubuntu διαπιστώνει ότι επιτύχατε κάτι νέο "
-"τότε το τρόπαιο στέλνεται σε έναν διακομιστή για επαλήθευση χρησιμοποιώντας "
-"το Ubuntu One. Αυτό είναι κάτι απλό, και ασφαλές  προς χρήση, και οι μόνες "
-"πληροφορίες που κοινοποιούνται στον διακομιστή είναι αυτές που μπορείτε να "
-"δείτε στο Επεξεργασία -> Ταυτοποίηση - οι πληροφορίες αυτές δεν "
-"κοινοποιούνται σε άλλους ούτε δίνονται σε εταιρείες."
+"Когда Ubuntu обнаруживает ваше очередное достижение, трофей отправляется на "
+"сервер проверки с помощью Ubuntu One. Это просто и безопасно. На сервер "
+"отправляется только информация, которую вы можете увидеть в меню  "
+"Правка→Идентификация. Эта информация не становится публичной и не "
+"раскрывается другим людям или компаниям."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid "Learn more..."
-msgstr "Μάθετε περισσότερα..."
+msgstr "Узнать больше..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid "Ubuntu One account required"
-msgstr "Απατείται λογαριασμός Ubuntu One"
+msgstr "Необходим аккаунт Ubuntu One"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid "Get Started"
-msgstr "Ξεκινώντας"
+msgstr "Начнём!"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
 msgid "Show me"
-msgstr "Προβολή"
+msgstr "Показать"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "accomplishments"
-msgstr "επιτεύγματα"
+msgstr "достижения"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "opportunities for"
-msgstr "ευκαιρίες για"
+msgstr "возможности для"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Show Locked"
-msgstr "Προβολή κλειδωμένων"
+msgstr "Показать заблокированные"
