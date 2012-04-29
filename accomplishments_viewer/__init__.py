@@ -39,7 +39,8 @@ def main():
     # Run the application.    
     window = AccomplishmentsViewerWindow.AccomplishmentsViewerWindow()
     
-    window.optparse_accomplishment(options.id)
+    if options.id:
+        window.optparse_accomplishment(options.id)
     
     window.show()
     Gtk.main()
