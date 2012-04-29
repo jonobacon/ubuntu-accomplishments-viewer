@@ -644,10 +644,21 @@ class AccomplishmentsViewerWindow(Window):
         self.accomplishment_info(accomplishment,1)
 
     def optparse_accomplishment(self, accom_id):
-        """Process the -a command line option
-        XXX: No checking made for incorrect accom_id"""
+        """Process the -a command line option"""
         collection, accom = accom_id.split("/")
-        self.accomplishment_info(accom, 0)
+        
+        achieved = 2
+        # find the accomplishment...
+        for acc in self.accomdb:
+            if acc["application"] == collection and acc["accomplishment"] == accom:
+                achieved = int(acc["accomplished"])
+                
+        if achieved == 2:
+            # this accomplishment does not exist! aborting...
+            print "There is no accomplishment with this ID."
+            return
+                
+        self.accomplishment_info(accom, achieved)
 
     def accomplishment_info(self, accomplishment, achieved):
         """Display information about the selected accomplishment.
@@ -790,7 +801,7 @@ class AccomplishmentsViewerWindow(Window):
         html = html + "</ul></div> \
             </div>"
 
-        if achieved:
+        if achieved is 1:
             #script for showing details...
             html = html + """<script language="JavaScript">function ShwHid(divId){if(document.getElementById(divId).style.display == 'none'){document.getElementById(divId).style.display='block';}else{document.getElementById(divId).style.display='none';}}</script>"""
             html = html + """<a onclick="javascript:ShwHid('acc_body')" href="javascript:;" class='grid_3' style='outline: none'>"""
