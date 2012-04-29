@@ -643,7 +643,13 @@ class AccomplishmentsViewerWindow(Window):
 
         self.accomplishment_info(accomplishment,1)
 
-    def accomplishment_info(self, accomplishment,achieved):
+    def optparse_accomplishment(self, accom_id):
+        """Process the -a command line option
+        XXX: No checking made for incorrect accom_id"""
+        collection, accom = accom_id.split("/")
+        self.accomplishment_info(accom, 0)
+
+    def accomplishment_info(self, accomplishment, achieved):
         """Display information about the selected accomplishment.
            Because it is used to display both achieved trophies
            and opportunites for acomplishments and the data displayed

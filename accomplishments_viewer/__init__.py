@@ -24,15 +24,22 @@ def parse_options():
     parser.add_option(
         "-v", "--verbose", action="count", dest="verbose",
         help=_("Show debug messages (-vv debugs accomplishments_viewer_lib also)").decode('utf-8'))
+    parser.add_option(
+        "-a", "--accomplishment", action="store", dest="id",
+        help=_("Display information about the provided accomplishment ID (e.g. 'ubuntu-community/registered-on-launchpad'").decode('utf-8'))
     (options, args) = parser.parse_args()
-
+    
     set_up_logging(options)
+    return options
 
 def main():
     'constructor for your class instances'
-    parse_options()
+    options = parse_options()
 
     # Run the application.    
     window = AccomplishmentsViewerWindow.AccomplishmentsViewerWindow()
+    
+    window.optparse_accomplishment(options.id)
+    
     window.show()
     Gtk.main()
