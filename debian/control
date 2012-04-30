@@ -21,6 +21,7 @@ Depends: ${misc:Depends},
  gir1.2-gdkpixbuf-2.0,
  gir1.2-webkit-3.0,
  gir1.2-launchpad-integration-3.0,
- yelp
+ yelp,
+ accomplishments-daemon
 Description: Ubuntu Accomplishments opportunities and trophies viewer.
  Ubuntu Accomplishments opportunities and trophies viewer.
