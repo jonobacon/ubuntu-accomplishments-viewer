@@ -308,12 +308,6 @@ div#howto ol{
   padding-top: 20px;
 }
 
-div#howto i{
-  color: #fff;
-  float: left;
-  font-size: 3em;
-}
-
 div#howto h2{
   margin-left: 100px;
 }

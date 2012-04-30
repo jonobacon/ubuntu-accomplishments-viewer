@@ -644,10 +644,21 @@ class AccomplishmentsViewerWindow(Window):
         self.accomplishment_info(accomplishment,1)
 
     def optparse_accomplishment(self, accom_id):
-        """Process the -a command line option
-        XXX: No checking made for incorrect accom_id"""
+        """Process the -a command line option"""
         collection, accom = accom_id.split("/")
-        self.accomplishment_info(accom, 0)
+        
+        achieved = 2
+        # find the accomplishment...
+        for acc in self.accomdb:
+            if acc["application"] == collection and acc["accomplishment"] == accom:
+                achieved = int(acc["accomplished"])
+                
+        if achieved == 2:
+            # this accomplishment does not exist! aborting...
+            print "There is no accomplishment with this ID."
+            return
+                
+        self.accomplishment_info(accom, achieved)
 
     def accomplishment_info(self, accomplishment, achieved):
         """Display information about the selected accomplishment.
@@ -786,113 +797,122 @@ class AccomplishmentsViewerWindow(Window):
                 if a[0]["needs-signing"] == "true":
                     html = html + "<li><i class='icon-trophy icon-large'></i>" + _("This opportunity requires verification").decode('utf-8') + ".</li> \
                         </ul>"
-                        
-
-            html = html + "</ul></div> \
-            </div>"
-
-
-            if "summary" in a[0]:
-                html = html + "<div id='accompilshment-info' class='grid_8'>"
-                summary = a[0]["summary"]
-                for l in summary.split('\n'):
-                    html = html  + "<p>" + l + "</p>"
-                html = html + "</div>"
-
-
-            html = html + "<div id='accomplishment-more'  class='grid_8'>"
-
-            if "steps" in a[0]:
-
-                html = html + "<div id='howto' class='grid_8'> \
-                    <i class='icon-list'></i> \
-                    <h2>" + _("How to accomplish this opportunity").decode('utf-8') + "</h2> \
-                    <ol>"
-                
-                steps = a[0]["steps"]
-                for l in steps.split('\n'):
-                    html = html + "<li class='icon-pushpin'>" + l + "</li>"
-                html = html + "</ol> \
-                    </div>"
-
-            showtipspitfalls = False
-            haspitfalls = False
-            haspitfalls = False
-            
-            if "tips" in a[0] or "pitfalls" in a[0]:
-                try:
-                    if not a[0]["tips"] == "None":
-                        showtipspitfalls = True
-                        hastips = True
-                except:
-                    hastips = False
-                    
-                try:
-                    if not a[0]["pitfalls"] == "None":
-                        showtipspitfalls = True                                       
-                        haspitfalls = True
-                except:
-                    haspitfalls = False
-                    
-                if showtipspitfalls == True:
-                    html = html + "  <div id='tipspitfalls' class='grid_8 clearfix'>"
-            else:
-                showtipspitfalls == False
-                    
-            if showtipspitfalls == True:
-                html = html + "<div class='grid_4 block left' id='tips'>"
-                html = html + "<h2>" + _("Tips and Tricks").decode('utf-8') + ":</h2>"
-                
-                if hastips == True:
-                    tips = a[0]["tips"]
-                else:
-                    tips = None
-                
-                html = html + "<ul>"
-
-                if tips == None:
-                    html = html + "<li class='icon-ok'>" + _("None.").decode('utf-8') + "</li>"
-                else:
-                    for t in tips.split('\n'):
-                        html = html + "<li class='icon-ok'>" + t + "</li>"
-                
-                html = html + "</ul>"
-                html = html + "</div>"
-
-                html = html + "<div id='divider' class='left'>&nbsp;</div>"
-                html = html + "<div class='grid_3 block left' id='pitfals'>"
-                html = html + "<h2>" + _("Pitfalls To Avoid").decode('utf-8') + ":</h2>"
-                
-                if haspitfalls == True:
-                    pitfalls = a[0]["pitfalls"]
-                else:
-                    pitfalls = None
-                
-                html = html + "<ul>"
-
-                if pitfalls == None:
-                    html = html + "<li class='icon-remove'>" + _("None.").decode('utf-8') + "</li>"
-                else:
-                    for p in pitfalls.split('\n'):
-                        html = html + "<li class='icon-remove'>" + p + "</li>"
-
-                html = html + "</ul>"
-                html = html + "</div>"
-
-                html = html + "</div>"
-
-            if "links" in a[0]:
-                links = a[0]["links"]
-                html = html + "<div id='furtherreading' class='grid_8'> \
-                    <h2>" + _("Further Reading").decode('utf-8') + "</h2>"
-                html = html + "<ul>"
-                for l in links.split('\n'):
-                    html = html + "<li><a href='" + l + "'><i class='icon-external-link icon-large'></i>" + l + "</a></li>"
-                html = html + "</ul> \
-                    </div>"
-            # end of "if not achieved"
 
         html = html + "</ul></div> \
+            </div>"
+
+        if achieved is 1:
+            #script for showing details...
+            html = html + """<script language="JavaScript">function ShwHid(divId){if(document.getElementById(divId).style.display == 'none'){document.getElementById(divId).style.display='block';}else{document.getElementById(divId).style.display='none';}}</script>"""
+            html = html + """<a onclick="javascript:ShwHid('acc_body')" href="javascript:;" class='grid_3' style='outline: none'>"""
+            html = html + _("Accomplishment Details") + "</a>"
+            #details hidden by default
+            html = html + "<div id='acc_body' style='display: none'>"
+        else:
+            #details not hidden by default
+            html = html + "<div>"
+        
+        
+        if "summary" in a[0]:
+            html = html + "<div id='accompilshment-info' class='grid_8'>"
+            summary = a[0]["summary"]
+            for l in summary.split('\n'):
+                html = html  + "<p>" + l + "</p>"
+            html = html + "</div>"
+
+
+        html = html + "<div id='accomplishment-more'  class='grid_8'>"
+
+        if "steps" in a[0]:
+
+            html = html + "<div id='howto' class='grid_8'> \
+                <i class='icon-list'></i> \
+                <h2>" + _("How to accomplish this opportunity").decode('utf-8') + "</h2> \
+                <ol>"
+            
+            steps = a[0]["steps"]
+            for l in steps.split('\n'):
+                html = html + "<li class='icon-pushpin'>" + l + "</li>"
+            html = html + "</ol> \
+                </div>"
+
+        showtipspitfalls = False
+        haspitfalls = False
+        haspitfalls = False
+        
+        if "tips" in a[0] or "pitfalls" in a[0]:
+            try:
+                if not a[0]["tips"] == "None":
+                    showtipspitfalls = True
+                    hastips = True
+            except:
+                hastips = False
+                
+            try:
+                if not a[0]["pitfalls"] == "None":
+                    showtipspitfalls = True                                       
+                    haspitfalls = True
+            except:
+                haspitfalls = False
+                
+            if showtipspitfalls == True:
+                html = html + "  <div id='tipspitfalls' class='grid_8 clearfix'>"
+        else:
+            showtipspitfalls == False
+                
+        if showtipspitfalls == True:
+            html = html + "<div class='grid_4 block left' id='tips'>"
+            html = html + "<h2>" + _("Tips and Tricks").decode('utf-8') + ":</h2>"
+            
+            if hastips == True:
+                tips = a[0]["tips"]
+            else:
+                tips = None
+            
+            html = html + "<ul>"
+
+            if tips == None:
+                html = html + "<li class='icon-ok'>" + _("None.").decode('utf-8') + "</li>"
+            else:
+                for t in tips.split('\n'):
+                    html = html + "<li class='icon-ok'>" + t + "</li>"
+            
+            html = html + "</ul>"
+            html = html + "</div>"
+
+            html = html + "<div id='divider' class='left'>&nbsp;</div>"
+            html = html + "<div class='grid_3 block left' id='pitfals'>"
+            html = html + "<h2>" + _("Pitfalls To Avoid").decode('utf-8') + ":</h2>"
+            
+            if haspitfalls == True:
+                pitfalls = a[0]["pitfalls"]
+            else:
+                pitfalls = None
+            
+            html = html + "<ul>"
+
+            if pitfalls == None:
+                html = html + "<li class='icon-remove'>" + _("None.").decode('utf-8') + "</li>"
+            else:
+                for p in pitfalls.split('\n'):
+                    html = html + "<li class='icon-remove'>" + p + "</li>"
+
+            html = html + "</ul>"
+            html = html + "</div>"
+
+            html = html + "</div>"
+
+        if "links" in a[0]:
+            links = a[0]["links"]
+            html = html + "<div id='furtherreading' class='grid_8'> \
+                <h2>" + _("Further Reading").decode('utf-8') + "</h2>"
+            html = html + "<ul>"
+            for l in links.split('\n'):
+                html = html + "<li><a href='" + l + "'><i class='icon-external-link icon-large'></i>" + l + "</a></li>"
+            html = html + "</ul> \
+                </div>"
+
+        html = html + "</ul></div></div> \
             </body> \
             </html>"
 
