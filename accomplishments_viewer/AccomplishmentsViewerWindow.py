@@ -153,6 +153,9 @@ class AccomplishmentsViewerWindow(Window):
         if not os.path.exists(self.dir_cache):
             os.makedirs(self.dir_cache)
 
+        if not os.path.exists(os.path.join(self.dir_cache, "logs")):
+            os.makedirs(os.path.join(self.dir_cache, "logs"))
+
         if self.connected is True:
             self.check_and_ask_for_info()
 
@@ -252,8 +255,8 @@ class AccomplishmentsViewerWindow(Window):
         return True
         
     def run_daemon(self):
-        """Starts the daemon process"""
-        
+        """Starts the daemon process"""                
+
         command = "twistd -noy " + daemon_exec_dir + "/accomplishments-daemon --logfile=" + os.path.join(self.dir_cache, "logs", "daemon.log") + " &"
         print ("Starting the daemon using command `%s`" % command)
         os.system(command)
