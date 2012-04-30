@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-21 15:53-0700\n"
-"PO-Revision-Date: 2012-04-12 13:34+0000\n"
-"Last-Translator: franciscoIR <Unknown>\n"
+"PO-Revision-Date: 2012-04-29 14:47+0000\n"
+"Last-Translator: Julian Alarcon <alarconj@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-25 05:25+0000\n"
-"X-Generator: Launchpad (build 15139)\n"
+"X-Launchpad-Export-Date: 2012-04-30 05:20+0000\n"
+"X-Generator: Launchpad (build 15171)\n"
 
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
@@ -37,9 +37,9 @@ msgid ""
 "\n"
 "Please ensure that this data is accurate and up to date."
 msgstr ""
-"<b>La siguiente información es necesaria para verificar sus logros</b>\n"
+"<b>La siguiente información es necesaria para verificar sus logros.</b>\n"
 "\n"
-"Asegúrese que su información sea correcta y este actualizada."
+"Asegúrese de que su información sea correcta y este actualizada."
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "GNU Public License"
@@ -95,7 +95,7 @@ msgstr "activado"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:743
 msgid "using the following credentials"
-msgstr "usar las siguientes credenciales"
+msgstr "usando las siguientes credenciales"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:753
 msgid "This trophy has been verified"
@@ -185,8 +185,8 @@ msgid ""
 "need an Ubuntu One account and agree to have those opportunities verified."
 msgstr ""
 "Algunas oportunidades necesitan verificación al ser completadas. Para hacer "
-"esto necesitará una cuenta de Ubuntu One y estar de acuerdo con el proceso "
-"de verificación."
+"esto necesitará una cuenta de Ubuntu One y estar de acuerdo en verificar "
+"estas oportunidades."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
 msgid ""
@@ -199,7 +199,7 @@ msgid ""
 "is the information you can see in Edit -> Identification - this information "
 "is not shared with others or given to companies."
 msgstr ""
-"Ubuntu One es un servicio en línea de uso libre para sincronizar archivos y "
+"Ubuntu One es un servicio en línea gratuito para sincronizar archivos y "
 "otras características. Esta elegantemente integrado dentro de su escritorio "
 "de Ubuntu.\n"
 "\n"
@@ -207,7 +207,7 @@ msgstr ""
 "meta, el trofeo será enviado a un servidor de verificación usando Ubuntu "
 "One. Esto es simple, seguro de usar, y la única información que se comparte "
 "con el servidor es la que puede ver en Editar -> Identificación - esta "
-"información no es compartida con terceros o suministrada a las empresas."
+"información no es compartida con terceros o suministrada a empresas."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid "Learn more..."
@@ -235,4 +235,4 @@ msgstr "oportunidades para"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Show Locked"
-msgstr "Mostrar Bloqueado"
+msgstr "Mostrar bloqueadas"
