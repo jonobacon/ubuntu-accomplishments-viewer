@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-04-21 15:53-0700\n"
+"POT-Creation-Date: 2012-04-30 11:33-0700\n"
 "PO-Revision-Date: 2012-04-11 15:43+0000\n"
 "Last-Translator: Wang Dianjin <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-25 05:25+0000\n"
-"X-Generator: Launchpad (build 15139)\n"
+"X-Launchpad-Export-Date: 2012-05-01 06:03+0000\n"
+"X-Generator: Launchpad (build 15171)\n"
 
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
@@ -49,78 +49,88 @@ msgstr "GNU 公共许可证"
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
 msgstr "显示调试信息(-vv 也可调试 accomplishments_viewer_lib)"
 
+#: ../accomplishments_viewer/__init__.py:29
+msgid ""
+"Display information about the provided accomplishment ID (e.g. 'ubuntu-"
+"community/registered-on-launchpad'"
+msgstr ""
+
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
 msgstr "成就查看器首选项"
 
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:678
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:716
 msgid "Opportunity Information"
 msgstr "机会信息"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:686
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:724
 msgid "No information available."
 msgstr "无可用信息。"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:696
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:734
 msgid "Getting Help"
 msgstr "获取帮助"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:705
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:743
 msgid "No help available."
 msgstr "无可用帮助。"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:766
 msgid "This opportunity is locked. You need to complete"
 msgstr "该机会被锁定。您需要完成才行"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:766
 msgid "from"
 msgstr "来自"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:766
 msgid "first"
 msgstr "第一个"
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:733
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:771
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "该奖杯<strong>已颁发</strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:737
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:775
 msgid "on"
 msgstr "在"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:743
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:781
 msgid "using the following credentials"
 msgstr "使用下面证件"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:753
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:791
 msgid "This trophy has been verified"
 msgstr "该奖杯已通过验证"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:760
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:798
 msgid "This opportunity requires verification"
 msgstr "本机会需要验证"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:782
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:808
+msgid "Accomplishment Details"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:830
 msgid "How to accomplish this opportunity"
 msgstr "如何完成该机会"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:817
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:865
 msgid "Tips and Tricks"
 msgstr "提示与技巧"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:827
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:847
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:875
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:895
 msgid "None."
 msgstr "无。"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:837
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:885
 msgid "Pitfalls To Avoid"
 msgstr "避免陷阱"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:860
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:908
 msgid "Further Reading"
 msgstr "深入阅读"
 

@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-04-21 15:53-0700\n"
+"POT-Creation-Date: 2012-04-30 11:33-0700\n"
 "PO-Revision-Date: 2012-04-09 21:13+0000\n"
 "Last-Translator: Lulzim <Unknown>\n"
 "Language-Team: Albanian <sq@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-25 05:25+0000\n"
-"X-Generator: Launchpad (build 15139)\n"
+"X-Launchpad-Export-Date: 2012-05-01 06:03+0000\n"
+"X-Generator: Launchpad (build 15171)\n"
 
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
@@ -46,78 +46,88 @@ msgstr ""
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
 msgstr ""
 
+#: ../accomplishments_viewer/__init__.py:29
+msgid ""
+"Display information about the provided accomplishment ID (e.g. 'ubuntu-"
+"community/registered-on-launchpad'"
+msgstr ""
+
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
 msgstr ""
 
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:678
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:716
 msgid "Opportunity Information"
 msgstr "Informacione mbi mundësitë"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:686
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:724
 msgid "No information available."
 msgstr "Asnjë informacion i disponueshëm."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:696
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:734
 msgid "Getting Help"
 msgstr "Duke marr Ndihmë"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:705
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:743
 msgid "No help available."
 msgstr "Asnjë ndihmë në dispozicion."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:766
 msgid "This opportunity is locked. You need to complete"
 msgstr "Kjo mundësi është e mbyllur. Ju duhet të plotësoni"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:766
 msgid "from"
 msgstr "nga"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:766
 msgid "first"
 msgstr "i pari"
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:733
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:771
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "Ky trofe <strong>është dhënë</ strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:737
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:775
 msgid "on"
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:743
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:781
 msgid "using the following credentials"
 msgstr "duke përdorur kredencialet e mëposhtme"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:753
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:791
 msgid "This trophy has been verified"
 msgstr "Ky trofe është verifikuar"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:760
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:798
 msgid "This opportunity requires verification"
 msgstr "Kjo mundësi kërkon verifikim"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:782
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:808
+msgid "Accomplishment Details"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:830
 msgid "How to accomplish this opportunity"
 msgstr "Si të përmbushni këtë mundësi"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:817
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:865
 msgid "Tips and Tricks"
 msgstr "Këshilla dhe truke"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:827
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:847
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:875
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:895
 msgid "None."
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:837
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:885
 msgid "Pitfalls To Avoid"
 msgstr "Gracka për të shmangur"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:860
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:908
 msgid "Further Reading"
 msgstr "Lexim i Mëtejshëm"
 
