@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-30 11:33-0700\n"
-"PO-Revision-Date: 2012-04-12 12:06+0000\n"
-"Last-Translator: Eduard Gotwig <eduardgotwig@gmail.com>\n"
+"PO-Revision-Date: 2012-05-01 07:38+0000\n"
+"Last-Translator: Alexander Neumann <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-01 06:03+0000\n"
-"X-Generator: Launchpad (build 15171)\n"
+"X-Launchpad-Export-Date: 2012-05-02 05:58+0000\n"
+"X-Generator: Launchpad (build 15177)\n"
 
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
-msgstr "Betrachter für Errungenschaften"
+msgstr "Errungenschaften Betrachter"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "AccomplishmentsViewer application"
@@ -56,6 +56,8 @@ msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad'"
 msgstr ""
+"Zeige Informationen über die gegebene Errungenschaft ID (e.g.  \"'ubuntu-"
+"community/registered-on-launchpad\")"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
@@ -64,7 +66,7 @@ msgstr "Einstellungen zu Errungenschaften"
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:716
 msgid "Opportunity Information"
-msgstr "Möglichkeiten Info"
+msgstr "Gelegenheiten Informationen"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:724
 msgid "No information available."
@@ -113,7 +115,7 @@ msgstr "Diese Möglichkeit erfordert eine Verifikation"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:808
 msgid "Accomplishment Details"
-msgstr ""
+msgstr "Errungenschaft Details"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:830
 msgid "How to accomplish this opportunity"
@@ -134,7 +136,7 @@ msgstr "Vermeidbare Irrtümmer"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:908
 msgid "Further Reading"
-msgstr "Weitere Informationen"
+msgstr "Weiterführende Literatur"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
@@ -213,10 +215,10 @@ msgstr ""
 "Dateien und anderen Dingen. Es ist nahtlos in Ihren Ubuntu Desktop "
 "integriert.\n"
 "\n"
-"Wenn Ubuntu Errungenschaften erkennt dass Sie etwas neues erreicht haben "
+"Wenn Ubuntu Errungenschaften erkennt, dass Sie etwas neues erreicht haben, "
 "wird die Trophäe zu einem Server zur Verifikation mittels Ubuntu One "
 "gesendet. Dass ist einfach, sicher, und die einzigen Informationen die "
-"ausgetauscht werden sind die die Sie unter Bearbeiten -> Identifikation "
+"ausgetauscht werden sind die, die Sie unter Bearbeiten -> Identifikation "
 "sehen können - Diese Informationen werden nicht mit Dritten oder Unternehmen "
 "ausgetauscht."
 
@@ -242,7 +244,7 @@ msgstr "Errungenschaften"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "opportunities for"
-msgstr "Möglichkeiten für"
+msgstr "Gelegenheiten für"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Show Locked"

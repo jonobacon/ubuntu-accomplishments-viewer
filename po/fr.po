@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-30 11:33-0700\n"
-"PO-Revision-Date: 2012-04-12 07:35+0000\n"
-"Last-Translator: Nicolas Delvaux <Unknown>\n"
+"PO-Revision-Date: 2012-05-01 21:27+0000\n"
+"Last-Translator: Alkalyzer <Unknown>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-01 06:03+0000\n"
-"X-Generator: Launchpad (build 15171)\n"
+"X-Launchpad-Export-Date: 2012-05-02 05:58+0000\n"
+"X-Generator: Launchpad (build 15177)\n"
 
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
@@ -57,6 +57,8 @@ msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad'"
 msgstr ""
+"Affiche des informations relatives à l'identité de la réalisation obtenue "
+"(par exemple \"communauté-ubuntu/inscrit-sur-launchpad\")"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
@@ -114,7 +116,7 @@ msgstr "Cette opportunité requiert une vérification"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:808
 msgid "Accomplishment Details"
-msgstr ""
+msgstr "Détails des réalisations"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:830
 msgid "How to accomplish this opportunity"
