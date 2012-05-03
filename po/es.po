@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-30 11:33-0700\n"
-"PO-Revision-Date: 2012-04-29 14:47+0000\n"
-"Last-Translator: Julian Alarcon <alarconj@gmail.com>\n"
+"PO-Revision-Date: 2012-05-03 03:18+0000\n"
+"Last-Translator: Ronald Elizondo <ry.elizondo@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-01 06:03+0000\n"
-"X-Generator: Launchpad (build 15171)\n"
+"X-Launchpad-Export-Date: 2012-05-03 06:01+0000\n"
+"X-Generator: Launchpad (build 15185)\n"
 
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
@@ -113,7 +113,7 @@ msgstr "Esta oportunidad necesita verificación"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:808
 msgid "Accomplishment Details"
-msgstr ""
+msgstr "Detalle de Logros"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:830
 msgid "How to accomplish this opportunity"
