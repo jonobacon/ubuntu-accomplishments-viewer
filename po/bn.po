@@ -1,4 +1,4 @@
-# English (United Kingdom) translation for ubuntu-accomplishments-viewer
+# Bengali translation for ubuntu-accomplishments-viewer
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the ubuntu-accomplishments-viewer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-30 11:33-0700\n"
-"PO-Revision-Date: 2012-05-12 00:45+0000\n"
+"PO-Revision-Date: 2012-05-12 00:26+0000\n"
 "Last-Translator: Kazi Shahnoor Ashraf <kazidxb@gmail.com>\n"
-"Language-Team: English (United Kingdom) <en_GB@li.org>\n"
+"Language-Team: Bengali <bn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,15 +20,15 @@ msgstr ""
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
-msgstr "Accomplishments Viewer"
+msgstr "নিষ্পাদন প্রদর্শক"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "AccomplishmentsViewer application"
-msgstr "AccomplishmentsViewer application"
+msgstr "নিষ্পাদন প্রদর্শক যন্ত্র"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
-msgstr "Extra information required..."
+msgstr "অতিরিক্ত তথ্য প্রয়োজন..."
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:2
 msgid ""
@@ -37,80 +37,79 @@ msgid ""
 "\n"
 "Please ensure that this data is accurate and up to date."
 msgstr ""
-"<b>The following information is required to verify your "
-"accomplishments.</b>\n"
+"<b>আপনার নিষ্পাদনসমূহ যাচাইয়ের জন্য নিম্নলিখিত তথ্য প্রয়োজন.</b>\n"
 "\n"
-"Please ensure that this data is accurate and up to date."
+"দয়া করে নিশ্চিত করুন যে এই তথ্য সঠিক এবং হালনাগাদ."
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "GNU Public License"
-msgstr "GNU Public License"
+msgstr "GNU পাবলিক লাইসেন্স"
 
 #: ../accomplishments_viewer/__init__.py:26
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
-msgstr "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
+msgstr "ডিবাগ বার্তাগুলি দেখান (-vv debugs accomplishments_viewer_lib also)"
 
 #: ../accomplishments_viewer/__init__.py:29
 msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad'"
 msgstr ""
-"প্রদত্ত নিষ্পাদন আইডি সম্বন্ধে তথ্য প্রদর্শন (যেমন 'ubuntu-"
-"community/registered-on-launchpad'"
+"প্রদত্ত নিষ্পাদন আইডি সম্বন্ধে তথ্য দেখান (যেমন 'ubuntu-community/registered-"
+"on-launchpad'"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
-msgstr "Accomplishments Preferences"
+msgstr "নিষ্পাদনগুলির পছন্দসমূহ"
 
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:716
 msgid "Opportunity Information"
-msgstr "Opportunity Information"
+msgstr "সুযোগ তথ্য"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:724
 msgid "No information available."
-msgstr "No information available."
+msgstr "কোন তথ্য নাই"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:734
 msgid "Getting Help"
-msgstr "Getting Help"
+msgstr "সহায়তা নিন"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:743
 msgid "No help available."
-msgstr "No help available."
+msgstr "কোন সহায়তা নাই"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:766
 msgid "This opportunity is locked. You need to complete"
-msgstr "This opportunity is locked. You need to complete"
+msgstr "এই সুযোগটি বন্ধ. আপনার শেষ করা প্রোয়োজন"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:766
 msgid "from"
-msgstr "from"
+msgstr "থেকে"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:766
 msgid "first"
-msgstr "first"
+msgstr "প্রথম"
 
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:771
 msgid "This trophy <strong>was awarded</strong>"
-msgstr "This trophy <strong>was awarded</strong>"
+msgstr "এই ট্রফিটি <strong>পুরস্কৃত হয়েছে</strong>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:775
 msgid "on"
-msgstr "on"
+msgstr "সচল"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:781
 msgid "using the following credentials"
-msgstr "using the following credentials"
+msgstr "নিম্নলিখিত প্রমাণপ্রত্রাদি ব্যবহার করে"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:791
 msgid "This trophy has been verified"
-msgstr "This trophy has been verified"
+msgstr "এই ট্রফি যাচাই করা হয়েছে"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:798
 msgid "This opportunity requires verification"
-msgstr "This opportunity requires verification"
+msgstr "এই সুযোগ যাচাই প্রয়োজন"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:808
 msgid "Accomplishment Details"
@@ -118,28 +117,28 @@ msgstr "নিষ্পাদন বিবরণ"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:830
 msgid "How to accomplish this opportunity"
-msgstr "How to accomplish this opportunity"
+msgstr "কিভাবে এই সুযোগ নিষ্পাদন করা যায়"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:865
 msgid "Tips and Tricks"
-msgstr "Tips and Tricks"
+msgstr "পরামর্শ এবং কৌশলগুলি"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:875
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:895
 msgid "None."
-msgstr "None."
+msgstr "কোনটাই না"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:885
 msgid "Pitfalls To Avoid"
-msgstr "Pitfalls To Avoid"
+msgstr "ভ্রান্তি এড়ানোর জন্য"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:908
 msgid "Further Reading"
-msgstr "Further Reading"
+msgstr "আরও পড়তে"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
-msgstr "Accomplishment Information"
+msgstr "নিষ্পাদন তথ্য"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:2
 msgid "_File"
@@ -155,15 +154,15 @@ msgstr "_Help"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "Contents"
-msgstr "Contents"
+msgstr "বিষয়বস্তু"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "My Trophies"
-msgstr "My Trophies"
+msgstr "আমার ট্রফিসমূহ"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "Opportunities"
-msgstr "Opportunities"
+msgstr "সুযোগসমূহ"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid ""
@@ -172,30 +171,31 @@ msgid ""
 "\n"
 "You can edit this data anytime later using: <i>Edit->Identification...</i>"
 msgstr ""
-"<b>Some opportunities need additional information to verify their "
-"completion.</b>\n"
+"<b>কিছু সুযোগের সমাপ্তি যাচাইয়ের জন্য অতিরিক্ত তথ্য প্রয়োজন.</b>\n"
 "\n"
-"You can edit this data anytime later using: <i>Edit->Identification...</i>"
+"<i>Edit->সনাক্তকরণ...</i> : ব্যবহার করে আপনি এই তথ্য পরবর্তিতে যেকোন সময় "
+"পরিবর্তন করতে পারবেন."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
 msgid "Edit credentials"
-msgstr "Edit credentials"
+msgstr "প্রমাণপ্রত্রাদি সম্পাদনা করুন"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid "Later"
-msgstr "Later"
+msgstr "পরবর্তীতে"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:13
 msgid "Additional information required..."
-msgstr "Additional information required..."
+msgstr "অতিরিক্ত তথ্য প্রয়োজন..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:14
 msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
 msgstr ""
-"Some opportunities require verification when completed. To do this you will "
-"need an Ubuntu One account and agree to have those opportunities verified."
+"সমাপ্তির পর কিছু সুযোগ যাচাই করা প্রয়োজন. এই কাজের জন্য আপনার একটি উবুন্টু "
+"ওয়ান একাউন্টের প্রয়োজন এবং ওই ​​সুযোগগুলি যাচাই যাচাই হয়েছে বলে স্বীকার "
+"করতে হবে."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
 msgid ""
@@ -208,39 +208,40 @@ msgid ""
 "is the information you can see in Edit -> Identification - this information "
 "is not shared with others or given to companies."
 msgstr ""
-"Ubuntu One is a online service that is Free to use for syncing files and "
-"other features. It is neatly integrated into your Ubuntu desktop.\n"
+"উবুন্টু ওয়ান হল একটি অনলাইন পরিষেবা যা ফাইল সিংক্রনাইজ করা সহ অন্যান্য "
+"বৈশিষ্ট্য বিনামূল্যে ব্যবহারযোগ্য.এটি আপনার উবুন্টু ওয়ান ডেস্কটপে "
+"সুন্দরভাবে সমন্বিত.\n"
 "\n"
-"When Ubuntu Accomplishments detects you have accomplished something new the "
-"trophy will be sent to a verification server using Ubuntu one. This is "
-"simple, safe to use, and the only information that is shared with the server "
-"is the information you can see in Edit -> Identification - this information "
-"is not shared with others or given to companies."
+"উবুন্টু নিষ্পাদনসমূহ আপনি নতুন কিছু সম্পন্ন করেছেন বলে সনাক্ত করলে একটি "
+"ট্রফি উবুন্টু ওয়ান ব্যবহার করে যাচাইকরণ সার্ভারে পাঠিয়ে দিবে. এটা সহজ, "
+"ব্যবহার নিরাপদ, এবং যে তথ্য আপনি সম্পাদনা-> সনাক্তকরণ এ দেখতে পারেন  "
+"শুধুমাত্র সেই তথ্য সার্ভারের সাথে বিনিময় করা হয় - এই তথ্য অন্য কারো সাথে "
+"অথবা কোন কোম্পানির সাথে বিনিময় হয় না."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid "Learn more..."
-msgstr "Learn more..."
+msgstr "আরও জানুন..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid "Ubuntu One account required"
-msgstr "Ubuntu One account required"
+msgstr "উবুন্টু ওয়ান অ্যাকাউন্টের প্রয়োজন"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid "Get Started"
-msgstr "Get Started"
+msgstr "শুরু করুন"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
 msgid "Show me"
-msgstr "Show me"
+msgstr "আমাকে দেখান"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "accomplishments"
-msgstr "accomplishments"
+msgstr "নিষ্পাদনসমূহ"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "opportunities for"
-msgstr "opportunities for"
+msgstr "সুযোগের"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Show Locked"
-msgstr "Show Locked"
+msgstr "বন্ধ দেখান"
