@@ -734,7 +734,7 @@ class AccomplishmentsViewerWindow(Window):
         if achieved is 0:
         
             html = html + "<div class='grid_3 block'> \
-            <h4>" + _("Getting Help") + ":</h4> \
+            <h4>" + _("Getting Help").decode('utf-8') + ":</h4> \
             <ul class='none'>"
             
             if "help" in a[0]:
