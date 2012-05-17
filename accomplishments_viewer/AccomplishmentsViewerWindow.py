@@ -190,7 +190,7 @@ class AccomplishmentsViewerWindow(Window):
         else:
             self.launcher.set_property("count_visible", False)
         
-        # self.on_tb_mytrophies_clicked(None)
+        self.on_tb_mytrophies_clicked(None)
 
     def check_and_ask_for_info(self):
         """Asks the daemon for additional info needed, and asks
