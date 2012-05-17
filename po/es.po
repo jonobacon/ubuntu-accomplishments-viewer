@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-15 14:05-0700\n"
-"PO-Revision-Date: 2012-05-08 17:25+0000\n"
-"Last-Translator: Javier P.L. <chilicuil@ubuntu.com>\n"
+"PO-Revision-Date: 2012-05-16 06:50+0000\n"
+"Last-Translator: Paco Molinero <paco@byasl.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-16 05:35+0000\n"
-"X-Generator: Launchpad (build 15247)\n"
+"X-Launchpad-Export-Date: 2012-05-17 06:08+0000\n"
+"X-Generator: Launchpad (build 15259)\n"
 
 #. Code for other initialization actions should be added here.
 #: ../accomplishments-viewer.desktop.in.h:1
@@ -43,7 +43,7 @@ msgstr ""
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "GNU Public License"
-msgstr "Licencia Pública de GNU"
+msgstr "Licencia pública de GNU"
 
 #: ../accomplishments_viewer/__init__.py:26
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
@@ -56,8 +56,8 @@ msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad'"
 msgstr ""
-"Despliega información sobre el ID del logro provisto (ejem 'ubuntu-"
-"community/registered-on-launchpad'"
+"Despliega información sobre el ID del logro proporcionado (ejem «ubuntu-"
+"community/registered-on-launchpad»"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
