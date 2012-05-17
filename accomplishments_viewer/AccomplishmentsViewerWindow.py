@@ -172,6 +172,8 @@ class AccomplishmentsViewerWindow(Window):
         #self.update_views(None)
         self.notebook.set_current_page(2)
         self.tb_opportunities.set_active(True)
+        
+        print self.libaccom.get_collection_authors("ubuntu-community")
 
     def trophy_received(self, message):
         """Called when a new trophy is detected on the system."""
