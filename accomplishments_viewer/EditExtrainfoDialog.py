@@ -68,7 +68,7 @@ class EditExtrainfoDialog(Gtk.Dialog):
             self.auth_box.add(self.main_box)
                     
             #essential. It ensures we'll append items to section_dict, in an unchanging order.
-            infoneeded = sorted(i, key=itemgetter('application'))
+            infoneeded = sorted(i, key=itemgetter('collection'))
             
             section_dict = {}
             extrainfo_dict = {}
@@ -78,10 +78,10 @@ class EditExtrainfoDialog(Gtk.Dialog):
             #                           "github-id"       : ["openshot", "otherapp"]                     }
             for i in infoneeded:
                 if i["needs-information"] not in section_dict:
-                    section_dict[i["needs-information"]] = list([i["application"]])
+                    section_dict[i["needs-information"]] = list([i["collection"]])
                     extrainfo_dict[i["needs-information"]] = [i["label"],i["description"],i["value"]]
                 else:
-                    section_dict[i["needs-information"]].append(i["application"])
+                    section_dict[i["needs-information"]].append(i["collection"])
                     extrainfo_dict[i["needs-information"]] = [i["label"],i["description"],i["value"]]
             for a in section_dict:
                 section_dict[a] = tuple(section_dict[a])
@@ -125,18 +125,18 @@ class EditExtrainfoDialog(Gtk.Dialog):
                 #temporarily we'll use an ugly name
                 n = len(i)
                 if n is 1:
-                    name = self.libaccom.get_application_full_name(i[0])
+                    name = self.libaccom.get_collection_name(i[0])
                 elif n is 2:
-                    name = self.libaccom.get_application_full_name(i[0]) + " and " + self.libaccom.get_application_full_name(i[1])
+                    name = self.libaccom.get_collection_name(i[0]) + " and " + self.libaccom.get_collection_name(i[1])
                 else:
                     name = ""
                     for k in range(0,n):
                         if n-k > 2:
-                            name = name + self.libaccom.get_application_full_name(i[k]) + ", "
+                            name = name + self.libaccom.get_collection_name(i[k]) + ", "
                         elif n-k is 2:
-                            name = name + self.libaccom.get_application_full_name(i[k]) + " and "
+                            name = name + self.libaccom.get_collection_name(i[k]) + " and "
                         elif n-k is 1:
-                            name = name + self.libaccom.get_application_full_name(i[k])
+                            name = name + self.libaccom.get_collection_name(i[k])
                            
                 g_uplabel = Gtk.Label("<big><b>" + name + "</b></big>")
                 g_uplabel.set_use_markup(True)
