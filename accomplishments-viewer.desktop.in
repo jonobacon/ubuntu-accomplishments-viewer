@@ -3,6 +3,6 @@ _Name=Accomplishments Viewer
 _Comment=AccomplishmentsViewer application
 Categories=GNOME;Utility;
 Exec=accomplishments-viewer
-Icon=/usr/share/accomplishments-viewer/media/accomplishments-viewer.svg
+Icon=/opt/accomplishments//share/accomplishments-viewer/media/accomplishments-viewer.svg
 Terminal=false
 Type=Application
