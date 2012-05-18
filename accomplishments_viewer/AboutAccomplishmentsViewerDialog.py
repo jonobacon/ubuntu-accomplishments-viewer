@@ -30,7 +30,7 @@ class AboutAccomplishmentsViewerDialog(AboutDialog):
         self.libaccom = dbusapi.Accomplishments()
 
         # add app authors
-        authors = [ "Jono Bacon <jono@ubuntu.com>", "Stuart Langridge <sil@kryogenix.org>"]
+        authors = [ "Jono Bacon <jono@ubuntu.com>", "Rafal Cieślak <rafalcieslak256@gmail.com>", "Stuart Langridge <sil@kryogenix.org>"]
         
         authors.append(" ")
         authors.append(_("Accomplishment Authors:"))
