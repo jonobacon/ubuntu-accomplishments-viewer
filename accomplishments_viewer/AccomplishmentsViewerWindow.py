@@ -649,10 +649,24 @@ class AccomplishmentsViewerWindow(Window):
             return
                 
         self.accomplishment_info(accom_id)
+        print self.accomdb
 
     def accomplishment_info(self, accomID):
         """Display information about the selected accomplishment."""
         data = []
+        
+        # determine dependencies
+        
+        deps = []
+        depstatus = []
+        
+        deps = self.libaccom.get_acc_depends(accomID)
+        
+        for acc in self.accomdb:
+            for d in deps:
+                if acc["id"] == d:
+                    depstatus.append({ "id" : acc["id"], "accomplished" : acc["accomplished"], "collection-human" : acc["collection-human"], "title" : acc["title"] })
+        
         
         achieved = self.libaccom.get_acc_is_completed(accomID)
         data = self.libaccom.get_acc_data(accomID)
@@ -723,11 +737,15 @@ class AccomplishmentsViewerWindow(Window):
         if "depends" in data:
             # check if it is locked
             if not self.libaccom.get_acc_is_unlocked(accomID):
-                depid = data["depends"]
-                for depa in self.accomdb:
-                    if depa['id'] == depid:
-                         html = html + "<li ><i class='icon-key icon-large'></i>" + _("This opportunity is locked. You need to complete").decode('utf-8') + " <a href='accomplishment://" + depa['id'] + "'><strong>" + depa["title"] + "</strong></a> " + _("from").decode('utf-8') +" <strong>" + depa["collection-human"] + "</strong> " + _("first").decode('utf-8') + ".</li>"
-
+                if len(depstatus) > 0:
+                    if len(depstatus) == 1:
+                        print depstatus[0]["title"]
+                        html = html + "<li><i class='icon-key icon-large'></i>" + _("This opportunity is locked. You need to complete").decode('utf-8') + " <a href='accomplishment://" + depstatus[0]["id"] + "'><strong>" + depstatus[0]["title"] + "</strong></a> " + _("from").decode('utf-8') +" <strong>" + depstatus[0]["collection-human"] + "</strong> " + _("first").decode('utf-8') + ".</li>"
+                    else:
+                        html = html + "<li><i class='icon-key icon-large'></i>" + _("This opportunity is locked. You need to complete the following opportunities first:").decode('utf-8') + "</li>"
+                        for d in depstatus:
+                            if d["accomplished"] == False:
+                                html = html + "<li class='deps_child'><a href='accomplishment://" + d["id"] + "'><strong>" + d["title"] + "</strong></a> " + _("from").decode('utf-8') +" <strong>" + d["collection-human"] + "</strong></li>"
         if achieved:
             #achieved
             
