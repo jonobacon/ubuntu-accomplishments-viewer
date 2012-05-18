@@ -311,3 +311,7 @@ div#howto ol{
 div#howto h2{
   margin-left: 100px;
 }
+
+li.deps_child {
+    margin-left: 50px;
+}
