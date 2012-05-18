@@ -338,6 +338,12 @@ class AccomplishmentsViewerWindow(Window):
         if uri.startswith('http'):
             webbrowser.open_new_tab(uri)
             return True
+
+        if uri.startswith('accomplishment:'):
+            id = uri[17:]
+            self.accomplishment_info(id)
+            return True
+
         pol_dec.ignore()
         return True        
 
@@ -710,7 +716,7 @@ class AccomplishmentsViewerWindow(Window):
                 depid = data["depends"]
                 for depa in self.accomdb:
                     if depa['id'] == depid:
-                         html = html + "<li ><i class='icon-key icon-large'></i>" + _("This opportunity is locked. You need to complete").decode('utf-8') + " <strong>" + depa["title"] + "</strong> " + _("from").decode('utf-8') +" <strong>" + depa["collection-human"] + "</strong> " + _("first").decode('utf-8') + ".</li>"
+                         html = html + "<li ><i class='icon-key icon-large'></i>" + _("This opportunity is locked. You need to complete").decode('utf-8') + " <a href='accomplishment://" + depa['id'] + "'><strong>" + depa["title"] + "</strong></a> " + _("from").decode('utf-8') +" <strong>" + depa["collection-human"] + "</strong> " + _("first").decode('utf-8') + ".</li>"
 
         if achieved:
             #achieved
