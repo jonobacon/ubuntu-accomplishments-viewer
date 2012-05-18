@@ -621,12 +621,22 @@ class AccomplishmentsViewerWindow(Window):
         self.accomdb = []
         self.accomdb = self.libaccom.build_viewer_database()
         
-    def opp_clicked(self, widget, item):
+    def opp_clicked(self, widget):
+        selection = widget.get_selected_items()
+        if len(selection) is 0:
+            return
+        item = selection[0]
+        widget.unselect_path(item)
         model = widget.get_model()
         accomID = model[item][COL_ID]
         self.accomplishment_info(accomID)
 
-    def mytrophy_clicked(self, widget, item):
+    def mytrophy_clicked(self, widget):
+        selection = widget.get_selected_items()
+        if len(selection) is 0:
+            return
+        item = selection[0]
+        widget.unselect_path(item)
         model = widget.get_model()
         accomID = model[item][COL_ID]
         self.accomplishment_info(accomID)

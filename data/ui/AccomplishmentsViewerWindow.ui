@@ -673,7 +673,7 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="item_width">120</property>
-                            <signal name="item-activated" handler="mytrophy_clicked" swapped="no"/>
+                            <signal name="selection-changed" handler="mytrophy_clicked" swapped="no"/>
                           </object>
                         </child>
                       </object>
@@ -844,7 +844,7 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="item_width">120</property>
-                            <signal name="item-activated" handler="opp_clicked" swapped="no"/>
+                            <signal name="selection-changed" handler="opp_clicked" swapped="no"/>
                           </object>
                         </child>
                       </object>
