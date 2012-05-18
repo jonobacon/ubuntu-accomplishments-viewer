@@ -595,9 +595,7 @@ class AccomplishmentsViewerWindow(Window):
         
         infoneeded = self.libaccom.get_all_extra_information_required()
 
-        if len(infoneeded) == 0:
-            self.notebook.set_current_page(0)
-        else:
+        if len(infoneeded) is not 0:
             # kick of the process of gathering the information needed
             self.additional_info_req.set_visible(True)
 
