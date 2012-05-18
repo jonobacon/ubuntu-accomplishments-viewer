@@ -126,6 +126,7 @@ class AccomplishmentsViewerWindow(Window):
 
         self.webview = WebKit.WebView()
         self.scrolledwindow.add(self.webview)
+        self.webview.props.settings.props.enable_default_context_menu = False
         self.webkitlink = self.webview.connect("navigation-policy-decision-requested",self.webkit_link_clicked)
 
         self.webview.show()
