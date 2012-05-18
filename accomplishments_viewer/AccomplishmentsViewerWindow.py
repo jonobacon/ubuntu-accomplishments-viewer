@@ -180,6 +180,7 @@ class AccomplishmentsViewerWindow(Window):
         
         # run this to refresh our accomplishments list
         self._load_accomplishments()
+        self.update_views(None)
         
         # set the Launcher icon to be urgent and show new trophy count
         self.launcher.set_property("urgent", True)
