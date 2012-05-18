@@ -7,17 +7,91 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-05-15 14:05-0700\n"
+"POT-Creation-Date: 2012-05-17 18:57+0200\n"
 "PO-Revision-Date: 2012-05-01 21:27+0000\n"
 "Last-Translator: Alkalyzer <Unknown>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-16 05:35+0000\n"
-"X-Generator: Launchpad (build 15247)\n"
+"X-Launchpad-Export-Date: 2012-05-18 05:08+0000\n"
+"X-Generator: Launchpad (build 15259)\n"
 
-#. Code for other initialization actions should be added here.
+#. # summary table
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:672
+msgid "Opportunity Information"
+msgstr "Informations sur les Opportunités"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:680
+msgid "No information available."
+msgstr "Aucune information disponible."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:690
+msgid "Getting Help"
+msgstr "Obtenir de l'aide"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:699
+msgid "No help available."
+msgstr "Aucune aide disponible."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:715
+msgid "This opportunity is locked. You need to complete"
+msgstr "Cette opportunité est fermée. Vous devez completer"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:715
+msgid "from"
+msgstr "de"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:715
+msgid "first"
+msgstr "premier"
+
+#. achieved
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:720
+msgid "This trophy <strong>was awarded</strong>"
+msgstr "Ce trophée <strong>a été décerné</strong>"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:724
+msgid "on"
+msgstr "activé"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
+msgid "using the following credentials"
+msgstr "utilisant les informations d'identification suivantes"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:738
+msgid "This trophy has been verified"
+msgstr "Ce trophée a été vérifié"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:745
+msgid "This opportunity requires verification"
+msgstr "Cette opportunité requiert une vérification"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:755
+msgid "Accomplishment Details"
+msgstr "Détails des réalisations"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:777
+msgid "How to accomplish this opportunity"
+msgstr "Comment accomplir cette opportunité"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:812
+msgid "Tips and Tricks"
+msgstr "Trucs et Astuces"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:822
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:842
+msgid "None."
+msgstr "Aucun."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:832
+msgid "Pitfalls To Avoid"
+msgstr "Pièges à éviter"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:855
+msgid "Further Reading"
+msgstr "Lectures complémentaires"
+
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
 msgstr "Visualisateur des Réalisations"
@@ -63,81 +137,6 @@ msgstr ""
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
 msgstr "Préférences des Réalisations"
-
-#. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:719
-msgid "Opportunity Information"
-msgstr "Informations sur les Opportunités"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:727
-msgid "No information available."
-msgstr "Aucune information disponible."
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:737
-msgid "Getting Help"
-msgstr "Obtenir de l'aide"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:746
-msgid "No help available."
-msgstr "Aucune aide disponible."
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:769
-msgid "This opportunity is locked. You need to complete"
-msgstr "Cette opportunité est fermée. Vous devez completer"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:769
-msgid "from"
-msgstr "de"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:769
-msgid "first"
-msgstr "premier"
-
-#. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:774
-msgid "This trophy <strong>was awarded</strong>"
-msgstr "Ce trophée <strong>a été décerné</strong>"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:778
-msgid "on"
-msgstr "activé"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:784
-msgid "using the following credentials"
-msgstr "utilisant les informations d'identification suivantes"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:794
-msgid "This trophy has been verified"
-msgstr "Ce trophée a été vérifié"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:801
-msgid "This opportunity requires verification"
-msgstr "Cette opportunité requiert une vérification"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:811
-msgid "Accomplishment Details"
-msgstr "Détails des réalisations"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:833
-msgid "How to accomplish this opportunity"
-msgstr "Comment accomplir cette opportunité"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:868
-msgid "Tips and Tricks"
-msgstr "Trucs et Astuces"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:878
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:898
-msgid "None."
-msgstr "Aucun."
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:888
-msgid "Pitfalls To Avoid"
-msgstr "Pièges à éviter"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:911
-msgid "Further Reading"
-msgstr "Lectures complémentaires"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
