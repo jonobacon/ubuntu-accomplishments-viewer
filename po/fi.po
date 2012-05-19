@@ -7,90 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-05-17 18:57+0200\n"
+"POT-Creation-Date: 2012-05-18 09:18-0700\n"
 "PO-Revision-Date: 2012-04-09 18:47+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-18 05:08+0000\n"
+"X-Launchpad-Export-Date: 2012-05-19 05:58+0000\n"
 "X-Generator: Launchpad (build 15259)\n"
 
-#. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:672
-msgid "Opportunity Information"
+#: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
+msgid "Collection Authors:"
 msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:680
-msgid "No information available."
-msgstr "Ei tietoja saatavilla."
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:690
-msgid "Getting Help"
-msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:699
-msgid "No help available."
-msgstr "Ei ohjeita saatavilla."
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:715
-msgid "This opportunity is locked. You need to complete"
-msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:715
-msgid "from"
-msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:715
-msgid "first"
-msgstr ""
-
-#. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:720
-msgid "This trophy <strong>was awarded</strong>"
-msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:724
-msgid "on"
-msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
-msgid "using the following credentials"
-msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:738
-msgid "This trophy has been verified"
-msgstr "Tämä pokaali on vahvistettu"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:745
-msgid "This opportunity requires verification"
-msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:755
-msgid "Accomplishment Details"
-msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:777
-msgid "How to accomplish this opportunity"
-msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:812
-msgid "Tips and Tricks"
-msgstr "Vinkkejä ja vihjeitä"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:822
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:842
-msgid "None."
-msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:832
-msgid "Pitfalls To Avoid"
-msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:855
-msgid "Further Reading"
-msgstr "Lisää luettavaa"
 
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
@@ -129,6 +58,81 @@ msgstr ""
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
 msgstr ""
+
+#. # summary table
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:671
+msgid "Opportunity Information"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:679
+msgid "No information available."
+msgstr "Ei tietoja saatavilla."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:689
+msgid "Getting Help"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:698
+msgid "No help available."
+msgstr "Ei ohjeita saatavilla."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:714
+msgid "This opportunity is locked. You need to complete"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:714
+msgid "from"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:714
+msgid "first"
+msgstr ""
+
+#. achieved
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:719
+msgid "This trophy <strong>was awarded</strong>"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
+msgid "on"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:727
+msgid "using the following credentials"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:737
+msgid "This trophy has been verified"
+msgstr "Tämä pokaali on vahvistettu"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:744
+msgid "This opportunity requires verification"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:754
+msgid "Accomplishment Details"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:776
+msgid "How to accomplish this opportunity"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:811
+msgid "Tips and Tricks"
+msgstr "Vinkkejä ja vihjeitä"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:821
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:841
+msgid "None."
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:831
+msgid "Pitfalls To Avoid"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:854
+msgid "Further Reading"
+msgstr "Lisää luettavaa"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"

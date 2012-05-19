@@ -7,90 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-05-17 18:57+0200\n"
+"POT-Creation-Date: 2012-05-18 09:18-0700\n"
 "PO-Revision-Date: 2012-04-12 04:13+0000\n"
 "Last-Translator: Joel Pickett <jlkpcktt@gmail.com>\n"
 "Language-Team: English (Australia) <en_AU@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-18 05:08+0000\n"
+"X-Launchpad-Export-Date: 2012-05-19 05:58+0000\n"
 "X-Generator: Launchpad (build 15259)\n"
 
-#. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:672
-msgid "Opportunity Information"
-msgstr "Opportunity Information"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:680
-msgid "No information available."
-msgstr "No information available."
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:690
-msgid "Getting Help"
-msgstr "Getting Help"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:699
-msgid "No help available."
-msgstr "No help available."
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:715
-msgid "This opportunity is locked. You need to complete"
-msgstr "This opportunity is locked. You need to complete"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:715
-msgid "from"
-msgstr "from"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:715
-msgid "first"
-msgstr "first"
-
-#. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:720
-msgid "This trophy <strong>was awarded</strong>"
-msgstr "This trophy <strong>was awarded</strong>"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:724
-msgid "on"
-msgstr "on"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:728
-msgid "using the following credentials"
-msgstr "using the following credentials"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:738
-msgid "This trophy has been verified"
-msgstr "This trophy has been verified"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:745
-msgid "This opportunity requires verification"
-msgstr "This opportunity requires verification"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:755
-msgid "Accomplishment Details"
+#: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
+msgid "Collection Authors:"
 msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:777
-msgid "How to accomplish this opportunity"
-msgstr "How to accomplish this opportunity"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:812
-msgid "Tips and Tricks"
-msgstr "Tips and Tricks"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:822
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:842
-msgid "None."
-msgstr "None."
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:832
-msgid "Pitfalls To Avoid"
-msgstr "Pitfalls To Avoid"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:855
-msgid "Further Reading"
-msgstr "Further Reading"
 
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
@@ -133,6 +62,81 @@ msgstr ""
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
 msgstr "Accomplishments Preferences"
+
+#. # summary table
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:671
+msgid "Opportunity Information"
+msgstr "Opportunity Information"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:679
+msgid "No information available."
+msgstr "No information available."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:689
+msgid "Getting Help"
+msgstr "Getting Help"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:698
+msgid "No help available."
+msgstr "No help available."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:714
+msgid "This opportunity is locked. You need to complete"
+msgstr "This opportunity is locked. You need to complete"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:714
+msgid "from"
+msgstr "from"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:714
+msgid "first"
+msgstr "first"
+
+#. achieved
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:719
+msgid "This trophy <strong>was awarded</strong>"
+msgstr "This trophy <strong>was awarded</strong>"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
+msgid "on"
+msgstr "on"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:727
+msgid "using the following credentials"
+msgstr "using the following credentials"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:737
+msgid "This trophy has been verified"
+msgstr "This trophy has been verified"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:744
+msgid "This opportunity requires verification"
+msgstr "This opportunity requires verification"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:754
+msgid "Accomplishment Details"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:776
+msgid "How to accomplish this opportunity"
+msgstr "How to accomplish this opportunity"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:811
+msgid "Tips and Tricks"
+msgstr "Tips and Tricks"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:821
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:841
+msgid "None."
+msgstr "None."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:831
+msgid "Pitfalls To Avoid"
+msgstr "Pitfalls To Avoid"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:854
+msgid "Further Reading"
+msgstr "Further Reading"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
