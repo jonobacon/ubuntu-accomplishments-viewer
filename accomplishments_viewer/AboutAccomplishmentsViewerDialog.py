@@ -37,7 +37,7 @@ class AboutAccomplishmentsViewerDialog(AboutDialog):
             authors.append("'" + self.libaccom.get_collection_name(col) + "' " + _("Collection Authors:"))
             authors.append(" ")
             
-            for a in self.libaccom.get_collection_authors("ubuntu-community"):
+            for a in self.libaccom.get_collection_authors(col):
                 authors.append(a)
             
         self.set_authors(authors)
