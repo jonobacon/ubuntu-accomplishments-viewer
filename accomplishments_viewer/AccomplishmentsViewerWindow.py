@@ -682,9 +682,9 @@ class AccomplishmentsViewerWindow(Window):
         html = "<!DOCTYPE html> \
         <html lang='en'> \
         <head> \
-            <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic' rel='stylesheet' type='text/css'> \
-            <link href='file://" + os.path.join(self.datapath, "css", "information.txt") + "' rel='stylesheet' type='text/css'></head> \
+            <link href='file://" + os.path.join(self.datapath, "css", "information.txt") + "' rel='stylesheet' type='text/css'> \
             <link href='file://" + os.path.join(self.datapath, "css", "font.txt") + "' rel='stylesheet' type='text/css'> \
+        </head> \
         <body class='container_8' background='" + get_media_file("home-bkg.gif") + "'>"
 
         if "title" in data:
