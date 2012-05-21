@@ -555,6 +555,9 @@ class AccomplishmentsViewerWindow(Window):
         else:
             self.subcats_show(col, cat)
 
+        print "SELF.SUBCAT"
+        print self.subcat
+        
         # update opportunities
         for acc in self.accomdb:
             icon = None
@@ -572,21 +575,29 @@ class AccomplishmentsViewerWindow(Window):
                     thiscat = c[0]
                 else:
                     thiscat = ""                    
-
-                subcat = str(cat) + ":" + str(self.subcat)
+                
                 status_opps = status_opps + 1
-                if acc["collection"] == col and cat == thiscat:
-                    if not acc["locked"] or show_locked:
-                        oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
                 if col == "" and cat == "":
+                    print "2"
                     if not acc["locked"] or show_locked:
                         oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
                 if acc["collection"] == col and cat == "":
                     if not acc["locked"] or show_locked:
                         oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                if acc["collection"] == col and list(acc["categories"])[0] == subcat:
-                    if not acc["locked"] or show_locked:
-                        oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                if self.subcat is not None:
+                    subcat = str(cat) + ":" + str(self.subcat)
+                    if acc["collection"] == col and list(acc["categories"])[0] == subcat:
+                        if not acc["locked"] or show_locked:
+                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                else:
+                    print "THISCAT"
+                    print cat
+                    print "CATS"
+                    print list(acc["categories"])[0]
+                    if acc["collection"] == col and cat in list(acc["categories"])[0]:
+                        if not acc["locked"] or show_locked:
+                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+
 
     def populate_opp_combos(self):
 
@@ -666,7 +677,7 @@ class AccomplishmentsViewerWindow(Window):
         else:
             cat, catname = catmodel[cattree_iter][:2]
             
-        self.subcat = ""
+        self.subcat = None
 
         self.update_views(None)
 
