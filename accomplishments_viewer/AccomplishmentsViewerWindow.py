@@ -362,6 +362,7 @@ class AccomplishmentsViewerWindow(Window):
         else:
             # set up the subcats
             subcats = self.get_subcats(col, cat)
+            print sel.libaccom.get_collection_categories(col)
 
             print self.subcats_buttonbox.get_children()
             
@@ -611,10 +612,15 @@ class AccomplishmentsViewerWindow(Window):
         model = widget.get_model()
         col, name = model[tree_iter][:2]
 
-        for i in self.accomdb:
+        print col
+        print self.libaccom.get_collection_categories(col)
+
+        """for i in self.accomdb:
             if i["collection"] == col:
-                if i["category"] != "":
-                    catlist.add(i["category"])
+                if i["categories"] != "":
+                    pass
+                    print i["categories"]
+                    catlist.add(i["categories"])"""
 
         self.opp_cat_store.clear()
 
