@@ -393,7 +393,6 @@ class AccomplishmentsViewerWindow(Window):
 
     def subcat_clicked(self, button, data):
         self.subcat = button.get_label()
-        print "Subcat clicked: " + self.subcat
         self.update_views(None)
 
     def subcats_back_button(self, widget):
@@ -558,9 +557,6 @@ class AccomplishmentsViewerWindow(Window):
             self.subcats_container.hide()
         else:
             self.subcats_show(col, cat)
-
-        print "SELF.SUBCAT"
-        print self.subcat
         
         # update opportunities
         for acc in self.accomdb:
@@ -581,12 +577,7 @@ class AccomplishmentsViewerWindow(Window):
                     thiscat = ""                    
                 
                 status_opps = status_opps + 1
-                if col == "" and cat == "":
-                    if not acc["locked"] or show_locked:
-                        oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                if acc["collection"] == col and cat == "":
-                    if not acc["locked"] or show_locked:
-                        oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+
                 if self.subcat is not None:
                     subcat = str(cat) + ":" + str(self.subcat)
                     if acc["collection"] == col and list(acc["categories"])[0] == subcat:
@@ -594,6 +585,13 @@ class AccomplishmentsViewerWindow(Window):
                             oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
                 else:
                     if acc["collection"] == col and cat in list(acc["categories"])[0]:
+                        if not acc["locked"] or show_locked:
+                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                    elif col == "" and cat == "":
+                        if not acc["locked"] or show_locked:
+                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                    elif acc["collection"] == col and cat == "":
+                        print "3"
                         if not acc["locked"] or show_locked:
                             oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
 
@@ -636,26 +634,32 @@ class AccomplishmentsViewerWindow(Window):
         model = widget.get_model()
         col, name = model[tree_iter][:2]
 
-        cats = self.libaccom.get_collection_categories(col)
+        if col == "":
+            self.opp_cat_store.clear()
+            self.opp_cat_store.append(["", "everything"])
 
-        for i in cats:
-            catlist.add(i)
+            self.update_views(None)
+        else:
+            cats = self.libaccom.get_collection_categories(col)
 
-        self.opp_cat_store.clear()
+            for i in cats:
+                catlist.add(i)
 
-        self.opp_cat_store.append(["", "everything"])
+            self.opp_cat_store.clear()
 
-        for i in catlist:
-            self.opp_cat_store.append([i, i])
+            self.opp_cat_store.append(["", "everything"])
 
-        self.do_not_react_on_cat_changes = False
-        self.opp_combo_cat.set_active(0)
-        
-        self.subcats_container.hide()
-        # Following does not have to be done, because using
-        # opp_combo_cat.set_active will cause opp_cat_updated
-        # to run update_views
-        #self.update_views(None)
+            for i in catlist:
+                self.opp_cat_store.append([i, i])
+
+            self.do_not_react_on_cat_changes = False
+            self.opp_combo_cat.set_active(0)
+            
+            self.subcats_container.hide()
+            # Following does not have to be done, because using
+            # opp_combo_cat.set_active will cause opp_cat_updated
+            # to run update_views
+            #self.update_views(None)
 
     def check_accomplishments(self, widget):
         """Called when Check Accomplishments is selected in the interface."""
