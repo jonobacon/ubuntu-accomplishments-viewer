@@ -539,6 +539,7 @@ class AccomplishmentsViewerWindow(Window):
             col, colname = colmodel[coltree_iter][:2]
         
         col_active_item = self.opp_combo_col.get_active()
+        
         if col_active_item == 0:
             self.opp_combo_cat.set_sensitive(False)
         else:
@@ -556,7 +557,7 @@ class AccomplishmentsViewerWindow(Window):
         if cat == "":
             self.subcats_container.hide()
         else:
-            self.subcats_show(col, cat)
+            self.subcats_show(col, cat)        
         
         # update opportunities
         for acc in self.accomdb:
@@ -591,10 +592,8 @@ class AccomplishmentsViewerWindow(Window):
                         if not acc["locked"] or show_locked:
                             oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
                     elif acc["collection"] == col and cat == "":
-                        print "3"
                         if not acc["locked"] or show_locked:
                             oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-
 
     def populate_opp_combos(self):
 
@@ -637,6 +636,8 @@ class AccomplishmentsViewerWindow(Window):
         if col == "":
             self.opp_cat_store.clear()
             self.opp_cat_store.append(["", "everything"])
+            
+            self.subcat = None
 
             self.update_views(None)
         else:
