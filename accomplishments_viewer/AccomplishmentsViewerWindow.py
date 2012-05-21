@@ -378,14 +378,18 @@ class AccomplishmentsViewerWindow(Window):
                 self.subcats_buttonbox.add(button)
                 button.show()
 
-            button = Gtk.Button(_("Other"))
+            """button = Gtk.Button(_("Other"))
             button.props.relief = Gtk.ReliefStyle.NONE
             button.connect("clicked", self.subcat_clicked, cat)
             self.subcats_buttonbox.add(button)
-            button.show()
+            button.show()"""
             
-            self.subcats_buttonbox.show_all()
-            self.subcats_container.show()
+            if len(subcats) > 1:
+                self.subcats_buttonbox.show_all()
+                self.subcats_container.show()
+            else:
+                self.subcats_container.hide()
+                
 
     def subcat_clicked(self, button, data):
         self.subcat = button.get_label()
@@ -578,7 +582,6 @@ class AccomplishmentsViewerWindow(Window):
                 
                 status_opps = status_opps + 1
                 if col == "" and cat == "":
-                    print "2"
                     if not acc["locked"] or show_locked:
                         oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
                 if acc["collection"] == col and cat == "":
@@ -590,10 +593,6 @@ class AccomplishmentsViewerWindow(Window):
                         if not acc["locked"] or show_locked:
                             oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
                 else:
-                    print "THISCAT"
-                    print cat
-                    print "CATS"
-                    print list(acc["categories"])[0]
                     if acc["collection"] == col and cat in list(acc["categories"])[0]:
                         if not acc["locked"] or show_locked:
                             oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
