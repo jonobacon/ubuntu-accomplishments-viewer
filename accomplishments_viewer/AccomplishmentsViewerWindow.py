@@ -361,10 +361,10 @@ class AccomplishmentsViewerWindow(Window):
             self.subcats_container.hide()
         else:
             # set up the subcats
-            subcats = self.get_subcats(col, cat)
-            print sel.libaccom.get_collection_categories(col)
-
-            print self.subcats_buttonbox.get_children()
+            cats = self.libaccom.get_collection_categories(col)
+            for c in cats:
+                if c == cat:
+                    subcats = cats[c]
             
             # remove previous buttons from the button box
             for b in self.subcats_buttonbox.get_children():
@@ -388,8 +388,9 @@ class AccomplishmentsViewerWindow(Window):
             self.subcats_container.show()
 
     def subcat_clicked(self, button, data):
-        self.subcat = data
-        print "Subcat clicked: " + data
+        self.subcat = button.get_label()
+        print "Subcat clicked: " + self.subcat
+        self.update_views(None)
 
     def subcats_back_button(self, widget):
         h = self.subcats_scroll.get_hadjustment()
@@ -462,7 +463,7 @@ class AccomplishmentsViewerWindow(Window):
             self.libaccom.write_config_file_item("config", "has_u1", True)
 
         else:
-            print ""
+            pass
 
     def cancel_register_with_u1(self, widget):
         self.additional_ubuntu1.set_visible(False)
@@ -563,14 +564,27 @@ class AccomplishmentsViewerWindow(Window):
                 trophymodel.append([acc["title"], icon, bool(acc["accomplished"]), acc["locked"], acc["collection"], acc["id"]])
                 status_trophies = status_trophies + 1
             else:
+                subcat = ""
+                thiscat = ""
+
+                c = [i for i in acc["categories"] if i == cat]
+                if len(c) is not 0:
+                    thiscat = c[0]
+                else:
+                    thiscat = ""                    
+
+                subcat = str(cat) + ":" + str(self.subcat)
                 status_opps = status_opps + 1
-                if acc["collection"] == col and acc["category"] == cat:
+                if acc["collection"] == col and cat == thiscat:
                     if not acc["locked"] or show_locked:
                         oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
                 if col == "" and cat == "":
                     if not acc["locked"] or show_locked:
                         oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
                 if acc["collection"] == col and cat == "":
+                    if not acc["locked"] or show_locked:
+                        oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                if acc["collection"] == col and list(acc["categories"])[0] == subcat:
                     if not acc["locked"] or show_locked:
                         oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
 
@@ -612,15 +626,10 @@ class AccomplishmentsViewerWindow(Window):
         model = widget.get_model()
         col, name = model[tree_iter][:2]
 
-        print col
-        print self.libaccom.get_collection_categories(col)
+        cats = self.libaccom.get_collection_categories(col)
 
-        """for i in self.accomdb:
-            if i["collection"] == col:
-                if i["categories"] != "":
-                    pass
-                    print i["categories"]
-                    catlist.add(i["categories"])"""
+        for i in cats:
+            catlist.add(i)
 
         self.opp_cat_store.clear()
 
@@ -657,7 +666,7 @@ class AccomplishmentsViewerWindow(Window):
         else:
             cat, catname = catmodel[cattree_iter][:2]
             
-        self.subcat = "foo"
+        self.subcat = ""
 
         self.update_views(None)
 
@@ -750,7 +759,6 @@ class AccomplishmentsViewerWindow(Window):
             return
                 
         self.accomplishment_info(accom_id)
-        print self.accomdb
 
     def accomplishment_info(self, accomID):
         """Display information about the selected accomplishment."""
@@ -840,7 +848,6 @@ class AccomplishmentsViewerWindow(Window):
             if not self.libaccom.get_acc_is_unlocked(accomID):
                 if len(depstatus) > 0:
                     if len(depstatus) == 1:
-                        print depstatus[0]["title"]
                         html = html + "<li><i class='icon-key icon-large'></i>" + _("This opportunity is locked. You need to complete").decode('utf-8') + " <a href='accomplishment://" + depstatus[0]["id"] + "'><strong>" + depstatus[0]["title"] + "</strong></a> " + _("from").decode('utf-8') +" <strong>" + depstatus[0]["collection-human"] + "</strong> " + _("first").decode('utf-8') + ".</li>"
                     else:
                         html = html + "<li><i class='icon-key icon-large'></i>" + _("This opportunity is locked. You need to complete the following opportunities first:").decode('utf-8') + "</li>"
