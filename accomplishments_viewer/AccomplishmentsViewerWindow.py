@@ -102,7 +102,22 @@ class AccomplishmentsViewerWindow(Window):
         self.mnu_check_acc = self.builder.get_object("mnu_check_acc")
         self.opp_tb = self.builder.get_object("opp_tb")
         self.mnu_edit_ident = self.builder.get_object("mnu_edit_ident")
+        self.subcats_scroll = self.builder.get_object("subcats_scroll")
+        self.subcats_back = self.builder.get_object("subcats_back")
+        self.subcats_forward = self.builder.get_object("subcats_forward")
+        self.subcats_buttonbox = self.builder.get_object("subcats_buttonbox")
+        self.subcats_container = self.builder.get_object("subcats_container")
 
+        # don't display the sub-cats scrollbars
+        sb_h = self.subcats_scroll.get_hscrollbar()
+        sb_v = self.subcats_scroll.get_vscrollbar()
+        sb_h.set_child_visible(False)
+        sb_v.set_child_visible(False)
+                
+        #h = self.subcats_scroll.get_hadjustment()
+        self.subcat = None
+        self.subcats_container.hide()
+        
         # make the toolbar black in Ubuntu
         context = self.toolbar.get_style_context()
         context.add_class(Gtk.STYLE_CLASS_PRIMARY_TOOLBAR)
@@ -326,6 +341,72 @@ class AccomplishmentsViewerWindow(Window):
         # self.on_tb_opportunities_clicked(None)
         return
 
+    def enable_subcats_buttons(self):
+        self.subcats_back.set_sensitive(True)
+        self.subcats_forward.set_sensitive(True)
+
+    def get_subcats(self, col, cat):
+        """Get the subcats for the current category."""
+        
+        if col == "ubuntu-community" and cat == "Development":
+            return ["Programming", "Sponsorship Queue"]
+        elif col == "ubuntu-community" and cat == "LoCo Teams":
+            return ["Joining", "Creating Teams", "Events"]
+        else:
+            return ["Test One", "Test Two"]
+
+    def subcats_show(self, col, cat):
+        subcats = []
+        if cat == "everything":
+            self.subcats_container.hide()
+        else:
+            # set up the subcats
+            cats = self.libaccom.get_collection_categories(col)
+            for c in cats:
+                if c == cat:
+                    subcats = cats[c]
+            
+            # remove previous buttons from the button box
+            for b in self.subcats_buttonbox.get_children():
+                self.subcats_buttonbox.remove(b)
+            
+            # fill the button box with the sub categories
+            for s in subcats:
+                button = Gtk.Button(s)
+                button.props.relief = Gtk.ReliefStyle.NONE
+                button.connect("clicked", self.subcat_clicked, cat)
+                self.subcats_buttonbox.add(button)
+                button.show()
+
+            """button = Gtk.Button(_("Other"))
+            button.props.relief = Gtk.ReliefStyle.NONE
+            button.connect("clicked", self.subcat_clicked, cat)
+            self.subcats_buttonbox.add(button)
+            button.show()"""
+            
+            if len(subcats) > 1:
+                self.subcats_buttonbox.show_all()
+                self.subcats_container.show()
+            else:
+                self.subcats_container.hide()
+                
+
+    def subcat_clicked(self, button, data):
+        self.subcat = button.get_label()
+        self.update_views(None)
+
+    def subcats_back_button(self, widget):
+        h = self.subcats_scroll.get_hadjustment()
+        new = h.get_value() - h.get_step_increment()
+        h.set_value(new)
+        self.subcats_scroll.set_hadjustment(h)
+
+    def subcats_forward_button(self, widget):
+        h = self.subcats_scroll.get_hadjustment()
+        new = h.get_value() + h.get_step_increment()
+        h.set_value(new)
+        self.subcats_scroll.set_hadjustment(h)
+        
     def webkit_link_clicked(self, view, frame, net_req, nav_act, pol_dec):
         """Load a link from the webkit view in an external system browser."""
         
@@ -385,7 +466,7 @@ class AccomplishmentsViewerWindow(Window):
             self.libaccom.write_config_file_item("config", "has_u1", True)
 
         else:
-            print ""
+            pass
 
     def cancel_register_with_u1(self, widget):
         self.additional_ubuntu1.set_visible(False)
@@ -472,6 +553,11 @@ class AccomplishmentsViewerWindow(Window):
         else:
             cat, catname = catmodel[cattree_iter][:2]
 
+        if cat == "":
+            self.subcats_container.hide()
+        else:
+            self.subcats_show(col, cat)
+        
         # update opportunities
         for acc in self.accomdb:
             icon = None
@@ -481,16 +567,34 @@ class AccomplishmentsViewerWindow(Window):
                 trophymodel.append([acc["title"], icon, bool(acc["accomplished"]), acc["locked"], acc["collection"], acc["id"]])
                 status_trophies = status_trophies + 1
             else:
+                subcat = ""
+                thiscat = ""
+
+                c = [i for i in acc["categories"] if i == cat]
+                if len(c) is not 0:
+                    thiscat = c[0]
+                else:
+                    thiscat = ""                    
+                
                 status_opps = status_opps + 1
-                if acc["collection"] == col and acc["category"] == cat:
-                    if not acc["locked"] or show_locked:
-                        oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                if col == "" and cat == "":
-                    if not acc["locked"] or show_locked:
-                        oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                if acc["collection"] == col and cat == "":
-                    if not acc["locked"] or show_locked:
-                        oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+
+                if self.subcat is not None:
+                    subcat = str(cat) + ":" + str(self.subcat)
+                    if acc["collection"] == col and list(acc["categories"])[0] == subcat:
+                        if not acc["locked"] or show_locked:
+                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                else:
+                    if acc["collection"] == col and cat in list(acc["categories"])[0]:
+                        if not acc["locked"] or show_locked:
+                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                    elif col == "" and cat == "":
+                        if not acc["locked"] or show_locked:
+                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                    elif acc["collection"] == col and cat == "":
+                        print "3"
+                        if not acc["locked"] or show_locked:
+                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+
 
     def populate_opp_combos(self):
 
@@ -530,25 +634,32 @@ class AccomplishmentsViewerWindow(Window):
         model = widget.get_model()
         col, name = model[tree_iter][:2]
 
-        for i in self.accomdb:
-            if i["collection"] == col:
-                if i["category"] != "":
-                    catlist.add(i["category"])
+        if col == "":
+            self.opp_cat_store.clear()
+            self.opp_cat_store.append(["", "everything"])
 
-        self.opp_cat_store.clear()
+            self.update_views(None)
+        else:
+            cats = self.libaccom.get_collection_categories(col)
 
-        self.opp_cat_store.append(["", "everything"])
+            for i in cats:
+                catlist.add(i)
 
-        for i in catlist:
-            self.opp_cat_store.append([i, i])
+            self.opp_cat_store.clear()
 
-        self.do_not_react_on_cat_changes = False
-        self.opp_combo_cat.set_active(0)
-        
-        # Following does not have to be done, because using
-        # opp_combo_cat.set_active will cause opp_cat_updated
-        # to run update_views
-        #self.update_views(None)
+            self.opp_cat_store.append(["", "everything"])
+
+            for i in catlist:
+                self.opp_cat_store.append([i, i])
+
+            self.do_not_react_on_cat_changes = False
+            self.opp_combo_cat.set_active(0)
+            
+            self.subcats_container.hide()
+            # Following does not have to be done, because using
+            # opp_combo_cat.set_active will cause opp_cat_updated
+            # to run update_views
+            #self.update_views(None)
 
     def check_accomplishments(self, widget):
         """Called when Check Accomplishments is selected in the interface."""
@@ -559,6 +670,18 @@ class AccomplishmentsViewerWindow(Window):
     def opp_cat_updated(self, widget):
         if self.do_not_react_on_cat_changes:
             return
+
+        cattree_iter = self.opp_combo_cat.get_active_iter()
+        catmodel = self.opp_combo_cat.get_model()
+
+        if cattree_iter == None:
+            cat = ""
+            catname = ""
+        else:
+            cat, catname = catmodel[cattree_iter][:2]
+            
+        self.subcat = None
+
         self.update_views(None)
 
     def on_tb_mytrophies_clicked(self, widget):
@@ -650,7 +773,6 @@ class AccomplishmentsViewerWindow(Window):
             return
                 
         self.accomplishment_info(accom_id)
-        print self.accomdb
 
     def accomplishment_info(self, accomID):
         """Display information about the selected accomplishment."""
@@ -740,7 +862,6 @@ class AccomplishmentsViewerWindow(Window):
             if not self.libaccom.get_acc_is_unlocked(accomID):
                 if len(depstatus) > 0:
                     if len(depstatus) == 1:
-                        print depstatus[0]["title"]
                         html = html + "<li><i class='icon-key icon-large'></i>" + _("This opportunity is locked. You need to complete").decode('utf-8') + " <a href='accomplishment://" + depstatus[0]["id"] + "'><strong>" + depstatus[0]["title"] + "</strong></a> " + _("from").decode('utf-8') +" <strong>" + depstatus[0]["collection-human"] + "</strong> " + _("first").decode('utf-8') + ".</li>"
                     else:
                         html = html + "<li><i class='icon-key icon-large'></i>" + _("This opportunity is locked. You need to complete the following opportunities first:").decode('utf-8') + "</li>"
