@@ -331,6 +331,13 @@ class AccomplishmentsViewerWindow(Window):
         """Called when user clicks Edit->Identification..."""
         if self.connected is False:
             return
+
+        # ACCOMPLISHMENT: Editing Credentials
+        try:
+            self.libaccom.accomplish("ubuntu-desktop/accomplishments-edit-credentials")
+        except:
+            pass
+
         self.EditExtraDialog.prepare(self.libaccom)
         result = self.EditExtraDialog.run() #the dialog's response handlers will take care about storing the result
         self.EditExtraDialog.hide()
@@ -486,6 +493,13 @@ class AccomplishmentsViewerWindow(Window):
 
     def complete_share_process(self, widget):
         self.additional_ubuntu1.set_visible(False)
+
+        # ACCOMPLISHMENT: Editing Credentials
+        try:
+            self.libaccom.accomplish("ubuntu-desktop/accomplishments-shared-with-validation-server")
+        except:
+            pass
+        
         self.check_for_extra_info_required()
 
     def register_with_verif(self, widget):
