@@ -65,6 +65,15 @@ class AccomplishmentsViewerWindow(Window):
         self.do_not_react_on_cat_changes = False
         # Code for other initialization actions should be added here.
 
+        # set up autostart dir
+        self.autostartdir = None
+
+        self.autostartdir = os.path.join(
+            xdg.BaseDirectory.xdg_config_home, "autostart")
+
+        if not os.path.exists(self.autostartdir):
+            os.makedirs(self.autostartdir)
+
         # self.accomdb provides a collection of all accomplishments
         # that we query throughout the application
         self.accomdb = []
@@ -88,6 +97,7 @@ class AccomplishmentsViewerWindow(Window):
         self.additional_info_req = self.builder.get_object("add_info_req")
         self.additional_ubuntu1 = self.builder.get_object("add_ubu1")
         self.additional_daemon = self.builder.get_object("add_daemon")
+        self.additional_daemon_session = self.builder.get_object("add_daemon_session")
         self.auth_scrolled = self.builder.get_object("auth_scrolled")
         self.auth_viewport = self.builder.get_object("auth_viewport")
         self.verif_box = self.builder.get_object("verif_box")
@@ -189,6 +199,8 @@ class AccomplishmentsViewerWindow(Window):
         self.notebook.set_current_page(2)
         self.tb_opportunities.set_active(True)
 
+        self.check_daemon_session()
+        
     def trophy_received(self, message):
         """Called when a new trophy is detected on the system."""
         
@@ -743,6 +755,21 @@ class AccomplishmentsViewerWindow(Window):
         if len(infoneeded) is not 0:
             # kick of the process of gathering the information needed
             self.additional_info_req.set_visible(True)
+
+    def check_daemon_session(self):
+        configvalue = self.libaccom.read_config_file_item("config", "daemon_sessionstart")
+        if configvalue == "NoOption":
+            self.additional_daemon_session.set_visible(True)
+        elif configvalue == "false":
+            pass
+
+    def daemon_session_yes(self, widget):
+        self.libaccom.enable_daemon_session_start()
+        self.additional_daemon_session.set_visible(False)
+
+    def daemon_session_no(self, widget):
+        self.additional_daemon_session.set_visible(False)
+        self.libaccom.write_config_file_item("config", "daemon_sessionstart", "false")
 
     def edit_auth_info(self,widget):
         """Called when user clicks "Edit credentials" from notification"""
