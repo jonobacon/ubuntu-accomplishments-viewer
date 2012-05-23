@@ -757,7 +757,7 @@ class AccomplishmentsViewerWindow(Window):
             self.additional_info_req.set_visible(True)
 
     def check_daemon_session(self):
-        configvalue = self.libaccom.read_config_file_item("config", "daemon_sessionstart")
+        configvalue = self.libaccom.get_config_value("config", "daemon_sessionstart")
         if configvalue == "NoOption":
             self.additional_daemon_session.set_visible(True)
         elif configvalue == "false":
