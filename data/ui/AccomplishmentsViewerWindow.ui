@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-requires accomplishments_viewer_window 1.0 -->
+  <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-local-resource-path ../media -->
   <object class="AccomplishmentsViewerWindow" id="accomplishments_viewer_window">
     <property name="height_request">270</property>
@@ -43,15 +43,6 @@
                         <signal name="activate" handler="check_accomplishments" swapped="no"/>
                       </object>
                     </child>
-                    <child>
-                      <object class="GtkImageMenuItem" id="mnu_preferences">
-                        <property name="label">gtk-preferences</property>
-                        <property name="use_action_appearance">False</property>
-                        <property name="can_focus">False</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                      </object>
-                    </child>
                   </object>
                 </child>
               </object>
@@ -67,6 +58,15 @@
                   <object class="GtkMenu" id="editMenu">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkImageMenuItem" id="mnu_preferences">
+                        <property name="label">gtk-preferences</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_stock">True</property>
+                      </object>
+                    </child>
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_edit_ident">
                         <property name="label">_Identification...</property>
