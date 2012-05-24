@@ -189,6 +189,8 @@ class AccomplishmentsViewerWindow(Window):
         if self.connected is False:
             self.run_daemon()
 
+        self.check_daemon_session()
+
         self.datapath = get_data_path()
         #self.datapath = "/home/jono/source/accomplishments-viewer/data/"
 
@@ -198,8 +200,6 @@ class AccomplishmentsViewerWindow(Window):
         #self.update_views(None)
         self.notebook.set_current_page(2)
         self.tb_opportunities.set_active(True)
-
-        self.check_daemon_session()
         
     def trophy_received(self, message):
         """Called when a new trophy is detected on the system."""
