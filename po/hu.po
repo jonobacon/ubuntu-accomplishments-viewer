@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-05-18 09:18-0700\n"
+"POT-Creation-Date: 2012-05-24 15:17+0200\n"
 "PO-Revision-Date: 2012-04-17 06:03+0000\n"
 "Last-Translator: zsorzs <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-19 05:58+0000\n"
-"X-Generator: Launchpad (build 15259)\n"
+"X-Launchpad-Export-Date: 2012-05-24 21:36+0000\n"
+"X-Generator: Launchpad (build 15288)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
@@ -61,78 +61,101 @@ msgstr ""
 msgid "Accomplishments Preferences"
 msgstr ""
 
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:2
+msgid "Start background service on log in (recommended)"
+msgstr ""
+
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:3
+msgid "<b>Accomplishments Background Service</b>"
+msgstr ""
+
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:4
+msgid "Hide Ubuntu One file upload notifications (recommended)"
+msgstr ""
+
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:5
+msgid "<b>Notification Bubbles</b>"
+msgstr ""
+
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:671
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:885
 msgid "Opportunity Information"
 msgstr "Inofrmáció a lehetőségekről"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:679
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:893
 msgid "No information available."
 msgstr "Nem áll rendelkezésre információ."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:689
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:903
 msgid "Getting Help"
 msgstr "Segítségkérés"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:698
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:912
 msgid "No help available."
 msgstr "Nincs elérhető súgó"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:714
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:927
 msgid "This opportunity is locked. You need to complete"
 msgstr "Ez a lehetőség zárolva van. Teljesítened kell"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:714
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:927
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:932
 msgid "from"
 msgstr "Feladó:"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:714
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:927
 msgid "first"
 msgstr "első"
 
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:929
+msgid ""
+"This opportunity is locked. You need to complete the following opportunities "
+"first:"
+msgstr ""
+
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:719
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "Ezt a trófeát kaptad"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:723
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:940
 msgid "on"
 msgstr "ekkor:"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:727
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:944
 msgid "using the following credentials"
 msgstr "A következő adatok leszenk használva"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:737
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:954
 msgid "This trophy has been verified"
 msgstr "Ez a trófea igazolva lett"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:744
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:961
 msgid "This opportunity requires verification"
 msgstr "Ez a lehetőség ellenőrzést igényel"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:754
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:971
 msgid "Accomplishment Details"
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:776
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:993
 msgid "How to accomplish this opportunity"
 msgstr "Hogyan teljesítsd ezt a lehetőséget"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:811
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1028
 msgid "Tips and Tricks"
 msgstr "Tippek és trükkök"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:821
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:841
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1038
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1058
 msgid "None."
 msgstr "Nincs."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:831
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1048
 msgid "Pitfalls To Avoid"
 msgstr "Elkerülendő buktatók"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:854
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1071
 msgid "Further Reading"
 msgstr "További olvasmányok"
 
@@ -166,6 +189,35 @@ msgstr "Lehetőségek"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid ""
+"It is recommended that the accomplishments background service is started "
+"automatically when you log into your computer. This way you won't need to "
+"load this application to see new trophies you have achieved.\n"
+"\n"
+"Would you like to do this?"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
+msgid ""
+"The Accomplishments background service is a program that runs automatically "
+"and checks to see if various opportunities have been accomplished.\n"
+"\n"
+"We recommend this is started automatically so that you are automatically "
+"notified when new opportunities have been achieved.\n"
+"\n"
+"You can disable this easily later if you change your mind by clicking "
+"<i>Edit -> Preferences</i>."
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
+msgid "Learn more..."
+msgstr "További információ..."
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:17
+msgid "Accomplishments Service"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
+msgid ""
 "<b>Some opportunities need additional information to verify their "
 "completion.</b>\n"
 "\n"
@@ -175,25 +227,25 @@ msgstr ""
 "Ezeket az adatokat később is módosíthatod itt: <i>Szerkesztés-"
 ">Azonosítás...</i>"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
 msgid "Edit credentials"
 msgstr "Szemályes adatok módosítása"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "Later"
 msgstr "Később"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:13
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "Additional information required..."
 msgstr "További információk szükségesek"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:14
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
 msgstr ""
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
 msgid ""
 "Ubuntu One is a online service that is Free to use for syncing files and "
 "other features. It is neatly integrated into your Ubuntu desktop.\n"
@@ -205,30 +257,26 @@ msgid ""
 "is not shared with others or given to companies."
 msgstr ""
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
-msgid "Learn more..."
-msgstr "További információ..."
-
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "Ubuntu One account required"
 msgstr "Ubuntu One hozzáférés szükséges"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid "Get Started"
 msgstr "Kezdjük"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:30
 msgid "Show me"
 msgstr "Mutasd"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
 msgid "accomplishments"
 msgstr "eredmények"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
 msgid "opportunities for"
 msgstr ""
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
 msgid "Show Locked"
 msgstr "Zárolt elemek mutatása"
