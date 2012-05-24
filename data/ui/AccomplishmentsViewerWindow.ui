@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires accomplishments_viewer_window 1.0 -->
   <!-- interface-requires gtk+ 3.0 -->
+  <!-- interface-requires accomplishments_viewer_window 1.0 -->
   <!-- interface-local-resource-path ../media -->
   <object class="AccomplishmentsViewerWindow" id="accomplishments_viewer_window">
     <property name="height_request">270</property>
@@ -64,6 +64,7 @@
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                       </object>
                     </child>
@@ -219,7 +220,7 @@
                                 <property name="margin_right">5</property>
                                 <property name="margin_top">5</property>
                                 <property name="margin_bottom">5</property>
-                                <property name="label" translatable="yes">It is recommended that the accomplishments background service is started automatically when you log into your computer.
+                                <property name="label" translatable="yes">It is recommended that the accomplishments background service is started automatically when you log into your computer. This way you won't need to load this application to see new trophies you have achieved.
 
 Would you like to do this?</property>
                                 <property name="wrap">True</property>
@@ -266,9 +267,9 @@ Would you like to do this?</property>
                                         <property name="margin_bottom">4</property>
                                         <property name="label" translatable="yes">The Accomplishments background service is a program that runs automatically and checks to see if various opportunities have been accomplished.
 
-We recommend this is started automatically  so that you are automatically notified when new opportunities have been achieved.
+We recommend this is started automatically so that you are automatically notified when new opportunities have been achieved.
 
-You can disable this easily later if you change your mind.</property>
+You can disable this easily later if you change your mind by clicking &lt;i&gt;Edit -&gt; Preferences&lt;/i&gt;.</property>
                                         <property name="use_markup">True</property>
                                         <property name="wrap">True</property>
                                       </object>

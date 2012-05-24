@@ -81,7 +81,7 @@
                     <property name="left_padding">12</property>
                     <child>
                       <object class="GtkCheckButton" id="cb_daemonsessionstart">
-                        <property name="label" translatable="yes">Start background service on log in</property>
+                        <property name="label" translatable="yes">Start background service on log in (recommended)</property>
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -126,7 +126,7 @@
                     <property name="left_padding">12</property>
                     <child>
                       <object class="GtkCheckButton" id="cb_hideu1bubbles">
-                        <property name="label" translatable="yes">Hide Ubuntu One file upload notifications</property>
+                        <property name="label" translatable="yes">Hide Ubuntu One file upload notifications (recommended)</property>
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
