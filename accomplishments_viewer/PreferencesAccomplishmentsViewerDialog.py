@@ -49,40 +49,18 @@ class PreferencesAccomplishmentsViewerDialog(PreferencesDialog):
     def populate_settings(self):
         self.cb_daemonsessionstart.handler_block_by_func(self.cb_daemonsessionstart_toggled)
         self.cb_hideu1bubbles.handler_block_by_func(self.cb_hideu1bubbles_toggled)
-            
-        if self.libaccom.get_config_value("config", "daemon_sessionstart") == "true":
-            self.cb_daemonsessionstart.set_active(True)
-
-        u1configdir = os.path.join(
-        xdg.BaseDirectory.xdg_config_home, "ubuntuone")
-
-        if not os.path.exists(u1configdir):
-            os.makedirs(u1configdir)
-
-        cfile = os.path.join(u1configdir, "syncdaemon.conf")
-
-        config = ConfigParser.ConfigParser()
-        config.read(cfile)
-
-        if config.has_option('notifications', 'show_all_notifications'):
-            if config.get('notifications', 'show_all_notifications') == "False":
-                self.cb_hideu1bubbles.set_active(True)
-            else:
-                self.cb_hideu1bubbles.set_active(False)
-        else:
-            self.cb_hideu1bubbles.set_active(False)
+        
+        self.cb_daemonsessionstart.set_active(bool(self.libaccom.get_daemon_session_start()))
+        print self.libaccom.get_daemon_session_start()
+        print type(self.libaccom.get_daemon_session_start())
+        self.cb_hideu1bubbles.set_active(self.libaccom.get_block_ubuntuone_notification_bubbles())
 
         self.cb_daemonsessionstart.handler_unblock_by_func(self.cb_daemonsessionstart_toggled)
         self.cb_hideu1bubbles.handler_unblock_by_func(self.cb_hideu1bubbles_toggled)
         
     def cb_daemonsessionstart_toggled(self, widget):
-        if widget.get_active() == True:
-            self.libaccom.enable_daemon_session_start()
-        else:
-            self.libaccom.disable_daemon_session_start()
+        print widget.get_active()
+        self.libaccom.set_daemon_session_start( widget.get_active() )
 
     def cb_hideu1bubbles_toggled(self, widget):
-        if widget.get_active() == True:
-            self.libaccom.enable_block_ubuntuone_notification_bubbles()
-        else:
-            self.libaccom.disable_block_ubuntuone_notification_bubbles()
+        self.libaccom.set_block_ubuntuone_notification_bubbles( widget.get_active() )
