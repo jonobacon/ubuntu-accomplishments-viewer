@@ -35,15 +35,16 @@ class PreferencesAccomplishmentsViewerDialog(PreferencesDialog):
         self.cb_daemonsessionstart = self.builder.get_object("cb_daemonsessionstart")
         self.cb_hideu1bubbles = self.builder.get_object("cb_hideu1bubbles")
         
-        self.libaccom = dbusapi.Accomplishments()
-        
-        self.populate_settings()
         # Bind each preference widget to gsettings
         #settings = Gio.Settings("net.launchpad.accomplishments-viewer")
         #widget = self.builder.get_object('example_entry')
         #settings.bind("example", widget, "text", Gio.SettingsBindFlags.DEFAULT)
 
         # Code for other initialization actions should be added here.
+
+    def prepare(self,daemon_handle):
+        self.libaccom = daemon_handle
+        self.populate_settings()
 
     def populate_settings(self):
         if self.libaccom.get_config_value("config", "daemon_sessionstart") == "true":

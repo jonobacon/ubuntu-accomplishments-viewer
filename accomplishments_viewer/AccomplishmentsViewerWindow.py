@@ -57,7 +57,8 @@ class AccomplishmentsViewerWindow(Window):
         super(AccomplishmentsViewerWindow, self).finish_initializing(builder)
 
         self.AboutDialog = AboutAccomplishmentsViewerDialog
-        self.PreferencesDialog = PreferencesAccomplishmentsViewerDialog
+        self.PreferencesDialog = PreferencesAccomplishmentsViewerDialog #class
+        self.preferences_dialog = None #instance
         self.EditExtraDialog = EditExtrainfoDialog()
         self.EditExtraDialog.parent = self
         self.curr_height = 0
@@ -744,6 +745,24 @@ class AccomplishmentsViewerWindow(Window):
         else:
             self.tb_opportunities.set_active(True)
 
+    def menu_prefs_clicked(self,widget):
+        """Display the preferences window."""
+        
+        # If the window already is in use, when user clicks the menu
+        # item, present() is used instead, to bring the window to front
+        # etc.
+        if self.preferences_dialog is not None:
+            self.preferences_dialog.present()
+        else:
+            #create new instance
+            self.preferences_dialog = self.PreferencesDialog()
+            self.preferences_dialog.prepare(self.libaccom)
+            self.preferences_dialog.connect('destroy', self.on_preferences_dialog_destroyed)
+            self.preferences_dialog.show()
+    
+    def on_preferences_dialog_destroyed(self,widget):
+        self.preferences_dialog = None
+    
     def get_icon(self, name):
         theme = Gtk.IconTheme.get_default()
         return theme.load_icon(name, 48, 0)
