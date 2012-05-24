@@ -198,8 +198,6 @@ class AccomplishmentsViewerWindow(Window):
         #self.update_views(None)
         self.notebook.set_current_page(2)
         self.tb_opportunities.set_active(True)
-
-        self.check_daemon_session()
         
     def trophy_received(self, message):
         """Called when a new trophy is detected on the system."""
@@ -282,6 +280,9 @@ class AccomplishmentsViewerWindow(Window):
             signal_name = "scriptrunner_finish")
         
         self.connected = True
+        
+        self.check_daemon_session()
+        
         return True
         
     def run_daemon(self):
