@@ -47,6 +47,9 @@ class PreferencesAccomplishmentsViewerDialog(PreferencesDialog):
         self.populate_settings()
 
     def populate_settings(self):
+        self.cb_daemonsessionstart.handler_block_by_func(self.cb_daemonsessionstart_toggled)
+        self.cb_hideu1bubbles.handler_block_by_func(self.cb_hideu1bubbles_toggled)
+            
         if self.libaccom.get_config_value("config", "daemon_sessionstart") == "true":
             self.cb_daemonsessionstart.set_active(True)
 
@@ -69,7 +72,10 @@ class PreferencesAccomplishmentsViewerDialog(PreferencesDialog):
         else:
             self.cb_hideu1bubbles.set_active(False)
 
-    def cb_daemonsessionstart(self, widget):
+        self.cb_daemonsessionstart.handler_unblock_by_func(self.cb_daemonsessionstart_toggled)
+        self.cb_hideu1bubbles.handler_unblock_by_func(self.cb_hideu1bubbles_toggled)
+        
+    def cb_daemonsessionstart_toggled(self, widget):
         if widget.get_active() == True:
             self.libaccom.enable_daemon_session_start()
         else:
