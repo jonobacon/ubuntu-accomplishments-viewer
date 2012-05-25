@@ -79,10 +79,6 @@ class AccomplishmentsViewerWindow(Window):
         # that we query throughout the application
         self.accomdb = []
 
-        # create a connection to the daemon
-        self.connected = False
-        self.connect_to_daemon()
-
         # reference to the Unity Launchcher
         self.launcher = Unity.LauncherEntry.get_for_desktop_id("accomplishments-viewer.desktop")
         self.newtrophies = 0
@@ -166,6 +162,10 @@ class AccomplishmentsViewerWindow(Window):
         self.cat_combo_renderer_text = Gtk.CellRendererText()
         self.opp_combo_cat.pack_start(self.cat_combo_renderer_text, True)
         self.opp_combo_cat.add_attribute(self.cat_combo_renderer_text, "text", 1)
+
+        # create a connection to the daemon
+        self.connected = False
+        self.connect_to_daemon()
 
         if self.connected is True:
             self.populate_opp_combos()
