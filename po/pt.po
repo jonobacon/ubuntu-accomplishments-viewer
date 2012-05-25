@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-24 15:17+0200\n"
-"PO-Revision-Date: 2012-05-22 16:19+0000\n"
-"Last-Translator: André Oliveira <Unknown>\n"
+"PO-Revision-Date: 2012-05-25 00:51+0000\n"
+"Last-Translator: Pedro Machado Santa <pedro.santa@gmail.com>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-24 21:36+0000\n"
+"X-Launchpad-Export-Date: 2012-05-25 05:17+0000\n"
 "X-Generator: Launchpad (build 15288)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
@@ -69,19 +69,20 @@ msgstr "Preferências dos Feitos"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:2
 msgid "Start background service on log in (recommended)"
-msgstr ""
+msgstr "Iniciar serviço de fundo no início da sessão"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:3
 msgid "<b>Accomplishments Background Service</b>"
-msgstr ""
+msgstr "<b>Serviço de Fundo de Proezas</b>"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:4
 msgid "Hide Ubuntu One file upload notifications (recommended)"
 msgstr ""
+"Esconder as notificações de envio de ficheiros do Ubuntu One (recomendado)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:5
 msgid "<b>Notification Bubbles</b>"
-msgstr ""
+msgstr "<b>Bolhas de Notificação</b>"
 
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:885
@@ -118,6 +119,8 @@ msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr ""
+"Esta oportunidade está bloqueada. Precisa de completar as seguintes "
+"oportunidades primeiro:"
 
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
@@ -201,6 +204,11 @@ msgid ""
 "\n"
 "Would you like to do this?"
 msgstr ""
+"É recomendado que o serviço de fundo de proezas arranque automaticamente "
+"quando inicia a sessão no seu computador. Assim não será necessário carregar "
+"esta aplicação para ver novos troféus que alcançou.\n"
+"\n"
+"Deseja fazer isto?"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
 msgid ""
@@ -213,6 +221,14 @@ msgid ""
 "You can disable this easily later if you change your mind by clicking "
 "<i>Edit -> Preferences</i>."
 msgstr ""
+"O serviço de fundo das Proezas é um programa que executa automaticamente e "
+"verifica se alguma das várias oportunidades foram realizadas.\n"
+"\n"
+"Recomendamos que seja iniciado automaticamente para que seja automaticamente "
+"notificado quando sejam alcançadas novas oportunidades.\n"
+"\n"
+"Poderá desactivar isto facilmente mais tarde se mudar de opinião clicando em "
+"<i>Editar -> Preferências</i>."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
 msgid "Learn more..."
@@ -220,7 +236,7 @@ msgstr "Aprender mais..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:17
 msgid "Accomplishments Service"
-msgstr ""
+msgstr "Serviço de Proezas"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid ""
