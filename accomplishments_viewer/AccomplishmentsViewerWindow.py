@@ -783,13 +783,9 @@ class AccomplishmentsViewerWindow(Window):
         elif configvalue == "false":
             pass
 
-    def daemon_session_yes(self, widget):
-        self.libaccom.enable_daemon_session_start()
+    def daemon_session_ok(self, widget):
+        self.libaccom.set_daemon_session_start(True)
         self.additional_daemon_session.set_visible(False)
-
-    def daemon_session_no(self, widget):
-        self.additional_daemon_session.set_visible(False)
-        self.libaccom.write_config_file_item("config", "daemon_sessionstart", "false")
 
     def edit_auth_info(self,widget):
         """Called when user clicks "Edit credentials" from notification"""
