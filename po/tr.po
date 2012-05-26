@@ -1,4 +1,4 @@
-# Danish translation for ubuntu-accomplishments-viewer
+# Turkish translation for ubuntu-accomplishments-viewer
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the ubuntu-accomplishments-viewer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-25 14:11-0700\n"
-"PO-Revision-Date: 2012-04-13 12:08+0000\n"
-"Last-Translator: Sune Keller <Unknown>\n"
-"Language-Team: Danish <da@li.org>\n"
+"PO-Revision-Date: 2012-05-25 11:29+0000\n"
+"Last-Translator: SSSelim <selimssevgi@gmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,15 +23,15 @@ msgstr ""
 
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
-msgstr "Bedriftsviser"
+msgstr ""
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "AccomplishmentsViewer application"
-msgstr "Bedriftsviser-applikation"
+msgstr "Başarı Görüntüleyicisi uygulaması"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
-msgstr "Yderligere oplysninger kræves..."
+msgstr ""
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:2
 msgid ""
@@ -39,19 +39,15 @@ msgid ""
 "accomplishments.</b>\n"
 "\n"
 "Please ensure that this data is accurate and up to date."
-msgstr ""
-"<b>De følgende oplysninger kræves for at bekræfte dine bedrifter.</b>\n"
-"\n"
-"Sørg venligst for at disse data er nøjagtige og ajourførte."
+msgstr "<b>Aşağıdaki bilgi başarınızı doğrulamak için gerekli.</b>"
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "GNU Public License"
-msgstr "GNU Public License"
+msgstr ""
 
 #: ../accomplishments_viewer/__init__.py:26
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
 msgstr ""
-"Vis fejlretningsbeskeder (-vv fejlretter også accomplishments_viewer_lib)"
 
 #: ../accomplishments_viewer/__init__.py:29
 msgid ""
@@ -61,7 +57,7 @@ msgstr ""
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
-msgstr "Bedriftsindstillinger"
+msgstr ""
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:2
 msgid "Start background service on log in (recommended)"
@@ -69,45 +65,45 @@ msgstr ""
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:3
 msgid "<b>Accomplishments Background Service</b>"
-msgstr ""
+msgstr "<b>Başarı Arkaplan Servisi</b>"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:4
 msgid "Hide Ubuntu One file upload notifications (recommended)"
-msgstr ""
+msgstr "Ubuntu One dosya yükleyicisi bildirilerini gizle(Önerilen)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:5
 msgid "<b>Notification Bubbles</b>"
-msgstr ""
+msgstr "<b>Bildirim Baloncukları</b>"
 
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:881
 msgid "Opportunity Information"
-msgstr "Oplysninger om muligheder"
+msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:889
 msgid "No information available."
-msgstr "Ingen information tilgængelig."
+msgstr "Hiç bilgi yok."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:899
 msgid "Getting Help"
-msgstr "Få hjælp"
+msgstr "Yardım Alma"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:908
 msgid "No help available."
-msgstr "Ingen tilgængelig hjælp."
+msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
 msgid "This opportunity is locked. You need to complete"
-msgstr "Denne mulighed er låst. Du skal færdiggøre"
+msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
 msgid "from"
-msgstr "fra"
+msgstr "kimden"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
 msgid "first"
-msgstr "først"
+msgstr "ilk"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:925
 msgid ""
@@ -118,23 +114,23 @@ msgstr ""
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:932
 msgid "This trophy <strong>was awarded</strong>"
-msgstr "Dette trofæ <strong>blev tildelt</strong>"
+msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
 msgid "on"
-msgstr "på"
+msgstr "açık"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:940
 msgid "using the following credentials"
-msgstr "ved hjælp af de følgende legitimationsoplysninger"
+msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
 msgid "This trophy has been verified"
-msgstr "Dette trofæ er blevet bekræftet"
+msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:957
 msgid "This opportunity requires verification"
-msgstr "Denne mulighed kræver bekræftelse"
+msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:967
 msgid "Accomplishment Details"
@@ -142,52 +138,52 @@ msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:989
 msgid "How to accomplish this opportunity"
-msgstr "Hvordan man opnår denne mulighed"
+msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1024
 msgid "Tips and Tricks"
-msgstr "Tips og tricks"
+msgstr "İpuçları ve İncelikler"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1034
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1054
 msgid "None."
-msgstr "Ingen."
+msgstr "Hiç biri"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1044
 msgid "Pitfalls To Avoid"
-msgstr "Faldgrupper man kan undgå"
+msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1067
 msgid "Further Reading"
-msgstr "Læs mere"
+msgstr "Daha fazla bilgi için..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
-msgstr "Bedriftsoplysninger"
+msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:2
 msgid "_File"
-msgstr "_Filer"
+msgstr "_Dosya"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "_Edit"
-msgstr "_Redigér"
+msgstr "_Düzenle"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Help"
-msgstr "_Hjælp"
+msgstr "_Yardım"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "Contents"
-msgstr "Indhold"
+msgstr "İçindekiler"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "My Trophies"
-msgstr "Mine trofæer"
+msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "Opportunities"
-msgstr "Muligheder"
+msgstr "Fırsatlar"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid ""
@@ -208,32 +204,29 @@ msgid ""
 "\n"
 "You can edit this data anytime later using: <i>Edit->Identification...</i>"
 msgstr ""
-"<b>Visse muligheder kræver yderligere oplysninger for at bekræfte deres "
-"færdiggørelse.</b>\n"
+"<b>Bazı fırsatların değerlendirildiğinin doğrulanması için fazladan bilgiye "
+"ihtiyaç duyulur.</b>\n"
 "\n"
-"Du kan redigere disse data på et hvilket som helst senere tidspunkt ved "
-"hjælp af: <i>Redigér->Identificering...</i>"
+"Bu daha sonra istediğin zaman değiştirebilirsin: <i>Değiştir-> Kimlik "
+"Doğrulama...</i>"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
 msgid "Edit credentials"
-msgstr "Redigér identifikationsoplysninger"
+msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
 msgid "Later"
-msgstr "Senere"
+msgstr "Daha Sonra"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:17
 msgid "Additional information required..."
-msgstr "Yderligere oplysninger kræves..."
+msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
 msgstr ""
-"Visse muligheder kræver bekræftelse når de er færdiggjort. For at gøre dette "
-"skal du bruge en Ubuntu One-konto og gå med til at få de muligheder "
-"bekræftet."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid ""
@@ -246,39 +239,31 @@ msgid ""
 "is the information you can see in Edit -> Identification - this information "
 "is not shared with others or given to companies."
 msgstr ""
-"Ubuntu One er online tjeneste, som er gratis at bruge til at synkronisere "
-"filer og andre elementer. Det integreres nydeligt i dit Ubuntu-skrivebord.\n"
-"\n"
-"Når Ubuntu Bedrifter bemærker, at du har færdiggjort noget nyt, bliver "
-"trofæet sendt til en bekræftelsesserver ved hjælp af Ubuntu One. Dette er en "
-"simpel, sikker måde at bruge, og de eneste oplysninger der deles med "
-"serveren er de oplysninger som du kan se i Redigér -> Identificering - disse "
-"oplysninger deles ikke med andre og gives heller ikke til firmaer."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "Learn more..."
-msgstr "Lær mere..."
+msgstr "Daha fazla bilgi..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "Ubuntu One account required"
-msgstr "Ubuntu One-konto kræves"
+msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Get Started"
-msgstr "Kom i gang"
+msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
 msgid "Show me"
-msgstr "Vis mig"
+msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
 msgid "accomplishments"
-msgstr "bedrifter"
+msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "opportunities for"
-msgstr "muligheder for"
+msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "Show Locked"
-msgstr "Vis låste"
+msgstr ""

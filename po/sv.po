@@ -7,19 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-05-24 15:17+0200\n"
-"PO-Revision-Date: 2012-05-01 05:44+0000\n"
-"Last-Translator: Daniel Nylander <yeager@ubuntu.com>\n"
+"POT-Creation-Date: 2012-05-25 14:11-0700\n"
+"PO-Revision-Date: 2012-05-25 12:38+0000\n"
+"Last-Translator: Alexander Fougner <fougner89@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-24 21:37+0000\n"
+"X-Launchpad-Export-Date: 2012-05-26 05:55+0000\n"
 "X-Generator: Launchpad (build 15288)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
-msgstr ""
+msgstr "Författare av kollektion:"
 
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
@@ -67,99 +67,99 @@ msgstr "Inställningar för bedrifter"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:2
 msgid "Start background service on log in (recommended)"
-msgstr ""
+msgstr "Starta bakgrundsprocess vid inloggning (rekommenderat)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:3
 msgid "<b>Accomplishments Background Service</b>"
-msgstr ""
+msgstr "<b>Backgrundsprocess för framsteg</b>"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:4
 msgid "Hide Ubuntu One file upload notifications (recommended)"
-msgstr ""
+msgstr "Dölj Ubuntu One-notifieringar för filuppladdning (rekommenderat)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:5
 msgid "<b>Notification Bubbles</b>"
-msgstr ""
+msgstr "<b>Notifikations-dialoger</b>"
 
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:885
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:881
 msgid "Opportunity Information"
 msgstr "Information om möjlighet"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:893
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:889
 msgid "No information available."
 msgstr "Ingen information tillgänglig."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:903
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:899
 msgid "Getting Help"
 msgstr "Få hjälp"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:912
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:908
 msgid "No help available."
 msgstr "Ingen hjälp finns tillgänglig."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:927
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
 msgid "This opportunity is locked. You need to complete"
 msgstr "Denna möjlighet är låst. Du måste färdigställa"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:927
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:932
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
 msgid "from"
 msgstr "från"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:927
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
 msgid "first"
 msgstr "första"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:929
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:925
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr ""
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:932
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "Denna trofé <strong>tilldelades</strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:940
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
 msgid "on"
 msgstr "den"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:944
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:940
 msgid "using the following credentials"
 msgstr "med följande uppgifter"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:954
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
 msgid "This trophy has been verified"
 msgstr "Denna trofé har verifierats"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:961
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:957
 msgid "This opportunity requires verification"
 msgstr "Denna möjlighet kräver verifiering"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:971
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:967
 msgid "Accomplishment Details"
 msgstr "Detaljer om bedrift"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:993
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:989
 msgid "How to accomplish this opportunity"
 msgstr "Hur man fullbordar denna möjlighet"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1028
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1024
 msgid "Tips and Tricks"
 msgstr "Tips och tricks"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1038
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1058
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1034
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1054
 msgid "None."
 msgstr "Inga."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1048
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1044
 msgid "Pitfalls To Avoid"
 msgstr "Fallgropar att undvika"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1071
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1067
 msgid "Further Reading"
 msgstr "Ytterligare läsning"
 
@@ -193,34 +193,17 @@ msgstr "Möjligheter"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid ""
-"It is recommended that the accomplishments background service is started "
-"automatically when you log into your computer. This way you won't need to "
-"load this application to see new trophies you have achieved.\n"
+"<b>The Accomplishments background service will be started when you log in. "
+"This is so your computer can check for accomplishments automatically.</b>\n"
 "\n"
-"Would you like to do this?"
+"You can disable this in <i>Edit</i> -> <i>Preferences</i> if required."
 msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
-msgid ""
-"The Accomplishments background service is a program that runs automatically "
-"and checks to see if various opportunities have been accomplished.\n"
-"\n"
-"We recommend this is started automatically so that you are automatically "
-"notified when new opportunities have been achieved.\n"
-"\n"
-"You can disable this easily later if you change your mind by clicking "
-"<i>Edit -> Preferences</i>."
-msgstr ""
-
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
-msgid "Learn more..."
-msgstr "Läs mer..."
-
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:17
 msgid "Accomplishments Service"
-msgstr ""
+msgstr "Process för Framsteg"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid ""
 "<b>Some opportunities need additional information to verify their "
 "completion.</b>\n"
@@ -233,19 +216,19 @@ msgstr ""
 "Du kan redigera detta data när som helst genom att: <i>Redigera-"
 ">Identifiering...</i>"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
 msgid "Edit credentials"
 msgstr "Redigera uppgifter"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
 msgid "Later"
 msgstr "Senare"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:17
 msgid "Additional information required..."
 msgstr "Ytterligare information krävs..."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
@@ -254,7 +237,7 @@ msgstr ""
 "Ubuntu One-konto för att göra detta och godkänna att dessa möjligheter "
 "verifieras."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid ""
 "Ubuntu One is a online service that is Free to use for syncing files and "
 "other features. It is neatly integrated into your Ubuntu desktop.\n"
@@ -276,26 +259,30 @@ msgstr ""
 "Identifiering - denna information delas inte med andra eller ges ut till "
 "företag."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
+msgid "Learn more..."
+msgstr "Läs mer..."
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "Ubuntu One account required"
 msgstr "Ubuntu One-konto krävs"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Get Started"
 msgstr "Kom igång"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:30
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
 msgid "Show me"
 msgstr "Visa mig"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
 msgid "accomplishments"
 msgstr "bedrifter"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "opportunities for"
 msgstr "möjligheter för"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "Show Locked"
 msgstr "Visa låsta"

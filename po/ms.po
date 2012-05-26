@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-05-24 15:17+0200\n"
-"PO-Revision-Date: 2012-05-21 14:54+0000\n"
+"POT-Creation-Date: 2012-05-25 14:11-0700\n"
+"PO-Revision-Date: 2012-05-25 23:22+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-24 21:36+0000\n"
+"X-Launchpad-Export-Date: 2012-05-26 05:55+0000\n"
 "X-Generator: Launchpad (build 15288)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
@@ -68,98 +68,99 @@ msgstr "Keutamaan Pencapaian"
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:2
 msgid "Start background service on log in (recommended)"
 msgstr ""
+"Mulakan perkhidmatan latar belakang bila mendaftar masuk (disarankan)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:3
 msgid "<b>Accomplishments Background Service</b>"
-msgstr ""
+msgstr "<b>Perkhidmatan Latar Belakang Pencapaian</b>"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:4
 msgid "Hide Ubuntu One file upload notifications (recommended)"
-msgstr ""
+msgstr "Sembunyi pemberitahuan muat naik gail Ubuntu One (disarankan)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:5
 msgid "<b>Notification Bubbles</b>"
-msgstr ""
+msgstr "<b>Bebuih Pemberitahuan</b>"
 
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:885
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:881
 msgid "Opportunity Information"
 msgstr "Maklumat Peluang"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:893
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:889
 msgid "No information available."
 msgstr "Tiada maklumat tersedia."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:903
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:899
 msgid "Getting Help"
 msgstr "Dapatkan Bantuan"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:912
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:908
 msgid "No help available."
 msgstr "Tiada bantuan tersedia."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:927
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
 msgid "This opportunity is locked. You need to complete"
 msgstr "Peluang ini dikunci. Anda perlu lengkapkan"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:927
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:932
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
 msgid "from"
 msgstr "dari"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:927
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
 msgid "first"
 msgstr "pertama"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:929
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:925
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
-msgstr ""
+msgstr "Peluang ini dikunci. Anda perlu selesaikan peluang berikut dahulu:"
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:932
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "Trofi ini <strong>telah dianugerahkan</strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:940
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
 msgid "on"
 msgstr "pada"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:944
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:940
 msgid "using the following credentials"
 msgstr "menggunakan kelayakan berikut"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:954
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
 msgid "This trophy has been verified"
 msgstr "Trofi ini telah disahkan"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:961
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:957
 msgid "This opportunity requires verification"
 msgstr "Peluang ini memerlukan pengesahan"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:971
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:967
 msgid "Accomplishment Details"
 msgstr "Perincian Pencapaian"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:993
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:989
 msgid "How to accomplish this opportunity"
 msgstr "Bagaimana hendak mencapai peluang ini"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1028
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1024
 msgid "Tips and Tricks"
 msgstr "Tip dan Trik"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1038
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1058
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1034
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1054
 msgid "None."
 msgstr "Tiada."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1048
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1044
 msgid "Pitfalls To Avoid"
 msgstr "Jurang Untuk DIhindari"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1071
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1067
 msgid "Further Reading"
 msgstr "Bacaan Lanjutan"
 
@@ -193,34 +194,22 @@ msgstr "Peluang"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid ""
-"It is recommended that the accomplishments background service is started "
-"automatically when you log into your computer. This way you won't need to "
-"load this application to see new trophies you have achieved.\n"
+"<b>The Accomplishments background service will be started when you log in. "
+"This is so your computer can check for accomplishments automatically.</b>\n"
 "\n"
-"Would you like to do this?"
+"You can disable this in <i>Edit</i> -> <i>Preferences</i> if required."
 msgstr ""
+"<b>Perkhidmatan latar belakang pencapaian akan dimulakan bila anda mendaftar "
+"masuk. Supaya komputer anda boleh menyemak pencapaian secara automatik.</b>\n"
+"\n"
+"Anda boleh lumpuhkan ia dalam <i>Sunting</i> -> <i>Keutamaan</i> jika "
+"diperlukan."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
-msgid ""
-"The Accomplishments background service is a program that runs automatically "
-"and checks to see if various opportunities have been accomplished.\n"
-"\n"
-"We recommend this is started automatically so that you are automatically "
-"notified when new opportunities have been achieved.\n"
-"\n"
-"You can disable this easily later if you change your mind by clicking "
-"<i>Edit -> Preferences</i>."
-msgstr ""
-
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
-msgid "Learn more..."
-msgstr "Pelajari lagi..."
-
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:17
 msgid "Accomplishments Service"
-msgstr ""
+msgstr "Perkhidmatan Pencapaian"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid ""
 "<b>Some opportunities need additional information to verify their "
 "completion.</b>\n"
@@ -233,19 +222,19 @@ msgstr ""
 "Anda boleh sunting data ini bila-bila masa menggunakan: <i>Sunting-"
 ">Pengenalan...</i>"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
 msgid "Edit credentials"
 msgstr "Sunting kelayakan"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
 msgid "Later"
 msgstr "Kemudian"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:17
 msgid "Additional information required..."
 msgstr "Maklumat tambahan diperlukan..."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
@@ -253,7 +242,7 @@ msgstr ""
 "Beberapa peluang memerlukan pengesahan bila selesai. Untuk buat ini anda "
 "perlukan akaun Ubuntu One dan setuju mempunyai peluang yang disahkan."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid ""
 "Ubuntu One is a online service that is Free to use for syncing files and "
 "other features. It is neatly integrated into your Ubuntu desktop.\n"
@@ -274,26 +263,30 @@ msgstr ""
 "pelayan adalah maklumat yang anda boleh lihat dalam Sunting -> Pengenalan - "
 "maklumat ini tidak dikongsi dengan orang lain atau diberikan kepada rakan."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
+msgid "Learn more..."
+msgstr "Pelajari lagi..."
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "Ubuntu One account required"
 msgstr "Akaun Ubuntu One diperlukan"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Get Started"
 msgstr "Mulakan"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:30
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
 msgid "Show me"
 msgstr "Tunjukkan pada saya"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
 msgid "accomplishments"
 msgstr "pencapaian"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "opportunities for"
 msgstr "peluang untuk"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "Show Locked"
 msgstr "Papar Dikunci"
