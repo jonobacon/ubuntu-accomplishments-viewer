@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-25 14:11-0700\n"
-"PO-Revision-Date: 2012-05-25 15:11+0000\n"
+"PO-Revision-Date: 2012-05-27 13:05+0000\n"
 "Last-Translator: Richard Somlói <ricsipontaz@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-26 05:55+0000\n"
+"X-Launchpad-Export-Date: 2012-05-28 05:56+0000\n"
 "X-Generator: Launchpad (build 15288)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
@@ -101,16 +101,16 @@ msgstr "Nem érhető el a súgó."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
 msgid "This opportunity is locked. You need to complete"
-msgstr "Ez a kihívás zárolva van. Az aktiváláshoz teljesítse ezt:"
+msgstr "Ez a kihívás zárolva van. Az aktiváláshoz teljesítse a(z)"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
 msgid "from"
-msgstr "Innen:"
+msgstr "kihívást a(z)"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
 msgid "first"
-msgstr ""
+msgstr "kihívásokból"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:925
 msgid ""
@@ -199,10 +199,15 @@ msgid ""
 "\n"
 "You can disable this in <i>Edit</i> -> <i>Preferences</i> if required."
 msgstr ""
+"<b>A kihívások háttérszolgáltatása elindul a bejelentkezést követően, így "
+"automatikusan ellenőrizve lesznek a teljesített kihívások</b>\n"
+"\n"
+"Ha gondolja, ez kikapcsolható a <i>Szerkesztés</i> -> <i>Beállítások</i> "
+"alatt."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
 msgid "Accomplishments Service"
-msgstr ""
+msgstr "Kihívás szolgáltatás"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid ""
@@ -251,11 +256,11 @@ msgstr ""
 "Az Ubuntu One egy ingyenes online fájlszinkronizáló szolgáltatás extra "
 "lehetőségekkel, szinte teljesen integrálva az Ubuntu rendszerében.\n"
 "\n"
-"When Ubuntu Accomplishments detects you have accomplished something new the "
-"trophy will be sent to a verification server using Ubuntu one. This is "
-"simple, safe to use, and the only information that is shared with the server "
-"is the information you can see in Edit -> Identification - this information "
-"is not shared with others or given to companies."
+"Amikor az Ubuntu Kihívások észleli, hogy teljesített egy kihívást, a "
+"kiszolgáló ellenőrzi azt, majd az Ubuntu One-on keresztül elküldi a trófeát. "
+"Ez egyszerű, biztonságos, a kiszolgálón csak azok az információk lesznek "
+"tárolva amiket a Szerkesztés -> Azonosítás menüpont alatt lát és ezeket sem "
+"osztjuk meg semmilyen harmadik féllel."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "Learn more..."
@@ -267,7 +272,7 @@ msgstr "Ubuntu One hozzáférés szükséges"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Get Started"
-msgstr "A kezdet"
+msgstr "Vágjunk bele"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
 msgid "Show me"
@@ -279,7 +284,7 @@ msgstr "eredmények"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "opportunities for"
-msgstr ""
+msgstr "kihívás közül"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "Show Locked"
