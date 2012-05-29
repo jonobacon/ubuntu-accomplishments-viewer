@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-25 14:11-0700\n"
-"PO-Revision-Date: 2012-05-26 07:12+0000\n"
-"Last-Translator: Paco Molinero <paco@byasl.com>\n"
+"PO-Revision-Date: 2012-05-28 12:20+0000\n"
+"Last-Translator: Fitoschido <fitoschido@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-27 05:15+0000\n"
-"X-Generator: Launchpad (build 15288)\n"
+"X-Launchpad-Export-Date: 2012-05-29 05:06+0000\n"
+"X-Generator: Launchpad (build 15316)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
@@ -102,7 +102,7 @@ msgstr "No hay ayuda disponible."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
 msgid "This opportunity is locked. You need to complete"
-msgstr "Esta oportunidad se encuentra bloqueada. Necesita completarla"
+msgstr "Esta oportunidad se encuentra bloqueada. Necesita completar"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
@@ -118,8 +118,8 @@ msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr ""
-"Esta oportunidad esta bloqueada, necesita completar la siguiente oportunidad "
-"primero:"
+"Esta oportunidad está bloqueada. Necesita completar las siguiente "
+"oportunidades primero:"
 
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:932
@@ -128,7 +128,7 @@ msgstr "Este trofeo <strong>fue otorgado</strong>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
 msgid "on"
-msgstr "activado"
+msgstr "el"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:940
 msgid "using the following credentials"
@@ -205,7 +205,7 @@ msgstr ""
 "<b>El servicio en segundo plano de Logros se iniciará cuando acceda. De esta "
 "manera su equipo comprobará los logros automáticamente.</b>\n"
 "\n"
-"Puede desactivarlo en <i>Editar</i> -> <i>Preferencias</i> si es necesario."
+"Puede desactivarlo en <i>Editar</i> ‣ <i>Preferencias</i> si es necesario."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
 msgid "Accomplishments Service"
