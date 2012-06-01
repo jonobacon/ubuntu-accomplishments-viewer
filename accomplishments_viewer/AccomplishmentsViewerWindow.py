@@ -220,6 +220,9 @@ class AccomplishmentsViewerWindow(Window):
         
         self.on_tb_mytrophies_clicked(None)
 
+    def on_help_askubuntu_activate(self, widget):
+        webbrowser.open("http://askubuntu.com/questions/ask?tags=accomplishments", True)
+
     def check_and_ask_for_info(self):
         """Asks the daemon for additional info needed, and asks
            the user for it, in case it has not been yet given"""
