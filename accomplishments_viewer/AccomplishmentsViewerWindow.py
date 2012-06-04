@@ -942,7 +942,7 @@ class AccomplishmentsViewerWindow(Window):
                 extrainfo = trophydata["needs-information"].split(" ")
                 html = html + ", " + _("using the following credentials").decode('utf-8') + ":</li><li><ul class='big'>"
                 for i in extrainfo:
-                    e = self.libaccom.get_extra_information(data["application"],i)
+                    e = self.libaccom.get_extra_information(accomID.split("/")[0],i)
                     html = html + "<li>" + e[0]["label"] + ": " + trophydata[i] + "</li>"
                 html = html + "</ul></li>"
             else:       
