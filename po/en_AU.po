@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-25 14:11-0700\n"
-"PO-Revision-Date: 2012-04-12 04:13+0000\n"
-"Last-Translator: Joel Pickett <jlkpcktt@gmail.com>\n"
+"PO-Revision-Date: 2012-06-03 07:54+0000\n"
+"Last-Translator: Joel Addison <jaddi27@gmail.com>\n"
 "Language-Team: English (Australia) <en_AU@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-26 05:55+0000\n"
-"X-Generator: Launchpad (build 15288)\n"
+"X-Launchpad-Export-Date: 2012-06-04 05:07+0000\n"
+"X-Generator: Launchpad (build 15353)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
-msgstr ""
+msgstr "Collection Authors:"
 
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
@@ -58,6 +58,8 @@ msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad'"
 msgstr ""
+"Display information about the provided accomplishment ID (e.g. 'ubuntu-"
+"community/registered-on-launchpad')"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
@@ -65,19 +67,19 @@ msgstr "Accomplishments Preferences"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:2
 msgid "Start background service on log in (recommended)"
-msgstr ""
+msgstr "Start background service on log in (recommended)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:3
 msgid "<b>Accomplishments Background Service</b>"
-msgstr ""
+msgstr "<b>Accomplishments Background Service</b>"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:4
 msgid "Hide Ubuntu One file upload notifications (recommended)"
-msgstr ""
+msgstr "Hide Ubuntu One file upload notifications (recommended)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:5
 msgid "<b>Notification Bubbles</b>"
-msgstr ""
+msgstr "<b>Notification Bubbles</b>"
 
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:881
@@ -114,6 +116,8 @@ msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr ""
+"This opportunity is locked. You need to complete the following opportunities "
+"first:"
 
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:932
@@ -138,7 +142,7 @@ msgstr "This opportunity requires verification"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:967
 msgid "Accomplishment Details"
-msgstr ""
+msgstr "Accomplishment Details"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:989
 msgid "How to accomplish this opportunity"
@@ -196,10 +200,14 @@ msgid ""
 "\n"
 "You can disable this in <i>Edit</i> -> <i>Preferences</i> if required."
 msgstr ""
+"<b>The Accomplishments background service will be started when you log in. "
+"This is so your computer can check for accomplishments automatically.</b>\n"
+"\n"
+"You can disable this in <i>Edit</i> -> <i>Preferences</i> if required."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
 msgid "Accomplishments Service"
-msgstr ""
+msgstr "Accomplishments Service"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid ""
