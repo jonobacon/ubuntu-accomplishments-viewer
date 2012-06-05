@@ -218,7 +218,8 @@ class AccomplishmentsViewerWindow(Window):
         else:
             self.launcher.set_property("count_visible", False)
         
-        self.on_tb_mytrophies_clicked(None)
+        if not self.notebook.get_current_page() == 0:
+            self.on_tb_mytrophies_clicked(None)
 
     def on_help_askubuntu_activate(self, widget):
         webbrowser.open("http://askubuntu.com/questions/ask?tags=accomplishments", True)
