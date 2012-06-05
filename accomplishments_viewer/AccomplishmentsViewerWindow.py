@@ -642,7 +642,7 @@ class AccomplishmentsViewerWindow(Window):
         # set up app
         self.opp_col_store.append(["", "All"])
 
-        for i in result:
+        for i in sorted(result):
             self.opp_col_store.append([i.keys()[0], i.values()[0]])
 
         self.opp_combo_col.set_model(self.opp_col_store)
@@ -666,7 +666,7 @@ class AccomplishmentsViewerWindow(Window):
 
         if col == "":
             self.opp_cat_store.clear()
-            self.opp_cat_store.append(["", "everything"])
+            self.opp_cat_store.append(["", _("everything")])
             
             self.subcat = None
 
@@ -679,9 +679,9 @@ class AccomplishmentsViewerWindow(Window):
 
             self.opp_cat_store.clear()
 
-            self.opp_cat_store.append(["", "everything"])
+            self.opp_cat_store.append(["", _("everything")])
 
-            for i in catlist:
+            for i in sorted(catlist):
                 self.opp_cat_store.append([i, i])
 
             self.do_not_react_on_cat_changes = False
