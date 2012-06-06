@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-requires accomplishments_viewer_window 1.0 -->
+  <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-local-resource-path ../media -->
   <object class="AccomplishmentsViewerWindow" id="accomplishments_viewer_window">
     <property name="height_request">270</property>
@@ -37,7 +37,6 @@
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="image">image4</property>
                         <property name="use_stock">False</property>
                         <accelerator key="n" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <signal name="activate" handler="check_accomplishments" swapped="no"/>
@@ -76,7 +75,6 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>
-                        <property name="image">image9</property>
                         <property name="use_stock">False</property>
                         <accelerator key="i" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <signal name="activate" handler="edit_identification_clicked" swapped="no"/>
@@ -154,7 +152,7 @@
                 <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">My Trophies</property>
                 <property name="use_underline">True</property>
-                <property name="stock_id">gtk-ok</property>
+                <property name="icon_widget">image9</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -171,7 +169,7 @@
                 <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">Opportunities</property>
                 <property name="use_underline">True</property>
-                <property name="stock_id">gtk-find</property>
+                <property name="icon_widget">image4</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -338,7 +336,8 @@ You can disable this in &lt;i&gt;Edit&lt;/i&gt; -&gt; &lt;i&gt;Preferences&lt;/i
                                 <property name="margin_right">10</property>
                                 <property name="margin_top">10</property>
                                 <property name="margin_bottom">10</property>
-                                <property name="stock">gtk-about</property>
+                                <property name="pixel_size">32</property>
+                                <property name="icon_name">user-available-symbolic</property>
                                 <property name="icon-size">3</property>
                               </object>
                               <packing>
@@ -706,7 +705,7 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                                       <object class="GtkImage" id="image1">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="stock">gtk-help</property>
+                                        <property name="stock">gtk-delete</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -841,18 +840,6 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                                     <property name="margin_top">5</property>
                                     <property name="margin_bottom">5</property>
                                     <property name="spacing">10</property>
-                                    <child>
-                                      <object class="GtkImage" id="image3">
-                                        <property name="visible">True</property>
-                                        <property name="can_focus">False</property>
-                                        <property name="stock">gtk-help</property>
-                                      </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">True</property>
-                                        <property name="position">0</property>
-                                      </packing>
-                                    </child>
                                     <child>
                                       <object class="GtkLabel" id="label7">
                                         <property name="visible">True</property>
@@ -1156,12 +1143,12 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
   <object class="GtkImage" id="image4">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="stock">gtk-execute</property>
+    <property name="pixbuf">../media/opportunities.png</property>
   </object>
   <object class="GtkImage" id="image9">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="stock">gtk-edit</property>
+    <property name="pixbuf">../media/mytrophies.png</property>
   </object>
   <object class="GtkListStore" id="mytrophies_list"/>
 </interface>
