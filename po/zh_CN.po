@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-05-25 14:11-0700\n"
+"POT-Creation-Date: 2012-06-05 16:49-0700\n"
 "PO-Revision-Date: 2012-05-26 09:17+0000\n"
 "Last-Translator: Tolbkni Kao <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-27 05:15+0000\n"
-"X-Generator: Launchpad (build 15288)\n"
+"X-Launchpad-Export-Date: 2012-06-06 05:33+0000\n"
+"X-Generator: Launchpad (build 15353)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
@@ -78,85 +78,90 @@ msgstr "隐藏 Ubuntu One 文件上传通知(推荐)"
 msgid "<b>Notification Bubbles</b>"
 msgstr "<b>通知气泡</b>"
 
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:669
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:682
+msgid "everything"
+msgstr ""
+
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:881
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:884
 msgid "Opportunity Information"
 msgstr "机会信息"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:889
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:892
 msgid "No information available."
 msgstr "无可用信息。"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:899
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:902
 msgid "Getting Help"
 msgstr "获取帮助"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:908
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:911
 msgid "No help available."
 msgstr "无可用帮助。"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
 msgid "This opportunity is locked. You need to complete"
 msgstr "该机会被锁定。您需要完成才行"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:931
 msgid "from"
 msgstr "来自"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
 msgid "first"
 msgstr "第一个"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:925
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr "该机会被锁定。您需要先完成下面的机会："
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:932
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:935
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "该奖杯<strong>已颁发</strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:939
 msgid "on"
 msgstr "在"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:940
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:943
 msgid "using the following credentials"
 msgstr "使用下面证件"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:953
 msgid "This trophy has been verified"
 msgstr "该奖杯已通过验证"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:957
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:960
 msgid "This opportunity requires verification"
 msgstr "本机会需要验证"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:967
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:970
 msgid "Accomplishment Details"
 msgstr "成就细节"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:989
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:992
 msgid "How to accomplish this opportunity"
 msgstr "如何完成该机会"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1024
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1027
 msgid "Tips and Tricks"
 msgstr "提示与技巧"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1034
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1054
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1037
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1057
 msgid "None."
 msgstr "无。"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1044
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1047
 msgid "Pitfalls To Avoid"
 msgstr "避免陷阱"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1067
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1070
 msgid "Further Reading"
 msgstr "深入阅读"
 
@@ -181,14 +186,18 @@ msgid "Contents"
 msgstr "内容"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
+msgid "Ask a question..."
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "My Trophies"
 msgstr "我的奖杯"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid "Opportunities"
 msgstr "机会"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:9
 msgid ""
 "<b>The Accomplishments background service will be started when you log in. "
 "This is so your computer can check for accomplishments automatically.</b>\n"
@@ -199,11 +208,11 @@ msgstr ""
 "\n"
 "你可以在<i>编辑</i> -> <i>首选项</i>中禁用。"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid "Accomplishments Service"
 msgstr "成就服务"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:13
 msgid ""
 "<b>Some opportunities need additional information to verify their "
 "completion.</b>\n"
@@ -214,25 +223,25 @@ msgstr ""
 "\n"
 "您稍后可用下面的选项编辑该数据：<i>编辑证书...</i>"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
 msgid "Edit credentials"
 msgstr "编辑证书"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:17
 msgid "Later"
 msgstr "稍候"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:17
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid "Additional information required..."
 msgstr "需要额外信息..."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
 msgstr "一些机会当完成时需要验证。为此，您需要一个 Ubuntu One 帐户并同意对这些机会进行验证。"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid ""
 "Ubuntu One is a online service that is Free to use for syncing files and "
 "other features. It is neatly integrated into your Ubuntu desktop.\n"
@@ -248,30 +257,30 @@ msgstr ""
 "当 Ubuntu 成就检测到您已完成某些新机会时，奖杯将自动发送到一台使用 Ubuntu One "
 "的验证服务器。此步骤简单、安全，服务器分享的单一信息就是您在 编辑 -> 验证 - 本信息 处看到的，它不会共享给他人或公司。"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "Learn more..."
 msgstr "了解更多..."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Ubuntu One account required"
 msgstr "需要 Ubuntu One 帐户"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
 msgid "Get Started"
 msgstr "开始"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
 msgid "Show me"
 msgstr "显示"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "accomplishments"
 msgstr "成就"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "opportunities for"
 msgstr "机会之"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid "Show Locked"
 msgstr "显示已锁定"

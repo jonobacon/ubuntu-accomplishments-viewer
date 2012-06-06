@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-05-25 14:11-0700\n"
+"POT-Creation-Date: 2012-06-05 16:49-0700\n"
 "PO-Revision-Date: 2012-06-04 21:36+0000\n"
 "Last-Translator: Rachid <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-05 05:20+0000\n"
+"X-Launchpad-Export-Date: 2012-06-06 05:33+0000\n"
 "X-Generator: Launchpad (build 15353)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
@@ -80,85 +80,90 @@ msgstr "Meldingen van Ubuntu One bestand-upload verbergen (aanbevolen)"
 msgid "<b>Notification Bubbles</b>"
 msgstr ""
 
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:669
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:682
+msgid "everything"
+msgstr ""
+
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:881
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:884
 msgid "Opportunity Information"
 msgstr "Mogelijkheden informatie"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:889
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:892
 msgid "No information available."
 msgstr "Geen informatie beschikbaar."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:899
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:902
 msgid "Getting Help"
 msgstr "Hulp verkrijgen"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:908
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:911
 msgid "No help available."
 msgstr "Geen hulp beschikbaar"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
 msgid "This opportunity is locked. You need to complete"
 msgstr "Deze kans is vergrendeld. Je moet deze nog volbrengen"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:931
 msgid "from"
 msgstr "van"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
 msgid "first"
 msgstr "eerste"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:925
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr ""
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:932
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:935
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "Deze trofee <strong>is uitgereikt</strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:939
 msgid "on"
 msgstr "aan"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:940
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:943
 msgid "using the following credentials"
 msgstr "gebruik de volgende aanmeldgegevens"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:953
 msgid "This trophy has been verified"
 msgstr "Deze trofee is geverifieerd"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:957
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:960
 msgid "This opportunity requires verification"
 msgstr "Deze kans vereist verificatie"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:967
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:970
 msgid "Accomplishment Details"
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:989
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:992
 msgid "How to accomplish this opportunity"
 msgstr "Hoe je deze kans kunt waarmaken"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1024
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1027
 msgid "Tips and Tricks"
 msgstr "Tips en Trucs"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1034
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1054
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1037
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1057
 msgid "None."
 msgstr "Geen."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1044
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1047
 msgid "Pitfalls To Avoid"
 msgstr "Te vermijden valkuilen"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1067
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1070
 msgid "Further Reading"
 msgstr "Zie verder"
 
@@ -183,14 +188,18 @@ msgid "Contents"
 msgstr "Inhoudsopgave"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
+msgid "Ask a question..."
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "My Trophies"
 msgstr "Mijn trofeeën"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid "Opportunities"
 msgstr "Kansen"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:9
 msgid ""
 "<b>The Accomplishments background service will be started when you log in. "
 "This is so your computer can check for accomplishments automatically.</b>\n"
@@ -198,11 +207,11 @@ msgid ""
 "You can disable this in <i>Edit</i> -> <i>Preferences</i> if required."
 msgstr ""
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid "Accomplishments Service"
 msgstr ""
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:13
 msgid ""
 "<b>Some opportunities need additional information to verify their "
 "completion.</b>\n"
@@ -214,19 +223,19 @@ msgstr ""
 "\n"
 "Je kunt dit later bewerken via: <i>Bewerken->Identificatie...</i>"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
 msgid "Edit credentials"
 msgstr "Aanmeldgegevens wijzigen"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:17
 msgid "Later"
 msgstr "Later"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:17
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid "Additional information required..."
 msgstr "Aanvullende gegevens vereist…"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
@@ -235,7 +244,7 @@ msgstr ""
 "je een Ubuntu One account nodig en zul je ermee moeten instemmen dat deze "
 "kansen gecontroleerd worden."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid ""
 "Ubuntu One is a online service that is Free to use for syncing files and "
 "other features. It is neatly integrated into your Ubuntu desktop.\n"
@@ -256,30 +265,30 @@ msgstr ""
 "Bewerken -> Identificatie - deze informatie wordt niet gedeeld met derden en "
 "wordt niet doorgegeven aan bedrijven."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "Learn more..."
 msgstr "Meer informatie..."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Ubuntu One account required"
 msgstr "Ubuntu One-account vereist"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
 msgid "Get Started"
 msgstr "Aan de slag"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
 msgid "Show me"
 msgstr "Laten zien"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "accomplishments"
 msgstr "realisaties"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "opportunities for"
 msgstr "kansen voor"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid "Show Locked"
 msgstr "Toon vergrendelde"
