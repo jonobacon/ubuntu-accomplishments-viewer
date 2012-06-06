@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-05-25 14:11-0700\n"
+"POT-Creation-Date: 2012-06-05 16:49-0700\n"
 "PO-Revision-Date: 2012-05-25 10:46+0000\n"
 "Last-Translator: Damir Jerovsek <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-26 05:55+0000\n"
-"X-Generator: Launchpad (build 15288)\n"
+"X-Launchpad-Export-Date: 2012-06-06 05:33+0000\n"
+"X-Generator: Launchpad (build 15353)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
@@ -82,37 +82,42 @@ msgstr "Skrij obvestila Ubuntu One za pošiljanje datotek (priporočeno)"
 msgid "<b>Notification Bubbles</b>"
 msgstr "<b>Obvestilni mehurčki</b>"
 
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:669
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:682
+msgid "everything"
+msgstr ""
+
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:881
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:884
 msgid "Opportunity Information"
 msgstr "Podatki o priložnosti"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:889
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:892
 msgid "No information available."
 msgstr "Podatki niso na voljo."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:899
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:902
 msgid "Getting Help"
 msgstr "Kako do pomoči"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:908
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:911
 msgid "No help available."
 msgstr "Pomoč ni na voljo"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
 msgid "This opportunity is locked. You need to complete"
 msgstr "Ta priložnost je zaklenjena. Najprej morate končati"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:931
 msgid "from"
 msgstr "od"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:923
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
 msgid "first"
 msgstr "prvi"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:925
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
@@ -120,48 +125,48 @@ msgstr ""
 "Ta priložnost je zaklenjena. Najprej morate dokončati naslednje priložnosti:"
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:932
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:935
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "Ta trofeja <strong>je bila dodeljena</strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:939
 msgid "on"
 msgstr "na"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:940
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:943
 msgid "using the following credentials"
 msgstr "z uporabo naslednjih poveril"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:953
 msgid "This trophy has been verified"
 msgstr "Ta trofeja je bila preverjena"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:957
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:960
 msgid "This opportunity requires verification"
 msgstr "To priložnost je potrebno preveriti"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:967
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:970
 msgid "Accomplishment Details"
 msgstr "Podrobnosti dosežka"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:989
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:992
 msgid "How to accomplish this opportunity"
 msgstr "Kako opraviti to priložnost"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1024
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1027
 msgid "Tips and Tricks"
 msgstr "Triki in nasveti"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1034
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1054
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1037
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1057
 msgid "None."
 msgstr "Brez."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1044
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1047
 msgid "Pitfalls To Avoid"
 msgstr "Pasti za izogibanje"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1067
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1070
 msgid "Further Reading"
 msgstr "Nadaljnje branje"
 
@@ -186,14 +191,18 @@ msgid "Contents"
 msgstr "Vsebina"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
+msgid "Ask a question..."
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "My Trophies"
 msgstr "Moje trofeje"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid "Opportunities"
 msgstr "Priložnosti"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:9
 msgid ""
 "<b>The Accomplishments background service will be started when you log in. "
 "This is so your computer can check for accomplishments automatically.</b>\n"
@@ -201,11 +210,11 @@ msgid ""
 "You can disable this in <i>Edit</i> -> <i>Preferences</i> if required."
 msgstr ""
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid "Accomplishments Service"
 msgstr "Storitev dosežkov"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:13
 msgid ""
 "<b>Some opportunities need additional information to verify their "
 "completion.</b>\n"
@@ -217,19 +226,19 @@ msgstr ""
 "\n"
 "Te podatke lahko kadarkoli urejate z uporabo<i>Uredi->Identifikacija ...</i>"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
 msgid "Edit credentials"
 msgstr "Uredi poverila"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:17
 msgid "Later"
 msgstr "Pozneje"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:17
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid "Additional information required..."
 msgstr "Manjkajo dodatni podatki ..."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid ""
 "Some opportunities require verification when completed. To do this you will "
 "need an Ubuntu One account and agree to have those opportunities verified."
@@ -237,7 +246,7 @@ msgstr ""
 "Nekatere priložnosti po dokončanju zahtevajo overitev. Za to boste "
 "potrebovali račun na Ubuntu One in potrditev overitve teh priložnosti."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid ""
 "Ubuntu One is a online service that is Free to use for syncing files and "
 "other features. It is neatly integrated into your Ubuntu desktop.\n"
@@ -257,30 +266,30 @@ msgstr ""
 "Uredi -> Identifikacija. Do teh podatkov nima dostopa nihče drug, prav tako "
 "se jih ne izroča tretjim osebam."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid "Learn more..."
 msgstr "Izvedi več ..."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid "Ubuntu One account required"
 msgstr "Zahtevan je račun Ubuntu One"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
 msgid "Get Started"
 msgstr "Za začetek"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
 msgid "Show me"
 msgstr "Pokaži mi"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "accomplishments"
 msgstr "dosežki"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "opportunities for"
 msgstr "priložnosti za"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid "Show Locked"
 msgstr "Pokaži zaklenjene"
