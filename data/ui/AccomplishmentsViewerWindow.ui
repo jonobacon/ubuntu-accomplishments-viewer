@@ -336,8 +336,8 @@ You can disable this in &lt;i&gt;Edit&lt;/i&gt; -&gt; &lt;i&gt;Preferences&lt;/i
                                 <property name="margin_right">10</property>
                                 <property name="margin_top">10</property>
                                 <property name="margin_bottom">10</property>
+                                <property name="pixbuf">../media/speechbubble.png</property>
                                 <property name="pixel_size">32</property>
-                                <property name="icon_name">user-available-symbolic</property>
                                 <property name="icon-size">3</property>
                               </object>
                               <packing>
