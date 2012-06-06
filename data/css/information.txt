@@ -315,3 +315,9 @@ div#howto h2{
 li.deps_child {
     margin-left: 50px;
 }
+
+div#howto i{
+  color: #fff;
+  float: left;
+  font-size: 3em;
+}
