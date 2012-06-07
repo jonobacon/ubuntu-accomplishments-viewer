@@ -370,18 +370,8 @@ class AccomplishmentsViewerWindow(Window):
         self.subcats_back.set_sensitive(True)
         self.subcats_forward.set_sensitive(True)
 
-    def get_subcats(self, col, cat):
-        """Get the subcats for the current category."""
-        
-        if col == "ubuntu-community" and cat == "Development":
-            return ["Programming", "Sponsorship Queue"]
-        elif col == "ubuntu-community" and cat == "LoCo Teams":
-            return ["Joining", "Creating Teams", "Events"]
-        else:
-            return ["Test One", "Test Two"]
-
-    def subcats_show(self, col, cat):
-        subcats = []
+    def subcats_show(self, col, cat):                    
+        tempcats = []
         if cat == "everything":
             self.subcats_container.hide()
         else:
@@ -389,27 +379,31 @@ class AccomplishmentsViewerWindow(Window):
             cats = self.libaccom.get_collection_categories(col)
             for c in cats:
                 if c == cat:
-                    subcats = cats[c]
+                    tempcats = cats[c]
+
+            finalcats = []
+            
+            for s in tempcats:
+                for i in self.accomdb:
+                    if i["collection"] == col and i["categories"][0] == cat + ":" + s and i["accomplished"] == False:
+                        finalcats.append(s)
+
+            # convert to a set to remove dupes
+            finalcats = set(finalcats)            
             
             # remove previous buttons from the button box
             for b in self.subcats_buttonbox.get_children():
                 self.subcats_buttonbox.remove(b)
             
             # fill the button box with the sub categories
-            for s in subcats:
+            for s in finalcats:
                 button = Gtk.Button(s)
                 button.props.relief = Gtk.ReliefStyle.NONE
                 button.connect("clicked", self.subcat_clicked, cat)
                 self.subcats_buttonbox.add(button)
                 button.show()
-
-            """button = Gtk.Button(_("Other"))
-            button.props.relief = Gtk.ReliefStyle.NONE
-            button.connect("clicked", self.subcat_clicked, cat)
-            self.subcats_buttonbox.add(button)
-            button.show()"""
             
-            if len(subcats) > 1:
+            if len(finalcats) > 0:
                 self.subcats_buttonbox.show_all()
                 self.subcats_container.show()
             else:
