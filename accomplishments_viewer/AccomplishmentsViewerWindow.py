@@ -1007,7 +1007,7 @@ class AccomplishmentsViewerWindow(Window):
 
         showtipspitfalls = False
         haspitfalls = False
-        haspitfalls = False
+        hastips = False
         
         if "tips" in data or "pitfalls" in data:
             try:
