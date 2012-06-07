@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-requires accomplishments_viewer_window 1.0 -->
+  <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-local-resource-path ../media -->
   <object class="AccomplishmentsViewerWindow" id="accomplishments_viewer_window">
     <property name="height_request">270</property>
@@ -486,11 +486,11 @@ You can edit this data anytime later using: &lt;i&gt;Edit-&gt;Identification...&
                                 <property name="margin_right">5</property>
                                 <property name="margin_top">5</property>
                                 <property name="margin_bottom">5</property>
-                                <property name="label" translatable="yes">Some opportunities require verification when completed. To do this you will need an Ubuntu One account and agree to have those opportunities verified.</property>
+                                <property name="label" translatable="yes">&lt;b&gt;Some opportunities require verification when completed. To do this you will need an Ubuntu One account and agree to have those opportunities verified.&lt;/b&gt;
+
+Press the button below to check if you have an Ubuntu One account. If you don't, we will take a second to sign-up; the account is free.</property>
+                                <property name="use_markup">True</property>
                                 <property name="wrap">True</property>
-                                <attributes>
-                                  <attribute name="weight" value="bold"/>
-                                </attributes>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -591,14 +591,13 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                             </child>
                             <child>
                               <object class="GtkButton" id="button2">
-                                <property name="label">gtk-cancel</property>
+                                <property name="label">Don't Use Ubuntu One</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">True</property>
                                 <property name="valign">start</property>
                                 <property name="use_action_appearance">False</property>
-                                <property name="use_stock">True</property>
                                 <property name="yalign">0.46000000834465027</property>
                                 <signal name="clicked" handler="cancel_register_with_u1" swapped="no"/>
                               </object>
