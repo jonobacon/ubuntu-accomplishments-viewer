@@ -394,6 +394,13 @@ class AccomplishmentsViewerWindow(Window):
             # remove previous buttons from the button box
             for b in self.subcats_buttonbox.get_children():
                 self.subcats_buttonbox.remove(b)
+
+            # Add 'All' button
+            button = Gtk.Button(_("All"))
+            button.props.relief = Gtk.ReliefStyle.NONE
+            button.connect("clicked", self.subcat_clicked, cat)
+            self.subcats_buttonbox.add(button)
+            button.show()
             
             # fill the button box with the sub categories
             for s in finalcats:
@@ -584,7 +591,7 @@ class AccomplishmentsViewerWindow(Window):
             self.subcats_container.hide()
         else:
             self.subcats_show(col, cat)        
-        
+
         # update opportunities
         for acc in self.accomdb:
             icon = None
@@ -607,9 +614,14 @@ class AccomplishmentsViewerWindow(Window):
 
                 if self.subcat is not None:
                     subcat = str(cat) + ":" + str(self.subcat)
-                    if acc["collection"] == col and list(acc["categories"])[0] == subcat:
-                        if not acc["locked"] or show_locked:
-                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                    if self.subcat == "All":
+                        if acc["collection"] == col and cat in list(acc["categories"])[0]:
+                            if not acc["locked"] or show_locked:
+                                oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                    else:
+                        if acc["collection"] == col and list(acc["categories"])[0] == subcat:
+                            if not acc["locked"] or show_locked:
+                                oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
                 else:
                     if acc["collection"] == col and cat in list(acc["categories"])[0]:
                         if not acc["locked"] or show_locked:
