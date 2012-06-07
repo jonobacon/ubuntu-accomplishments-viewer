@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-05 16:49-0700\n"
-"PO-Revision-Date: 2012-04-09 18:47+0000\n"
+"PO-Revision-Date: 2012-06-06 16:19+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-06 05:33+0000\n"
+"X-Launchpad-Export-Date: 2012-06-07 05:13+0000\n"
 "X-Generator: Launchpad (build 15353)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
@@ -23,15 +23,15 @@ msgstr ""
 
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
-msgstr ""
+msgstr "Saavutusten katselin"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "AccomplishmentsViewer application"
-msgstr ""
+msgstr "Sovellus saavutusten katselua varten"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
-msgstr ""
+msgstr "Tarvitaan lisätietoa..."
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:2
 msgid ""
@@ -57,33 +57,34 @@ msgstr ""
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
-msgstr ""
+msgstr "Saavutusten asetukset"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:2
 msgid "Start background service on log in (recommended)"
 msgstr ""
+"Käynnistä taustapalvelu sisäänkirjautumisen yhteydessä (suositellaan)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:3
 msgid "<b>Accomplishments Background Service</b>"
-msgstr ""
+msgstr "<b>Saavutusten taustapalvelu</b>"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:4
 msgid "Hide Ubuntu One file upload notifications (recommended)"
-msgstr ""
+msgstr "Piilota Ubuntu Onen tiedostonlähetysilmoitukset (suositellaan)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:5
 msgid "<b>Notification Bubbles</b>"
-msgstr ""
+msgstr "<b>Ilmoitukset</b>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:669
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:682
 msgid "everything"
-msgstr ""
+msgstr "kaikki"
 
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:884
 msgid "Opportunity Information"
-msgstr ""
+msgstr "Tietoa mahdollisuudesta"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:892
 msgid "No information available."
@@ -91,7 +92,7 @@ msgstr "Ei tietoja saatavilla."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:902
 msgid "Getting Help"
-msgstr ""
+msgstr "Avun saaminen"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:911
 msgid "No help available."
@@ -108,13 +109,15 @@ msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
 msgid "first"
-msgstr ""
+msgstr "ensin"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr ""
+"Tämä mahdollisuus on lukittu. Suorita seuraavat mahdollisuudet ennen tätä "
+"mahdollisuutta:"
 
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:935
@@ -135,7 +138,7 @@ msgstr "Tämä pokaali on vahvistettu"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:960
 msgid "This opportunity requires verification"
-msgstr ""
+msgstr "Tämä mahdollisuus vaatii vahvistusta"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:970
 msgid "Accomplishment Details"
@@ -143,7 +146,7 @@ msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:992
 msgid "How to accomplish this opportunity"
-msgstr ""
+msgstr "Kuinka suorittaa tämä mahdollisuus"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1027
 msgid "Tips and Tricks"
@@ -156,7 +159,7 @@ msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1047
 msgid "Pitfalls To Avoid"
-msgstr ""
+msgstr "Vältettäviä asioita"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1070
 msgid "Further Reading"
@@ -164,7 +167,7 @@ msgstr "Lisää luettavaa"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
-msgstr ""
+msgstr "Saavutustiedot"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:2
 msgid "_File"
@@ -184,7 +187,7 @@ msgstr "Sisältö"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "Ask a question..."
-msgstr ""
+msgstr "Esitä kysymys..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "My Trophies"
@@ -192,7 +195,7 @@ msgstr "Pokaalini"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid "Opportunities"
-msgstr ""
+msgstr "Mahdollisuudet"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:9
 msgid ""
@@ -204,7 +207,7 @@ msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid "Accomplishments Service"
-msgstr ""
+msgstr "Saavutuspalvelu"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:13
 msgid ""
@@ -262,12 +265,12 @@ msgstr "Näytä"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "accomplishments"
-msgstr ""
+msgstr "saavutukset"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "opportunities for"
-msgstr ""
+msgstr "-mahdollisuudet kohteelle"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid "Show Locked"
-msgstr ""
+msgstr "Näytä lukitut"
