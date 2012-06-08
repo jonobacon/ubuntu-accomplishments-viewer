@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-06-05 16:49-0700\n"
+"POT-Creation-Date: 2012-06-07 12:46-0700\n"
 "PO-Revision-Date: 2012-05-27 13:05+0000\n"
 "Last-Translator: Richard Somlói <ricsipontaz@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-07 05:13+0000\n"
-"X-Generator: Launchpad (build 15353)\n"
+"X-Launchpad-Export-Date: 2012-06-08 05:16+0000\n"
+"X-Generator: Launchpad (build 15376)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
@@ -82,90 +82,95 @@ msgstr "Ubuntu One fájlfeltöltési értesítések elrejtése (ajánlott)"
 msgid "<b>Notification Bubbles</b>"
 msgstr "<b>Értesítés buborékok</b>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:669
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:682
+#. Add 'All' button
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:399
+msgid "All"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:676
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:689
 msgid "everything"
 msgstr ""
 
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:884
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:891
 msgid "Opportunity Information"
 msgstr "Kihívás információk"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:892
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:899
 msgid "No information available."
 msgstr "Nem érhető el információ."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:902
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:909
 msgid "Getting Help"
 msgstr "Segítségkérés"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:911
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:918
 msgid "No help available."
 msgstr "Nem érhető el a súgó."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
 msgid "This opportunity is locked. You need to complete"
 msgstr "Ez a kihívás zárolva van. Az aktiváláshoz teljesítse a(z)"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:931
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:938
 msgid "from"
 msgstr "kihívást a(z)"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
 msgid "first"
 msgstr "kihívásokból"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:935
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr "A kihívás zárolva van. Először ezek közül teljesítsen egyet:"
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:935
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:942
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "Ezt a trófeát <strong>érdemelte ki.</strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:939
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:946
 msgid "on"
 msgstr "ekkor:"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:943
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
 msgid "using the following credentials"
 msgstr "A következő adatok lesznek használva"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:953
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:960
 msgid "This trophy has been verified"
 msgstr "Ez a trófea igazolva lett"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:960
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:967
 msgid "This opportunity requires verification"
 msgstr "Ez a kihívás ellenőrzést igényel"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:970
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:977
 msgid "Accomplishment Details"
 msgstr "Kihívás részletei"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:992
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:999
 msgid "How to accomplish this opportunity"
 msgstr "Hogyan teljesítse ezt a kihívást"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1027
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1034
 msgid "Tips and Tricks"
 msgstr "Tippek és trükkök"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1037
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1057
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1044
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1064
 msgid "None."
 msgstr "Nincs."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1047
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1054
 msgid "Pitfalls To Avoid"
 msgstr "Elkerülendő buktatók"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1070
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1077
 msgid "Further Reading"
 msgstr "További olvasnivaló"
 

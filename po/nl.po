@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-06-05 16:49-0700\n"
+"POT-Creation-Date: 2012-06-07 12:46-0700\n"
 "PO-Revision-Date: 2012-06-04 21:36+0000\n"
 "Last-Translator: Rachid <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-07 05:13+0000\n"
-"X-Generator: Launchpad (build 15353)\n"
+"X-Launchpad-Export-Date: 2012-06-08 05:16+0000\n"
+"X-Generator: Launchpad (build 15376)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
@@ -80,90 +80,95 @@ msgstr "Meldingen van Ubuntu One bestand-upload verbergen (aanbevolen)"
 msgid "<b>Notification Bubbles</b>"
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:669
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:682
+#. Add 'All' button
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:399
+msgid "All"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:676
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:689
 msgid "everything"
 msgstr ""
 
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:884
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:891
 msgid "Opportunity Information"
 msgstr "Mogelijkheden informatie"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:892
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:899
 msgid "No information available."
 msgstr "Geen informatie beschikbaar."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:902
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:909
 msgid "Getting Help"
 msgstr "Hulp verkrijgen"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:911
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:918
 msgid "No help available."
 msgstr "Geen hulp beschikbaar"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
 msgid "This opportunity is locked. You need to complete"
 msgstr "Deze kans is vergrendeld. Je moet deze nog volbrengen"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:931
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:938
 msgid "from"
 msgstr "van"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
 msgid "first"
 msgstr "eerste"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:935
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr ""
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:935
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:942
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "Deze trofee <strong>is uitgereikt</strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:939
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:946
 msgid "on"
 msgstr "aan"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:943
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
 msgid "using the following credentials"
 msgstr "gebruik de volgende aanmeldgegevens"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:953
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:960
 msgid "This trophy has been verified"
 msgstr "Deze trofee is geverifieerd"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:960
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:967
 msgid "This opportunity requires verification"
 msgstr "Deze kans vereist verificatie"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:970
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:977
 msgid "Accomplishment Details"
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:992
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:999
 msgid "How to accomplish this opportunity"
 msgstr "Hoe je deze kans kunt waarmaken"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1027
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1034
 msgid "Tips and Tricks"
 msgstr "Tips en Trucs"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1037
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1057
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1044
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1064
 msgid "None."
 msgstr "Geen."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1047
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1054
 msgid "Pitfalls To Avoid"
 msgstr "Te vermijden valkuilen"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1070
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1077
 msgid "Further Reading"
 msgstr "Zie verder"
 
