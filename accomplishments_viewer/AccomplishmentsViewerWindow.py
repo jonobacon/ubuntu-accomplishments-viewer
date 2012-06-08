@@ -297,10 +297,7 @@ class AccomplishmentsViewerWindow(Window):
         
         return True
 
-    def ubuntu_one_account_ready(self):
-        print "--------------------------------------------"
-        print "UBUNTU ONE READY"
-        
+    def ubuntu_one_account_ready(self):        
         if not self.has_u1 == 1:
             self.register_with_verif(None)
         
@@ -493,8 +490,6 @@ class AccomplishmentsViewerWindow(Window):
 
     def register_with_u1(self, widget):
         ver = self.libaccom.verify_ubuntu_one_account()
-        #webbrowser.open("http://one.ubuntu.com")
-        #self.verify_u1_account()
 
     def verify_u1_account(self):
         ver = self.libaccom.verify_ubuntu_one_account()
@@ -528,7 +523,6 @@ class AccomplishmentsViewerWindow(Window):
         self.complete_share_process()
 
     def complete_share_process(self):
-        print "complete share process"
         self.has_u1 = True
         self.libaccom.write_config_file_item("config", "has_u1", True)
         
@@ -543,7 +537,6 @@ class AccomplishmentsViewerWindow(Window):
         self.check_for_extra_info_required()
 
     def register_with_verif(self, widget):
-        print "reg with verif"
         self.u1_button.set_label("Account found, Approve verified trophies")
 
         if widget is not None:

@@ -591,7 +591,7 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                             </child>
                             <child>
                               <object class="GtkButton" id="button2">
-                                <property name="label">Don't Use Ubuntu One</property>
+                                <property name="label" translatable="yes">Don't Use Ubuntu One</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
