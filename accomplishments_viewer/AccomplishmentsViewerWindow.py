@@ -258,6 +258,7 @@ class AccomplishmentsViewerWindow(Window):
         bus = dbus.SessionBus()
         
         try:
+            print "trying"
             object  = bus.get_object("org.ubuntu.accomplishments",
                 "/org/ubuntu/accomplishments")
             object.connect_to_signal("trophy_recieved",
@@ -269,6 +270,9 @@ class AccomplishmentsViewerWindow(Window):
             object.connect_to_signal("scriptrunner_finish",
                 self.scriptrunner_finish,
                 dbus_interface="org.ubuntu.accomplishments")
+            object.connect_to_signal("ubuntu_one_account_ready",
+                self.ubuntu_one_account_ready,
+                dbus_interface="org.ubuntu.accomplishments", arg0="Hello")
         except dbus.DBusException:
             traceback.print_exc()
             print usage
@@ -283,12 +287,19 @@ class AccomplishmentsViewerWindow(Window):
         bus.add_signal_receiver(self.scriptrunner_finish,
             dbus_interface = "org.ubuntu.accomplishments",
             signal_name = "scriptrunner_finish")
+        bus.add_signal_receiver(self.ubuntu_one_account_ready,
+            dbus_interface = "org.ubuntu.accomplishments",
+            signal_name = "ubuntu_one_account_ready")
         
         self.connected = True
         
         self.check_daemon_session()
         
         return True
+
+    def ubuntu_one_account_ready(self):        
+        if not self.has_u1 == 1:
+            self.register_with_verif(None)
         
     def run_daemon(self):
         """Starts the daemon process"""                
@@ -472,14 +483,13 @@ class AccomplishmentsViewerWindow(Window):
         self.statusbox.hide()
 
     def approve_u1_trophies(self):
-        self.u1_button.set_label("Register with Ubuntu One")
+        self.u1_button.set_label("Check for Ubuntu One account")
         self.u1_button_sig = self.u1_button.connect("clicked", self.register_with_u1)
         self.verif_box.show_all()
         self.additional_ubuntu1.set_visible(True)
 
     def register_with_u1(self, widget):
-        webbrowser.open("http://one.ubuntu.com")
-        self.verify_u1_account()
+        ver = self.libaccom.verify_ubuntu_one_account()
 
     def verify_u1_account(self):
         ver = self.libaccom.verify_ubuntu_one_account()
@@ -490,7 +500,6 @@ class AccomplishmentsViewerWindow(Window):
             self.u1_button_sig = self.u1_button.connect("clicked", self.register_with_verif)
             self.has_u1 = True
             self.libaccom.write_config_file_item("config", "has_u1", True)
-
         else:
             pass
 
@@ -505,12 +514,18 @@ class AccomplishmentsViewerWindow(Window):
 
         res = self.libaccom.register_trophy_dir(trophydir)
 
-        if res == 1:
-            self.u1_button.set_label("Successfully shared. Click here to continue...")
-            self.u1_button.disconnect(self.u1_button_sig)
-            self.u1_button_sig = self.u1_button.connect("clicked", self.complete_share_process)
+        #if res == 1:
+        #    print "foo"
+        #self.u1_button.set_label("Successfully shared. Click here to continue...")
+        #self.u1_button.disconnect(self.u1_button_sig)
+        #self.u1_button_sig = self.u1_button.connect("clicked", self.complete_share_process)
+        #self.u1_button.show()
+        self.complete_share_process()
 
-    def complete_share_process(self, widget):
+    def complete_share_process(self):
+        self.has_u1 = True
+        self.libaccom.write_config_file_item("config", "has_u1", True)
+        
         self.additional_ubuntu1.set_visible(False)
 
         # ACCOMPLISHMENT: Editing Credentials
@@ -522,7 +537,7 @@ class AccomplishmentsViewerWindow(Window):
         self.check_for_extra_info_required()
 
     def register_with_verif(self, widget):
-        self.u1_button.set_label("Approve verified trophies")
+        self.u1_button.set_label("Account found, Approve verified trophies")
 
         if widget is not None:
             self.u1_button.disconnect(self.u1_button_sig)
