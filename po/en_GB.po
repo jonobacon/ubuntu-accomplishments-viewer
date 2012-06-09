@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-06-07 12:46-0700\n"
+"POT-Creation-Date: 2012-06-08 10:40-0700\n"
 "PO-Revision-Date: 2012-06-03 07:54+0000\n"
 "Last-Translator: Joel Addison <jaddi27@gmail.com>\n"
 "Language-Team: English (United Kingdom) <en_GB@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-08 05:16+0000\n"
+"X-Launchpad-Export-Date: 2012-06-09 06:21+0000\n"
 "X-Generator: Launchpad (build 15376)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
@@ -82,46 +82,46 @@ msgid "<b>Notification Bubbles</b>"
 msgstr "<b>Notification Bubbles</b>"
 
 #. Add 'All' button
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:399
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:410
 msgid "All"
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:676
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:689
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:691
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:704
 msgid "everything"
 msgstr ""
 
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:891
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:906
 msgid "Opportunity Information"
 msgstr "Opportunity Information"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:899
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:914
 msgid "No information available."
 msgstr "No information available."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:909
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:924
 msgid "Getting Help"
 msgstr "Getting Help"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:918
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
 msgid "No help available."
 msgstr "No help available."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:948
 msgid "This opportunity is locked. You need to complete"
 msgstr "This opportunity is locked. You need to complete"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:938
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:948
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:953
 msgid "from"
 msgstr "from"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:948
 msgid "first"
 msgstr "first"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:935
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
@@ -130,48 +130,48 @@ msgstr ""
 "first:"
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:942
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:957
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "This trophy <strong>was awarded</strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:946
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:961
 msgid "on"
 msgstr "on"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:965
 msgid "using the following credentials"
 msgstr "using the following credentials"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:960
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:975
 msgid "This trophy has been verified"
 msgstr "This trophy has been verified"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:967
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:982
 msgid "This opportunity requires verification"
 msgstr "This opportunity requires verification"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:977
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:992
 msgid "Accomplishment Details"
 msgstr "নিষ্পাদন বিবরণ"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:999
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1014
 msgid "How to accomplish this opportunity"
 msgstr "How to accomplish this opportunity"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1034
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1049
 msgid "Tips and Tricks"
 msgstr "Tips and Tricks"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1044
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1064
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1059
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1079
 msgid "None."
 msgstr "None."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1054
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1069
 msgid "Pitfalls To Avoid"
 msgstr "Pitfalls To Avoid"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1077
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1092
 msgid "Further Reading"
 msgstr "Further Reading"
 
@@ -249,13 +249,15 @@ msgstr "Additional information required..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid ""
-"Some opportunities require verification when completed. To do this you will "
-"need an Ubuntu One account and agree to have those opportunities verified."
+"<b>Some opportunities require verification when completed. To do this you "
+"will need an Ubuntu One account and agree to have those opportunities "
+"verified.</b>\n"
+"\n"
+"Press the button below to check if you have an Ubuntu One account. If you "
+"don't, we will take a second to sign-up; the account is free."
 msgstr ""
-"Some opportunities require verification when completed. To do this you will "
-"need an Ubuntu One account and agree to have those opportunities verified."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid ""
 "Ubuntu One is a online service that is Free to use for syncing files and "
 "other features. It is neatly integrated into your Ubuntu desktop.\n"
@@ -275,30 +277,34 @@ msgstr ""
 "is the information you can see in Edit -> Identification - this information "
 "is not shared with others or given to companies."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
 msgid "Learn more..."
 msgstr "Learn more..."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
+msgid "Don't Use Ubuntu One"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "Ubuntu One account required"
 msgstr "Ubuntu One account required"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "Get Started"
 msgstr "Get Started"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid "Show me"
 msgstr "Show me"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:30
 msgid "accomplishments"
 msgstr "accomplishments"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
 msgid "opportunities for"
 msgstr "opportunities for"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
 msgid "Show Locked"
 msgstr "Show Locked"

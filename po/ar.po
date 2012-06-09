@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-06-07 12:46-0700\n"
+"POT-Creation-Date: 2012-06-08 10:40-0700\n"
 "PO-Revision-Date: 2012-05-11 22:18+0000\n"
 "Last-Translator: Ahmed Shokry <Unknown>\n"
 "Language-Team: Arabic <ar@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-08 05:16+0000\n"
+"X-Launchpad-Export-Date: 2012-06-09 06:21+0000\n"
 "X-Generator: Launchpad (build 15376)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
@@ -79,94 +79,94 @@ msgid "<b>Notification Bubbles</b>"
 msgstr ""
 
 #. Add 'All' button
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:399
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:410
 msgid "All"
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:676
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:689
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:691
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:704
 msgid "everything"
 msgstr ""
 
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:891
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:906
 msgid "Opportunity Information"
 msgstr "معلومات عن الفرص"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:899
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:914
 msgid "No information available."
 msgstr "لا تتوفر أي معلومات."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:909
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:924
 msgid "Getting Help"
 msgstr "الحصول على مساعدة"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:918
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
 msgid "No help available."
 msgstr "لا تتوفر أي مساعدة"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:948
 msgid "This opportunity is locked. You need to complete"
 msgstr "فرصة مقفلة . تحتاج إلى إكمال"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:938
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:948
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:953
 msgid "from"
 msgstr "من"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:948
 msgid "first"
 msgstr "الأوّل"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:935
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr ""
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:942
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:957
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "هذه الجائزة </strong>منحت<strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:946
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:961
 msgid "on"
 msgstr "بتاريخ"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:965
 msgid "using the following credentials"
 msgstr "باستخدام عناصر اعتماد المصداقية التالية"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:960
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:975
 msgid "This trophy has been verified"
 msgstr "تم التحقق من هذا الكأس"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:967
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:982
 msgid "This opportunity requires verification"
 msgstr "يتطلب التحقق من هذه الفرصة"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:977
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:992
 msgid "Accomplishment Details"
 msgstr "تفاصيل الإنجاز"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:999
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1014
 msgid "How to accomplish this opportunity"
 msgstr "كيفية إنجاز هذه الفرصة"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1034
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1049
 msgid "Tips and Tricks"
 msgstr "نصائح وخدع"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1044
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1064
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1059
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1079
 msgid "None."
 msgstr "لا احد"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1054
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1069
 msgid "Pitfalls To Avoid"
 msgstr "لتجنب المزالق"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1077
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1092
 msgid "Further Reading"
 msgstr "لمزيد من القراءة"
 
@@ -240,13 +240,15 @@ msgstr "معلومات إضافية مطلوبة ..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid ""
-"Some opportunities require verification when completed. To do this you will "
-"need an Ubuntu One account and agree to have those opportunities verified."
+"<b>Some opportunities require verification when completed. To do this you "
+"will need an Ubuntu One account and agree to have those opportunities "
+"verified.</b>\n"
+"\n"
+"Press the button below to check if you have an Ubuntu One account. If you "
+"don't, we will take a second to sign-up; the account is free."
 msgstr ""
-"بعض الفرص تتطلب التحقق عند اكتمالها. للقيام بذلك ستحتاج إلى حساب \"أوبونتو "
-"وان\" وأن توافق على أن يكون التحقق من تلك الفرص."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid ""
 "Ubuntu One is a online service that is Free to use for syncing files and "
 "other features. It is neatly integrated into your Ubuntu desktop.\n"
@@ -266,30 +268,34 @@ msgstr ""
 "تراها في تحرير -> تحديد الهوية لا تتم مشاركة هذه المعلومات مع الآخرين أو  "
 "للشركات."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
 msgid "Learn more..."
 msgstr "اعرف المزيد..."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
+msgid "Don't Use Ubuntu One"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "Ubuntu One account required"
 msgstr "حساب أوبونتو وان مطلوب"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "Get Started"
 msgstr "انطلاقة"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid "Show me"
 msgstr "أرني"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:30
 msgid "accomplishments"
 msgstr "الإنجازات"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
 msgid "opportunities for"
 msgstr "الفرص المتاحة ل"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
 msgid "Show Locked"
 msgstr "عرض مغلق"

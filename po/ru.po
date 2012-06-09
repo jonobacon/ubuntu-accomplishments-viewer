@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-06-07 12:46-0700\n"
+"POT-Creation-Date: 2012-06-08 10:40-0700\n"
 "PO-Revision-Date: 2012-04-29 13:32+0000\n"
 "Last-Translator: Artem Popov <artfwo@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-08 05:16+0000\n"
+"X-Launchpad-Export-Date: 2012-06-09 06:21+0000\n"
 "X-Generator: Launchpad (build 15376)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
@@ -81,94 +81,94 @@ msgid "<b>Notification Bubbles</b>"
 msgstr ""
 
 #. Add 'All' button
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:399
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:410
 msgid "All"
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:676
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:689
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:691
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:704
 msgid "everything"
 msgstr ""
 
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:891
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:906
 msgid "Opportunity Information"
 msgstr "Информация о возможностях"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:899
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:914
 msgid "No information available."
 msgstr "Информация недоступна."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:909
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:924
 msgid "Getting Help"
 msgstr "Получение помощи"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:918
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
 msgid "No help available."
 msgstr "Помощь недоступна."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:948
 msgid "This opportunity is locked. You need to complete"
 msgstr "Эта возможность заблокирована. Вам необходимо завершить"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:938
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:948
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:953
 msgid "from"
 msgstr "от"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:948
 msgid "first"
 msgstr "первые"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:935
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr ""
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:942
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:957
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "Этот трофей <strong>был получен</strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:946
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:961
 msgid "on"
 msgstr "на"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:965
 msgid "using the following credentials"
 msgstr "используя следующие данные входа"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:960
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:975
 msgid "This trophy has been verified"
 msgstr "Этот трофей уже проверен"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:967
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:982
 msgid "This opportunity requires verification"
 msgstr "Необходима проверка этой возможности"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:977
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:992
 msgid "Accomplishment Details"
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:999
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1014
 msgid "How to accomplish this opportunity"
 msgstr "Как исполнить эту возможность"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1034
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1049
 msgid "Tips and Tricks"
 msgstr "Полезные советы"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1044
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1064
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1059
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1079
 msgid "None."
 msgstr "Нет."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1054
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1069
 msgid "Pitfalls To Avoid"
 msgstr "Чтобы избежать ошибок"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1077
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1092
 msgid "Further Reading"
 msgstr "Дополнительная информация"
 
@@ -242,13 +242,15 @@ msgstr "Необходима дополнительная информация�
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid ""
-"Some opportunities require verification when completed. To do this you will "
-"need an Ubuntu One account and agree to have those opportunities verified."
+"<b>Some opportunities require verification when completed. To do this you "
+"will need an Ubuntu One account and agree to have those opportunities "
+"verified.</b>\n"
+"\n"
+"Press the button below to check if you have an Ubuntu One account. If you "
+"don't, we will take a second to sign-up; the account is free."
 msgstr ""
-"Достижение некоторых возможностей нужно проверить. Для этого вам нужен "
-"аккаунт Ubuntu One и согласие на проверку достижения возможностей."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid ""
 "Ubuntu One is a online service that is Free to use for syncing files and "
 "other features. It is neatly integrated into your Ubuntu desktop.\n"
@@ -268,30 +270,34 @@ msgstr ""
 "Правка→Идентификация. Эта информация не становится публичной и не "
 "раскрывается другим людям или компаниям."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
 msgid "Learn more..."
 msgstr "Узнать больше..."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
+msgid "Don't Use Ubuntu One"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "Ubuntu One account required"
 msgstr "Необходим аккаунт Ubuntu One"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "Get Started"
 msgstr "Начнём!"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid "Show me"
 msgstr "Показать"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:30
 msgid "accomplishments"
 msgstr "достижения"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
 msgid "opportunities for"
 msgstr "возможности для"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
 msgid "Show Locked"
 msgstr "Показать заблокированные"
