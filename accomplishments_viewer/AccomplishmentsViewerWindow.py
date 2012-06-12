@@ -799,7 +799,19 @@ class AccomplishmentsViewerWindow(Window):
 
         if len(infoneeded) is not 0:
             # kick of the process of gathering the information needed
-            self.additional_info_req.set_visible(True)
+            try:
+                seen = self.libaccom.get_config_value("config", "extrainfo_seen")
+                
+                print "------------------"
+                print seen
+                if seen == "NoOption" or seen == 0:
+                    self.additional_info_req.set_visible(True)
+                    self.libaccom.write_config_file_item("config", "extrainfo_seen", 1)
+                else:
+                    return
+            except:
+                self.additional_info_req.set_visible(True)
+                self.libaccom.write_config_file_item("config", "extrainfo_seen", 1)
 
     def check_daemon_session(self):
         configvalue = self.libaccom.get_config_value("config", "daemon_sessionstart")
