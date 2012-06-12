@@ -258,7 +258,6 @@ class AccomplishmentsViewerWindow(Window):
         bus = dbus.SessionBus()
         
         try:
-            print "trying"
             object  = bus.get_object("org.ubuntu.accomplishments",
                 "/org/ubuntu/accomplishments")
             object.connect_to_signal("trophy_recieved",
