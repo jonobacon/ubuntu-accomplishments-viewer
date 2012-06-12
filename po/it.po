@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-08 10:40-0700\n"
-"PO-Revision-Date: 2012-05-28 19:44+0000\n"
-"Last-Translator: Mattia Rizzolo <mapreri@gmail.com>\n"
+"PO-Revision-Date: 2012-06-11 09:49+0000\n"
+"Last-Translator: leonardo corato <leocor@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-09 06:21+0000\n"
-"X-Generator: Launchpad (build 15376)\n"
+"X-Launchpad-Export-Date: 2012-06-12 05:39+0000\n"
+"X-Generator: Launchpad (build 15389)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
@@ -86,12 +86,12 @@ msgstr "<b>Bolle di notifica</b>"
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:410
 msgid "All"
-msgstr ""
+msgstr "Tutto"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:691
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:704
 msgid "everything"
-msgstr ""
+msgstr "tutto"
 
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:906
@@ -198,7 +198,7 @@ msgstr "Contenuti"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "Ask a question..."
-msgstr ""
+msgstr "Fai una domanda..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "My Trophies"
@@ -260,6 +260,12 @@ msgid ""
 "Press the button below to check if you have an Ubuntu One account. If you "
 "don't, we will take a second to sign-up; the account is free."
 msgstr ""
+"<b> Alcune opportunità richiedono una verifica quando sono state completate. "
+"Per far ciò ti serve un account Ubuntu One e accettare di aver una verifica "
+"su queste opportunità.</b>\n"
+"\n"
+"Premi il tasto sotto per controllare se hai un account Ubuntu One. Se non ce "
+"l'hai, ci vorrà un secondo per registrati; l'account è gratuito."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid ""
@@ -289,7 +295,7 @@ msgstr "Per saperne di più..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
 msgid "Don't Use Ubuntu One"
-msgstr ""
+msgstr "Non usare Ubuntu One."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "Ubuntu One account required"
