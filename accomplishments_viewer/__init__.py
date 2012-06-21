@@ -26,7 +26,7 @@ def parse_options():
         help=_("Show debug messages (-vv debugs accomplishments_viewer_lib also)").decode('utf-8'))
     parser.add_option(
         "-a", "--accomplishment", action="store", dest="id",
-        help=_("Display information about the provided accomplishment ID (e.g. 'ubuntu-community/registered-on-launchpad'").decode('utf-8'))
+        help=_("Display information about the provided accomplishment ID (e.g. 'ubuntu-community/registered-on-launchpad')").decode('utf-8'))
     (options, args) = parser.parse_args()
     
     set_up_logging(options)
