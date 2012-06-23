@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-08 10:40-0700\n"
-"PO-Revision-Date: 2012-06-04 22:40+0000\n"
-"Last-Translator: Rafael Neri <Unknown>\n"
+"PO-Revision-Date: 2012-06-23 05:07+0000\n"
+"Last-Translator: Thiago Abreu <Unknown>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-09 06:21+0000\n"
-"X-Generator: Launchpad (build 15376)\n"
+"X-Launchpad-Export-Date: 2012-06-23 05:25+0000\n"
+"X-Generator: Launchpad (build 15461)\n"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
@@ -86,7 +86,7 @@ msgstr "<b>Bolhas de notificação</b>"
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:410
 msgid "All"
-msgstr ""
+msgstr "Todas"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:691
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:704
@@ -199,7 +199,7 @@ msgstr "Conteúdo"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "Ask a question..."
-msgstr ""
+msgstr "Obter ajuda on-line..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "My Trophies"
@@ -289,7 +289,7 @@ msgstr "Saiba mais..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
 msgid "Don't Use Ubuntu One"
-msgstr ""
+msgstr "Não Usar o Ubuntu One"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "Ubuntu One account required"
