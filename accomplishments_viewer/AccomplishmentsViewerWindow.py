@@ -718,7 +718,7 @@ class AccomplishmentsViewerWindow(Window):
         """Called when Check Accomplishments is selected in the interface."""
         
         self.libaccom.run_scripts(True)
-        self.notebook.set_current_page(2)
+        #self.notebook.set_current_page(2)
 
     def opp_cat_updated(self, widget):
         if self.do_not_react_on_cat_changes:
