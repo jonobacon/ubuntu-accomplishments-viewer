@@ -3,6 +3,8 @@
 # This file is in the public domain
 ### END LICENSE
 
+from gi.repository import GwibberGtk
+
 import gettext, locale
 from gettext import gettext as _
 from accomplishments.util.paths import locale_dir
@@ -442,11 +444,29 @@ class AccomplishmentsViewerWindow(Window):
         new = h.get_value() + h.get_step_increment()
         h.set_value(new)
         self.subcats_scroll.set_hadjustment(h)
+
+    def show_gwibber_widget(self):
+        entry = GwibberGtk.Entry()
+        entry.text_view.get_buffer().set_text('my string')
+        messagewindow = Gtk.Window()
+        messagewindow.set_title("Share Accomplishment")
+        messagewindow.set_icon_name("gwibber")
+        messagewindow.resize(400, 150)
+        messagewindow.add(entry)
+        messagewindow.show_all()
+     
         
     def webkit_link_clicked(self, view, frame, net_req, nav_act, pol_dec):
         """Load a link from the webkit view in an external system browser."""
-        
+
         uri=net_req.get_uri()
+
+        if uri == 'file:///#gwibber-share':
+            gwibberPopup = self.show_gwibber_widget()
+
+        if uri.startswith('about:'):
+            return False
+
         if uri.startswith('about:'):
             return False
 
@@ -914,6 +934,7 @@ class AccomplishmentsViewerWindow(Window):
         <div id='accomplishment-badge' class='grid_8 clearfix'> \
             <img class='icon' src='" + str(iconpath) + "'> \
             <div class='grid_3 block'> \
+                <a href='#gwibber-share' id='gwibber-share'><img src = 'http://i.imgur.com/pIjAG.png' /></a> \
             <h4>" + _("Opportunity Information").decode('utf-8') + ":</h4> \
             <ul class='none'> \
                 <li>"
