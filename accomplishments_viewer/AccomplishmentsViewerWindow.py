@@ -819,6 +819,7 @@ class AccomplishmentsViewerWindow(Window):
             self.tb_opportunities.handler_block_by_func(self.on_tb_opportunities_clicked)
             self.tb_opportunities.set_active(False) 
             self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
+            self.mytrophies_filter_all.set_active(True)
             self.notebook.set_current_page(1)
         else:
             self.tb_mytrophies.set_active(True)
