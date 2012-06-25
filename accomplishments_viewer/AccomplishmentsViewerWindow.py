@@ -263,6 +263,9 @@ class AccomplishmentsViewerWindow(Window):
             object.connect_to_signal("trophy_recieved",
                 self.trophy_received,
                 dbus_interface="org.ubuntu.accomplishments", arg0="Hello")
+            object.connect_to_signal("publish_trophies_online_completed",
+                self.publish_trophies_online_completed,
+                dbus_interface="org.ubuntu.accomplishments", arg0="Hello")                
             object.connect_to_signal("scriptrunner_start",
                 self.scriptrunner_start,
                 dbus_interface="org.ubuntu.accomplishments")
@@ -272,6 +275,7 @@ class AccomplishmentsViewerWindow(Window):
             object.connect_to_signal("ubuntu_one_account_ready",
                 self.ubuntu_one_account_ready,
                 dbus_interface="org.ubuntu.accomplishments", arg0="Hello")
+        
         except dbus.DBusException:
             traceback.print_exc()
             print usage
@@ -280,6 +284,9 @@ class AccomplishmentsViewerWindow(Window):
         bus.add_signal_receiver(self.trophy_received,
             dbus_interface = "org.ubuntu.accomplishments",
             signal_name = "trophy_received")
+        bus.add_signal_receiver(self.publish_trophies_online_completed,
+            dbus_interface = "org.ubuntu.accomplishments",
+            signal_name = "publish_trophies_online_completed")
         bus.add_signal_receiver(self.scriptrunner_start,
             dbus_interface = "org.ubuntu.accomplishments",
             signal_name = "scriptrunner_start")
@@ -295,6 +302,9 @@ class AccomplishmentsViewerWindow(Window):
         self.check_daemon_session()
         
         return True
+
+    def publish_trophies_online_completed(self, url):
+        webbrowser.open(url)
 
     def ubuntu_one_account_ready(self):        
         if not self.has_u1 == 1:

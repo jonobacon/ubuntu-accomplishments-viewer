@@ -34,6 +34,12 @@ class PreferencesAccomplishmentsViewerDialog(PreferencesDialog):
         super(PreferencesAccomplishmentsViewerDialog, self).finish_initializing(builder)
         self.cb_daemonsessionstart = self.builder.get_object("cb_daemonsessionstart")
         self.cb_hideu1bubbles = self.builder.get_object("cb_hideu1bubbles")
+        self.pref_publish = self.builder.get_object("pref_publish")
+        self.pref_publish_label = self.builder.get_object("pref_publish_label")
+        self.pref_publish_icon = self.builder.get_object("pref_publish_icon")
+        self.publishedstatus = None
+        
+        #trophydir = self.libaccom.get_config_value("config", "trophypath")
         
         # Bind each preference widget to gsettings
         #settings = Gio.Settings("net.launchpad.accomplishments-viewer")
@@ -45,7 +51,14 @@ class PreferencesAccomplishmentsViewerDialog(PreferencesDialog):
     def prepare(self,daemon_handle):
         self.libaccom = daemon_handle
         self.populate_settings()
-
+        
+        self.publishedstatus = self.libaccom.get_published_status()
+        
+        if self.publishedstatus == 0:
+            self.pref_publish.set_label(_("Publish..."))
+        else:
+            self.pref_publish.set_label(_("Stop Publishing"))
+        
     def populate_settings(self):
         self.cb_daemonsessionstart.handler_block_by_func(self.cb_daemonsessionstart_toggled)
         self.cb_hideu1bubbles.handler_block_by_func(self.cb_hideu1bubbles_toggled)
@@ -64,3 +77,17 @@ class PreferencesAccomplishmentsViewerDialog(PreferencesDialog):
 
     def cb_hideu1bubbles_toggled(self, widget):
         self.libaccom.set_block_ubuntuone_notification_bubbles( widget.get_active() )
+
+    def on_pref_publish_clicked(self, widget):
+        if self.publishedstatus == 0:
+            self.libaccom.publish_trophies_online()
+            self.pref_publish_label.set_text(_("Please see your web browser to continue..."))
+            self.pref_publish.set_label(_("Stop Publishing"))
+            self.pref_publish_icon.set_visible(True)
+            self.publishedstatus = 1
+        else:
+            self.libaccom.unpublish_trophies_online()
+            self.pref_publish_label.set_text(_("Trophies are no longer published."))
+            self.pref_publish.set_label(_("Publish..."))
+            self.pref_publish_icon.set_visible(True)
+            self.publishedstatus = 0
