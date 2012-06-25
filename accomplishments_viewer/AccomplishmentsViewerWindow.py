@@ -822,7 +822,8 @@ class AccomplishmentsViewerWindow(Window):
                     collectionhuman = i[0]["collection-human"]
                     ls.append([i[0]["title"], i[0]["icon"], i[0]["accomplished"], i[0]["locked"], i[0]["collection"], i[0]["id"]])
 
-            self.add_mytrophies_view(collectionhuman, ls)
+            if len(ls) > 0:
+                self.add_mytrophies_view(collectionhuman, ls)
 
     def on_tb_mytrophies_clicked(self, widget):
         """Called when the My Trophies button is clicked."""
