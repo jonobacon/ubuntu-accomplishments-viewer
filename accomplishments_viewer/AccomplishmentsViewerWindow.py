@@ -66,6 +66,8 @@ class AccomplishmentsViewerWindow(Window):
         self.do_not_react_on_cat_changes = False
         # Code for other initialization actions should be added here.
 
+        self.mytrophies_store_all = []
+        
         # set up autostart dir
         self.autostartdir = None
 
@@ -599,6 +601,8 @@ class AccomplishmentsViewerWindow(Window):
         else:
             show_locked = False
 
+        self.mytrophies_store_all = []
+        
         #trophymodel = self.trophy_icon.get_model()
         oppmodel = self.opp_icon.get_model()
 
@@ -641,7 +645,8 @@ class AccomplishmentsViewerWindow(Window):
             icon = GdkPixbuf.Pixbuf.new_from_file_at_size(str(acc["iconpath"]), 90, 90)
 
             if str(acc["accomplished"]) == '1':
-                #trophymodel.append([acc["title"], icon, bool(acc["accomplished"]), acc["locked"], acc["collection"], acc["id"]])
+                #self.mytrophies_filter_all = testlist.append( { acc["collection-human"] : [acc["title"], icon, bool(acc["accomplished"]), acc["locked"], acc["collection"], acc["id"]] } )
+                self.mytrophies_store_all.append([{ "title" : acc["title"], "icon" : icon, "accomplished" : bool(acc["accomplished"]), "locked" : acc["locked"], "collection" : acc["collection"], "id" : acc["id"], "collection-human" : acc["collection-human"] }])
                 status_trophies = status_trophies + 1
             else:
                 subcat = ""
@@ -675,7 +680,7 @@ class AccomplishmentsViewerWindow(Window):
                     elif acc["collection"] == col and cat == "":
                         if not acc["locked"] or show_locked:
                             oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-
+        
     def populate_opp_combos(self):
 
         # grab data
@@ -789,7 +794,6 @@ class AccomplishmentsViewerWindow(Window):
         self.add_mytrophies_view("This Week", self.oppstore)
 
     def on_mytrophies_filter_all_toggled(self, widget):        
-
         all_toggled = self.mytrophies_filter_all.get_active()
         latest_toggled = self.mytrophies_filter_latest.get_active()
 
@@ -806,8 +810,19 @@ class AccomplishmentsViewerWindow(Window):
             for k in kids:
                 self.mytrophies_mainbox.remove(k)
 
-        self.add_mytrophies_view("Ubuntu Community", self.oppstore)
-        self.add_mytrophies_view("Ubuntu Desktop", self.oppstore)
+        collections = self.libaccom.list_collections()
+        
+        for c in collections:
+            ls = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
+            ls.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
+            ls.clear()
+            collectionhuman = ""
+            for i in self.mytrophies_store_all:
+                if i[0]["collection"] == c:
+                    collectionhuman = i[0]["collection-human"]
+                    ls.append([i[0]["title"], i[0]["icon"], i[0]["accomplished"], i[0]["locked"], i[0]["collection"], i[0]["id"]])
+
+            self.add_mytrophies_view(collectionhuman, ls)
 
     def on_tb_mytrophies_clicked(self, widget):
         """Called when the My Trophies button is clicked."""
@@ -874,8 +889,6 @@ class AccomplishmentsViewerWindow(Window):
             try:
                 seen = self.libaccom.get_config_value("config", "extrainfo_seen")
                 
-                print "------------------"
-                print seen
                 if seen == "NoOption" or seen == 0:
                     self.additional_info_req.set_visible(True)
                     self.libaccom.write_config_file_item("config", "extrainfo_seen", 1)
