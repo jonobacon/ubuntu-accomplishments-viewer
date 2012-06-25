@@ -687,7 +687,7 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                         <property name="margin_bottom">5</property>
                         <property name="layout_style">center</property>
                         <child>
-                          <object class="GtkToggleButton" id="togglebutton1">
+                          <object class="GtkToggleButton" id="mytrophies_filter_all">
                             <property name="label" translatable="yes">All</property>
                             <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
@@ -728,7 +728,6 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="hscrollbar_policy">always</property>
-                        <property name="shadow_type">in</property>
                         <child>
                           <object class="GtkViewport" id="viewport3">
                             <property name="visible">True</property>
@@ -740,17 +739,7 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                                 <property name="can_focus">False</property>
                                 <property name="orientation">vertical</property>
                                 <child>
-                                  <object class="GtkIconView" id="trophy_icon">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">True</property>
-                                    <property name="item_width">120</property>
-                                    <signal name="selection-changed" handler="mytrophy_clicked" swapped="no"/>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                             </child>

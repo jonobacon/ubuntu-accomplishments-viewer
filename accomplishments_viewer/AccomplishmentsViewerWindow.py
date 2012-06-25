@@ -86,7 +86,6 @@ class AccomplishmentsViewerWindow(Window):
         # set up all of the different UI references
         self.tb_mytrophies = self.builder.get_object("tb_mytrophies")
         self.tb_opportunities = self.builder.get_object("tb_opportunities")
-        self.trophy_icon = self.builder.get_object("trophy_icon")
         self.opp_combo_col = self.builder.get_object("opp_combo_app")
         self.opp_combo_cat = self.builder.get_object("opp_combo_cat")
         self.opp_icon = self.builder.get_object("opp_icon")
@@ -133,20 +132,22 @@ class AccomplishmentsViewerWindow(Window):
         context.add_class(Gtk.STYLE_CLASS_PRIMARY_TOOLBAR)
 
         # create the stores used by the IconViews
-        self.trophystore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
-        self.trophystore.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
-        self.trophy_icon.set_model(self.trophystore)
+        #self.trophystore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
+        #self.trophystore.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
+        #self.trophy_icon.set_model(self.trophystore)
 
         self.oppstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon, accomplished, locked, col, accomplishment
         self.oppstore.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
         self.opp_icon.set_model(self.oppstore)
 
-        self.trophy_icon.set_text_column(COL_TITLE)
-        self.trophy_icon.set_pixbuf_column(COL_PIXBUF)
+        #self.trophy_icon.set_text_column(COL_TITLE)
+        #self.trophy_icon.set_pixbuf_column(COL_PIXBUF)
 
         self.opp_icon.set_text_column(COL_TITLE)
         self.opp_icon.set_pixbuf_column(COL_PIXBUF)
 
+        #self.opp_icon.show()
+        
         # set up webkit
 
         self.webview = WebKit.WebView()
@@ -598,10 +599,10 @@ class AccomplishmentsViewerWindow(Window):
         else:
             show_locked = False
 
-        trophymodel = self.trophy_icon.get_model()
+        #trophymodel = self.trophy_icon.get_model()
         oppmodel = self.opp_icon.get_model()
 
-        trophymodel.clear()
+        #trophymodel.clear()
         oppmodel.clear()
 
         coltree_iter = self.opp_combo_col.get_active_iter()
@@ -640,7 +641,7 @@ class AccomplishmentsViewerWindow(Window):
             icon = GdkPixbuf.Pixbuf.new_from_file_at_size(str(acc["iconpath"]), 90, 90)
 
             if str(acc["accomplished"]) == '1':
-                trophymodel.append([acc["title"], icon, bool(acc["accomplished"]), acc["locked"], acc["collection"], acc["id"]])
+                #trophymodel.append([acc["title"], icon, bool(acc["accomplished"]), acc["locked"], acc["collection"], acc["id"]])
                 status_trophies = status_trophies + 1
             else:
                 subcat = ""
@@ -766,8 +767,47 @@ class AccomplishmentsViewerWindow(Window):
         self.update_views(None)
 
     def on_mytrophies_filter_latest_toggled(self, widget):
-        self.add_mytrophies_view("Today", self.trophystore)
-        self.add_mytrophies_view("This Week", self.trophystore)
+
+        all_toggled = self.mytrophies_filter_all.get_active()
+        latest_toggled = self.mytrophies_filter_latest.get_active()
+
+        if latest_toggled == True:
+            self.mytrophies_filter_all.handler_block_by_func(self.on_mytrophies_filter_all_toggled)
+            self.mytrophies_filter_all.set_active(False) 
+            self.mytrophies_filter_all.handler_unblock_by_func(self.on_mytrophies_filter_all_toggled)
+        else:
+            self.mytrophies_filter_latest.set_active(True)
+
+
+        kids = self.mytrophies_mainbox.get_children()
+        
+        if len(kids) > 1:
+            for k in kids:
+                self.mytrophies_mainbox.remove(k)
+
+        self.add_mytrophies_view("Today", self.oppstore)
+        self.add_mytrophies_view("This Week", self.oppstore)
+
+    def on_mytrophies_filter_all_toggled(self, widget):        
+
+        all_toggled = self.mytrophies_filter_all.get_active()
+        latest_toggled = self.mytrophies_filter_latest.get_active()
+
+        if all_toggled == True:
+            self.mytrophies_filter_latest.handler_block_by_func(self.on_mytrophies_filter_latest_toggled)
+            self.mytrophies_filter_latest.set_active(False) 
+            self.mytrophies_filter_latest.handler_unblock_by_func(self.on_mytrophies_filter_latest_toggled)
+        else:
+            self.mytrophies_filter_all.set_active(True)
+            
+        kids = self.mytrophies_mainbox.get_children()
+        
+        if len(kids) > 1:
+            for k in kids:
+                self.mytrophies_mainbox.remove(k)
+
+        self.add_mytrophies_view("Ubuntu Community", self.oppstore)
+        self.add_mytrophies_view("Ubuntu Desktop", self.oppstore)
 
     def on_tb_mytrophies_clicked(self, widget):
         """Called when the My Trophies button is clicked."""
