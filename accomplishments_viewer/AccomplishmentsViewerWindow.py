@@ -3,7 +3,7 @@
 # This file is in the public domain
 ### END LICENSE
 
-import gettext, locale
+import gettext, locale, datetime
 from gettext import gettext as _
 from accomplishments.util.paths import locale_dir
 locale.bindtextdomain('accomplishments-viewer', locale_dir)
@@ -133,10 +133,23 @@ class AccomplishmentsViewerWindow(Window):
         context = self.toolbar.get_style_context()
         context.add_class(Gtk.STYLE_CLASS_PRIMARY_TOOLBAR)
 
-        # create the stores used by the IconViews
-        #self.trophystore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
-        #self.trophystore.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
-        #self.trophy_icon.set_model(self.trophystore)
+        # create the stores used by the IconViews in the Latest View
+
+        self.mytrophies_filter_today = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
+        self.mytrophies_filter_today.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
+
+        self.mytrophies_filter_week = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
+        self.mytrophies_filter_week.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
+
+        self.mytrophies_filter_month = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
+        self.mytrophies_filter_month.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
+
+        self.mytrophies_filter_sixmonths = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
+        self.mytrophies_filter_sixmonths.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
+
+        self.mytrophies_filter_earlier = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
+        self.mytrophies_filter_earlier.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
+
 
         self.oppstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon, accomplished, locked, col, accomplishment
         self.oppstore.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
@@ -606,8 +619,13 @@ class AccomplishmentsViewerWindow(Window):
         #trophymodel = self.trophy_icon.get_model()
         oppmodel = self.opp_icon.get_model()
 
-        #trophymodel.clear()
+        # clear the models
         oppmodel.clear()
+        self.mytrophies_filter_today.clear()
+        self.mytrophies_filter_week.clear()
+        self.mytrophies_filter_month.clear()
+        self.mytrophies_filter_sixmonths.clear()
+        self.mytrophies_filter_earlier.clear()
 
         coltree_iter = self.opp_combo_col.get_active_iter()
         colmodel = self.opp_combo_col.get_model()
@@ -647,6 +665,31 @@ class AccomplishmentsViewerWindow(Window):
             if str(acc["accomplished"]) == '1':
                 #self.mytrophies_filter_all = testlist.append( { acc["collection-human"] : [acc["title"], icon, bool(acc["accomplished"]), acc["locked"], acc["collection"], acc["id"]] } )
                 self.mytrophies_store_all.append([{ "title" : acc["title"], "icon" : icon, "accomplished" : bool(acc["accomplished"]), "locked" : acc["locked"], "collection" : acc["collection"], "id" : acc["id"], "collection-human" : acc["collection-human"] }])
+
+                today = datetime.date.today()
+                margin_today = datetime.timedelta(days = 1)
+                margin_week = datetime.timedelta(days = 7)
+                margin_month = datetime.timedelta(days = 31)
+                margin_sixmonths = datetime.timedelta(days = 180)
+                
+                match = False
+                
+                if acc["date-completed"] is not "None":
+                    year = int(acc["date-completed"].split("-")[0])
+                    month = int(acc["date-completed"].split("-")[1])
+                    day = int(acc["date-completed"].split("-")[2].split(" ")[0])
+                    
+                    if (today - margin_today <= datetime.date(year, month, day) <= today + margin_today) == True:
+                        self.mytrophies_filter_today.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                    elif (today - margin_week <= datetime.date(year, month, day) <= today + margin_week) == True:
+                        self.mytrophies_filter_week.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                    elif (today - margin_month <= datetime.date(year, month, day) <= today + margin_month) == True:
+                        self.mytrophies_filter_month.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                    elif (today - margin_sixmonths <= datetime.date(year, month, day) <= today + margin_sixmonths) == True:                        
+                        self.mytrophies_filter_sixmonths.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                    else:
+                        self.mytrophies_filter_earlier.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                
                 status_trophies = status_trophies + 1
             else:
                 subcat = ""
@@ -790,8 +833,34 @@ class AccomplishmentsViewerWindow(Window):
             for k in kids:
                 self.mytrophies_mainbox.remove(k)
 
-        self.add_mytrophies_view("Today", self.oppstore)
-        self.add_mytrophies_view("This Week", self.oppstore)
+        #for i in self.mytrophies_store_all:
+
+        #ls = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
+        #ls.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
+        #ls.clear()
+        #collectionhuman = ""
+        #    if i[0]["collection"] == c:
+        #        collectionhuman = i[0]["collection-human"]
+        #        ls.append([i[0]["title"], i[0]["icon"], i[0]["accomplished"], i[0]["locked"], i[0]["collection"], i[0]["id"]])
+
+        #if len(ls) > 0:
+        #    self.add_mytrophies_view(collectionhuman, ls)
+
+
+        if len(self.mytrophies_filter_today) > 0:
+            self.add_mytrophies_view(_("Today"), self.mytrophies_filter_today)
+        
+        if len(self.mytrophies_filter_week) > 0:
+            self.add_mytrophies_view(_("This Week"), self.mytrophies_filter_week)
+        
+        if len(self.mytrophies_filter_month) > 0:
+            self.add_mytrophies_view(_("This Month"), self.mytrophies_filter_month)
+        
+        if len(self.mytrophies_filter_sixmonths) > 0:
+            self.add_mytrophies_view(_("Last Six Months"), self.mytrophies_filter_sixmonths)
+        
+        if len(self.mytrophies_filter_earlier) > 0:
+            self.add_mytrophies_view(_("Earlier"), self.mytrophies_filter_earlier)
 
     def on_mytrophies_filter_all_toggled(self, widget):        
         all_toggled = self.mytrophies_filter_all.get_active()
