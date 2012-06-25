@@ -114,6 +114,9 @@ class AccomplishmentsViewerWindow(Window):
         self.subcats_forward = self.builder.get_object("subcats_forward")
         self.subcats_buttonbox = self.builder.get_object("subcats_buttonbox")
         self.subcats_container = self.builder.get_object("subcats_container")
+        self.mytrophies_mainbox = self.builder.get_object("mytrophies_mainbox")
+        self.mytrophies_filter_latest = self.builder.get_object("mytrophies_filter_latest")
+        self.mytrophies_filter_all = self.builder.get_object("mytrophies_filter_all")
 
         # don't display the sub-cats scrollbars
         sb_h = self.subcats_scroll.get_hscrollbar()
@@ -242,6 +245,31 @@ class AccomplishmentsViewerWindow(Window):
 
         if bool(self.has_u1) is True and bool(self.has_verif) is True:
             self.check_for_extra_info_required()
+
+    def add_mytrophies_view(self, section, liststore):
+        outerbox = Gtk.Box()
+        outerbox.set_property("orientation", Gtk.Orientation.VERTICAL)
+        header = Gtk.Label("<span font_family='Ubuntu' size='18000' weight='light'>" + section + "</span>")
+        header.set_use_markup(True)
+        header.set_property("xalign", 0)
+        header.set_property("margin_left", 10)
+        header.set_property("margin_top", 5)
+        header.set_property("margin_bottom", 2)
+        separator = Gtk.Separator()
+        separator.set_property("margin_left", 10)
+        separator.set_property("margin_right", 10)
+        
+        iconview = Gtk.IconView()
+        iconview.set_model(liststore)
+        iconview.set_text_column(COL_TITLE)
+        iconview.set_pixbuf_column(COL_PIXBUF)
+
+        outerbox.pack_start(header, False, True, 0)
+        outerbox.pack_start(separator, False, True, 0)
+        outerbox.pack_start(iconview, True, True, 0)
+        
+        outerbox.show_all()
+        self.mytrophies_mainbox.pack_start(outerbox, True, True, 0)
             
     def connect_to_daemon(self):
         """Tries to connect to the daemon"""
@@ -736,6 +764,10 @@ class AccomplishmentsViewerWindow(Window):
         self.subcat = None
 
         self.update_views(None)
+
+    def on_mytrophies_filter_latest_toggled(self, widget):
+        self.add_mytrophies_view("Today", self.trophystore)
+        self.add_mytrophies_view("This Week", self.trophystore)
 
     def on_tb_mytrophies_clicked(self, widget):
         """Called when the My Trophies button is clicked."""
