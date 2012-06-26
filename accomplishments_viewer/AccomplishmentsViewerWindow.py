@@ -674,7 +674,9 @@ class AccomplishmentsViewerWindow(Window):
                 
                 match = False
                 
-                if acc["date-completed"] is not "None":
+                if str(acc["date-completed"]) == "None":
+                    pass
+                else:
                     year = int(acc["date-completed"].split("-")[0])
                     month = int(acc["date-completed"].split("-")[1])
                     day = int(acc["date-completed"].split("-")[2].split(" ")[0])
@@ -687,8 +689,8 @@ class AccomplishmentsViewerWindow(Window):
                         self.mytrophies_filter_month.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
                     elif (today - margin_sixmonths <= datetime.date(year, month, day) <= today + margin_sixmonths) == True:                        
                         self.mytrophies_filter_sixmonths.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    else:
-                        self.mytrophies_filter_earlier.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+                    #else:
+                    #    self.mytrophies_filter_earlier.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
                 
                 status_trophies = status_trophies + 1
             else:
