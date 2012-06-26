@@ -7,15 +7,34 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-06-08 10:40-0700\n"
+"POT-Creation-Date: 2012-06-25 00:47-0700\n"
 "PO-Revision-Date: 2012-04-15 11:36+0000\n"
 "Last-Translator: Rigved Rakshit <Unknown>\n"
 "Language-Team: Marathi <mr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-09 06:21+0000\n"
-"X-Generator: Launchpad (build 15376)\n"
+"X-Launchpad-Export-Date: 2012-06-26 05:48+0000\n"
+"X-Generator: Launchpad (build 15482)\n"
+
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:8
+msgid "Publish..."
+msgstr ""
+
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:60
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:85
+msgid "Stop Publishing"
+msgstr ""
+
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:84
+msgid "Please see your web browser to continue..."
+msgstr ""
+
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:90
+msgid "Trophies are no longer published."
+msgstr ""
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
@@ -57,7 +76,7 @@ msgstr ""
 #: ../accomplishments_viewer/__init__.py:29
 msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
-"community/registered-on-launchpad'"
+"community/registered-on-launchpad')"
 msgstr ""
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
@@ -80,95 +99,106 @@ msgstr ""
 msgid "<b>Notification Bubbles</b>"
 msgstr ""
 
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:6
+msgid ""
+"To publish your trophies online for others to see, click the <i>Publish</i> "
+"button.\n"
+"You can <i>Unpublish</i> later if you want to."
+msgstr ""
+
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
+msgid "<b>Publish Trophies Online</b>"
+msgstr ""
+
 #. Add 'All' button
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:410
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:409
 msgid "All"
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:691
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:704
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:690
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:703
 msgid "everything"
 msgstr ""
 
 #. # summary table
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:906
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:917
 msgid "Opportunity Information"
 msgstr "संधिचे माहिती"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:914
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:925
 msgid "No information available."
 msgstr "माहिती उपलब्ध नाहि आहे"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:924
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:935
 msgid "Getting Help"
 msgstr "मदत मिळवा"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:933
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:944
 msgid "No help available."
 msgstr "मदत उपलब्ध नाहि आहे|"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:948
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:959
 msgid "This opportunity is locked. You need to complete"
 msgstr "ही संधि बंद आहे| ती उघदन्याकर्ता तूमहाला पूर्नकराय्ला लागेल"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:948
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:953
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:959
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:964
 msgid "from"
 msgstr "पासून"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:948
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:959
 msgid "first"
 msgstr "पहिला"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:950
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:961
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr ""
 
 #. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:957
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:968
 msgid "This trophy <strong>was awarded</strong>"
 msgstr "हे बक्शीश <strong>संपादित केलेलय</strong>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:961
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:972
 msgid "on"
 msgstr "या दिवशी"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:965
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:976
 msgid "using the following credentials"
 msgstr "खालील अधिकारपत्रे वापरून"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:975
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:986
 msgid "This trophy has been verified"
 msgstr "हे बक्शिशाचे पडताळणी केलेलय"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:982
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:993
 msgid "This opportunity requires verification"
 msgstr "हे संधिचे पडताळणी आवश्यक आहे"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:992
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1003
 msgid "Accomplishment Details"
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1014
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1025
 msgid "How to accomplish this opportunity"
 msgstr "ही संधि कशी तडीस नेणे"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1049
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1060
 msgid "Tips and Tricks"
 msgstr "युक्ति आणि चाले"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1059
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1079
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1070
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1090
 msgid "None."
 msgstr "काहि नाहि"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1069
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1080
 msgid "Pitfalls To Avoid"
 msgstr "काहि गचकीन्ने वाचा"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1092
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1103
 msgid "Further Reading"
 msgstr "अधिक वाचनासाठी"
 
