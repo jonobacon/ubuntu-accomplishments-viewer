@@ -47,6 +47,9 @@ COL_LOCKED = 3
 COL_COLLECTION = 4
 COL_ID = 5
 
+MYTROPHIES_FILTER_ALL = 0
+MYTROPHIES_FILTER_LATEST = 1
+
 # See accomplishments_viewer_lib.Window.py for more details about how this class works
 class AccomplishmentsViewerWindow(Window):
     __gtype_name__ = "AccomplishmentsViewerWindow"
@@ -64,9 +67,10 @@ class AccomplishmentsViewerWindow(Window):
         self.curr_height = 0
         self.curr_width = 0
         self.do_not_react_on_cat_changes = False
+        self.mytrophies_filtermode = MYTROPHIES_FILTER_ALL
+        self.mytrophies_store_all = []
         # Code for other initialization actions should be added here.
 
-        self.mytrophies_store_all = []
         
         # set up autostart dir
         self.autostartdir = None
@@ -263,8 +267,7 @@ class AccomplishmentsViewerWindow(Window):
             self.check_for_extra_info_required()
 
     def add_mytrophies_view(self, section, liststore):
-        outerbox = Gtk.Box()
-        outerbox.set_property("orientation", Gtk.Orientation.VERTICAL)
+        outerbox = Gtk.VBox()
         header = Gtk.Label("<span font_family='Ubuntu' size='18000' weight='light'>" + section + "</span>")
         header.set_use_markup(True)
         header.set_property("xalign", 0)
@@ -279,12 +282,13 @@ class AccomplishmentsViewerWindow(Window):
         iconview.set_model(liststore)
         iconview.set_text_column(COL_TITLE)
         iconview.set_pixbuf_column(COL_PIXBUF)
+        iconview.set_item_width(120)
 
         outerbox.pack_start(header, False, True, 0)
         outerbox.pack_start(separator, False, True, 0)
         outerbox.pack_start(iconview, True, True, 0)
-        
         outerbox.show_all()
+        
         self.mytrophies_mainbox.pack_start(outerbox, True, True, 0)
             
     def connect_to_daemon(self):
@@ -601,6 +605,7 @@ class AccomplishmentsViewerWindow(Window):
             self.curr_height = new_height
             # and refill iconviews with icons to adjust columns number
             self.update_views(widget)
+            self.update_mytrophy_filter()
 
     def update_views(self, widget):
         """Update all of the views to reflect the current state of Trophies and Opportunities."""
@@ -816,52 +821,55 @@ class AccomplishmentsViewerWindow(Window):
 
         self.update_views(None)
     
+    def update_mytrophy_filter(self):
+        
+        kids = self.mytrophies_mainbox.get_children()
+        
+        if len(kids) > 0:
+            for k in kids:
+                self.mytrophies_mainbox.remove(k)
+                
+        if (self.mytrophies_filtermode == MYTROPHIES_FILTER_ALL):
+            collections = self.libaccom.list_collections()
+            
+            for c in collections:
+                ls = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
+                ls.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
+                ls.clear()
+                collectionhuman = ""
+                for i in self.mytrophies_store_all:
+                    if i[0]["collection"] == c:
+                        collectionhuman = i[0]["collection-human"]
+                        ls.append([i[0]["title"], i[0]["icon"], i[0]["accomplished"], i[0]["locked"], i[0]["collection"], i[0]["id"]])
+
+                if len(ls) > 0:
+                    self.add_mytrophies_view(collectionhuman, ls)
+        elif (self.mytrophies_filtermode == MYTROPHIES_FILTER_LATEST):
+            if len(self.mytrophies_filter_today) > 0:
+                self.add_mytrophies_view(_("Today"), self.mytrophies_filter_today)
+            
+            if len(self.mytrophies_filter_week) > 0:
+                self.add_mytrophies_view(_("This Week"), self.mytrophies_filter_week)
+            
+            if len(self.mytrophies_filter_month) > 0:
+                self.add_mytrophies_view(_("This Month"), self.mytrophies_filter_month)
+            
+            if len(self.mytrophies_filter_sixmonths) > 0:
+                self.add_mytrophies_view(_("Last Six Months"), self.mytrophies_filter_sixmonths)
+            
+            if len(self.mytrophies_filter_earlier) > 0:
+                self.add_mytrophies_view(_("Earlier"), self.mytrophies_filter_earlier)
+            
+        
+    
     def on_mytrophies_filter_latest_toggled(self, widget):
-
-        kids = self.mytrophies_mainbox.get_children()
-        
-        if len(kids) > 0:
-            for k in kids:
-                self.mytrophies_mainbox.remove(k)
+        self.mytrophies_filtermode = MYTROPHIES_FILTER_LATEST
+        self.update_mytrophy_filter()
 
 
-        if len(self.mytrophies_filter_today) > 0:
-            self.add_mytrophies_view(_("Today"), self.mytrophies_filter_today)
-        
-        if len(self.mytrophies_filter_week) > 0:
-            self.add_mytrophies_view(_("This Week"), self.mytrophies_filter_week)
-        
-        if len(self.mytrophies_filter_month) > 0:
-            self.add_mytrophies_view(_("This Month"), self.mytrophies_filter_month)
-        
-        if len(self.mytrophies_filter_sixmonths) > 0:
-            self.add_mytrophies_view(_("Last Six Months"), self.mytrophies_filter_sixmonths)
-        
-        if len(self.mytrophies_filter_earlier) > 0:
-            self.add_mytrophies_view(_("Earlier"), self.mytrophies_filter_earlier)
-
-    def on_mytrophies_filter_all_toggled(self, widget):        
-
-        kids = self.mytrophies_mainbox.get_children()
-        
-        if len(kids) > 0:
-            for k in kids:
-                self.mytrophies_mainbox.remove(k)
-
-        collections = self.libaccom.list_collections()
-        
-        for c in collections:
-            ls = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
-            ls.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
-            ls.clear()
-            collectionhuman = ""
-            for i in self.mytrophies_store_all:
-                if i[0]["collection"] == c:
-                    collectionhuman = i[0]["collection-human"]
-                    ls.append([i[0]["title"], i[0]["icon"], i[0]["accomplished"], i[0]["locked"], i[0]["collection"], i[0]["id"]])
-
-            if len(ls) > 0:
-                self.add_mytrophies_view(collectionhuman, ls)
+    def on_mytrophies_filter_all_toggled(self, widget):   
+        self.mytrophies_filtermode = MYTROPHIES_FILTER_ALL
+        self.update_mytrophy_filter()     
 
     def on_tb_mytrophies_clicked(self, widget):
         """Called when the My Trophies button is clicked."""
