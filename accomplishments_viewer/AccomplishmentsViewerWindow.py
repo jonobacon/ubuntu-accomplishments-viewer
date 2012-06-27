@@ -831,22 +831,9 @@ class AccomplishmentsViewerWindow(Window):
 
         kids = self.mytrophies_mainbox.get_children()
         
-        if len(kids) > 1:
+        if len(kids) > 0:
             for k in kids:
                 self.mytrophies_mainbox.remove(k)
-
-        #for i in self.mytrophies_store_all:
-
-        #ls = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
-        #ls.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
-        #ls.clear()
-        #collectionhuman = ""
-        #    if i[0]["collection"] == c:
-        #        collectionhuman = i[0]["collection-human"]
-        #        ls.append([i[0]["title"], i[0]["icon"], i[0]["accomplished"], i[0]["locked"], i[0]["collection"], i[0]["id"]])
-
-        #if len(ls) > 0:
-        #    self.add_mytrophies_view(collectionhuman, ls)
 
 
         if len(self.mytrophies_filter_today) > 0:
@@ -877,7 +864,7 @@ class AccomplishmentsViewerWindow(Window):
             
         kids = self.mytrophies_mainbox.get_children()
         
-        if len(kids) > 1:
+        if len(kids) > 0:
             for k in kids:
                 self.mytrophies_mainbox.remove(k)
 
