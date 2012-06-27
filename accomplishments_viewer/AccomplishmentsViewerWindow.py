@@ -815,19 +815,8 @@ class AccomplishmentsViewerWindow(Window):
         self.subcat = None
 
         self.update_views(None)
-
+    
     def on_mytrophies_filter_latest_toggled(self, widget):
-
-        all_toggled = self.mytrophies_filter_all.get_active()
-        latest_toggled = self.mytrophies_filter_latest.get_active()
-
-        if latest_toggled == True:
-            self.mytrophies_filter_all.handler_block_by_func(self.on_mytrophies_filter_all_toggled)
-            self.mytrophies_filter_all.set_active(False) 
-            self.mytrophies_filter_all.handler_unblock_by_func(self.on_mytrophies_filter_all_toggled)
-        else:
-            self.mytrophies_filter_latest.set_active(True)
-
 
         kids = self.mytrophies_mainbox.get_children()
         
@@ -852,16 +841,7 @@ class AccomplishmentsViewerWindow(Window):
             self.add_mytrophies_view(_("Earlier"), self.mytrophies_filter_earlier)
 
     def on_mytrophies_filter_all_toggled(self, widget):        
-        all_toggled = self.mytrophies_filter_all.get_active()
-        latest_toggled = self.mytrophies_filter_latest.get_active()
 
-        if all_toggled == True:
-            self.mytrophies_filter_latest.handler_block_by_func(self.on_mytrophies_filter_latest_toggled)
-            self.mytrophies_filter_latest.set_active(False) 
-            self.mytrophies_filter_latest.handler_unblock_by_func(self.on_mytrophies_filter_latest_toggled)
-        else:
-            self.mytrophies_filter_all.set_active(True)
-            
         kids = self.mytrophies_mainbox.get_children()
         
         if len(kids) > 0:
@@ -894,6 +874,7 @@ class AccomplishmentsViewerWindow(Window):
             self.tb_opportunities.set_active(False) 
             self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
             self.mytrophies_filter_all.set_active(True)
+            self.on_mytrophies_filter_all_toggled(None)
             self.notebook.set_current_page(1)
         else:
             self.tb_mytrophies.set_active(True)
