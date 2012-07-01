@@ -8,37 +8,37 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-25 00:47-0700\n"
-"PO-Revision-Date: 2012-05-01 06:55+0000\n"
+"PO-Revision-Date: 2012-06-30 13:02+0000\n"
 "Last-Translator: Aurimas Fišeras <Unknown>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-26 05:48+0000\n"
-"X-Generator: Launchpad (build 15482)\n"
+"X-Launchpad-Export-Date: 2012-07-01 04:58+0000\n"
+"X-Generator: Launchpad (build 15520)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:8
 msgid "Publish..."
-msgstr ""
+msgstr "Publikuoti..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:60
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:85
 msgid "Stop Publishing"
-msgstr ""
+msgstr "Nebepublikuoti"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:84
 msgid "Please see your web browser to continue..."
-msgstr ""
+msgstr "Žiūrėkite naršyklėje norėdami tęsti..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:90
 msgid "Trophies are no longer published."
-msgstr ""
+msgstr "Trofėjai dagiau nebepublikuojami."
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
-msgstr ""
+msgstr "Kolekcijos autoriai:"
 
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
@@ -78,6 +78,8 @@ msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad')"
 msgstr ""
+"Rodyti informaciją apie pateiktą laimėjimo ID (pvz., 'ubuntu-"
+"community/registered-on-launchpad')"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
@@ -85,19 +87,19 @@ msgstr "Laimėjimų nustatymai"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:2
 msgid "Start background service on log in (recommended)"
-msgstr ""
+msgstr "Paleisti foninę tarnybą prisijungus (rekomenduojama)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:3
 msgid "<b>Accomplishments Background Service</b>"
-msgstr ""
+msgstr "<b>Laimėjimų foninė tarnyba</b>"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:4
 msgid "Hide Ubuntu One file upload notifications (recommended)"
-msgstr ""
+msgstr "Slėpti „Ubuntu One“ failų išsiuntimo pranešimus (rekomenduojama)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:5
 msgid "<b>Notification Bubbles</b>"
-msgstr ""
+msgstr "<b>Pranešimų debesėliai</b>"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:6
 msgid ""
@@ -105,20 +107,23 @@ msgid ""
 "button.\n"
 "You can <i>Unpublish</i> later if you want to."
 msgstr ""
+"Norėdami publikuoti savo trofėjus internete, kad kiti matytų, spauskite "
+"mygtuką <i>Publikuoti</i>.\n"
+"Jei norėsite, vėliau galite <i>nebepublikuoti</i>."
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
 msgid "<b>Publish Trophies Online</b>"
-msgstr ""
+msgstr "<b>Publikuoti trofėjus internete</b>"
 
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:409
 msgid "All"
-msgstr ""
+msgstr "Visi"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:690
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:703
 msgid "everything"
-msgstr ""
+msgstr "visas"
 
 #. # summary table
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:917
@@ -144,7 +149,7 @@ msgstr "Ši galimybė užrakinta. Jums reikia užbaigti"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:959
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:964
 msgid "from"
-msgstr ""
+msgstr "nuo"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:959
 msgid "first"
@@ -154,7 +159,7 @@ msgstr "pirmiausiai"
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
-msgstr ""
+msgstr "Ši galimybė užrakinta. Jums pirmiau reikia užbaigti šias galimybes:"
 
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:968
@@ -224,7 +229,7 @@ msgstr "Turinys"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "Ask a question..."
-msgstr ""
+msgstr "Klausti..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "My Trophies"
@@ -241,10 +246,14 @@ msgid ""
 "\n"
 "You can disable this in <i>Edit</i> -> <i>Preferences</i> if required."
 msgstr ""
+"<b>Laimėjimų foninė tarnyba bus paleista, kai prisijungsite. Tai naudojama, "
+"kad jūsų kompiuterius galėtų automatiškai patikrinti laimėjimus.</b>\n"
+"\n"
+"Jūs tai galite išjungti per <i>Keisti</i> -> <i>Nustatymai</i>, jei reikia."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
 msgid "Accomplishments Service"
-msgstr ""
+msgstr "Laimėjimų tarnyba"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:13
 msgid ""
@@ -280,6 +289,12 @@ msgid ""
 "Press the button below to check if you have an Ubuntu One account. If you "
 "don't, we will take a second to sign-up; the account is free."
 msgstr ""
+"<b>Kai kurioms galimybėms reikalingas patikrinimas, kai jos baigtos. Norint "
+"tai padaryti jums reikės „Ubuntu One“ paskyros ir sutikti, kad šios "
+"galimybės būtų patikrintos.</b>\n"
+"\n"
+"Spauskite žemiau esantį mygtuką patikrinti, jei turite „Ubuntu One“ paskyrą. "
+"Jei neturite, užtruks keletą sekundžių užsiregistruoti; paskyra yra nemokama."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid ""
@@ -292,6 +307,15 @@ msgid ""
 "is the information you can see in Edit -> Identification - this information "
 "is not shared with others or given to companies."
 msgstr ""
+"„Ubuntu One“ yra internetinė tarnyba, kuri yra nemokama naudoti failams "
+"sinchronizuoti ir kitoms galimybėms. Ji yra tvarkingai integruota į jūsų "
+"Ubuntu darbalaukį.\n"
+"\n"
+"Kai Ubuntu laimėjimai aptinka, kad jūs nuveikėte kažką naujo, naujas "
+"trofėjus bus išsiųstas į tikrinimo serverį naudojant „Ubuntu One“. Tai yra "
+"paprastai ir saugu naudoti. Vienintelė informacija, kuri yra dalinamasi su "
+"serveriu yra informacija, kurią galite pamatyti Keisti -> Identifikavimas – "
+"šia informacija nėra dalinamasi su kitais, ar perduodama kompanijoms."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
 msgid "Learn more..."
@@ -299,7 +323,7 @@ msgstr "Sužinoti daugiau..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
 msgid "Don't Use Ubuntu One"
-msgstr ""
+msgstr "Nenaudoti „Ubuntu One“"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:27
 msgid "Ubuntu One account required"
@@ -319,7 +343,7 @@ msgstr "laimėjimai"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
 msgid "opportunities for"
-msgstr "galimybės"
+msgstr "galimybes"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
 msgid "Show Locked"
