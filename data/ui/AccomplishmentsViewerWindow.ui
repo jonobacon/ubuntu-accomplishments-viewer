@@ -48,7 +48,7 @@
                     <property name="can_focus">False</property>
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_check_acc">
-                        <property name="label">Check Accomplishments</property>
+                        <property name="label" translatable="true">Check Accomplishments</property>
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -85,7 +85,7 @@
                     </child>
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_edit_ident">
-                        <property name="label">_Identification...</property>
+                        <property name="label" translatable="yes">_Identification...</property>
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
