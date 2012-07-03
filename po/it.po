@@ -8,33 +8,33 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-25 00:47-0700\n"
-"PO-Revision-Date: 2012-06-11 09:49+0000\n"
-"Last-Translator: leonardo corato <leocor@gmail.com>\n"
+"PO-Revision-Date: 2012-07-02 15:36+0000\n"
+"Last-Translator: Leonardo Corato <leocor@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-26 05:48+0000\n"
-"X-Generator: Launchpad (build 15482)\n"
+"X-Launchpad-Export-Date: 2012-07-03 06:29+0000\n"
+"X-Generator: Launchpad (build 15531)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:8
 msgid "Publish..."
-msgstr ""
+msgstr "Pubblica..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:60
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:85
 msgid "Stop Publishing"
-msgstr ""
+msgstr "Ferma la pubblicazione"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:84
 msgid "Please see your web browser to continue..."
-msgstr ""
+msgstr "Per continuare guarda sul tuo browser..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:90
 msgid "Trophies are no longer published."
-msgstr ""
+msgstr "I trofei non sono più pubblicati."
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
@@ -79,6 +79,8 @@ msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad')"
 msgstr ""
+"Mostra le informazioni sull'ID fornito per le realizzazioni (per es. "
+"'comunità-ubuntu/registrazione-su-launchpad')"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
@@ -106,10 +108,13 @@ msgid ""
 "button.\n"
 "You can <i>Unpublish</i> later if you want to."
 msgstr ""
+"Per pubblicare i tuoi trofei in modo che altri li vedano sul web, clicca il "
+"bottone <i>Pubblica</i>.\n"
+"Puoi rimuovere la <i>Rimuovere la pubblicazione</i> più tardi se vuoi."
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
 msgid "<b>Publish Trophies Online</b>"
-msgstr ""
+msgstr "<b>Pubblica sul web i Trofei</b>"
 
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:409
