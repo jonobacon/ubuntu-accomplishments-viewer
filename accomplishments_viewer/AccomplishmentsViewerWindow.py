@@ -445,9 +445,10 @@ class AccomplishmentsViewerWindow(Window):
         h.set_value(new)
         self.subcats_scroll.set_hadjustment(h)
 
-    def show_gwibber_widget(self):
+    def show_gwibber_widget(self,uri):
         entry = GwibberGtk.Entry()
-        entry.text_view.get_buffer().set_text('my string')
+        trophyURL = 'http://www.trophies.ubuntu.com/aName/'+uri
+        entry.text_view.get_buffer().set_text('I just accomplishished this: '+trophyURL)
         messagewindow = Gtk.Window()
         messagewindow.set_title("Share Accomplishment")
         messagewindow.set_icon_name("gwibber")
@@ -461,8 +462,9 @@ class AccomplishmentsViewerWindow(Window):
 
         uri=net_req.get_uri()
 
-        if uri == 'file:///#gwibber-share':
-            gwibberPopup = self.show_gwibber_widget()
+        if uri.startswith ('file:///#gwibber-share'):
+            uri = uri.replace("file:///#gwibber-share?accomID=", '');
+            gwibberPopup = self.show_gwibber_widget(uri)
 
         if uri.startswith('about:'):
             return False
@@ -927,15 +929,16 @@ class AccomplishmentsViewerWindow(Window):
             html = html + "<div id='header' class='grid_8'> \
                 <h1>" + data['title'] + "</h1> \
                 </div>"
+                
+
 
         ## summary table
-
         html = html + "<div id='accomplishment' class='grid_8 clearfix'> \
         <div id='accomplishment-badge' class='grid_8 clearfix'> \
+            <div id='social-share'><a href='#gwibber-share?accomID="+accomID+"' id='gwibber-share'>+SHARE</a></div> \
             <img class='icon' src='" + str(iconpath) + "'> \
             <div class='grid_3 block'> \
-                <a href='#gwibber-share' id='gwibber-share'><img src = 'http://i.imgur.com/pIjAG.png' /></a> \
-            <h4>" + _("Opportunity Information").decode('utf-8') + ":</h4> \
+                <h4>" + _("Opportunity Information").decode('utf-8') + ":</h4> \
             <ul class='none'> \
                 <li>"
 
