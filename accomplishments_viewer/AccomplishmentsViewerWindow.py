@@ -284,6 +284,7 @@ class AccomplishmentsViewerWindow(Window):
         iconview.set_pixbuf_column(COL_PIXBUF)
         iconview.set_item_width(120)
         iconview.set_columns(-1)
+        iconview.connect("selection-changed",self.mytrophy_clicked)
 
         outerbox.pack_start(header, False, True, 0)
         outerbox.pack_start(separator, False, True, 0)
