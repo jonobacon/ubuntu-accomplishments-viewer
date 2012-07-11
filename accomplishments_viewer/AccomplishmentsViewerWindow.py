@@ -934,9 +934,12 @@ class AccomplishmentsViewerWindow(Window):
 
         ## summary table
         html = html + "<div id='accomplishment' class='grid_8 clearfix'> \
-        <div id='accomplishment-badge' class='grid_8 clearfix'> \
-            <div id='social-share'><a href='#gwibber-share?accomID="+accomID+"' id='gwibber-share'>+SHARE</a></div> \
-            <img class='icon' src='" + str(iconpath) + "'> \
+        <div id='accomplishment-badge' class='grid_8 clearfix'>"
+
+        if achieved:
+            html = html + "<div id='social-share'><a href='#gwibber-share?accomID="+accomID+"' id='gwibber-share'>+SHARE</a></div>"
+
+        html = html +"<img class='icon' src='" + str(iconpath) + "'> \
             <div class='grid_3 block'> \
                 <h4>" + _("Opportunity Information").decode('utf-8') + ":</h4> \
             <ul class='none'> \
