@@ -448,7 +448,7 @@ class AccomplishmentsViewerWindow(Window):
     def show_gwibber_widget(self,uri):
         entry = GwibberGtk.Entry()
         trophyURL = 'http://www.trophies.ubuntu.com/aName/'+uri
-        entry.text_view.get_buffer().set_text('I just accomplishished this: '+trophyURL)
+        entry.text_view.get_buffer().set_text("I've just accomplishished this: "+trophyURL)
         messagewindow = Gtk.Window()
         messagewindow.set_title("Share Accomplishment")
         messagewindow.set_icon_name("gwibber")
