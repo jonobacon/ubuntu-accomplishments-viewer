@@ -450,15 +450,13 @@ class AccomplishmentsViewerWindow(Window):
     def show_gwibber_widget(self,uri,name):
         entry = GwibberGtk.Entry()
         trophyURL = 'http://www.trophies.ubuntu.com/'+name+'/'+uri
-        print trophyURL
         entry.text_view.get_buffer().set_text("I've just accomplishished this: "+trophyURL)
         messagewindow = Gtk.Window()
         messagewindow.set_title("Share Accomplishment")
         messagewindow.set_icon_name("gwibber")
         messagewindow.resize(400, 150)
         messagewindow.add(entry)
-        messagewindow.show_all()
-     
+        messagewindow.show_all()   
         
     def webkit_link_clicked(self, view, frame, net_req, nav_act, pol_dec):
         """Load a link from the webkit view in an external system browser."""
