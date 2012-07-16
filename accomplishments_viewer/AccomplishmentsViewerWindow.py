@@ -507,23 +507,28 @@ class AccomplishmentsViewerWindow(Window):
         h.set_value(new)
         self.subcats_scroll.set_hadjustment(h)
 
-    def show_gwibber_widget(self,uri,name):
+    def show_gwibber_widget(self,accomID,name):
         entry = GwibberGtk.Entry()
-        trophyURL = TROPHY_GALLERY_URL+'/gallery/trophies/'+name+'/'+uri
-        entry.text_view.get_buffer().set_text(_("I've just accomplishished this: %s") % trophyURL)
+        trophyURL = TROPHY_GALLERY_URL+'/gallery/trophies/'+name+'/'+accomID
+        trophy_name = self.libaccom.get_acc_title(accomID);
+        entry.text_view.get_buffer().set_text(_("I've just got a trophy '%s'! %s") % (trophy_name, trophyURL))
         messagewindow = Gtk.Window()
+        vbox = Gtk.VBox()
         messagewindow.set_title(_("Share Trophy"))
         messagewindow.set_icon_name("gwibber")
         messagewindow.resize(400, 150)
-        messagewindow.add(entry)
+        vbox.pack_start(entry,True,True,0)
+        label = Gtk.Label()
+        label.set_markup(_("<b>Always add the link to your trophy on the web when sharing a trophy.</b>\nThis link works as a <b>proof</b> that you have really accomplished this trophy."))
+        vbox.pack_start(label,False,False,0)
+        messagewindow.add(vbox)
         messagewindow.show_all()   
         
     def webkit_link_clicked(self, view, frame, net_req, nav_act, pol_dec):
         """Load a link from the webkit view in an external system browser."""
 
         uri=net_req.get_uri()
-
-        if uri.startswith ('file:///#gwibber-share'):
+        if uri.startswith ('file:///gwibber-share'):
             share_name = self.libaccom.get_share_name()
             share_name = urllib2.quote(share_name.encode('utf8'))
             share_ID = self.libaccom.get_share_id()
@@ -531,17 +536,20 @@ class AccomplishmentsViewerWindow(Window):
 
             publish_status = self.libaccom.get_published_status()
             if publish_status==0:
-                dialog = Gtk.MessageDialog(self, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, "Information")
-                dialog.format_secondary_text(_("Sorry, you have not published your trophies yet."))
+                dialog = Gtk.MessageDialog(self, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, _("Your trophies are not yet published"))
+                dialog.format_secondary_text(_("You can do it from Edit->Preferences menu."))
                 dialog.run()
                 dialog.hide()
             else:
-                response = urllib2.urlopen(nameURL)
-                for line in response:
-                    name = line.rstrip()
-                    break          
-                uri = uri.replace("file:///#gwibber-share?accomID=", '');
-                gwibberPopup = self.show_gwibber_widget(uri,name)
+                try:
+                    response = urllib2.urlopen(nameURL)
+                    for line in response:
+                        name = line.rstrip()
+                        break          
+                    uri = uri.replace("file:///gwibber-share?accomID=", '');
+                    gwibberPopup = self.show_gwibber_widget(uri,name)
+                except urllib2.HTTPError:
+                    print 'HTTPError while gettin username.'
 
         if uri.startswith('about:'):
             return False
@@ -1100,7 +1108,7 @@ class AccomplishmentsViewerWindow(Window):
         <div id='accomplishment-badge' class='grid_8 clearfix'>"
 
         if achieved:
-            html = html + "<div id='social-share'><a href='#gwibber-share?accomID="+accomID+"' id='gwibber-share'>+SHARE</a></div>"
+            html = html + "<div id='social-share'><a href='gwibber-share?accomID="+accomID+"' id='gwibber-share'>+SHARE</a></div>"
 
         html = html +"<img class='icon' src='" + str(iconpath) + "'> \
             <div class='grid_3 block'> \
