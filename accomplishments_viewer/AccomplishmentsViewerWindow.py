@@ -197,6 +197,8 @@ class AccomplishmentsViewerWindow(Window):
         self.messagevbox.show_all()   
         self.messagewindow.hide()
         self.messagewindow.connect("delete-event",self.close_gwibber_window)
+        self.messageentry.text_view.connect("submit",self.close_gwibber_window)
+        
 
         self.opp_col_store = Gtk.ListStore(str, str)
         self.col_combo_renderer_text = Gtk.CellRendererText()
@@ -528,7 +530,7 @@ class AccomplishmentsViewerWindow(Window):
     def show_gwibber_widget(self,accomID,name):
         trophyURL = TROPHY_GALLERY_URL+'/gallery/trophies/'+name+'/'+accomID
         trophy_name = self.libaccom.get_acc_title(accomID);
-        self.messageentry.text_view.get_buffer().set_text(_("I've just got a trophy '%s'! %s") % (trophy_name, trophyURL))
+        self.messageentry.text_view.get_buffer().set_text(_("I've just got the trophy '%s'! %s") % (trophy_name, trophyURL))
         self.messagewindow.show()
         self.messagewindow.present()
 
