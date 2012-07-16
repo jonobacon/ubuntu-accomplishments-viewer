@@ -527,8 +527,6 @@ class AccomplishmentsViewerWindow(Window):
             share_ID = self.libaccom.get_share_id()
             host = 'http://213.138.100.229:8000'
             nameURL = host+"/user/getusername?share_name="+share_name+"&share_id="+share_ID
-            print nameURL
-
 
             publish_status = self.libaccom.get_published_status()
             if publish_status==0:
