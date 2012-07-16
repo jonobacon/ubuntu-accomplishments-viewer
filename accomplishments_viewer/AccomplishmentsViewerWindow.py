@@ -4,9 +4,7 @@
 ### END LICENSE
 
 from gi.repository import GwibberGtk
-
 import urllib2
-
 import gettext, locale, datetime
 from gettext import gettext as _
 from accomplishments.util.paths import locale_dir
