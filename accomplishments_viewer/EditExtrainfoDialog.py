@@ -79,10 +79,10 @@ class EditExtrainfoDialog(Gtk.Dialog):
             for i in infoneeded:
                 if i["needs-information"] not in section_dict:
                     section_dict[i["needs-information"]] = list([i["collection"]])
-                    extrainfo_dict[i["needs-information"]] = [i["label"],i["description"],i["value"]]
+                    extrainfo_dict[i["needs-information"]] = i
                 else:
                     section_dict[i["needs-information"]].append(i["collection"])
-                    extrainfo_dict[i["needs-information"]] = [i["label"],i["description"],i["value"]]
+                    extrainfo_dict[i["needs-information"]] = i
             for a in section_dict:
                 section_dict[a] = tuple(section_dict[a])
                  
@@ -148,12 +148,13 @@ class EditExtrainfoDialog(Gtk.Dialog):
                 
                 for f in d:
                     #for each information field in the group...
-                    extrainfolist = extrainfo_dict[f]
-                    label = extrainfolist[0]
+                    extrainfo = extrainfo_dict[f]
+                    label = extrainfo['label']
                     label = label.replace("&","&amp;") #pango would complain on that
-                    description = extrainfolist[1]
+                    description = extrainfo['description']
                     description = description.replace("&","&amp;") #pango would complain on that
-                    value = extrainfolist[2]
+                    value = extrainfo['value']
+                    example = extrainfo.get('example')
                     
                     g_entrybox = Gtk.HBox()
                     g_mainlabel = Gtk.Label(label)
@@ -166,12 +167,20 @@ class EditExtrainfoDialog(Gtk.Dialog):
                     g_desclabel = Gtk.Label("<small><small><b>" + description + "</b></small></small>")
                     g_desclabel.set_use_markup(True)
                     g_desclabel.set_alignment(1,0)
+
+                    if example:
+                        g_example = Gtk.Label("<small><small><b>Example: " + example + "</b></small></small>")
+                        g_example.set_use_markup(True)
+                        g_example.set_alignment(1,0)
+                        g_example.set_margin_right(20)
                     
                     g_entrybox.set_margin_right(20)
                     g_desclabel.set_margin_right(20)
                     
                     g_box.pack_start(g_entrybox,True,False,0)
                     g_box.pack_start(g_desclabel,True,False,0)
+                    if example:
+                        g_box.pack_start(g_example,True,False,0)
                     g_entrybox.pack_end(g_entry,False,False,0)
                     g_entrybox.pack_end(g_mainlabel,False,False,0)
                     
