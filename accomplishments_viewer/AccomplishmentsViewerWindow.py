@@ -3,6 +3,8 @@
 # This file is in the public domain
 ### END LICENSE
 
+from gi.repository import GwibberGtk
+import urllib2
 import gettext, locale, datetime
 from gettext import gettext as _
 from accomplishments.util.paths import locale_dir
@@ -502,11 +504,49 @@ class AccomplishmentsViewerWindow(Window):
         new = h.get_value() + h.get_step_increment()
         h.set_value(new)
         self.subcats_scroll.set_hadjustment(h)
+
+    def show_gwibber_widget(self,uri,name):
+        entry = GwibberGtk.Entry()
+        trophyURL = 'http://www.trophies.ubuntu.com/'+name+'/'+uri
+        entry.text_view.get_buffer().set_text("I've just accomplishished this: "+trophyURL)
+        messagewindow = Gtk.Window()
+        messagewindow.set_title("Share Accomplishment")
+        messagewindow.set_icon_name("gwibber")
+        messagewindow.resize(400, 150)
+        messagewindow.add(entry)
+        messagewindow.show_all()   
         
     def webkit_link_clicked(self, view, frame, net_req, nav_act, pol_dec):
         """Load a link from the webkit view in an external system browser."""
-        
+
         uri=net_req.get_uri()
+
+        if uri.startswith ('file:///#gwibber-share'):
+            share_name = self.libaccom.get_share_name()
+            share_name = urllib2.quote(share_name.encode('utf8'))
+            share_ID = self.libaccom.get_share_id()
+            host = 'http://213.138.100.229:8000'
+            nameURL = host+"/user/getusername?share_name="+share_name+"&share_id="+share_ID
+
+            publish_status = self.libaccom.get_published_status()
+            if publish_status==0:
+                dialog = Gtk.MessageDialog(self, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, "Information")
+                dialog.format_secondary_text("Sorry, you have not published your trophies yet.")
+                dialog.run()
+                dialog.hide()
+            else:
+                response = urllib2.urlopen(nameURL)
+                i = 0
+                for line in response:
+                    if i ==0:
+                        name = line.rstrip()
+                    i=i+1            
+                uri = uri.replace("file:///#gwibber-share?accomID=", '');
+                gwibberPopup = self.show_gwibber_widget(uri,name)
+
+        if uri.startswith('about:'):
+            return False
+
         if uri.startswith('about:'):
             return False
 
@@ -1053,14 +1093,19 @@ class AccomplishmentsViewerWindow(Window):
             html = html + "<div id='header' class='grid_8'> \
                 <h1>" + data['title'] + "</h1> \
                 </div>"
+                
+
 
         ## summary table
-
         html = html + "<div id='accomplishment' class='grid_8 clearfix'> \
-        <div id='accomplishment-badge' class='grid_8 clearfix'> \
-            <img class='icon' src='" + str(iconpath) + "'> \
+        <div id='accomplishment-badge' class='grid_8 clearfix'>"
+
+        if achieved:
+            html = html + "<div id='social-share'><a href='#gwibber-share?accomID="+accomID+"' id='gwibber-share'>+SHARE</a></div>"
+
+        html = html +"<img class='icon' src='" + str(iconpath) + "'> \
             <div class='grid_3 block'> \
-            <h4>" + _("Opportunity Information").decode('utf-8') + ":</h4> \
+                <h4>" + _("Opportunity Information").decode('utf-8') + ":</h4> \
             <ul class='none'> \
                 <li>"
 

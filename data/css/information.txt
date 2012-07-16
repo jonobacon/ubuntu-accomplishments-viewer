@@ -17,6 +17,19 @@ a {
 	margin-top: 10px
 }
 
+#social-share { 
+	position: relative;
+	text-align: right;
+	padding-right: 10px;
+	padding-top: 10px;
+}
+
+#gwibber-share {
+	color: #FFF;
+	text-decoration: none;
+	font-weight: 500;
+}
+
 #accomplishment-badge {
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
