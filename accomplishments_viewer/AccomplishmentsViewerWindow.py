@@ -5,6 +5,8 @@
 
 from gi.repository import GwibberGtk
 
+import urllib2
+
 import gettext, locale
 from gettext import gettext as _
 from accomplishments.util.paths import locale_dir
@@ -445,9 +447,10 @@ class AccomplishmentsViewerWindow(Window):
         h.set_value(new)
         self.subcats_scroll.set_hadjustment(h)
 
-    def show_gwibber_widget(self,uri):
+    def show_gwibber_widget(self,uri,name):
         entry = GwibberGtk.Entry()
-        trophyURL = 'http://www.trophies.ubuntu.com/aName/'+uri
+        trophyURL = 'http://www.trophies.ubuntu.com/'+name+'/'+uri
+        print trophyURL
         entry.text_view.get_buffer().set_text("I've just accomplishished this: "+trophyURL)
         messagewindow = Gtk.Window()
         messagewindow.set_title("Share Accomplishment")
@@ -463,8 +466,25 @@ class AccomplishmentsViewerWindow(Window):
         uri=net_req.get_uri()
 
         if uri.startswith ('file:///#gwibber-share'):
-            uri = uri.replace("file:///#gwibber-share?accomID=", '');
-            gwibberPopup = self.show_gwibber_widget(uri)
+            share_name = self.libaccom.get_share_name()
+            share_ID = self.libaccom.get_share_id()
+            host = 'http://213.138.100.229:8000'
+            nameURL = host+"/user/getusername?share_name="+share_name+"&share_id="+share_ID
+            publish_status = self.libaccom.get_published_status()
+            if publish_status==0:
+                dialog = Gtk.MessageDialog(self, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, "Information")
+                dialog.format_secondary_text("Sorry, you have not published your trophies yet.")
+                dialog.run()
+                dialog.hide()
+            else:
+                response = urllib2.urlopen(nameURL)
+                i = 0
+                for line in response:
+                    if i ==0:
+                        name = line.rstrip()
+                    i=i+1            
+                uri = uri.replace("file:///#gwibber-share?accomID=", '');
+                gwibberPopup = self.show_gwibber_widget(uri,name)
 
         if uri.startswith('about:'):
             return False
