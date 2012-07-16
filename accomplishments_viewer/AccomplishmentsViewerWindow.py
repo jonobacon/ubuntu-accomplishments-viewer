@@ -523,9 +523,13 @@ class AccomplishmentsViewerWindow(Window):
 
         if uri.startswith ('file:///#gwibber-share'):
             share_name = self.libaccom.get_share_name()
+            share_name = urllib2.quote(share_name.encode('utf8'))
             share_ID = self.libaccom.get_share_id()
             host = 'http://213.138.100.229:8000'
             nameURL = host+"/user/getusername?share_name="+share_name+"&share_id="+share_ID
+            print nameURL
+
+
             publish_status = self.libaccom.get_published_status()
             if publish_status==0:
                 dialog = Gtk.MessageDialog(self, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, "Information")
