@@ -180,6 +180,24 @@ class AccomplishmentsViewerWindow(Window):
 
         self.webview.show()
 
+
+        self.messageentry = GwibberGtk.Entry()        
+        self.messagewindow = Gtk.Window()
+        self.messagewindow.set_transient_for(self)
+        self.messagevbox = Gtk.VBox()
+        self.messagewindow.set_title(_("Share Trophy"))
+        self.messagewindow.set_icon_name("gwibber")
+        self.messagewindow.resize(400, 150)
+        self.messagewindow.set_resizable(False)
+        self.messagevbox.pack_start(self.messageentry,True,True,0)
+        self.messagelabel = Gtk.Label()
+        self.messagelabel.set_markup(_("<b>Always add the link to your trophy on the web when sharing a trophy.</b>\nThis link works as a <b>proof</b> that you have really accomplished this trophy."))
+        self.messagevbox.pack_start(self.messagelabel,False,False,0)
+        self.messagewindow.add(self.messagevbox)
+        self.messagevbox.show_all()   
+        self.messagewindow.hide()
+        self.messagewindow.connect("delete-event",self.close_gwibber_window)
+
         self.opp_col_store = Gtk.ListStore(str, str)
         self.col_combo_renderer_text = Gtk.CellRendererText()
         self.opp_combo_col.pack_start(self.col_combo_renderer_text, True)
@@ -508,22 +526,16 @@ class AccomplishmentsViewerWindow(Window):
         self.subcats_scroll.set_hadjustment(h)
 
     def show_gwibber_widget(self,accomID,name):
-        entry = GwibberGtk.Entry()
         trophyURL = TROPHY_GALLERY_URL+'/gallery/trophies/'+name+'/'+accomID
         trophy_name = self.libaccom.get_acc_title(accomID);
-        entry.text_view.get_buffer().set_text(_("I've just got a trophy '%s'! %s") % (trophy_name, trophyURL))
-        messagewindow = Gtk.Window()
-        vbox = Gtk.VBox()
-        messagewindow.set_title(_("Share Trophy"))
-        messagewindow.set_icon_name("gwibber")
-        messagewindow.resize(400, 150)
-        vbox.pack_start(entry,True,True,0)
-        label = Gtk.Label()
-        label.set_markup(_("<b>Always add the link to your trophy on the web when sharing a trophy.</b>\nThis link works as a <b>proof</b> that you have really accomplished this trophy."))
-        vbox.pack_start(label,False,False,0)
-        messagewindow.add(vbox)
-        messagewindow.show_all()   
-        
+        self.messageentry.text_view.get_buffer().set_text(_("I've just got a trophy '%s'! %s") % (trophy_name, trophyURL))
+        self.messagewindow.show()
+        self.messagewindow.present()
+
+    def close_gwibber_window(self,widget=None,event=None):
+        self.messagewindow.hide()
+        return True
+    
     def webkit_link_clicked(self, view, frame, net_req, nav_act, pol_dec):
         """Load a link from the webkit view in an external system browser."""
 
@@ -549,10 +561,8 @@ class AccomplishmentsViewerWindow(Window):
                     uri = uri.replace("file:///gwibber-share?accomID=", '');
                     gwibberPopup = self.show_gwibber_widget(uri,name)
                 except urllib2.HTTPError:
-                    print 'HTTPError while gettin username.'
-
-        if uri.startswith('about:'):
-            return False
+                    print 'HTTPError while getting username.'
+            return True
 
         if uri.startswith('about:'):
             return False
