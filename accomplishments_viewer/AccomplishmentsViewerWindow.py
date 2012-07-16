@@ -528,7 +528,9 @@ class AccomplishmentsViewerWindow(Window):
         self.subcats_scroll.set_hadjustment(h)
 
     def show_gwibber_widget(self,accomID,name):
-        trophyURL = TROPHY_GALLERY_URL+'/gallery/trophies/'+name+'/'+accomID
+        # Temporarily using trophies.ubuntu.com
+        #trophyURL = TROPHY_GALLERY_URL+'/gallery/trophies/'+name+'/'+accomID
+        trophyURL = 'http://trophies.ubuntu.com/gallery/trophies/'+name+'/'+accomID
         trophy_name = self.libaccom.get_acc_title(accomID);
         self.messageentry.text_view.get_buffer().set_text(_("I've just got the trophy '%s'! %s") % (trophy_name, trophyURL))
         self.messagewindow.show()
