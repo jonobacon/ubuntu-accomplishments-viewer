@@ -52,6 +52,8 @@ COL_ID = 5
 MYTROPHIES_FILTER_ALL = 0
 MYTROPHIES_FILTER_LATEST = 1
 
+TROPHY_GALLERY_URL = 'http://213.138.100.229:8000'
+
 # See accomplishments_viewer_lib.Window.py for more details about how this class works
 class AccomplishmentsViewerWindow(Window):
     __gtype_name__ = "AccomplishmentsViewerWindow"
@@ -507,10 +509,10 @@ class AccomplishmentsViewerWindow(Window):
 
     def show_gwibber_widget(self,uri,name):
         entry = GwibberGtk.Entry()
-        trophyURL = 'http://www.trophies.ubuntu.com/'+name+'/'+uri
-        entry.text_view.get_buffer().set_text("I've just accomplishished this: "+trophyURL)
+        trophyURL = TROPHY_GALLERY_URL+'/gallery/trophies/'+name+'/'+uri
+        entry.text_view.get_buffer().set_text(_("I've just accomplishished this: %s") % trophyURL)
         messagewindow = Gtk.Window()
-        messagewindow.set_title("Share Accomplishment")
+        messagewindow.set_title(_("Share Trophy"))
         messagewindow.set_icon_name("gwibber")
         messagewindow.resize(400, 150)
         messagewindow.add(entry)
@@ -525,22 +527,19 @@ class AccomplishmentsViewerWindow(Window):
             share_name = self.libaccom.get_share_name()
             share_name = urllib2.quote(share_name.encode('utf8'))
             share_ID = self.libaccom.get_share_id()
-            host = 'http://213.138.100.229:8000'
-            nameURL = host+"/user/getusername?share_name="+share_name+"&share_id="+share_ID
+            nameURL = TROPHY_GALLERY_URL+"/user/getusername?share_name="+share_name+"&share_id="+share_ID
 
             publish_status = self.libaccom.get_published_status()
             if publish_status==0:
                 dialog = Gtk.MessageDialog(self, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, "Information")
-                dialog.format_secondary_text("Sorry, you have not published your trophies yet.")
+                dialog.format_secondary_text(_("Sorry, you have not published your trophies yet."))
                 dialog.run()
                 dialog.hide()
             else:
                 response = urllib2.urlopen(nameURL)
-                i = 0
                 for line in response:
-                    if i ==0:
-                        name = line.rstrip()
-                    i=i+1            
+                    name = line.rstrip()
+                    break          
                 uri = uri.replace("file:///#gwibber-share?accomID=", '');
                 gwibberPopup = self.show_gwibber_widget(uri,name)
 
