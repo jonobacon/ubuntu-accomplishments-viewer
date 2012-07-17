@@ -1152,7 +1152,6 @@ class AccomplishmentsViewerWindow(Window):
 
                 for l in help.split('\n'):
                     channelName = l[l.find("#")+1:l.find(" ")]
-                    print channelName
                     if l.startswith( '#'+channelName ):
                         l = "<a style='color:#FFF' href='http://webchat.freenode.net/?channels="+channelName+"'>"+'#'+channelName+" on freenode</a>"                 
                         html = html + "<li>" + l + "</li>"
