@@ -1151,7 +1151,12 @@ class AccomplishmentsViewerWindow(Window):
                 help = data["help"]
 
                 for l in help.split('\n'):
-                    html = html + "<li>" + l + "</li>"
+                    channelName = l[l.find("#")+1:l.find(" ")]
+                    if l.startswith( '#'+channelName ):
+                        l = "<a style='color:#FFF' href='http://webchat.freenode.net/?channels="+channelName+"'>"+'#'+channelName+" on freenode</a>"                 
+                        html = html + "<li>" + l + "</li>"
+                    else:
+                        html = html + "<li>" + l + "</li>"  
             else:
                 html = html + "<li>" + _("No help available.").decode('utf-8') + "</li>"
             
