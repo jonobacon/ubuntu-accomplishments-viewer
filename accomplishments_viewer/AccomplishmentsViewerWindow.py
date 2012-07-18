@@ -1210,9 +1210,19 @@ class AccomplishmentsViewerWindow(Window):
 
         if achieved:
             #script for showing details...
-            html = html + """<script language="JavaScript">function ShwHid(divId){if(document.getElementById(divId).style.display == 'none'){document.getElementById(divId).style.display='block';}else{document.getElementById(divId).style.display='none';}}</script>"""
-            html = html + """<a onclick="javascript:ShwHid('acc_body')" href="javascript:;" class='grid_3' style='outline: none'>"""
-            html = html + _("Accomplishment Details") + "</a>"
+            html = html + """<script language="JavaScript">function ShwHid(divId){
+var el = document.getElementById('accomDetails');
+    if(document.getElementById(divId).style.display == 'none'){
+        document.getElementById(divId).style.display='block';
+        el.innerHTML = '""" + _("Accomplishment Details [-]") + """';
+    }else{
+        document.getElementById(divId).style.display='none';
+                el.innerHTML = '""" + _("Accomplishment Details [-]") + """';
+    }
+}
+</script>"""
+            html = html + """<a id="accomDetails" onclick="javascript:ShwHid('acc_body')" href="javascript:;" class='grid_3' style='outline: none'>"""
+            html = html + _("Accomplishment Details [+]") + "</a>"
             #details hidden by default
             html = html + "<div id='acc_body' style='display: none'>"
         else:
