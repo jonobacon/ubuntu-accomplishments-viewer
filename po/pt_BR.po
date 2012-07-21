@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-18 14:06+0200\n"
-"PO-Revision-Date: 2012-07-18 20:45+0000\n"
+"PO-Revision-Date: 2012-07-20 12:58+0000\n"
 "Last-Translator: Rafael Neri <Unknown>\n"
 "Language-Team: Português <joao.abo.santana@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-19 05:02+0000\n"
-"X-Generator: Launchpad (build 15637)\n"
+"X-Launchpad-Export-Date: 2012-07-21 05:35+0000\n"
+"X-Generator: Launchpad (build 15654)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
@@ -43,11 +43,11 @@ msgstr "Autores da Coleção:"
 
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
-msgstr "Visualizador de Realizações"
+msgstr "Visualizador de conquistas"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "AccomplishmentsViewer application"
-msgstr "Aplicativo Visualizador de Realizações"
+msgstr "Aplicativo visualizador de conquistas"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
@@ -61,7 +61,7 @@ msgid ""
 "Please ensure that this data is accurate and up to date."
 msgstr ""
 "<b>As seguintes informações são necessárias para verificar suas "
-"realizações.</b>\n"
+"conquistas.</b>\n"
 "\n"
 "Por favor certifique-se que estes dados são precisos e atualizados."
 
@@ -85,7 +85,7 @@ msgstr ""
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
-msgstr "Preferências de Realizações"
+msgstr "Preferências de conquistas"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:2
 msgid "Start background service on log in (recommended)"
@@ -94,7 +94,7 @@ msgstr ""
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:3
 msgid "<b>Accomplishments Background Service</b>"
-msgstr "<b>Serviço de Segundo Plano de Realizações</b>"
+msgstr "<b>Serviço de conquistas em segundo plano</b>"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:4
 msgid "Hide Ubuntu One file upload notifications (recommended)"
@@ -142,7 +142,7 @@ msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:555
 msgid "Your trophies are not yet published"
-msgstr ""
+msgstr "Seus troféus ainda não estão publicados"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:556
 msgid "You can do it from Edit->Preferences menu."
@@ -272,7 +272,7 @@ msgstr "_Arquivo"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "Check Accomplishments"
-msgstr ""
+msgstr "Verificar conquistas"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Edit"
@@ -309,8 +309,8 @@ msgid ""
 "\n"
 "You can disable this in <i>Edit</i> -> <i>Preferences</i> if required."
 msgstr ""
-"<b>O serviço de segundo plano de Realizações será iniciado quando você "
-"iniciar sua sessão. Dessa forma seu computador pode verificar as realizações "
+"<b>O serviço de conquistas em segundo plano será iniciado quando você "
+"iniciar sua sessão. Dessa forma seu computador pode verificar as conquistas "
 "automaticamente.</b>\n"
 "\n"
 "Você pode desabilitar isto em <i>Editar</i> -> <i>Preferências<i> se "
@@ -318,7 +318,7 @@ msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:14
 msgid "Accomplishments Service"
-msgstr "Serviço de realizações"
+msgstr "Serviço de conquistas"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
 msgid ""
@@ -376,7 +376,7 @@ msgstr ""
 "outras funcionalidades. Ele é totalmente integrado em seu computador "
 "Ubuntu.\n"
 "\n"
-"Quando o Realizações do Ubuntu percebe que você realizou algo novo, um "
+"Quando o \"Conquistas do Ubuntu\" percebe que você realizou algo novo, um "
 "troféu será enviado para um servidor de verificação usando sua conta no "
 "Ubuntu One. Isto é simples, seguro, e as únicas informações compartilhadas "
 "com o servidor são os dados que você pode ver em Editar -> Identificação - "

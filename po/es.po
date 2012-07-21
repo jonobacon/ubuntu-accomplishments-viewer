@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-18 14:06+0200\n"
-"PO-Revision-Date: 2012-07-04 14:11+0000\n"
-"Last-Translator: psamuel <persaudsamuel@gmail.com>\n"
+"PO-Revision-Date: 2012-07-20 12:44+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-19 05:02+0000\n"
-"X-Generator: Launchpad (build 15637)\n"
+"X-Launchpad-Export-Date: 2012-07-21 05:35+0000\n"
+"X-Generator: Launchpad (build 15654)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
@@ -118,7 +118,7 @@ msgstr "<b>Publicar Trofeos en línea</b>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:188
 msgid "Share Trophy"
-msgstr ""
+msgstr "Compartir trofeo"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:194
 msgid ""
@@ -126,6 +126,9 @@ msgid ""
 "This link works as a <b>proof</b> that you have really accomplished this "
 "trophy."
 msgstr ""
+"<b>Cuando comparta un trofeo, siempre añada el enlace web hacia él.</b>\n"
+"Este enlace funciona como <b>prueba</b> de que ha obtenido realmente este "
+"trofeo."
 
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:493
@@ -136,15 +139,15 @@ msgstr "Todo"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:535
 #, python-format
 msgid "I've just got the trophy '%s'! %s"
-msgstr ""
+msgstr "¡Acabo de obtener el trofeo «%s»! %s"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:555
 msgid "Your trophies are not yet published"
-msgstr ""
+msgstr "No se han publicado aún sus trofeos"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:556
 msgid "You can do it from Edit->Preferences menu."
-msgstr ""
+msgstr "Puede hacerlo desde el menú Editar ‣ Preferencias."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:847
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:860
@@ -233,11 +236,11 @@ msgstr "Esta oportunidad necesita verificación"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1217
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1220
 msgid "Accomplishment Details [-]"
-msgstr ""
+msgstr "Detalles del logro [−]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1225
 msgid "Accomplishment Details [+]"
-msgstr ""
+msgstr "Detalles del logro [+]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1247
 msgid "How to accomplish this opportunity"
@@ -270,7 +273,7 @@ msgstr "_Archivo"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "Check Accomplishments"
-msgstr ""
+msgstr "Comprobar logros"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Edit"
