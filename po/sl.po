@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-18 14:06+0200\n"
-"PO-Revision-Date: 2012-05-25 10:46+0000\n"
+"PO-Revision-Date: 2012-07-25 06:28+0000\n"
 "Last-Translator: Damir Jerovsek <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-19 05:02+0000\n"
-"X-Generator: Launchpad (build 15637)\n"
+"X-Launchpad-Export-Date: 2012-07-26 05:23+0000\n"
+"X-Generator: Launchpad (build 15679)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
@@ -300,6 +300,10 @@ msgid ""
 "\n"
 "You can disable this in <i>Edit</i> -> <i>Preferences</i> if required."
 msgstr ""
+"<b>Ozadna storitev dosežkov se bo začela, ko se boste prijavili. To pa zato, "
+"da lahko vaš računalnik samodejno preveri dosežke.</b>\n"
+"\n"
+"Če je potrebno, lahko to onemogočite v <i>Uredi</i> -> <i>Možnosti</i>."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:14
 msgid "Accomplishments Service"
