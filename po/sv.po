@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-18 14:06+0200\n"
-"PO-Revision-Date: 2012-07-21 21:06+0000\n"
-"Last-Translator: Christopher Forster <Unknown>\n"
+"PO-Revision-Date: 2012-07-29 21:29+0000\n"
+"Last-Translator: Jonathan Lindén <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-22 04:59+0000\n"
-"X-Generator: Launchpad (build 15654)\n"
+"X-Launchpad-Export-Date: 2012-07-30 05:11+0000\n"
+"X-Generator: Launchpad (build 15702)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
@@ -34,7 +34,7 @@ msgstr "Vänligen se din webbläsare för att fortsätta..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:90
 msgid "Trophies are no longer published."
-msgstr ""
+msgstr "Troféer blir inte längre publicerade."
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
@@ -77,6 +77,8 @@ msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad')"
 msgstr ""
+"Visa information om den försedda bedriftens ID (ex. 'ubuntu-"
+"community/registered-on-launchpad')"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
@@ -104,14 +106,17 @@ msgid ""
 "button.\n"
 "You can <i>Unpublish</i> later if you want to."
 msgstr ""
+"För att publicera dina troféer online för allmän beskådan, klicka "
+"<i>Publicera</i>.\n"
+"Du kan <i>avpublicera</i> senare om du vill."
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
 msgid "<b>Publish Trophies Online</b>"
-msgstr ""
+msgstr "<b>Publicera troféer online</b>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:188
 msgid "Share Trophy"
-msgstr ""
+msgstr "Dela trofé"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:194
 msgid ""
@@ -119,50 +124,52 @@ msgid ""
 "This link works as a <b>proof</b> that you have really accomplished this "
 "trophy."
 msgstr ""
+"<b>Bifoga alltid en länk till din trofé när du delar den på webben.</b>\n"
+"Länken fungerar som ett <b>bevis</b> att du faktiskt fått trofén."
 
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:493
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
 msgid "All"
-msgstr ""
+msgstr "Alla"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:535
 #, python-format
 msgid "I've just got the trophy '%s'! %s"
-msgstr ""
+msgstr "Jag har precis fått trofén '%s'! %s"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:555
 msgid "Your trophies are not yet published"
-msgstr ""
+msgstr "Dina troféer är ännu inte publicerade."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:556
 msgid "You can do it from Edit->Preferences menu."
-msgstr ""
+msgstr "Du kan göra det från menyn under Redigera->Inställningar."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:847
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:860
 msgid "everything"
-msgstr ""
+msgstr "allt"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:922
 msgid "Today"
-msgstr ""
+msgstr "Idag"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:925
 msgid "This Week"
-msgstr ""
+msgstr "Denna vecka"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
 msgid "This Month"
-msgstr ""
+msgstr "Denna månad"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:931
 msgid "Last Six Months"
-msgstr ""
+msgstr "Senaste sex månaderna"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:934
 msgid "Earlier"
-msgstr ""
+msgstr "Tidigare"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1129
 msgid "Opportunity Information"
@@ -225,11 +232,11 @@ msgstr "Denna möjlighet kräver verifiering"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1217
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1220
 msgid "Accomplishment Details [-]"
-msgstr ""
+msgstr "Detaljer för bedrift [-]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1225
 msgid "Accomplishment Details [+]"
-msgstr ""
+msgstr "Detaljer för bedrift [+]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1247
 msgid "How to accomplish this opportunity"
@@ -262,7 +269,7 @@ msgstr "_Arkiv"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "Check Accomplishments"
-msgstr ""
+msgstr "Kontrollera bedrifter"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Edit"
@@ -270,7 +277,7 @@ msgstr "R_edigera"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "_Identification..."
-msgstr ""
+msgstr "_Identifiering..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "_Help"
@@ -282,7 +289,7 @@ msgstr "Innehåll"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid "Ask a question..."
-msgstr ""
+msgstr "Ställ en fråga..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:9
 msgid "My Trophies"
@@ -343,6 +350,12 @@ msgid ""
 "Press the button below to check if you have an Ubuntu One account. If you "
 "don't, we will take a second to sign-up; the account is free."
 msgstr ""
+"<b>Vissa möjligheter kräver verifikation när de genomförts. För att göra "
+"detta krävs ett Ubuntu One-konto och tillåtelse att verifiera dessa "
+"möjlighet.</b>\n"
+"\n"
+"Klicka på knappen nedan för att se om du har ett Ubuntu One-konto. Om du "
+"inte har det, kan du registrera ett på några sekunder; kontot är gratis."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid ""
@@ -372,7 +385,7 @@ msgstr "Läs mer..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "Don't Use Ubuntu One"
-msgstr ""
+msgstr "Använd inte Ubuntu One"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid "Ubuntu One account required"
@@ -384,7 +397,7 @@ msgstr "Kom igång"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
 msgid "Latest"
-msgstr ""
+msgstr "Senaste"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
 msgid "Show me"
