@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-18 14:06+0200\n"
-"PO-Revision-Date: 2012-05-26 05:18+0000\n"
-"Last-Translator: Kimme Utsi <kimmeu@gmail.com>\n"
+"PO-Revision-Date: 2012-07-30 20:04+0000\n"
+"Last-Translator: Frode Lynum <frode@kittilsbotn.com>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-19 05:02+0000\n"
-"X-Generator: Launchpad (build 15637)\n"
+"X-Launchpad-Export-Date: 2012-07-31 05:24+0000\n"
+"X-Generator: Launchpad (build 15702)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:8
 msgid "Publish..."
-msgstr ""
+msgstr "Publiser..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:60
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:85
@@ -30,27 +30,27 @@ msgstr ""
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:84
 msgid "Please see your web browser to continue..."
-msgstr ""
+msgstr "Vennligst se i din nettleser for å fortsette..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:90
 msgid "Trophies are no longer published."
-msgstr ""
+msgstr "Trofeer er ikke lengre publisert."
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
-msgstr "Trofe Utgivere:"
+msgstr "Samlings opphav:"
 
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
-msgstr "Prestasjons Leser"
+msgstr "Oppnåelsesviser"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "AccomplishmentsViewer application"
-msgstr "PrestajonsLeser applikasjon"
+msgstr "Oppnåelseviser applikasjon"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
-msgstr "Ekstra informasjon behøves..."
+msgstr "Ekstra informasjon trengs..."
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:2
 msgid ""
@@ -59,13 +59,13 @@ msgid ""
 "\n"
 "Please ensure that this data is accurate and up to date."
 msgstr ""
-"<b>Den følgende informasjonen kreves for å bekrefte dine prestasjoner.</b>\n"
+"<b>Følgende informasjon kreves for å bekrefte dine oppnådde mål.</b>\n"
 "\n"
-"Venneligst bekreft at disse opplysningene er korrekte og oppdatert."
+"Vennligst forsikre deg om at disse data er riktige og oppdaterte."
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "GNU Public License"
-msgstr "GNU Public Lisens"
+msgstr "GNU Offentlig Lisens"
 
 #: ../accomplishments_viewer/__init__.py:26
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
@@ -77,6 +77,8 @@ msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad')"
 msgstr ""
+"Vis informasjon om den fremstilte oppnåelses ID (f.eks. 'ubuntu-"
+"community/registered-on-launchpad')"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
@@ -84,7 +86,7 @@ msgstr "Prestasjons innstillinger"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:2
 msgid "Start background service on log in (recommended)"
-msgstr ""
+msgstr "Start bakgrunns service ved innlogging (anbefalt)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:3
 msgid "<b>Accomplishments Background Service</b>"
@@ -104,14 +106,17 @@ msgid ""
 "button.\n"
 "You can <i>Unpublish</i> later if you want to."
 msgstr ""
+"For å publisere dine trofeer på nett  slik at andre kan se de, klikk "
+"<i>Publiser</i> knappen.\n"
+"Du kan <i>stoppe publiseringen</i> senere om du ønsker det."
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
 msgid "<b>Publish Trophies Online</b>"
-msgstr ""
+msgstr "<b>Publiser trofeer på nett</b>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:188
 msgid "Share Trophy"
-msgstr ""
+msgstr "Del trofè"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:194
 msgid ""
@@ -119,50 +124,54 @@ msgid ""
 "This link works as a <b>proof</b> that you have really accomplished this "
 "trophy."
 msgstr ""
+"<b>Alltid legg til en lenke til ditt trofé på nettet når du deler et "
+"trofé.</b>\n"
+"Denne lenken fungerer som et <b>bevis</b> på at du har fullført dette "
+"trofeet."
 
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:493
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
 msgid "All"
-msgstr ""
+msgstr "Alle"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:535
 #, python-format
 msgid "I've just got the trophy '%s'! %s"
-msgstr ""
+msgstr "Jeg har akkurat mottatt trofeet '%s'! %s"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:555
 msgid "Your trophies are not yet published"
-msgstr ""
+msgstr "Dine trofeer er ikke publisert enda"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:556
 msgid "You can do it from Edit->Preferences menu."
-msgstr ""
+msgstr "Du kan gjøre dette fra menyen Rediger->Innstillinger"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:847
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:860
 msgid "everything"
-msgstr ""
+msgstr "alt"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:922
 msgid "Today"
-msgstr ""
+msgstr "I dag"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:925
 msgid "This Week"
-msgstr ""
+msgstr "Denne uken"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
 msgid "This Month"
-msgstr ""
+msgstr "Denne måned"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:931
 msgid "Last Six Months"
-msgstr ""
+msgstr "Siste seks måneder"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:934
 msgid "Earlier"
-msgstr ""
+msgstr "Tidligere"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1129
 msgid "Opportunity Information"
@@ -197,7 +206,7 @@ msgstr "første"
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
-msgstr ""
+msgstr "Denne muligheten er låst. Du må fullføre følgende muligheter først:"
 
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1180
@@ -224,11 +233,11 @@ msgstr "Denne prestasjonen krever verifisering."
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1217
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1220
 msgid "Accomplishment Details [-]"
-msgstr ""
+msgstr "Prestasjonsdetaljer [-]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1225
 msgid "Accomplishment Details [+]"
-msgstr ""
+msgstr "Prestasjonsdetaljer [+]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1247
 msgid "How to accomplish this opportunity"
