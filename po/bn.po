@@ -8,14 +8,22 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-18 14:06+0200\n"
-"PO-Revision-Date: 2012-07-26 07:08+0000\n"
-"Last-Translator: Nure Alam Masud <nurealam.masud@gmail.com>\n"
+"PO-Revision-Date: 2012-08-02 18:55+0000\n"
+"Last-Translator: Kazi Shahnoor Ashraf <kazidxb@gmail.com>\n"
 "Language-Team: Bengali <bn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-27 05:36+0000\n"
-"X-Generator: Launchpad (build 15694)\n"
+"X-Launchpad-Export-Date: 2012-08-03 06:24+0000\n"
+"X-Generator: Launchpad (build 15734)\n"
+
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
+msgid "<b>Publish Trophies Online</b>"
+msgstr "<b>ট্রফিগুলো অনলাইনে প্রকাশ করুন</b>"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:188
+msgid "Share Trophy"
+msgstr "ট্রফি শেয়ার করুন"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
@@ -34,7 +42,7 @@ msgstr "আপনার ওয়েব ব্রাউজার দেখুন
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:90
 msgid "Trophies are no longer published."
-msgstr ""
+msgstr "আর কোন ট্রফি প্রকাশিত হয় নাই."
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
@@ -76,6 +84,8 @@ msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad')"
 msgstr ""
+"প্রদত্ত নিষ্পাদন আইডি সম্বন্ধে তথ্য (যেমন 'ubuntu-community/registered-on-"
+"launchpad') প্রদর্শন করুন."
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
@@ -103,14 +113,9 @@ msgid ""
 "button.\n"
 "You can <i>Unpublish</i> later if you want to."
 msgstr ""
-
-#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
-msgid "<b>Publish Trophies Online</b>"
-msgstr "ট্রফিগুলো অনলাইনে পাবলিশ করুন"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:188
-msgid "Share Trophy"
-msgstr "ট্রফি শেয়ার করুন"
+"অন্যদের দেখার জন্য আপনার ট্রফিসমূহ অনলাইনে প্রকাশ, <i>প্রকাশ</ i> বোতামে "
+"ক্লিক করুন.\n"
+"আপনি <i>অপ্রকাশ</ i> করতে পারেন পরে যদি আপনি চান."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:194
 msgid ""
@@ -118,6 +123,10 @@ msgid ""
 "This link works as a <b>proof</b> that you have really accomplished this "
 "trophy."
 msgstr ""
+"<b>একটি ট্রফি শেয়ার করার সময় ওয়েব এ সর্বদা আপনার ট্রফিটির সাথে লিংক যোগ "
+"করুন.</b>\n"
+"আপনি সত্যই ট্রফিটি নিষ্পাদন করেছেন তার <b>প্রমাণ</b> হিসাবে এই লিংকটি কাজ "
+"করে."
 
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:493
@@ -128,7 +137,7 @@ msgstr "সবগুলো"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:535
 #, python-format
 msgid "I've just got the trophy '%s'! %s"
-msgstr ""
+msgstr "আমি এইমাত্র ট্রফিটি পেয়েছি '%s'! %s"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:555
 msgid "Your trophies are not yet published"
@@ -224,11 +233,11 @@ msgstr "এই সুযোগ যাচাই প্রয়োজন"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1217
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1220
 msgid "Accomplishment Details [-]"
-msgstr ""
+msgstr "নিষ্পাদন বিবরণ [-]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1225
 msgid "Accomplishment Details [+]"
-msgstr ""
+msgstr "নিষ্পাদন বিবরণ [+]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1247
 msgid "How to accomplish this opportunity"
@@ -261,7 +270,7 @@ msgstr "_File"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "Check Accomplishments"
-msgstr ""
+msgstr "নিষ্পাদনসমূহ চেক করুন"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Edit"
@@ -269,7 +278,7 @@ msgstr "_Edit"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "_Identification..."
-msgstr ""
+msgstr "_Identification..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "_Help"
@@ -387,7 +396,7 @@ msgstr "শুরু করুন"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
 msgid "Latest"
-msgstr ""
+msgstr "সাম্প্রতিকতম"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
 msgid "Show me"
