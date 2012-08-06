@@ -393,7 +393,7 @@ class AccomplishmentsViewerWindow(Window):
     def run_daemon(self):
         """Starts the daemon process"""                
 
-        command = "twistd -noy " + daemon_exec_dir + "/accomplishments-daemon --logfile=" + os.path.join(self.dir_cache, "logs", "daemon.log") + " &"
+        command = os.path.join(daemon_exec_dir, "accomplishments-daemon") + " --start &"
         print ("Starting the daemon using command `%s`" % command)
         os.system(command)
         #apparently as that process daemonizes it will not get killed when one closes the client
