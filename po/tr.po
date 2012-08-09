@@ -8,29 +8,29 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-18 14:06+0200\n"
-"PO-Revision-Date: 2012-05-25 11:29+0000\n"
+"PO-Revision-Date: 2012-08-08 19:31+0000\n"
 "Last-Translator: SSSelim <selimssevgi@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-19 05:02+0000\n"
-"X-Generator: Launchpad (build 15637)\n"
+"X-Launchpad-Export-Date: 2012-08-09 05:27+0000\n"
+"X-Generator: Launchpad (build 15761)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:8
 msgid "Publish..."
-msgstr ""
+msgstr "Yayınla..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:60
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:85
 msgid "Stop Publishing"
-msgstr ""
+msgstr "Yayınlamayı Durdur"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:84
 msgid "Please see your web browser to continue..."
-msgstr ""
+msgstr "Devam etmek için lütfen tarayıcınıza bakınız..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:90
 msgid "Trophies are no longer published."
@@ -50,7 +50,7 @@ msgstr "Başarı Görüntüleyicisi uygulaması"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
-msgstr ""
+msgstr "Daha fazla bilgi gerekli...."
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:2
 msgid ""
@@ -62,11 +62,12 @@ msgstr "<b>Aşağıdaki bilgi başarınızı doğrulamak için gerekli.</b>"
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "GNU Public License"
-msgstr ""
+msgstr "GNU Genel Kamu Lisansı"
 
 #: ../accomplishments_viewer/__init__.py:26
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
 msgstr ""
+"Hata ayıklama mesajlarını göster (-vv debugs accomplishments_viewer_lib also)"
 
 #: ../accomplishments_viewer/__init__.py:29
 msgid ""
@@ -120,7 +121,7 @@ msgstr ""
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:493
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
 msgid "All"
-msgstr ""
+msgstr "Tümü"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:535
 #, python-format
@@ -138,31 +139,31 @@ msgstr ""
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:847
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:860
 msgid "everything"
-msgstr ""
+msgstr "herşey"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:922
 msgid "Today"
-msgstr ""
+msgstr "Bugün"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:925
 msgid "This Week"
-msgstr ""
+msgstr "Bu Hafta"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
 msgid "This Month"
-msgstr ""
+msgstr "Bu Ay"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:931
 msgid "Last Six Months"
-msgstr ""
+msgstr "Son Altı Ay"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:934
 msgid "Earlier"
-msgstr ""
+msgstr "Dana önce"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1129
 msgid "Opportunity Information"
-msgstr ""
+msgstr "Fırsat Bilgisi"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1137
 msgid "No information available."
@@ -174,11 +175,11 @@ msgstr "Yardım Alma"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1156
 msgid "No help available."
-msgstr ""
+msgstr "Yardım yok."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1171
 msgid "This opportunity is locked. You need to complete"
-msgstr ""
+msgstr "Bu fırsat kilitli. Tamamlamanız gerekiyor"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1171
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1176
@@ -194,6 +195,7 @@ msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr ""
+"Bu fırsat kilitli. Öncelikle aşağıdaki fırsatları tamamlanız gerekiyor :"
 
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1180
@@ -214,7 +216,7 @@ msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1205
 msgid "This opportunity requires verification"
-msgstr ""
+msgstr "Bu fırsat doğrulama gerektiriyor"
 
 #. script for showing details...
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1217
@@ -265,7 +267,7 @@ msgstr "_Düzenle"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "_Identification..."
-msgstr ""
+msgstr "_Kimlik..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "_Help"
@@ -277,7 +279,7 @@ msgstr "İçindekiler"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid "Ask a question..."
-msgstr ""
+msgstr "Bir soru sor..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:9
 msgid "My Trophies"
@@ -314,7 +316,7 @@ msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid "Edit credentials"
-msgstr ""
+msgstr "Kimlik bilgilerini düzenle"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid "Later"
@@ -322,7 +324,7 @@ msgstr "Daha Sonra"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid "Additional information required..."
-msgstr ""
+msgstr "Daha fazla bilgi gerekli..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
 msgid ""
@@ -368,12 +370,12 @@ msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
 msgid "Show me"
-msgstr ""
+msgstr "Göster"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:34
 msgid "opportunities for"
-msgstr ""
+msgstr "için fırsatlar"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:35
 msgid "Show Locked"
-msgstr ""
+msgstr "Kilitlileri göster"
