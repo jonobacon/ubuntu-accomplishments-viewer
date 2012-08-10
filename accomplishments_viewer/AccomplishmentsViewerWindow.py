@@ -538,7 +538,7 @@ class AccomplishmentsViewerWindow(Window):
             # Temporarily using trophies.ubuntu.com
             #trophyURL = TROPHY_GALLERY_URL+'/gallery/trophies/'+name+'/'+accomID
             trophyURL = 'http://trophies.ubuntu.com/gallery/trophies/'+name+'/'+accomID
-            trophy_name = self.libaccom.get_acc_title(accomID);
+            trophy_name = self.libaccom.get_accom_title(accomID);
             self.messageentry.text_view.get_buffer().set_text(_("I've just got the trophy '%s'! %s") % (trophy_name, trophyURL))
             self.messagewindow.show()
             self.messagewindow.present()
@@ -1078,7 +1078,7 @@ class AccomplishmentsViewerWindow(Window):
 
     def optparse_accomplishment(self, accom_id):
         """Process the -a command line option"""
-        if not self.libaccom.get_acc_exists(accom_id):
+        if not self.libaccom.get_accom_exists(accom_id):
             # this accomplishment does not exist! aborting...
             print "There is no accomplishment with this ID."
             return
@@ -1094,7 +1094,7 @@ class AccomplishmentsViewerWindow(Window):
         deps = []
         depstatus = []
         
-        deps = self.libaccom.get_acc_depends(accomID)
+        deps = self.libaccom.get_accom_depends(accomID)
         
         for acc in self.accomdb:
             for d in deps:
@@ -1102,15 +1102,15 @@ class AccomplishmentsViewerWindow(Window):
                     depstatus.append({ "id" : acc["id"], "accomplished" : acc["accomplished"], "collection-human" : acc["collection-human"], "title" : acc["title"] })
         
         
-        achieved = self.libaccom.get_acc_is_completed(accomID)
-        data = self.libaccom.get_acc_data(accomID)
+        achieved = self.libaccom.get_accom_is_completed(accomID)
+        data = self.libaccom.get_accom_data(accomID)
         if achieved:
             trophydata = self.libaccom.get_trophy_data(accomID)
         
 
         html = None
 
-        iconpath = self.libaccom.get_acc_icon_path(accomID)
+        iconpath = self.libaccom.get_accom_icon_path(accomID)
 
         html = "<!DOCTYPE html> \
         <html lang='en'> \
@@ -1180,7 +1180,7 @@ class AccomplishmentsViewerWindow(Window):
             
         if "depends" in data:
             # check if it is locked
-            if not self.libaccom.get_acc_is_unlocked(accomID):
+            if not self.libaccom.get_accom_is_unlocked(accomID):
                 if len(depstatus) > 0:
                     if len(depstatus) == 1:
                         html = html + "<li><i class='icon-key icon-large'></i>" + _("This opportunity is locked. You need to complete").decode('utf-8') + " <a href='accomplishment://" + depstatus[0]["id"] + "'><strong>" + depstatus[0]["title"] + "</strong></a> " + _("from").decode('utf-8') +" <strong>" + depstatus[0]["collection-human"] + "</strong> " + _("first").decode('utf-8') + ".</li>"
