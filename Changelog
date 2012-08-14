@@ -1,0 +1,14 @@
+Please add items to this changelog that are:
+
+ * New features.
+ * Bugs that have been fixed.
+
+Add items using the following format:
+
+-------------------------------------------------------------------------
+
+Next Version Target: 0.3
+
+-------------------------------------------------------------------------
+
+ * Bug #992809: Confusing behavior if no collection is installed (Jono Bacon)

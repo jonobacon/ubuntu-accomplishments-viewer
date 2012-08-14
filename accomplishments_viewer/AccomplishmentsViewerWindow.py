@@ -111,6 +111,7 @@ class AccomplishmentsViewerWindow(Window):
         self.additional_ubuntu1 = self.builder.get_object("add_ubu1")
         self.additional_daemon = self.builder.get_object("add_daemon")
         self.additional_daemon_session = self.builder.get_object("add_daemon_session")
+        self.additional_no_collections = self.builder.get_object("add_no_collections")
         self.auth_scrolled = self.builder.get_object("auth_scrolled")
         self.auth_viewport = self.builder.get_object("auth_viewport")
         self.verif_box = self.builder.get_object("verif_box")
@@ -133,6 +134,7 @@ class AccomplishmentsViewerWindow(Window):
         self.mytrophies_mainbox = self.builder.get_object("mytrophies_mainbox")
         self.mytrophies_filter_latest = self.builder.get_object("mytrophies_filter_latest")
         self.mytrophies_filter_all = self.builder.get_object("mytrophies_filter_all")
+        self.opp_frame = self.builder.get_object("opp_frame")
 
         # don't display the sub-cats scrollbars
         sb_h = self.subcats_scroll.get_hscrollbar()
@@ -252,6 +254,35 @@ class AccomplishmentsViewerWindow(Window):
         #self.update_views(None)
         self.notebook.set_current_page(2)
         self.tb_opportunities.set_active(True)
+        
+        if len(self.accomdb) == 0:
+            self.add_no_collections_installed()
+
+    def add_no_collections_installed(self):
+        """Display the message that no collections are installed."""
+        
+        # set bits of the user interface to be insensitive
+        self.tb_mytrophies.set_sensitive(False)
+        self.opp_frame.set_visible(False)
+        
+        # show the message
+        self.additional_no_collections.set_visible(True)
+
+    def on_add_no_collections_quit_clicked(self, widget):
+        """Quit the app."""
+        sys.exit(0)
+
+    def on_add_no_collections_scan_clicked(self, widget):
+        """FIXME: This function is not used until we can figure out a
+        way to reload the accom collections."""
+        self.connect_to_daemon()
+        self._load_accomplishments()
+        
+        if len(self.accomdb) == 0:
+            print "still none"
+        else:
+            print "success"
+        
         
     def trophy_received(self, message):
         """Called when a new trophy is detected on the system."""
