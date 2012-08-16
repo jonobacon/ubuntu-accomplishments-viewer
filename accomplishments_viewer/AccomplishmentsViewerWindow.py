@@ -347,12 +347,12 @@ class AccomplishmentsViewerWindow(Window):
         iconview.set_columns(-1)
         iconview.connect("selection-changed",self.mytrophy_clicked)
 
-        outerbox.pack_start(header, False, True, 0)
-        outerbox.pack_start(separator, False, True, 0)
-        outerbox.pack_start(iconview, True, True, 0)
+        outerbox.pack_start(header, False, False, 0)
+        outerbox.pack_start(separator, False, False, 0)
+        outerbox.pack_start(iconview, False, False, 0)
         outerbox.show_all()
         
-        self.mytrophies_mainbox.pack_start(outerbox, True, True, 0)
+        self.mytrophies_mainbox.add(outerbox)
             
     def connect_to_daemon(self):
         """Tries to connect to the daemon"""
