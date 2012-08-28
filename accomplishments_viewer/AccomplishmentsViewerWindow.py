@@ -276,12 +276,34 @@ class AccomplishmentsViewerWindow(Window):
     def reload_accomplishments(self):
         if not self.connected:
             return
+            
+        self.statusbar_reload_msg_start()
+        Gtk.main_iteration_do(False) # Force UI refresh
         self.libaccom.reload_accom_database()
+        self.statusbar_reload_msg_stop()
+        
         self.populate_opp_combos()
         if len(self.accomdb) == 0:
             self.add_no_collections_installed()
         self.update_views(None)
             
+    def statusbar_reload_msg_start(self):
+        self.statusbar.set_text(_("Reloading accomplishments collections..."))
+        self.spinner.start()
+        self.spinner.show()
+        self.statusbox.show()
+        self.statusbar_reload_msg = 0
+        GObject.timeout_add(1000,self.statusbar_reload_msg_stop)
+    
+    def statusbar_reload_msg_stop(self):
+        if self.statusbar_reload_msg is 0:
+            # That would be too quick and the user wouldn't even notice the message
+            self.statusbar_reload_msg = 1
+        elif self.statusbar_reload_msg is 1:
+            self.spinner.hide()
+            self.statusbox.hide()
+            
+    
     def trophy_received(self, message):
         """Called when a new trophy is detected on the system."""
         
@@ -427,7 +449,7 @@ class AccomplishmentsViewerWindow(Window):
         os.system(command)
         #apparently as that process daemonizes it will not get killed when one closes the client
         
-        self.statusbar.set_text("Starting the daemon...")
+        self.statusbar.set_text(_("Starting the daemon..."))
         self.spinner.start()
         self.spinner.show()
         self.statusbox.show()
