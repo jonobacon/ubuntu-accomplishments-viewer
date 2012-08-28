@@ -723,8 +723,15 @@ class AccomplishmentsViewerWindow(Window):
             self.curr_width = new_width
             self.curr_height = new_height
             # and refill iconviews with icons to adjust columns number
-            self.update_views(widget)
-            self.update_mytrophy_filter()
+            if self.connected:
+                self.update_views(widget)
+                self.update_mytrophy_filter()
+            else:
+                # Control flow may reach here if the daemon is not yet running 
+                # and therefore connection is yet to be made. Passing here will
+                # avoid errors about not-existing libaccom.
+                pass
+                
 
     def update_views(self, widget):
         """Update all of the views to reflect the current state of Trophies and Opportunities."""
