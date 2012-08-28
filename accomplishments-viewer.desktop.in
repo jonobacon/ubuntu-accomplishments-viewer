@@ -1,7 +1,9 @@
 [Desktop Entry]
 _Name=Accomplishments Viewer
-_Comment=AccomplishmentsViewer application
-Categories=GNOME;Utility;
+_GenericName=Accomplishments Viewer
+_X-GNOME-FullName=Ubuntu Accomplishments Viewer
+_Comment=Accomplishments Viewer Application
+Categories=Utility;
 Exec=accomplishments-viewer
 Icon=/opt/accomplishments/share/accomplishments-viewer/media/accomplishments-viewer.svg
 Terminal=false
