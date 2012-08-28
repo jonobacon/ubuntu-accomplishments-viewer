@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-18 14:06+0200\n"
-"PO-Revision-Date: 2012-08-08 19:15+0000\n"
-"Last-Translator: Jono Bacon <jono@ubuntu.com>\n"
+"PO-Revision-Date: 2012-08-20 21:41+0000\n"
+"Last-Translator: Anthony Harrington <untaintableangel@hotmail.co.uk>\n"
 "Language-Team: English (United Kingdom) <en_GB@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-09 05:27+0000\n"
-"X-Generator: Launchpad (build 15761)\n"
+"X-Launchpad-Export-Date: 2012-08-28 10:23+0000\n"
+"X-Generator: Launchpad (build 15864)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
@@ -137,40 +137,40 @@ msgstr "All"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:535
 #, python-format
 msgid "I've just got the trophy '%s'! %s"
-msgstr ""
+msgstr "I've just got the trophy '%s'! %s"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:555
 msgid "Your trophies are not yet published"
-msgstr ""
+msgstr "Your trophies are not yet published"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:556
 msgid "You can do it from Edit->Preferences menu."
-msgstr ""
+msgstr "You can do it from Edit->Preferences menu."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:847
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:860
 msgid "everything"
-msgstr ""
+msgstr "everything"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:922
 msgid "Today"
-msgstr ""
+msgstr "Today"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:925
 msgid "This Week"
-msgstr ""
+msgstr "This Week"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:928
 msgid "This Month"
-msgstr ""
+msgstr "This Month"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:931
 msgid "Last Six Months"
-msgstr ""
+msgstr "Last Six Months"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:934
 msgid "Earlier"
-msgstr ""
+msgstr "Earlier"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1129
 msgid "Opportunity Information"
@@ -234,11 +234,11 @@ msgstr "This opportunity requires verification"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1217
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1220
 msgid "Accomplishment Details [-]"
-msgstr ""
+msgstr "Accomplishment Details [-]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1225
 msgid "Accomplishment Details [+]"
-msgstr ""
+msgstr "Accomplishment Details [+]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1247
 msgid "How to accomplish this opportunity"
@@ -271,7 +271,7 @@ msgstr "_File"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "Check Accomplishments"
-msgstr ""
+msgstr "Check Accomplishments"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Edit"
@@ -279,7 +279,7 @@ msgstr "_Edit"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "_Identification..."
-msgstr ""
+msgstr "_Identification..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "_Help"
@@ -291,7 +291,7 @@ msgstr "Contents"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
 msgid "Ask a question..."
-msgstr ""
+msgstr "Ask a question..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:9
 msgid "My Trophies"
@@ -350,6 +350,12 @@ msgid ""
 "Press the button below to check if you have an Ubuntu One account. If you "
 "don't, we will take a second to sign-up; the account is free."
 msgstr ""
+"<b>Some opportunities require verification when completed. To do this you, "
+"will need an Ubuntu One account and agree to have those opportunities "
+"verified.</b>\n"
+"\n"
+"Press the button below to check if you have an Ubuntu One account. If you "
+"don't, we will take a second to sign-up; the account is free."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
 msgid ""
@@ -377,7 +383,7 @@ msgstr "Learn more..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:28
 msgid "Don't Use Ubuntu One"
-msgstr ""
+msgstr "Don't Use Ubuntu One"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid "Ubuntu One account required"
@@ -389,7 +395,7 @@ msgstr "Get Started"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
 msgid "Latest"
-msgstr ""
+msgstr "Latest"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
 msgid "Show me"
