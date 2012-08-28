@@ -5,11 +5,11 @@
 
 import urllib2
 import gettext, locale, datetime
-from gettext import gettext as _
+from locale import gettext as _
 from accomplishments.util.paths import locale_dir
 locale.bindtextdomain('accomplishments-viewer', locale_dir)
 gettext.bindtextdomain('accomplishments-viewer',locale_dir)
-gettext.textdomain('accomplishments-viewer')
+locale.textdomain('accomplishments-viewer')
 
 import traceback
 import os
@@ -45,7 +45,7 @@ except ImportError, ie:
     # start but disable any social media stuff
     GWIBBER_OK = False
 
-gettext.textdomain('accomplishments-viewer')
+locale.textdomain('accomplishments-viewer')
 DBusGMainLoop(set_as_default=True)
 logger = logging.getLogger('accomplishments-viewer')
 
@@ -223,7 +223,9 @@ class AccomplishmentsViewerWindow(Window):
         self.connect_to_daemon()
 
         if self.connected is True:
-            self.populate_opp_combos()
+            self.finalise_daemon_connection()
+        else:
+            self.run_daemon()
 
         self.u1_button = Gtk.Button()
         self.u1_button_sig = None
@@ -239,34 +241,26 @@ class AccomplishmentsViewerWindow(Window):
         if not os.path.exists(os.path.join(self.dir_cache, "logs")):
             os.makedirs(os.path.join(self.dir_cache, "logs"))
 
-        if self.connected is True:
-            self.check_and_ask_for_info()
-
-        if self.connected is False:
-            self.run_daemon()
-
         # IMPORTANT: This function should do no initialisations that depend
         # on having the daemon running. This is because if the daemon is not 
         # yet started it will take some time to connect to it. Such 
         # initialistions should land in appropriate place in run_daemon_timeout(...).
 
         self.datapath = get_data_path()
-        #self.datapath = "/home/jono/source/accomplishments-viewer/data/"
 
         self.update_widgets_sensitivity()
 
-        #self._load_accomplishments()
-        #self.update_views(None)
-        self.notebook.set_current_page(2)
-        self.tb_opportunities.set_active(True)
         
 
     def add_no_collections_installed(self):
         """Display the message that no collections are installed."""
         
-        # set bits of the user interface to be insensitive
-        self.tb_mytrophies.set_sensitive(False)
-        self.opp_frame.set_visible(False)
+        ### Commented out the following as it is confusing, and opens a lot of
+        ### possible scenarios where these buttons are left insensitive.
+        ## set bits of the user interface to be insensitive
+        # self.tb_mytrophies.set_sensitive(False)
+        # self.opp_frame.set_visible(False)
+        
         
         # show the message
         self.additional_no_collections.set_visible(True)
@@ -275,18 +269,19 @@ class AccomplishmentsViewerWindow(Window):
         """Quit the app."""
         sys.exit(0)
 
-    def on_add_no_collections_scan_clicked(self, widget):
-        """FIXME: This function is not used until we can figure out a
-        way to reload the accom collections."""
-        self.connect_to_daemon()
-        self._load_accomplishments()
+    def on_reload_accomplishments_clicked(self, widget):
+        self.additional_no_collections.set_visible(False)
+        self.reload_accomplishments()
         
+    def reload_accomplishments(self):
+        if not self.connected:
+            return
+        self.libaccom.reload_accom_database()
+        self.populate_opp_combos()
         if len(self.accomdb) == 0:
-            print "still none"
-        else:
-            print "success"
-        
-        
+            self.add_no_collections_installed()
+        self.update_views(None)
+            
     def trophy_received(self, message):
         """Called when a new trophy is detected on the system."""
         
@@ -457,17 +452,22 @@ class AccomplishmentsViewerWindow(Window):
             GObject.timeout_add(10000,self.run_daemon)
         else:
             #successfully started and connected
-            self.populate_opp_combos()
-            if len(self.accomdb) == 0:
-                self.add_no_collections_installed()
-            self.check_and_ask_for_info()
-            self.notebook.set_current_page(2)
-            self.tb_opportunities.set_active(1)
+            self.finalise_daemon_connection()
             
         self.update_widgets_sensitivity()
         
         #returning false removes the timeout
         return False    
+
+    def finalise_daemon_connection(self):
+        self.populate_opp_combos()
+        if len(self.accomdb) == 0:
+            self.add_no_collections_installed()
+        self.update_views(None)
+        self.check_and_ask_for_info()
+        self.notebook.set_current_page(2)
+        self.tb_opportunities.set_active(1)
+        
 
     def update_widgets_sensitivity(self):
         """Disables/enables some GUI elemets, according to whether the client is connected to the daemon or nor"""

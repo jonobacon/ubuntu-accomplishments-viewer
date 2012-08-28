@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires accomplishments_viewer_window 1.0 -->
   <!-- interface-requires gtk+ 3.0 -->
+  <!-- interface-requires accomplishments_viewer_window 1.0 -->
   <!-- interface-local-resource-path ../media -->
   <object class="AccomplishmentsViewerWindow" id="accomplishments_viewer_window">
     <property name="height_request">270</property>
@@ -66,6 +66,16 @@
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="menu_prefs_clicked" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="mnu_edit_reload_accoms">
+                        <property name="use_action_appearance">False</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">_Reload accomplishments collections...</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="on_reload_accomplishments_clicked" swapped="no"/>
                       </object>
                     </child>
                     <child>
@@ -377,10 +387,12 @@ You can disable this in &lt;i&gt;Edit&lt;/i&gt; -&gt; &lt;i&gt;Preferences&lt;/i
                               <object class="GtkButton" id="add_no_collections_scan">
                                 <property name="label">Scan Again</property>
                                 <property name="use_action_appearance">False</property>
+                                <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">True</property>
                                 <property name="margin_right">10</property>
                                 <property name="use_action_appearance">False</property>
+                                <signal name="clicked" handler="on_reload_accomplishments_clicked" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">False</property>

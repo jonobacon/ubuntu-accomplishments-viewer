@@ -4,11 +4,11 @@
 ### END LICENSE
 
 import gettext, locale
-from gettext import gettext as _
+from locale import gettext as _
 from accomplishments.util.paths import locale_dir
 locale.bindtextdomain('accomplishments-viewer', locale_dir)
 gettext.bindtextdomain('accomplishments-viewer',locale_dir)
-gettext.textdomain('accomplishments-viewer')
+locale.textdomain('accomplishments-viewer')
 
 from accomplishments.daemon import dbusapi
 
