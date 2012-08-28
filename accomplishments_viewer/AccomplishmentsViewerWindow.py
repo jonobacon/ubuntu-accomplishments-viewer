@@ -245,6 +245,11 @@ class AccomplishmentsViewerWindow(Window):
         if self.connected is False:
             self.run_daemon()
 
+        # IMPORTANT: This function should do no initialisations that depend
+        # on having the daemon running. This is because if the daemon is not 
+        # yet started it will take some time to connect to it. Such 
+        # initialistions should land in appropriate place in run_daemon_timeout(...).
+
         self.datapath = get_data_path()
         #self.datapath = "/home/jono/source/accomplishments-viewer/data/"
 
@@ -255,8 +260,6 @@ class AccomplishmentsViewerWindow(Window):
         self.notebook.set_current_page(2)
         self.tb_opportunities.set_active(True)
         
-        if len(self.accomdb) == 0:
-            self.add_no_collections_installed()
 
     def add_no_collections_installed(self):
         """Display the message that no collections are installed."""
@@ -455,6 +458,8 @@ class AccomplishmentsViewerWindow(Window):
         else:
             #successfully started and connected
             self.populate_opp_combos()
+            if len(self.accomdb) == 0:
+                self.add_no_collections_installed()
             self.check_and_ask_for_info()
             self.notebook.set_current_page(2)
             self.tb_opportunities.set_active(1)
