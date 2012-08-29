@@ -14,3 +14,5 @@ Next Version Target: 0.3
  * Bug #992809: Confusing behavior if no collection is installed (Jono Bacon)
  * Fixed up the .desktop file to meet Gnome standards (Benjamin Kerensa)
  * Implemented option to rescan accomplishment collections (Rafał Cieślak)
+ * Bug #1024085: Rename the api from *_completed() to *_accomplished() for
+  better consistency. (Matt Fischer)

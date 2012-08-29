@@ -808,7 +808,7 @@ class AccomplishmentsViewerWindow(Window):
         if cat == "":
             self.subcats_container.hide()
         else:
-            self.subcats_show(col, cat)        
+            self.subcats_show(col, cat)
 
         # update opportunities
         for acc in self.accomdb:
@@ -824,16 +824,16 @@ class AccomplishmentsViewerWindow(Window):
                 margin_week = datetime.timedelta(days = 7)
                 margin_month = datetime.timedelta(days = 31)
                 margin_sixmonths = datetime.timedelta(days = 180)
-                
+
                 match = False
-                
-                if str(acc["date-completed"]) == "None":
+
+                if str(acc["date-accomplished"]) == "None":
                     pass
                 else:
-                    year = int(acc["date-completed"].split("-")[0])
-                    month = int(acc["date-completed"].split("-")[1])
-                    day = int(acc["date-completed"].split("-")[2].split(" ")[0])
-                    
+                    year = int(acc["date-accomplished"].split("-")[0])
+                    month = int(acc["date-accomplished"].split("-")[1])
+                    day = int(acc["date-accomplished"].split("-")[2].split(" ")[0])
+
                     if (today - margin_today <= datetime.date(year, month, day) <= today + margin_today) == True:
                         self.mytrophies_filter_today.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
                     elif (today - margin_week <= datetime.date(year, month, day) <= today + margin_week) == True:
@@ -1167,7 +1167,7 @@ class AccomplishmentsViewerWindow(Window):
                     depstatus.append({ "id" : acc["id"], "accomplished" : acc["accomplished"], "collection-human" : acc["collection-human"], "title" : acc["title"] })
         
         
-        achieved = self.libaccom.get_accom_is_completed(accomID)
+        achieved = self.libaccom.get_accom_is_accomplished(accomID)
         data = self.libaccom.get_accom_data(accomID)
         if achieved:
             trophydata = self.libaccom.get_trophy_data(accomID)
