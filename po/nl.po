@@ -8,37 +8,37 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-08-28 19:13+0200\n"
-"PO-Revision-Date: 2012-06-04 21:36+0000\n"
-"Last-Translator: Rachid <Unknown>\n"
+"PO-Revision-Date: 2012-08-30 21:08+0000\n"
+"Last-Translator: xatr0z <xatr0z@users.sourceforge.net>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-29 05:31+0000\n"
-"X-Generator: Launchpad (build 15864)\n"
+"X-Launchpad-Export-Date: 2012-08-31 05:14+0000\n"
+"X-Generator: Launchpad (build 15887)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:8
 msgid "Publish..."
-msgstr ""
+msgstr "Publiceren..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:60
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:85
 msgid "Stop Publishing"
-msgstr ""
+msgstr "Publiceren stoppen"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:84
 msgid "Please see your web browser to continue..."
-msgstr ""
+msgstr "Zie uw webbrowser om door te gaan..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:90
 msgid "Trophies are no longer published."
-msgstr ""
+msgstr "Trofeeën worden niet langer gepubliceerd."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:198
 msgid "Share Trophy"
-msgstr ""
+msgstr "Trofee delen"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:204
 msgid ""
@@ -46,54 +46,57 @@ msgid ""
 "This link works as a <b>proof</b> that you have really accomplished this "
 "trophy."
 msgstr ""
+"<b>Voeg altijd een link naar de trofee toe als u deze deelt via het "
+"web.</b>\n"
+"De link werkt als <b>bewijs</b> dat u deze trofee echt hebt bereikt."
 
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:535
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:36
 msgid "All"
-msgstr ""
+msgstr "Alles"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:578
 #, python-format
 msgid "I've just got the trophy '%s'! %s"
-msgstr ""
+msgstr "Ik heb zojuist de trofee '%s' gekregen! %s"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:599
 msgid "Your trophies are not yet published"
-msgstr ""
+msgstr "Uw trofeeën zijn nog niet gepubliceerd."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:600
 msgid "You can do it from Edit->Preferences menu."
-msgstr ""
+msgstr "Dit kan door naar Bewerken->Voorkeuren te gaan."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:900
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:913
 msgid "everything"
-msgstr ""
+msgstr "alles"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:975
 msgid "Today"
-msgstr ""
+msgstr "Vandaag"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:978
 msgid "This Week"
-msgstr ""
+msgstr "Deze week"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:981
 msgid "This Month"
-msgstr ""
+msgstr "Deze maand"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:984
 msgid "Last Six Months"
-msgstr ""
+msgstr "Afgelopen zes maanden"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:987
 msgid "Earlier"
-msgstr ""
+msgstr "Eerder"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1182
 msgid "Opportunity Information"
-msgstr "Mogelijkheden informatie"
+msgstr "Kansinformatie"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1190
 msgid "No information available."
@@ -101,7 +104,7 @@ msgstr "Geen informatie beschikbaar."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1200
 msgid "Getting Help"
-msgstr "Hulp verkrijgen"
+msgstr "Hulp krijgen"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1214
 msgid "No help available."
@@ -109,7 +112,7 @@ msgstr "Geen hulp beschikbaar"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1229
 msgid "This opportunity is locked. You need to complete"
-msgstr "Deze kans is vergrendeld. Je moet deze nog volbrengen"
+msgstr "Deze kans is vergrendeld. U moet eerst"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1229
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1234
@@ -118,13 +121,13 @@ msgstr "van"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1229
 msgid "first"
-msgstr "eerste"
+msgstr "voltooien"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1231
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
-msgstr ""
+msgstr "Deze kans is vergrendeld. U moet de volgende kansen eerst voltooien:"
 
 #. achieved
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1238
@@ -133,11 +136,11 @@ msgstr "Deze trofee <strong>is uitgereikt</strong>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1242
 msgid "on"
-msgstr "aan"
+msgstr "op"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1246
 msgid "using the following credentials"
-msgstr "gebruik de volgende aanmeldgegevens"
+msgstr "met de volgende aanmeldgegevens"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1256
 msgid "This trophy has been verified"
@@ -151,19 +154,19 @@ msgstr "Deze kans vereist verificatie"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1275
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1278
 msgid "Accomplishment Details [-]"
-msgstr ""
+msgstr "Prestatiedetails [-]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1283
 msgid "Accomplishment Details [+]"
-msgstr ""
+msgstr "Prestatiedetails [+]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1305
 msgid "How to accomplish this opportunity"
-msgstr "Hoe je deze kans kunt waarmaken"
+msgstr "Hoe deze kans te bereiken"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1340
 msgid "Tips and Tricks"
-msgstr "Tips en Trucs"
+msgstr "Tips en trucs"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1350
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1370
@@ -180,15 +183,15 @@ msgstr "Zie verder"
 
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
-msgstr ""
+msgstr "Prestaties Weergave"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "Ubuntu Accomplishments Viewer"
-msgstr ""
+msgstr "Ubuntu Prestaties Weergave"
 
 #: ../accomplishments-viewer.desktop.in.h:3
 msgid "Accomplishments Viewer Application"
-msgstr ""
+msgstr "Prestaties Weergave Programma"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
@@ -201,7 +204,7 @@ msgid ""
 "\n"
 "Please ensure that this data is accurate and up to date."
 msgstr ""
-"<b>Onderstaande informatie is vereist om je realisaties te verifiëren.</b>\n"
+"<b>Onderstaande informatie is vereist om uw prestaties te verifiëren.</b>\n"
 "\n"
 "Controleer even of de informatie juist en actueel is."
 
@@ -211,7 +214,7 @@ msgstr "GNU Public License"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
-msgstr "Voorkeuren realisaties"
+msgstr "Prestaties Voorkeuren"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:2
 msgid "Start background service on log in (recommended)"
@@ -227,7 +230,7 @@ msgstr "Meldingen van Ubuntu One bestand-upload verbergen (aanbevolen)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:5
 msgid "<b>Notification Bubbles</b>"
-msgstr ""
+msgstr "<b>Mededelingen</b>"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:6
 msgid ""
@@ -235,14 +238,17 @@ msgid ""
 "button.\n"
 "You can <i>Unpublish</i> later if you want to."
 msgstr ""
+"Klik op de <i>Publiceren</i> knop om uw trofeeën online te publiceren zodat "
+"iedereen ze kan zien.\n"
+"Als u dat wilt kunt u later de <i>Publicatie ongedaan maken</i>."
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
 msgid "<b>Publish Trophies Online</b>"
-msgstr ""
+msgstr "<b>Trofeeën online publiceren</b>"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
 msgid "Collection Authors:"
-msgstr ""
+msgstr "Collectie auteurs"
 
 #: ../accomplishments_viewer/__init__.py:26
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
@@ -255,10 +261,12 @@ msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad')"
 msgstr ""
+"Informatie weergeven over de opgegeven prestatie ID (bijvoorbeeld 'ubuntu-"
+"community/registered-on-launchpad')"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
-msgstr "Informatie over realisaties"
+msgstr "Prestaties Informatie"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:2
 msgid "_File"
@@ -266,19 +274,19 @@ msgstr "_Bestand"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "Check Accomplishments"
-msgstr ""
+msgstr "Prestaties controleren"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Edit"
-msgstr "_Bewerkt"
+msgstr "Be_werken"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "_Reload accomplishments collections..."
-msgstr ""
+msgstr "_Ververs prestatiecollecties..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "_Identification..."
-msgstr ""
+msgstr "_Identificeren..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "_Help"
@@ -290,7 +298,7 @@ msgstr "Inhoudsopgave"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:9
 msgid "Ask a question..."
-msgstr ""
+msgstr "Vraag stellen..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:10
 msgid "My Trophies"
@@ -307,10 +315,14 @@ msgid ""
 "\n"
 "You can disable this in <i>Edit</i> -> <i>Preferences</i> if required."
 msgstr ""
+"De Prestaties achtergrond service wordt gestart bij het inloggen. Hierdoor "
+"kan uw computer automatisch op nieuwe prestaties controleren.</b>\n"
+"U kunt eventueel uitschakelen door naar <i>Bewerken</i> -> <i>Voorkeuren</i> "
+"te gaan."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
 msgid "Accomplishments Service"
-msgstr ""
+msgstr "Prestaties Service"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
 msgid ""
@@ -321,10 +333,16 @@ msgid ""
 "href=\"https://wiki.ubuntu.com/Accomplishments/DesktopAppDocs/NoCollections\""
 ">Learn More</a>"
 msgstr ""
+"<b>Om Ubuntu Prestaties te gebruiken dient u tenminste een "
+"prestatiecollectie te hebben geïnstalleerd.</b>\n"
+"\n"
+"<a "
+"href=\"https://wiki.ubuntu.com/Accomplishments/DesktopAppDocs/NoCollections\""
+">Meer informatie</a>"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid "No Collections Installed"
-msgstr ""
+msgstr "Geen collecties geïnstalleerd"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid ""
@@ -359,6 +377,12 @@ msgid ""
 "Press the button below to check if you have an Ubuntu One account. If you "
 "don't, we will take a second to sign-up; the account is free."
 msgstr ""
+"<b>Sommige kansen hebben bij voltooiing een verificatie nodig. Om dit te "
+"doen heeft u een Ubuntu One-account nodig en toestemming geven om deze "
+"kansen te verifiëren.</b>\n"
+"\n"
+"Druk op de button hieronder als u een Ubuntu One-account heeft. Als u dit "
+"niet heeft dan kunt u zich snel registreren; de account is gratis."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid ""
@@ -371,15 +395,15 @@ msgid ""
 "is the information you can see in Edit -> Identification - this information "
 "is not shared with others or given to companies."
 msgstr ""
-"Ubuntu One is een Gratis online dienst voor synchronisatie van bestanden en "
-"andere eigenschappen. Het is vloeiend geïntegreerd in je Ubuntu desktop.\n"
+"Ubuntu One is een gratis online dienst voor het synchroniseren van bestanden "
+"en meer. Het is vloeiend geïntegreerd in uw Ubuntu desktop.\n"
 "\n"
-"Als Ubuntu Realisaties vaststelt dat je iets realiseerde, zal een nieuwe "
-"trofee verstuurd worden naar een verificatieserver die gebruik maakt van "
-"Ubuntu One. Dit is eenvoudig en veilig in gebruik. De enige informatie die "
-"gedeeld wordt met de server is de informatie die je kunt terugvinden onder "
-"Bewerken -> Identificatie - deze informatie wordt niet gedeeld met derden en "
-"wordt niet doorgegeven aan bedrijven."
+"Als Ubuntu Prestaties vaststelt dat u iets nieuws bereikt zal een nieuwe "
+"trofee verstuurd worden naar een verificatieserver van Ubuntu One. Dit is "
+"eenvoudig en veilig in gebruik. De enige informatie die gedeeld wordt met de "
+"server is de informatie die u kunt terugvinden onder Bewerken -> "
+"Identificatie - deze informatie wordt niet gedeeld met derden en wordt niet "
+"doorgegeven aan bedrijven."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
 msgid "Learn more..."
@@ -387,7 +411,7 @@ msgstr "Meer informatie..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
 msgid "Don't Use Ubuntu One"
-msgstr ""
+msgstr "Ubuntu One niet gebruiken"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:34
 msgid "Ubuntu One account required"
@@ -399,7 +423,7 @@ msgstr "Aan de slag"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:37
 msgid "Latest"
-msgstr ""
+msgstr "Nieuwste"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:38
 msgid "Show me"

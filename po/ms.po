@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-08-28 19:13+0200\n"
-"PO-Revision-Date: 2012-08-14 14:24+0000\n"
+"PO-Revision-Date: 2012-08-30 09:33+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-29 05:32+0000\n"
-"X-Generator: Launchpad (build 15864)\n"
+"X-Launchpad-Export-Date: 2012-08-31 05:14+0000\n"
+"X-Generator: Launchpad (build 15887)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
@@ -338,7 +338,7 @@ msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid "No Collections Installed"
-msgstr ""
+msgstr "Tiada Koleksi Dipasang"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid ""
