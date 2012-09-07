@@ -17,3 +17,5 @@ Next Version Target: 0.3
  * Bug #1024085: Rename the api from *_completed() to *_accomplished() for
   better consistency. (Matt Fischer)
  * Bug #1021413: Fixes the spacing in the My Trophies view (Matt Fischer)
+ * Bug #1047149: Fixes the unit tests and have them run during builds (Chris
+ Wayne)

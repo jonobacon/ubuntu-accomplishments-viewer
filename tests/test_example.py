@@ -25,7 +25,7 @@ from accomplishments_viewer import AboutAccomplishmentsViewerDialog
 class TestExample(unittest.TestCase):
     def setUp(self):
         self.AboutAccomplishmentsViewerDialog_members = [
-        'AboutAccomplishmentsViewerDialog', 'get_builder', 'gettext', 'Gtk']
+        'AboutAccomplishmentsViewerDialog', 'AboutDialog', 'dbusapi', 'gettext', 'locale', 'locale_dir', 'logger', 'logging']
 
     def test_AboutAccomplishmentsViewerDialog_members(self):
         all_members = dir(AboutAccomplishmentsViewerDialog)
