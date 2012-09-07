@@ -609,7 +609,7 @@ class AccomplishmentsViewerWindow(Window):
             #trophyURL = TROPHY_GALLERY_URL+'/gallery/trophies/'+name+'/'+accomID
             trophyURL = 'http://trophies.ubuntu.com/gallery/trophies/'+name+'/'+accomID
             trophy_name = self.libaccom.get_accom_title(accomID);
-            self.messageentry.text_view.get_buffer().set_text(_("I've just got the trophy '%s'! %s") % (trophy_name, trophyURL))
+            self.messageentry.text_view.get_buffer().set_text(_("I've just got the trophy '%s' in #ubuntu accomplishments!") % (trophy_name))
             self.messagewindow.show()
             self.messagewindow.present()
 
