@@ -881,15 +881,7 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="orientation">vertical</property>
-                                <child>
-                                  <placeholder/>
-                                </child>
-                                <child>
-                                  <placeholder/>
-                                </child>
-                                <child>
-                                  <placeholder/>
-                                </child>
+                                <property name="column_homogeneous">True</property>
                                 <child>
                                   <placeholder/>
                                 </child>

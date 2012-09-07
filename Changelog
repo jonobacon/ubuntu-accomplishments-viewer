@@ -16,3 +16,4 @@ Next Version Target: 0.3
  * Implemented option to rescan accomplishment collections (Rafał Cieślak)
  * Bug #1024085: Rename the api from *_completed() to *_accomplished() for
   better consistency. (Matt Fischer)
+ * Bug #1021413: Fixes the spacing in the My Trophies view (Matt Fischer)
