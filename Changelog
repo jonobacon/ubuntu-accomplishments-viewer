@@ -19,3 +19,7 @@ Next Version Target: 0.3
  * Bug #1021413: Fixes the spacing in the My Trophies view (Matt Fischer)
  * Bug #1047149: Fixes the unit tests and have them run during builds (Chris
  Wayne)
+ * Bug #1049300: Accomplishments viewer crashes if you close the U1 sign-up
+  dialog without signing up (Matt Fischer)
+ * Fixed a bunch of lintian issues (Matt Fischer)
+
