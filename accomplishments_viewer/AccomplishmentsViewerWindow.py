@@ -229,6 +229,12 @@ class AccomplishmentsViewerWindow(Window):
         self.opp_combo_cat.pack_start(self.cat_combo_renderer_text, True)
         self.opp_combo_cat.add_attribute(self.cat_combo_renderer_text, "text", 1)
 
+        # LP: 1049300 - make sure we create the u1_button before calling
+        # finalise_daemon_connection()
+        self.u1_button = Gtk.Button()
+        self.u1_button_sig = None
+        self.verif_box.pack_start(self.u1_button, False, False, 0)
+
         # create a connection to the daemon
         self.connected = False
         self.connect_to_daemon()
@@ -237,10 +243,6 @@ class AccomplishmentsViewerWindow(Window):
             self.finalise_daemon_connection()
         else:
             self.run_daemon()
-
-        self.u1_button = Gtk.Button()
-        self.u1_button_sig = None
-        self.verif_box.pack_start(self.u1_button, False, False, 0)
 
         # set up logging
         self.dir_cache = os.path.join(

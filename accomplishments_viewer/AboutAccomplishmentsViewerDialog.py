@@ -41,7 +41,7 @@ class AboutAccomplishmentsViewerDialog(AboutDialog):
         self.libaccom = dbusapi.Accomplishments()
 
         # add app authors
-        authors = sorted([ "Jono Bacon <jono@ubuntu.com>", "Rafal Cieślak <rafalcieslak256@gmail.com>", "Stuart Langridge <sil@kryogenix.org>"])
+        authors = sorted([ "Jono Bacon <jono@ubuntu.com>", "Rafal Cieślak <rafalcieslak256@gmail.com>", "Matt Fischer <matt@mattfischer.com>", "Stuart Langridge <sil@kryogenix.org>"])
         
         for col in self.libaccom.list_collections():
             authors.append(" ")
