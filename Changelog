@@ -22,4 +22,5 @@ Next Version Target: 0.3
  * Bug #1049300: Accomplishments viewer crashes if you close the U1 sign-up
   dialog without signing up (Matt Fischer)
  * Fixed a bunch of lintian issues (Matt Fischer)
-
+ * Bug #1036452: removed AUTHORS file and added GPL 3 License info to
+ copyright (Benjamin Kerensa)
