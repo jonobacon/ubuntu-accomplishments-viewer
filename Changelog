@@ -5,22 +5,17 @@ Please add items to this changelog that are:
 
 Add items using the following format:
 
+   [Name]
+   * What you did 
+   * If a bug (LP: #BUGNUMBER)
+
+   For example:
+
+   [Matt Fischer]
+   * Fixed this format section (LP: #000000000)
+
 -------------------------------------------------------------------------
 
-Next Version Target: 0.3
+Next Version Target: 0.4
 
 -------------------------------------------------------------------------
-
- * Bug #992809: Confusing behavior if no collection is installed (Jono Bacon)
- * Fixed up the .desktop file to meet Gnome standards (Benjamin Kerensa)
- * Implemented option to rescan accomplishment collections (Rafał Cieślak)
- * Bug #1024085: Rename the api from *_completed() to *_accomplished() for
-  better consistency. (Matt Fischer)
- * Bug #1021413: Fixes the spacing in the My Trophies view (Matt Fischer)
- * Bug #1047149: Fixes the unit tests and have them run during builds (Chris
- Wayne)
- * Bug #1049300: Accomplishments viewer crashes if you close the U1 sign-up
-  dialog without signing up (Matt Fischer)
- * Fixed a bunch of lintian issues (Matt Fischer)
- * Bug #1036452: removed AUTHORS file and added GPL 3 License info to
- copyright (Benjamin Kerensa)
