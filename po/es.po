@@ -7,181 +7,38 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-08-28 19:13+0200\n"
+"POT-Creation-Date: 2012-10-20 21:15-0600\n"
 "PO-Revision-Date: 2012-09-12 09:35+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-13 05:01+0000\n"
-"X-Generator: Launchpad (build 15944)\n"
+"X-Launchpad-Export-Date: 2012-10-21 05:11+0000\n"
+"X-Generator: Launchpad (build 16165)\n"
 
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:58
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:91
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:69
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:102
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:8
 msgid "Publish..."
 msgstr "Publicar..."
 
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:60
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:85
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:71
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:96
 msgid "Stop Publishing"
 msgstr "Detener publicación"
 
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:84
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:95
 msgid "Please see your web browser to continue..."
 msgstr "Por favor, vea su navegador para continuar..."
 
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:90
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:101
 msgid "Trophies are no longer published."
 msgstr "Los trofeos ya no se publican"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:198
-msgid "Share Trophy"
-msgstr "Compartir trofeo"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:204
-msgid ""
-"<b>Always add the link to your trophy on the web when sharing a trophy.</b>\n"
-"This link works as a <b>proof</b> that you have really accomplished this "
-"trophy."
-msgstr ""
-"<b>Cuando comparta un trofeo, siempre añada el enlace web hacia él.</b>\n"
-"Este enlace funciona como <b>prueba</b> de que ha obtenido realmente este "
-"trofeo."
-
-#. Add 'All' button
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:535
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:36
-msgid "All"
-msgstr "Todo"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:578
-#, python-format
-msgid "I've just got the trophy '%s'! %s"
-msgstr "¡Acabo de obtener el trofeo «%s»! %s"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:599
-msgid "Your trophies are not yet published"
-msgstr "No se han publicado aún sus trofeos"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:600
-msgid "You can do it from Edit->Preferences menu."
-msgstr "Puede hacerlo desde el menú Editar ‣ Preferencias."
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:900
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:913
-msgid "everything"
-msgstr "todo"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:975
-msgid "Today"
-msgstr "Hoy"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:978
-msgid "This Week"
-msgstr "Esta Semana"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:981
-msgid "This Month"
-msgstr "Este Mes"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:984
-msgid "Last Six Months"
-msgstr "Últimos Seis Meses"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:987
-msgid "Earlier"
-msgstr "más temprano"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1182
-msgid "Opportunity Information"
-msgstr "Información sobre las oportunidades"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1190
-msgid "No information available."
-msgstr "No hay información disponible."
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1200
-msgid "Getting Help"
-msgstr "Obtener ayuda"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1214
-msgid "No help available."
-msgstr "No hay ayuda disponible."
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1229
-msgid "This opportunity is locked. You need to complete"
-msgstr "Esta oportunidad se encuentra bloqueada. Necesita completar"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1229
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1234
-msgid "from"
-msgstr "de"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1229
-msgid "first"
-msgstr "primero"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1231
-msgid ""
-"This opportunity is locked. You need to complete the following opportunities "
-"first:"
-msgstr ""
-"Esta oportunidad está bloqueada. Necesita completar las siguientes "
-"oportunidades primero:"
-
-#. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1238
-msgid "This trophy <strong>was awarded</strong>"
-msgstr "Este trofeo <strong>se ha otorgado</strong>"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1242
-msgid "on"
-msgstr "el"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1246
-msgid "using the following credentials"
-msgstr "usando las siguientes credenciales"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1256
-msgid "This trophy has been verified"
-msgstr "Este trofeo ha sido verificado"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1263
-msgid "This opportunity requires verification"
-msgstr "Esta oportunidad necesita verificación"
-
-#. script for showing details...
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1275
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1278
-msgid "Accomplishment Details [-]"
-msgstr "Detalles del logro [−]"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1283
-msgid "Accomplishment Details [+]"
-msgstr "Detalles del logro [+]"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1305
-msgid "How to accomplish this opportunity"
-msgstr "Cómo obtener este logro"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1340
-msgid "Tips and Tricks"
-msgstr "Consejos y trucos"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1350
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1370
-msgid "None."
-msgstr "Ninguno."
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1360
-msgid "Pitfalls To Avoid"
-msgstr "Dificultades a evitar"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1383
-msgid "Further Reading"
-msgstr "Para saber más"
+#: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:48
+msgid "Collection Authors:"
+msgstr "Autores de la colección:"
 
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
@@ -211,8 +68,39 @@ msgstr ""
 "Asegúrese de que su información sea correcta y esté actualizada."
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
-msgid "GNU Public License"
-msgstr "Licencia pública de GNU"
+msgid "Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>"
+msgstr ""
+
+#: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:2
+msgid ""
+"# Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>\n"
+"# This program is free software: you can redistribute it and/or modify it \n"
+"# under the terms of the GNU General Public License version 3, as published "
+"\n"
+"# by the Free Software Foundation.\n"
+"# \n"
+"# This program is distributed in the hope that it will be useful, but \n"
+"# WITHOUT ANY WARRANTY; without even the implied warranties of \n"
+"# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR \n"
+"# PURPOSE.  See the GNU General Public License for more details.\n"
+"# \n"
+"# You should have received a copy of the GNU General Public License along \n"
+"# with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
+msgstr ""
+
+#: ../accomplishments_viewer/__init__.py:37
+msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
+msgstr ""
+"Mostrar mensajes de depuración (-vv también muestra depuración de "
+"accomplishments_viewer_lib)"
+
+#: ../accomplishments_viewer/__init__.py:40
+msgid ""
+"Display information about the provided accomplishment ID (e.g. 'ubuntu-"
+"community/registered-on-launchpad')"
+msgstr ""
+"Muestra información sobre la ID de los logros proporcionados (p.ej. «ubuntu-"
+"community/registered-on-launchpad»)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
@@ -249,23 +137,161 @@ msgstr ""
 msgid "<b>Publish Trophies Online</b>"
 msgstr "<b>Publicar Trofeos en línea</b>"
 
-#: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:37
-msgid "Collection Authors:"
-msgstr "Autores de la colección:"
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:209
+msgid "Share Trophy"
+msgstr "Compartir trofeo"
 
-#: ../accomplishments_viewer/__init__.py:26
-msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
-msgstr ""
-"Mostrar mensajes de depuración (-vv también muestra depuración de "
-"accomplishments_viewer_lib)"
-
-#: ../accomplishments_viewer/__init__.py:29
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:215
 msgid ""
-"Display information about the provided accomplishment ID (e.g. 'ubuntu-"
-"community/registered-on-launchpad')"
+"<b>Always add the link to your trophy on the web when sharing a trophy.</b>\n"
+"This link works as a <b>proof</b> that you have really accomplished this "
+"trophy."
 msgstr ""
-"Muestra información sobre la ID de los logros proporcionados (p.ej. «ubuntu-"
-"community/registered-on-launchpad»)"
+"<b>Cuando comparta un trofeo, siempre añada el enlace web hacia él.</b>\n"
+"Este enlace funciona como <b>prueba</b> de que ha obtenido realmente este "
+"trofeo."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:304
+msgid "Reloading accomplishments collections..."
+msgstr ""
+
+#. apparently as that process daemonizes it will not get killed when one closes the client
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:465
+msgid "Starting the daemon..."
+msgstr ""
+
+#. Add 'All' button
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:571
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:36
+msgid "All"
+msgstr "Todo"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:614
+#, python-format
+msgid "I've just got the trophy '%s' in #ubuntu accomplishments!"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:635
+msgid "Your trophies are not yet published"
+msgstr "No se han publicado aún sus trofeos"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:636
+msgid "You can do it from Edit->Preferences menu."
+msgstr "Puede hacerlo desde el menú Editar ‣ Preferencias."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:949
+msgid "everything"
+msgstr "todo"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1011
+msgid "Today"
+msgstr "Hoy"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1014
+msgid "This Week"
+msgstr "Esta Semana"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1017
+msgid "This Month"
+msgstr "Este Mes"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1020
+msgid "Last Six Months"
+msgstr "Últimos Seis Meses"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1023
+msgid "Earlier"
+msgstr "más temprano"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1218
+msgid "Opportunity Information"
+msgstr "Información sobre las oportunidades"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1226
+msgid "No information available."
+msgstr "No hay información disponible."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1236
+msgid "Getting Help"
+msgstr "Obtener ayuda"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1250
+msgid "No help available."
+msgstr "No hay ayuda disponible."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1265
+msgid "This opportunity is locked. You need to complete"
+msgstr "Esta oportunidad se encuentra bloqueada. Necesita completar"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1265
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1270
+msgid "from"
+msgstr "de"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1265
+msgid "first"
+msgstr "primero"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1267
+msgid ""
+"This opportunity is locked. You need to complete the following opportunities "
+"first:"
+msgstr ""
+"Esta oportunidad está bloqueada. Necesita completar las siguientes "
+"oportunidades primero:"
+
+#. achieved
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1274
+msgid "This trophy <strong>was awarded</strong>"
+msgstr "Este trofeo <strong>se ha otorgado</strong>"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1278
+msgid "on"
+msgstr "el"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1282
+msgid "using the following credentials"
+msgstr "usando las siguientes credenciales"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1292
+msgid "This trophy has been verified"
+msgstr "Este trofeo ha sido verificado"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1299
+msgid "This opportunity requires verification"
+msgstr "Esta oportunidad necesita verificación"
+
+#. script for showing details...
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1311
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1314
+msgid "Accomplishment Details [-]"
+msgstr "Detalles del logro [−]"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1319
+msgid "Accomplishment Details [+]"
+msgstr "Detalles del logro [+]"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1341
+msgid "How to accomplish this opportunity"
+msgstr "Cómo obtener este logro"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1376
+msgid "Tips and Tricks"
+msgstr "Consejos y trucos"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1386
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1406
+msgid "None."
+msgstr "Ninguno."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1396
+msgid "Pitfalls To Avoid"
+msgstr "Dificultades a evitar"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1419
+msgid "Further Reading"
+msgstr "Para saber más"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
 msgid "Accomplishment Information"
@@ -439,3 +465,10 @@ msgstr "oportunidades para"
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:40
 msgid "Show Locked"
 msgstr "Mostrar bloqueadas"
+
+#~ msgid "GNU Public License"
+#~ msgstr "Licencia pública de GNU"
+
+#, python-format
+#~ msgid "I've just got the trophy '%s'! %s"
+#~ msgstr "¡Acabo de obtener el trofeo «%s»! %s"
