@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-21 05:10+0000\n"
+"X-Launchpad-Export-Date: 2012-10-22 04:56+0000\n"
 "X-Generator: Launchpad (build 16165)\n"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
@@ -457,10 +457,3 @@ msgstr "সুযোগের"
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:40
 msgid "Show Locked"
 msgstr "বন্ধ দেখান"
-
-#~ msgid "GNU Public License"
-#~ msgstr "GNU পাবলিক লাইসেন্স"
-
-#, python-format
-#~ msgid "I've just got the trophy '%s'! %s"
-#~ msgstr "আমি এইমাত্র ট্রফিটি পেয়েছি '%s'! %s"
