@@ -22,6 +22,8 @@ Depends: ${misc:Depends},
  gir1.2-launchpad-integration-3.0,
  yelp,
  accomplishments-daemon
+Recommends: ubuntu-community-accomplishments,
+ ubuntu-desktop-accomplishments
 Description: Ubuntu Accomplishments opportunities and trophies viewer.
  The Ubuntu Accomplishments opportunities and trophies viewer provides a 
  graphical interface for the Ubuntu Accomplishments system.  The Ubuntu
