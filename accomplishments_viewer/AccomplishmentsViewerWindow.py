@@ -67,8 +67,14 @@ COL_LOCKED = 3
 COL_COLLECTION = 4
 COL_ID = 5
 
-MYTROPHIES_FILTER_ALL = 0
-MYTROPHIES_FILTER_LATEST = 1
+MYTROPHIES_FILTER_UNSPECIFIED = 0
+MYTROPHIES_FILTER_ALL = 1
+MYTROPHIES_FILTER_LATEST = 2
+
+DISPLAY_MODE_UNSPECIFIED = 0
+DISPLAY_MODE_DETAILS = 1
+DISPLAY_MODE_TROPHIES = 2
+DISPLAY_MODE_OPPORTUNITIES = 3
 
 TROPHY_GALLERY_URL = 'http://213.138.100.229:8000'
 
@@ -90,6 +96,7 @@ class AccomplishmentsViewerWindow(Window):
         self.curr_width = 0
         self.do_not_react_on_cat_changes = False
         self.mytrophies_filtermode = MYTROPHIES_FILTER_ALL
+        self.display_mode = DISPLAY_MODE_OPPORTUNITIES
         self.mytrophies_store_all = []
         # Code for other initialization actions should be added here.
 
@@ -298,7 +305,7 @@ class AccomplishmentsViewerWindow(Window):
         self.populate_opp_combos()
         if len(self.accomdb) == 0:
             self.add_no_collections_installed()
-        self.update_views(None)
+        self.display(DISPLAY_MODE_OPPORTUNITIES)
             
     def statusbar_reload_msg_start(self):
         self.statusbar.set_text(_("Reloading accomplishments collections..."))
@@ -324,7 +331,6 @@ class AccomplishmentsViewerWindow(Window):
         
         # run this to refresh our accomplishments list
         self._load_accomplishments()
-        self.update_views(None)
         
         # set the Launcher icon to be urgent and show new trophy count
         self.launcher.set_property("urgent", True)
@@ -499,10 +505,7 @@ class AccomplishmentsViewerWindow(Window):
         self.populate_opp_combos()
         if len(self.accomdb) == 0:
             self.add_no_collections_installed()
-        self.update_views(None)
-        self.check_and_ask_for_info()
-        self.notebook.set_current_page(2)
-        self.tb_opportunities.set_active(1)
+        self.display(DISPLAY_MODE_OPPORTUNITIES)
         
 
     def update_widgets_sensitivity(self):
@@ -662,7 +665,7 @@ class AccomplishmentsViewerWindow(Window):
 
         if uri.startswith('accomplishment:'):
             id = uri[17:]
-            self.accomplishment_info(id)
+            self.display(DISPLAY_MODE_DETAILS,accomID=id)
             return True
 
         pol_dec.ignore()
@@ -760,16 +763,317 @@ class AccomplishmentsViewerWindow(Window):
             self.curr_height = new_height
             # and refill iconviews with icons to adjust columns number
             if self.connected:
-                self.update_views(widget)
-                self.update_mytrophy_filter()
+				if self.display_mode is DISPLAY_MODE_OPPORTUNITIES:
+					self._update_views(None)
+				if self.display_mode is DISPLAY_MODE_TROPHIES:
+					self._update_mytrophy_filter()
             else:
                 # Control flow may reach here if the daemon is not yet running 
                 # and therefore connection is yet to be made. Passing here will
                 # avoid errors about not-existing libaccom.
                 pass
-                
+                      
+    def populate_opp_combos(self):
 
-    def update_views(self, widget):
+        # grab data
+        self._load_accomplishments()
+
+        temp = []
+
+        for i in self.accomdb:
+            temp.append({i["collection"] : i["collection-human"] })
+
+        # uniqify the values
+        result = [dict(tupleized) for tupleized in set(tuple(item.items()) for item in temp)]
+
+        # set up app
+        self.opp_col_store.append(["", "All"])
+
+        for i in sorted(result):
+            self.opp_col_store.append([i.keys()[0], i.values()[0]])
+
+        self.opp_combo_col.set_model(self.opp_col_store)
+
+        self.opp_combo_col.set_active(0)
+        self.opp_combo_col.show()
+
+        # set up cat
+
+        self.opp_combo_cat.set_model(self.opp_cat_store)
+        
+        self.opp_combo_cat.show()
+      
+
+    def opp_app_updated(self, widget):
+        self.do_not_react_on_cat_changes = True
+        catlist = set()
+        tree_iter = widget.get_active_iter()
+        model = widget.get_model()
+        col, name = model[tree_iter][:2]
+
+        if col == "":
+            self.opp_cat_store.clear()
+            self.opp_cat_store.append(["", _("everything")])
+            
+            self.subcat = None
+
+            self.update_views(None)
+        else:
+            cats = self.libaccom.get_collection_categories(col)
+
+            for i in cats:
+                catlist.add(i)
+
+            self.opp_cat_store.clear()
+
+            self.opp_cat_store.append(["", _("everything")])
+
+            for i in sorted(catlist):
+                self.opp_cat_store.append([i, i])
+
+            self.do_not_react_on_cat_changes = False
+            self.opp_combo_cat.set_active(0)
+            
+            self.subcats_container.hide()
+            # Following does not have to be done, because using
+            # opp_combo_cat.set_active will cause opp_cat_updated
+            # to run update_views
+            #self.update_views(None)
+
+    def check_accomplishments(self, widget):
+        """Called when Check Accomplishments is selected in the interface."""
+        
+        self.libaccom.run_scripts(True)
+        #self.notebook.set_current_page(2)
+
+    def opp_cat_updated(self, widget):
+        if self.do_not_react_on_cat_changes:
+            return
+
+        cattree_iter = self.opp_combo_cat.get_active_iter()
+        catmodel = self.opp_combo_cat.get_model()
+
+        if cattree_iter == None:
+            cat = ""
+            catname = ""
+        else:
+            cat, catname = catmodel[cattree_iter][:2]
+            
+        self.subcat = None
+
+        self.update_views(None)
+    
+    def on_mytrophies_filter_latest_toggled(self, widget):
+        self.mytrophies_filtermode = MYTROPHIES_FILTER_LATEST
+        self.update_mytrophy_filter()
+
+
+    def on_mytrophies_filter_all_toggled(self, widget):   
+        self.mytrophies_filtermode = MYTROPHIES_FILTER_ALL
+        self.update_mytrophy_filter()     
+
+    def on_tb_mytrophies_clicked(self, widget):
+        """Called when the My Trophies button is clicked."""
+        
+        mytrophies_toggled = self.tb_mytrophies.get_active()
+        opportunities_toggled = self.tb_opportunities.get_active()
+        
+        if mytrophies_toggled == True:
+            self.mytrophies_filter_all.set_active(True)
+            self.display(DISPLAY_MODE_TROPHIES)
+        else:
+            self.tb_mytrophies.set_active(True) # This also fires the signal handler
+
+    def on_tb_opportunities_clicked(self, widget):
+        """Called when the Opportunities button is clicked."""
+        
+        self.launcher.set_property("urgent", False)
+        self.newtrophies = 0
+        self.launcher.set_property("count_visible", False)
+        
+        mytrophies_toggled = self.tb_mytrophies.get_active()
+        opportunities_toggled = self.tb_opportunities.get_active()
+        
+        if opportunities_toggled == True:
+            self.display(DISPLAY_MODE_OPPORTUNITIES)
+        else:
+            self.tb_opportunities.set_active(True) # This also fires the signal handler
+
+    def menu_prefs_clicked(self,widget):
+        """Display the preferences window."""
+        
+        # If the window already is in use, when user clicks the menu
+        # item, present() is used instead, to bring the window to front
+        # etc.
+        if self.preferences_dialog is not None:
+            self.preferences_dialog.present()
+        else:
+            #create new instance
+            self.preferences_dialog = self.PreferencesDialog()
+            self.preferences_dialog.prepare(self.libaccom)
+            self.preferences_dialog.connect('destroy', self.on_preferences_dialog_destroyed)
+            self.preferences_dialog.show()
+    
+    def on_preferences_dialog_destroyed(self,widget):
+        self.preferences_dialog = None
+    
+    def get_icon(self, name):
+        theme = Gtk.IconTheme.get_default()
+        return theme.load_icon(name, 48, 0)
+
+    def check_for_extra_info_required(self):
+        """Check if the installed accomplishments require additional information to be gathered from the user."""
+        
+        infoneeded = self.libaccom.get_all_extra_information_required()
+
+        if len(infoneeded) is not 0:
+            # kick of the process of gathering the information needed
+            try:
+                seen = self.libaccom.get_config_value("config", "extrainfo_seen")
+                
+                if seen == "NoOption" or seen == 0:
+                    self.additional_info_req.set_visible(True)
+                    self.libaccom.write_config_file_item("config", "extrainfo_seen", 1)
+                else:
+                    return
+            except:
+                self.additional_info_req.set_visible(True)
+                self.libaccom.write_config_file_item("config", "extrainfo_seen", 1)
+
+    def check_daemon_session(self):
+        configvalue = self.libaccom.get_config_value("config", "daemon_sessionstart")
+        if configvalue == "NoOption":
+            self.additional_daemon_session.set_visible(True)
+        elif configvalue == "false":
+            pass
+
+    def daemon_session_ok(self, widget):
+        self.libaccom.set_daemon_session_start(True)
+        self.additional_daemon_session.set_visible(False)
+
+    def edit_auth_info(self,widget):
+        """Called when user clicks "Edit credentials" from notification"""
+        self.additional_info_req.set_visible(False)
+        self.edit_identification_clicked(widget) #that's maily the same thing
+        return
+
+    def edit_auth_info_cancel(self,widget):
+        """Called when user clicks "Later" from extrainfo-needed notification"""
+        self.additional_info_req.set_visible(False)
+        return
+    
+    def _load_accomplishments(self):
+        # clear the local cache of accomplishments
+        self.accomdb = []
+        self.accomdb = self.libaccom.build_viewer_database()
+        
+    def opp_clicked(self, widget):
+        selection = widget.get_selected_items()
+        if len(selection) is 0:
+            return
+        item = selection[0]
+        widget.unselect_path(item)
+        model = widget.get_model()
+        accomID = model[item][COL_ID]
+        self.display(DISPLAY_MODE_DETAILS,accomID=accomID)
+
+    def mytrophy_clicked(self, widget):
+        selection = widget.get_selected_items()
+        if len(selection) is 0:
+            return
+        item = selection[0]
+        widget.unselect_path(item)
+        model = widget.get_model()
+        accomID = model[item][COL_ID]
+        self.display(DISPLAY_MODE_DETAILS,accomID=accomID)
+
+    def optparse_accomplishment(self, accom_id):
+        """Process the -a command line option"""
+        if not self.libaccom.get_accom_exists(accom_id):
+            # this accomplishment does not exist! aborting...
+            print "There is no accomplishment with this ID."
+            return
+                
+        self.accomplishment_info(accom_id)
+
+	def display(self, mode=DISPLAY_MODE_UNSPECIFIED, accomID="", trophies_mode=MYTROPHIES_FILTER_UNSPECIFIED):
+		"""
+		Switches display mode as specified in arguments. It takes care about flipping notebook pages, hiding unnecessary UI pieces etc.
+		"""
+		if mode is not DISPLAY_MODE_UNSPECIFIED:
+			self.display_mode = mode
+		
+		if self.display_mode is DISPLAY_MODE_DETAILS:
+			#Displaying details for an accomplishment
+			
+			if accomID == "":
+				print "Unable to display details view, you probably forgot the accomID argument."
+			else:
+				self._accomplishment_info(accomID)
+				
+		elif self.display_mode is DISPLAY_MODE_TROPHIES:
+			#Display the list of trophies
+					
+			if trophies_mode is not MYTROPHIES_FILTER_UNSPECIFIED:
+				self.mytrophies_filtermode = trophies_mode
+				
+            self.tb_mytrophies.handler_block_by_func(self.on_tb_mytrophies_clicked)       
+            self.tb_mytrophies.set_active(False) 
+            self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
+			self._update_mytrophy_filter()
+			self.notebook.set_current_page(1)
+		   
+		elif mode is DISPLAY_MODE_OPPORTUNITIES:
+			#Displaying the list of opportunities
+            self.tb_opportunities.handler_block_by_func(self.on_tb_opportunities_clicked)
+            self.tb_opportunities.set_active(False) 
+            self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
+			self._update_views(None)
+			self.notebook.set_current_page(2)
+			pass
+
+
+    def _update_mytrophy_filter(self):
+        
+        kids = self.mytrophies_mainbox.get_children()
+        
+        if len(kids) > 0:
+            for k in kids:
+                self.mytrophies_mainbox.remove(k)
+                
+        if (self.mytrophies_filtermode == MYTROPHIES_FILTER_ALL):
+            collections = self.libaccom.list_collections()
+            
+            for c in collections:
+                ls = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
+                ls.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
+                ls.clear()
+                collectionhuman = ""
+                for i in self.mytrophies_store_all:
+                    if i[0]["collection"] == c:
+                        collectionhuman = i[0]["collection-human"]
+                        ls.append([i[0]["title"], i[0]["icon"], i[0]["accomplished"], i[0]["locked"], i[0]["collection"], i[0]["id"]])
+
+                if len(ls) > 0:
+                    self.add_mytrophies_view(collectionhuman, ls)
+        elif (self.mytrophies_filtermode == MYTROPHIES_FILTER_LATEST):
+            if len(self.mytrophies_filter_today) > 0:
+                self.add_mytrophies_view(_("Today"), self.mytrophies_filter_today)
+            
+            if len(self.mytrophies_filter_week) > 0:
+                self.add_mytrophies_view(_("This Week"), self.mytrophies_filter_week)
+            
+            if len(self.mytrophies_filter_month) > 0:
+                self.add_mytrophies_view(_("This Month"), self.mytrophies_filter_month)
+            
+            if len(self.mytrophies_filter_sixmonths) > 0:
+                self.add_mytrophies_view(_("Last Six Months"), self.mytrophies_filter_sixmonths)
+            
+            if len(self.mytrophies_filter_earlier) > 0:
+                self.add_mytrophies_view(_("Earlier"), self.mytrophies_filter_earlier)
+    
+
+    def _update_views(self, widget):
         """Update all of the views to reflect the current state of Trophies and Opportunities."""
         status_trophies = 0
         status_opps = 0
@@ -892,279 +1196,9 @@ class AccomplishmentsViewerWindow(Window):
                     elif acc["collection"] == col and cat == "":
                         if not acc["locked"] or show_locked:
                             oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-        
-    def populate_opp_combos(self):
+  
 
-        # grab data
-        self._load_accomplishments()
-
-        temp = []
-
-        for i in self.accomdb:
-            temp.append({i["collection"] : i["collection-human"] })
-
-        # uniqify the values
-        result = [dict(tupleized) for tupleized in set(tuple(item.items()) for item in temp)]
-
-        # set up app
-        self.opp_col_store.append(["", "All"])
-
-        for i in sorted(result):
-            self.opp_col_store.append([i.keys()[0], i.values()[0]])
-
-        self.opp_combo_col.set_model(self.opp_col_store)
-
-        self.opp_combo_col.set_active(0)
-        self.opp_combo_col.show()
-
-        # set up cat
-
-        self.opp_combo_cat.set_model(self.opp_cat_store)
-        
-        self.opp_combo_cat.show()
-      
-
-    def opp_app_updated(self, widget):
-        self.do_not_react_on_cat_changes = True
-        catlist = set()
-        tree_iter = widget.get_active_iter()
-        model = widget.get_model()
-        col, name = model[tree_iter][:2]
-
-        if col == "":
-            self.opp_cat_store.clear()
-            self.opp_cat_store.append(["", _("everything")])
-            
-            self.subcat = None
-
-            self.update_views(None)
-        else:
-            cats = self.libaccom.get_collection_categories(col)
-
-            for i in cats:
-                catlist.add(i)
-
-            self.opp_cat_store.clear()
-
-            self.opp_cat_store.append(["", _("everything")])
-
-            for i in sorted(catlist):
-                self.opp_cat_store.append([i, i])
-
-            self.do_not_react_on_cat_changes = False
-            self.opp_combo_cat.set_active(0)
-            
-            self.subcats_container.hide()
-            # Following does not have to be done, because using
-            # opp_combo_cat.set_active will cause opp_cat_updated
-            # to run update_views
-            #self.update_views(None)
-
-    def check_accomplishments(self, widget):
-        """Called when Check Accomplishments is selected in the interface."""
-        
-        self.libaccom.run_scripts(True)
-        #self.notebook.set_current_page(2)
-
-    def opp_cat_updated(self, widget):
-        if self.do_not_react_on_cat_changes:
-            return
-
-        cattree_iter = self.opp_combo_cat.get_active_iter()
-        catmodel = self.opp_combo_cat.get_model()
-
-        if cattree_iter == None:
-            cat = ""
-            catname = ""
-        else:
-            cat, catname = catmodel[cattree_iter][:2]
-            
-        self.subcat = None
-
-        self.update_views(None)
-    
-    def update_mytrophy_filter(self):
-        
-        kids = self.mytrophies_mainbox.get_children()
-        
-        if len(kids) > 0:
-            for k in kids:
-                self.mytrophies_mainbox.remove(k)
-                
-        if (self.mytrophies_filtermode == MYTROPHIES_FILTER_ALL):
-            collections = self.libaccom.list_collections()
-            
-            for c in collections:
-                ls = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
-                ls.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
-                ls.clear()
-                collectionhuman = ""
-                for i in self.mytrophies_store_all:
-                    if i[0]["collection"] == c:
-                        collectionhuman = i[0]["collection-human"]
-                        ls.append([i[0]["title"], i[0]["icon"], i[0]["accomplished"], i[0]["locked"], i[0]["collection"], i[0]["id"]])
-
-                if len(ls) > 0:
-                    self.add_mytrophies_view(collectionhuman, ls)
-        elif (self.mytrophies_filtermode == MYTROPHIES_FILTER_LATEST):
-            if len(self.mytrophies_filter_today) > 0:
-                self.add_mytrophies_view(_("Today"), self.mytrophies_filter_today)
-            
-            if len(self.mytrophies_filter_week) > 0:
-                self.add_mytrophies_view(_("This Week"), self.mytrophies_filter_week)
-            
-            if len(self.mytrophies_filter_month) > 0:
-                self.add_mytrophies_view(_("This Month"), self.mytrophies_filter_month)
-            
-            if len(self.mytrophies_filter_sixmonths) > 0:
-                self.add_mytrophies_view(_("Last Six Months"), self.mytrophies_filter_sixmonths)
-            
-            if len(self.mytrophies_filter_earlier) > 0:
-                self.add_mytrophies_view(_("Earlier"), self.mytrophies_filter_earlier)
-            
-        
-    
-    def on_mytrophies_filter_latest_toggled(self, widget):
-        self.mytrophies_filtermode = MYTROPHIES_FILTER_LATEST
-        self.update_mytrophy_filter()
-
-
-    def on_mytrophies_filter_all_toggled(self, widget):   
-        self.mytrophies_filtermode = MYTROPHIES_FILTER_ALL
-        self.update_mytrophy_filter()     
-
-    def on_tb_mytrophies_clicked(self, widget):
-        """Called when the My Trophies button is clicked."""
-        
-        mytrophies_toggled = self.tb_mytrophies.get_active()
-        opportunities_toggled = self.tb_opportunities.get_active()
-        
-        if mytrophies_toggled == True:
-            self.tb_opportunities.handler_block_by_func(self.on_tb_opportunities_clicked)
-            self.tb_opportunities.set_active(False) 
-            self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
-            self.mytrophies_filter_all.set_active(True)
-            self.on_mytrophies_filter_all_toggled(None)
-            self.notebook.set_current_page(1)
-        else:
-            self.tb_mytrophies.set_active(True)
-
-    def on_tb_opportunities_clicked(self, widget):
-        """Called when the Opportunities button is clicked."""
-        
-        self.launcher.set_property("urgent", False)
-        self.newtrophies = 0
-        self.launcher.set_property("count_visible", False)
-        
-        mytrophies_toggled = self.tb_mytrophies.get_active()
-        opportunities_toggled = self.tb_opportunities.get_active()
-        
-        if opportunities_toggled == True:
-            self.tb_mytrophies.handler_block_by_func(self.on_tb_mytrophies_clicked)       
-            self.tb_mytrophies.set_active(False) 
-            self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
-            self.notebook.set_current_page(2)
-        else:
-            self.tb_opportunities.set_active(True)
-
-    def menu_prefs_clicked(self,widget):
-        """Display the preferences window."""
-        
-        # If the window already is in use, when user clicks the menu
-        # item, present() is used instead, to bring the window to front
-        # etc.
-        if self.preferences_dialog is not None:
-            self.preferences_dialog.present()
-        else:
-            #create new instance
-            self.preferences_dialog = self.PreferencesDialog()
-            self.preferences_dialog.prepare(self.libaccom)
-            self.preferences_dialog.connect('destroy', self.on_preferences_dialog_destroyed)
-            self.preferences_dialog.show()
-    
-    def on_preferences_dialog_destroyed(self,widget):
-        self.preferences_dialog = None
-    
-    def get_icon(self, name):
-        theme = Gtk.IconTheme.get_default()
-        return theme.load_icon(name, 48, 0)
-
-    def check_for_extra_info_required(self):
-        """Check if the installed accomplishments require additional information to be gathered from the user."""
-        
-        infoneeded = self.libaccom.get_all_extra_information_required()
-
-        if len(infoneeded) is not 0:
-            # kick of the process of gathering the information needed
-            try:
-                seen = self.libaccom.get_config_value("config", "extrainfo_seen")
-                
-                if seen == "NoOption" or seen == 0:
-                    self.additional_info_req.set_visible(True)
-                    self.libaccom.write_config_file_item("config", "extrainfo_seen", 1)
-                else:
-                    return
-            except:
-                self.additional_info_req.set_visible(True)
-                self.libaccom.write_config_file_item("config", "extrainfo_seen", 1)
-
-    def check_daemon_session(self):
-        configvalue = self.libaccom.get_config_value("config", "daemon_sessionstart")
-        if configvalue == "NoOption":
-            self.additional_daemon_session.set_visible(True)
-        elif configvalue == "false":
-            pass
-
-    def daemon_session_ok(self, widget):
-        self.libaccom.set_daemon_session_start(True)
-        self.additional_daemon_session.set_visible(False)
-
-    def edit_auth_info(self,widget):
-        """Called when user clicks "Edit credentials" from notification"""
-        self.additional_info_req.set_visible(False)
-        self.edit_identification_clicked(widget) #that's maily the same thing
-        return
-
-    def edit_auth_info_cancel(self,widget):
-        """Called when user clicks "Later" from extrainfo-needed notification"""
-        self.additional_info_req.set_visible(False)
-        return
-    
-    def _load_accomplishments(self):
-        # clear the local cache of accomplishments
-        self.accomdb = []
-        self.accomdb = self.libaccom.build_viewer_database()
-        
-    def opp_clicked(self, widget):
-        selection = widget.get_selected_items()
-        if len(selection) is 0:
-            return
-        item = selection[0]
-        widget.unselect_path(item)
-        model = widget.get_model()
-        accomID = model[item][COL_ID]
-        self.accomplishment_info(accomID)
-
-    def mytrophy_clicked(self, widget):
-        selection = widget.get_selected_items()
-        if len(selection) is 0:
-            return
-        item = selection[0]
-        widget.unselect_path(item)
-        model = widget.get_model()
-        accomID = model[item][COL_ID]
-        self.accomplishment_info(accomID)
-
-    def optparse_accomplishment(self, accom_id):
-        """Process the -a command line option"""
-        if not self.libaccom.get_accom_exists(accom_id):
-            # this accomplishment does not exist! aborting...
-            print "There is no accomplishment with this ID."
-            return
-                
-        self.accomplishment_info(accom_id)
-
-    def accomplishment_info(self, accomID):
+    def _accomplishment_info(self, accomID):
         """Display information about the selected accomplishment."""
         data = []
         
