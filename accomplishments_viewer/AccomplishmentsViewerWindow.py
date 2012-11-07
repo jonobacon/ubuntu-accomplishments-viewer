@@ -829,24 +829,12 @@ class AccomplishmentsViewerWindow(Window):
         self.set_display(filter_collection = collection)
 
     def on_filter_category_changed(self, widget):
-        pass
-
-    def _opp_cat_updated(self, widget):
-        if self.do_not_react_on_cat_changes:
+        tree_iter = widget.get_active_iter()
+        if tree_iter == None: # Special case if the categories combo is not sensitive
             return
-
-        cattree_iter = self.opp_combo_cat.get_active_iter()
-        catmodel = self.opp_combo_cat.get_model()
-
-        if cattree_iter == None:
-            cat = ""
-            catname = ""
-        else:
-            cat, catname = catmodel[cattree_iter][:2]
-            
-        self.subcat = None
-
-        self.update_views(None)
+        model = widget.get_model()
+        category, name = model[tree_iter][:2]
+        self.set_display(filter_category = category)
     
     def on_filter_show_locked_clicked(self, widget):
 		if widget.get_active():
@@ -856,7 +844,6 @@ class AccomplishmentsViewerWindow(Window):
     
     def check_accomplishments(self, widget):
         """Called when Check Accomplishments is selected in the interface."""
-        
         self.libaccom.run_scripts(True)
         
     def on_mytrophies_filter_latest_toggled(self, widget):
@@ -1000,7 +987,8 @@ class AccomplishmentsViewerWindow(Window):
                     accomID           = "",
                     trophies_mode     = MYTROPHIES_FILTER_UNSPECIFIED,
                     filter_locked     = DISPLAY_FILTER_LOCKED_UNSPECIFIED,
-                    filter_collection = DISPLAY_FILTER_COLLECTION_UNSPECIFIED):
+                    filter_collection = DISPLAY_FILTER_COLLECTION_UNSPECIFIED,
+                    filter_category   = DISPLAY_FILTER_CATEGORY_UNSPECIFIED):
 		"""
 		Switches display mode as specified in arguments. It takes care about flipping notebook pages, hiding unnecessary UI pieces etc.
 		"""
@@ -1031,6 +1019,9 @@ class AccomplishmentsViewerWindow(Window):
             self.opp_combo_cat.handler_block_by_func(self.on_filter_category_changed)
             self.opp_combo_cat.set_active(0)
             self.opp_combo_cat.handler_unblock_by_func(self.on_filter_category_changed)
+        
+        if filter_category is not DISPLAY_FILTER_CATEGORY_UNSPECIFIED:
+            self.display_filter_category = filter_category
         
 		if self.display_mode is DISPLAY_MODE_DETAILS:
 			#Displaying details for an accomplishment
