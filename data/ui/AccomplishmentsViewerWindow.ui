@@ -977,7 +977,7 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                                       <object class="GtkComboBox" id="opp_combo_app">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <signal name="changed" handler="opp_app_updated" swapped="no"/>
+                                        <signal name="changed" handler="on_filter_collection_changed" swapped="no"/>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -1001,7 +1001,7 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                                       <object class="GtkComboBox" id="opp_combo_cat">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <signal name="changed" handler="opp_cat_updated" swapped="no"/>
+                                        <signal name="changed" handler="on_filter_category_changed" swapped="no"/>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -1021,7 +1021,7 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                                         <property name="xalign">0</property>
                                         <property name="active">True</property>
                                         <property name="draw_indicator">True</property>
-                                        <signal name="toggled" handler="update_views" swapped="no"/>
+                                        <signal name="toggled" handler="on_filter_show_locked_clicked" swapped="no"/>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>

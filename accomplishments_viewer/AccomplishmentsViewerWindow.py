@@ -76,6 +76,15 @@ DISPLAY_MODE_DETAILS = 1
 DISPLAY_MODE_TROPHIES = 2
 DISPLAY_MODE_OPPORTUNITIES = 3
 
+DISPLAY_FILTER_LOCKED_UNSPECIFIED = 0
+DISPLAY_FILTER_LOCKED_SHOW = 1
+DISPLAY_FILTER_LOCKED_HIDE = 2
+
+DISPLAY_FILTER_COLLECTION_UNSPECIFIED = 0
+DISPLAY_FILTER_CATEGORY_UNSPECIFIED = 0
+DISPLAY_FILTER_SUBCAT_UNSPECIFIED = 0
+DISPLAY_FILTER_SEARCH_UNSPECIFIED = 0
+
 TROPHY_GALLERY_URL = 'http://213.138.100.229:8000'
 
 # See accomplishments_viewer_lib.Window.py for more details about how this class works
@@ -95,8 +104,15 @@ class AccomplishmentsViewerWindow(Window):
         self.curr_height = 0
         self.curr_width = 0
         self.do_not_react_on_cat_changes = False
-        self.mytrophies_filtermode = MYTROPHIES_FILTER_ALL
+        
+        self.display_mytrophies_filtermode = MYTROPHIES_FILTER_ALL
         self.display_mode = DISPLAY_MODE_OPPORTUNITIES
+        self.display_locked = DISPLAY_FILTER_LOCKED_SHOW
+        self.display_filter_collection = DISPLAY_FILTER_COLLECTION_UNSPECIFIED
+        self.display_filter_category = DISPLAY_FILTER_CATEGORY_UNSPECIFIED
+        self.display_filter_subcat = DISPLAY_FILTER_SUBCAT_UNSPECIFIED
+        self.display_filter_search = DISPLAY_FILTER_SEARCH_UNSPECIFIED
+        
         self.mytrophies_store_all = []
         # Code for other initialization actions should be added here.
 
@@ -305,7 +321,7 @@ class AccomplishmentsViewerWindow(Window):
         self.populate_opp_combos()
         if len(self.accomdb) == 0:
             self.add_no_collections_installed()
-        self.display(DISPLAY_MODE_OPPORTUNITIES)
+        self.set_display(DISPLAY_MODE_OPPORTUNITIES)
             
     def statusbar_reload_msg_start(self):
         self.statusbar.set_text(_("Reloading accomplishments collections..."))
@@ -505,7 +521,7 @@ class AccomplishmentsViewerWindow(Window):
         self.populate_opp_combos()
         if len(self.accomdb) == 0:
             self.add_no_collections_installed()
-        self.display(DISPLAY_MODE_OPPORTUNITIES)
+        self.set_display(DISPLAY_MODE_OPPORTUNITIES)
         
 
     def update_widgets_sensitivity(self):
@@ -592,7 +608,7 @@ class AccomplishmentsViewerWindow(Window):
                 self.subcats_container.hide()
                 
 
-    def subcat_clicked(self, button, data):
+    def _subcat_clicked(self, button, data):
         self.subcat = button.get_label()
         self.update_views(None)
 
@@ -665,7 +681,7 @@ class AccomplishmentsViewerWindow(Window):
 
         if uri.startswith('accomplishment:'):
             id = uri[17:]
-            self.display(DISPLAY_MODE_DETAILS,accomID=id)
+            self.set_display(DISPLAY_MODE_DETAILS,accomID=id)
             return True
 
         pol_dec.ignore()
@@ -804,7 +820,7 @@ class AccomplishmentsViewerWindow(Window):
         self.opp_combo_cat.show()
       
 
-    def opp_app_updated(self, widget):
+    def _opp_app_updated(self, widget):
         self.do_not_react_on_cat_changes = True
         catlist = set()
         tree_iter = widget.get_active_iter()
@@ -840,13 +856,7 @@ class AccomplishmentsViewerWindow(Window):
             # to run update_views
             #self.update_views(None)
 
-    def check_accomplishments(self, widget):
-        """Called when Check Accomplishments is selected in the interface."""
-        
-        self.libaccom.run_scripts(True)
-        #self.notebook.set_current_page(2)
-
-    def opp_cat_updated(self, widget):
+    def _opp_cat_updated(self, widget):
         if self.do_not_react_on_cat_changes:
             return
 
@@ -863,14 +873,22 @@ class AccomplishmentsViewerWindow(Window):
 
         self.update_views(None)
     
+    def on_filter_show_locked_clicked(self, widget):
+		if widget.get_active():
+			self.set_display(filter_locked=DISPLAY_FILTER_LOCKED_SHOW)
+		else:
+			self.set_display(filter_locked=DISPLAY_FILTER_LOCKED_HIDE)
+    
+    def check_accomplishments(self, widget):
+        """Called when Check Accomplishments is selected in the interface."""
+        
+        self.libaccom.run_scripts(True)
+        
     def on_mytrophies_filter_latest_toggled(self, widget):
-        self.mytrophies_filtermode = MYTROPHIES_FILTER_LATEST
-        self.update_mytrophy_filter()
-
+		self.set_display(trophies_mode=MYTROPHIES_FILTER_LATEST)
 
     def on_mytrophies_filter_all_toggled(self, widget):   
-        self.mytrophies_filtermode = MYTROPHIES_FILTER_ALL
-        self.update_mytrophy_filter()     
+		self.set_display(trophies_mode=MYTROPHIES_FILTER_ALL)
 
     def on_tb_mytrophies_clicked(self, widget):
         """Called when the My Trophies button is clicked."""
@@ -880,7 +898,7 @@ class AccomplishmentsViewerWindow(Window):
         
         if mytrophies_toggled == True:
             self.mytrophies_filter_all.set_active(True)
-            self.display(DISPLAY_MODE_TROPHIES)
+            self.set_display(DISPLAY_MODE_TROPHIES)
         else:
             self.tb_mytrophies.set_active(True) # This also fires the signal handler
 
@@ -895,7 +913,7 @@ class AccomplishmentsViewerWindow(Window):
         opportunities_toggled = self.tb_opportunities.get_active()
         
         if opportunities_toggled == True:
-            self.display(DISPLAY_MODE_OPPORTUNITIES)
+            self.set_display(DISPLAY_MODE_OPPORTUNITIES)
         else:
             self.tb_opportunities.set_active(True) # This also fires the signal handler
 
@@ -975,7 +993,7 @@ class AccomplishmentsViewerWindow(Window):
         widget.unselect_path(item)
         model = widget.get_model()
         accomID = model[item][COL_ID]
-        self.display(DISPLAY_MODE_DETAILS,accomID=accomID)
+        self.set_display(DISPLAY_MODE_DETAILS,accomID=accomID)
 
     def mytrophy_clicked(self, widget):
         selection = widget.get_selected_items()
@@ -985,7 +1003,7 @@ class AccomplishmentsViewerWindow(Window):
         widget.unselect_path(item)
         model = widget.get_model()
         accomID = model[item][COL_ID]
-        self.display(DISPLAY_MODE_DETAILS,accomID=accomID)
+        self.set_display(DISPLAY_MODE_DETAILS,accomID=accomID)
 
     def optparse_accomplishment(self, accom_id):
         """Process the -a command line option"""
@@ -996,7 +1014,7 @@ class AccomplishmentsViewerWindow(Window):
                 
         self.accomplishment_info(accom_id)
 
-	def display(self, mode=DISPLAY_MODE_UNSPECIFIED, accomID="", trophies_mode=MYTROPHIES_FILTER_UNSPECIFIED):
+	def set_display(self, mode=DISPLAY_MODE_UNSPECIFIED, accomID="", trophies_mode=MYTROPHIES_FILTER_UNSPECIFIED):
 		"""
 		Switches display mode as specified in arguments. It takes care about flipping notebook pages, hiding unnecessary UI pieces etc.
 		"""
@@ -1010,12 +1028,13 @@ class AccomplishmentsViewerWindow(Window):
 				print "Unable to display details view, you probably forgot the accomID argument."
 			else:
 				self._accomplishment_info(accomID)
+				self.notebook.set_current_page(0)
 				
 		elif self.display_mode is DISPLAY_MODE_TROPHIES:
 			#Display the list of trophies
 					
 			if trophies_mode is not MYTROPHIES_FILTER_UNSPECIFIED:
-				self.mytrophies_filtermode = trophies_mode
+				self.display_mytrophies_filtermode = trophies_mode
 				
             self.tb_mytrophies.handler_block_by_func(self.on_tb_mytrophies_clicked)       
             self.tb_mytrophies.set_active(False) 
@@ -1041,7 +1060,7 @@ class AccomplishmentsViewerWindow(Window):
             for k in kids:
                 self.mytrophies_mainbox.remove(k)
                 
-        if (self.mytrophies_filtermode == MYTROPHIES_FILTER_ALL):
+        if (self.display_mytrophies_filtermode == MYTROPHIES_FILTER_ALL):
             collections = self.libaccom.list_collections()
             
             for c in collections:
@@ -1056,7 +1075,7 @@ class AccomplishmentsViewerWindow(Window):
 
                 if len(ls) > 0:
                     self.add_mytrophies_view(collectionhuman, ls)
-        elif (self.mytrophies_filtermode == MYTROPHIES_FILTER_LATEST):
+        elif (self.display_mytrophies_filtermode == MYTROPHIES_FILTER_LATEST):
             if len(self.mytrophies_filter_today) > 0:
                 self.add_mytrophies_view(_("Today"), self.mytrophies_filter_today)
             
@@ -1462,6 +1481,5 @@ var el = document.getElementById('accomDetails');
             </html>"
 
         self.webview.load_html_string(html, "file:///")
-        self.notebook.set_current_page(0)
         self.webview.show()
 
