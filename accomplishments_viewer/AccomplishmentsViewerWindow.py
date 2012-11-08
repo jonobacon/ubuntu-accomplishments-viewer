@@ -111,8 +111,8 @@ class AccomplishmentsViewerWindow(Window):
         self.EditExtraDialog.parent = self
         self.curr_height = 0
         self.curr_width = 0
-        self.do_not_react_on_cat_changes = False
         
+        # Following variables store current display settings.
         self.display_mytrophies_filtermode = MYTROPHIES_FILTER_ALL
         self.display_mode = DISPLAY_MODE_OPPORTUNITIES
         self.display_filter_locked = DISPLAY_FILTER_LOCKED_SHOW
@@ -121,6 +121,7 @@ class AccomplishmentsViewerWindow(Window):
         self.display_filter_subcat = ""
         self.display_filter_search = ""
         
+        # These two store list of pairs [filter, iconview] for all accomplishment groups in mytrophies view.
         self.trophies_collection_filters = []
         self.mytrophies_latest_boxes = []
         # Code for other initialization actions should be added here.
@@ -911,6 +912,10 @@ class AccomplishmentsViewerWindow(Window):
         self.set_display(DISPLAY_MODE_DETAILS,accomID=accom_id)
 
     def prepare_models(self):
+        """
+        This function is the only one that clears liststores and fills them with data.
+        It also prepares some of filters - these which are used in mytrophies view.
+        """
         self.oppstore.clear()
         self.trophiesstore.clear()
         # Fill in the opportunities tree
@@ -949,6 +954,12 @@ class AccomplishmentsViewerWindow(Window):
             self.trophies_collection_filters.append([new_filter,box])
         
     def add_mytrophies_view(self, parent, section, model):
+        """
+        This function is used for adding a new group of accomplishments in mytrophies view.
+        It creates unified UI elements, packs them and adds to @parent. The @section argument
+        will be the header of the section. The @model argument should be the treemodel of this
+        new iconview (prefferably a treemodelfilter).
+        """
         outerbox = Gtk.VBox()
         header = Gtk.Label("<span font_family='Ubuntu' size='18000' weight='light'>" + section + "</span>")
         header.set_use_markup(True)
@@ -986,7 +997,9 @@ class AccomplishmentsViewerWindow(Window):
                     filter_subcat     = DISPLAY_FILTER_SUBCAT_UNSPECIFIED,
                     search_query      = DISPLAY_FILTER_SEARCH_UNSPECIFIED):
 		"""
-		Switches display mode as specified in arguments. It takes care about flipping notebook pages, hiding unnecessary UI pieces etc.
+		Switches display mode as specified in arguments.
+        It takes care about flipping notebook pages, hiding unnecessary UI pieces etc.
+        This function shouldn't be called with many arguments, pass only these that you want to override.
 		"""
         # The ordering of following IF statements *IS* important!
         # For example, passing both collection and category to this function
@@ -1213,7 +1226,10 @@ class AccomplishmentsViewerWindow(Window):
 			return False
         return True
 
-    def _update_subcats(self):                    
+    def _update_subcats(self):  
+        """
+        This function creates the buttons for subcategories, requesting required data from the daemon.
+        """
         tempcats = []
         if self.display_filter_category == "" or self.display_filter_collection == "":
             self.subcats_container.hide()
