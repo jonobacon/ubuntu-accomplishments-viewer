@@ -1134,7 +1134,7 @@ class AccomplishmentsViewerWindow(Window):
         if (self.display_filter_collection != "") and (self.display_filter_collection != model.get_value(iterator,COL_COLLECTION)):
             return False
         # If there is a search term and this row does not match the query:
-        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()):
+        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).lower()):
 			return False
         return True
 
@@ -1188,7 +1188,7 @@ class AccomplishmentsViewerWindow(Window):
                 return False
                 
         # If there is a search term and this row does not match the query:
-        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()):
+        if (self.display_filter_search != "") and not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).lower()):
 			return False
             
         return True
@@ -1205,7 +1205,7 @@ class AccomplishmentsViewerWindow(Window):
         if (collection != model.get_value(iterator,COL_COLLECTION)):
             return False
         # If there is a search term and this row does not match the query:
-        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()):
+        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).lower()):
 			return False
         return True
 
