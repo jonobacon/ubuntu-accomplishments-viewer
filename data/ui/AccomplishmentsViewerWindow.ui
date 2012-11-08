@@ -8,7 +8,7 @@
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Accomplishment Information</property>
     <property name="window_position">center</property>
-    <property name="default_width">705</property>
+    <property name="default_width">735</property>
     <property name="default_height">450</property>
     <property name="icon_name">distributor-logo</property>
     <signal name="check-resize" handler="on_window_resized" swapped="no"/>
@@ -190,18 +190,20 @@
                       <placeholder/>
                     </child>
                     <child>
-                      <object class="GtkBox" id="box13">
+                      <object class="GtkBox" id="searchbar_box">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="margin_right">5</property>
                         <property name="margin_bottom">5</property>
                         <property name="orientation">vertical</property>
                         <child>
-                          <object class="GtkEntry" id="entry1">
+                          <object class="GtkEntry" id="searchbar">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="invisible_char">•</property>
+                            <property name="secondary_icon_stock">gtk-clear</property>
                             <signal name="changed" handler="on_search_changed" swapped="no"/>
+                            <signal name="icon-press" handler="on_search_clear_clicked" swapped="no"/>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -218,7 +220,7 @@
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">False</property>
+                            <property name="fill">True</property>
                             <property name="pack_type">end</property>
                             <property name="position">1</property>
                           </packing>

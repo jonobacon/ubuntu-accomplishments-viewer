@@ -182,6 +182,8 @@ class AccomplishmentsViewerWindow(Window):
         self.mytrophies_box_latest_window = self.builder.get_object("mytrophies_box_latest_window")
         self.mytrophies_box_all_window = self.builder.get_object("mytrophies_box_all_window")
         self.mytrophies_notebook = self.builder.get_object("mytrophies_notebook")
+        self.searchbar = self.builder.get_object("searchbar")
+        self.searchbar_box = self.builder.get_object("searchbar_box")
 
         # don't display the sub-cats scrollbars
         sb_h = self.subcats_scroll.get_hscrollbar()
@@ -718,7 +720,7 @@ class AccomplishmentsViewerWindow(Window):
             # and refill iconviews with icons to adjust columns number
             if self.connected:
 				if self.display_mode is DISPLAY_MODE_OPPORTUNITIES:
-					self._update_views(None)
+					self._update_opportunities_view(None)
 				if self.display_mode is DISPLAY_MODE_TROPHIES:
 					self._update_mytrophy_filter()
             else:
@@ -731,28 +733,21 @@ class AccomplishmentsViewerWindow(Window):
         
     def populate_opp_combos(self):
         temp = []
-
         for i in self.accomdb:
             temp.append({i["collection"] : i["collection-human"] })
-
         # uniqify the values
         result = [dict(tupleized) for tupleized in set(tuple(item.items()) for item in temp)]
-
+        
         # set up app
         self.opp_col_store.append(["", "All"])
-
         for i in sorted(result):
             self.opp_col_store.append([i.keys()[0], i.values()[0]])
-
         self.opp_combo_col.set_model(self.opp_col_store)
-
         self.opp_combo_col.set_active(0)
         self.opp_combo_col.show()
 
-        # set up cat
-
+        # Prepare categories combo
         self.opp_combo_cat.set_model(self.opp_cat_store)
-        
         self.opp_combo_cat.show()
       
     def on_filter_collection_changed(self,widget):
@@ -778,6 +773,9 @@ class AccomplishmentsViewerWindow(Window):
     def on_search_changed(self,widget):
 		value = widget.get_text()
 		self.set_display(search_query=value)
+
+    def on_search_clear_clicked(self,widget,icon,data):
+        self.searchbar.set_text("")
     
     def check_accomplishments(self, widget):
         """Called when Check Accomplishments is selected in the interface."""
@@ -996,8 +994,60 @@ class AccomplishmentsViewerWindow(Window):
         # later on. Therefore hierarhical order is desired.
 		if mode is not DISPLAY_MODE_UNSPECIFIED:
 			self.display_mode = mode
+            # Reflect changes in the UI
+            if self.display_mode is DISPLAY_MODE_DETAILS:
+                #Displaying details for an accomplishment
+                
+                if accomID == "":
+                    print "Unable to display details view, you probably forgot the accomID argument."
+                    return
+                    
+                # Set togglable buttons to reflect current state
+                self.tb_mytrophies.handler_block_by_func(self.on_tb_mytrophies_clicked)      
+                self.tb_opportunities.handler_block_by_func(self.on_tb_opportunities_clicked) 
+                self.tb_mytrophies.set_active(False) 
+                self.tb_opportunities.set_active(False)
+                self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
+                self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
+                
+                self.notebook.set_current_page(0)
+                self.searchbar_box.hide()
+                    
+            elif self.display_mode is DISPLAY_MODE_TROPHIES:
+                #Display the list of trophies
+                
+                # Set togglable buttons to reflect current state
+                self.tb_mytrophies.handler_block_by_func(self.on_tb_mytrophies_clicked)      
+                self.tb_opportunities.handler_block_by_func(self.on_tb_opportunities_clicked) 
+                self.tb_mytrophies.set_active(True) 
+                self.tb_opportunities.set_active(False)
+                self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
+                self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
+                        
+                self.notebook.set_current_page(1)
+                self.searchbar_box.show()
+               
+            elif self.display_mode is DISPLAY_MODE_OPPORTUNITIES:
+                
+                # Set togglable buttons to reflect current state
+                self.tb_mytrophies.handler_block_by_func(self.on_tb_mytrophies_clicked)      
+                self.tb_opportunities.handler_block_by_func(self.on_tb_opportunities_clicked) 
+                self.tb_mytrophies.set_active(False) 
+                self.tb_opportunities.set_active(True)
+                self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
+                self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
+                
+                self.notebook.set_current_page(2)
+                self.searchbar_box.show()
+                
         if trophies_mode is not MYTROPHIES_FILTER_UNSPECIFIED:
             self.display_mytrophies_filtermode = trophies_mode
+            # Show/hide appropriate iconview
+            if self.display_mytrophies_filtermode is MYTROPHIES_FILTER_ALL:
+                self.mytrophies_notebook.set_current_page(0)
+            elif self.display_mytrophies_filtermode is MYTROPHIES_FILTER_LATEST:
+                self.mytrophies_notebook.set_current_page(1)
+                
         if filter_locked is not DISPLAY_FILTER_LOCKED_UNSPECIFIED:
             self.display_filter_locked = filter_locked
         if filter_collection is not DISPLAY_FILTER_COLLECTION_UNSPECIFIED:
@@ -1036,51 +1086,16 @@ class AccomplishmentsViewerWindow(Window):
 			self.display_filter_subcat = filter_subcat
 		if search_query is not DISPLAY_FILTER_SEARCH_UNSPECIFIED:
 			self.display_filter_search = search_query
-        
-        
-        
-		if self.display_mode is DISPLAY_MODE_DETAILS:
-			#Displaying details for an accomplishment
-			
-			if accomID == "":
-				print "Unable to display details view, you probably forgot the accomID argument."
-			else:
-				self._accomplishment_info(accomID)
-				self.notebook.set_current_page(0)
-				
-		elif self.display_mode is DISPLAY_MODE_TROPHIES:
-			#Display the list of trophies
-            
-            # Set togglable buttons to reflect current state
-            self.tb_mytrophies.handler_block_by_func(self.on_tb_mytrophies_clicked)      
-            self.tb_opportunities.handler_block_by_func(self.on_tb_opportunities_clicked) 
-            self.tb_mytrophies.set_active(True) 
-            self.tb_opportunities.set_active(False)
-            self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
-            self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
-					
-            # Show/hide appropriate iconview
-            if self.display_mytrophies_filtermode is MYTROPHIES_FILTER_ALL:
-                self.mytrophies_notebook.set_current_page(0)
-            elif self.display_mytrophies_filtermode is MYTROPHIES_FILTER_LATEST:
-                self.mytrophies_notebook.set_current_page(1)
-				
-			self._update_mytrophy_view()
-			self.notebook.set_current_page(1)
-		   
-		elif self.display_mode is DISPLAY_MODE_OPPORTUNITIES:
-            
-            # Set togglable buttons to reflect current state
-            self.tb_mytrophies.handler_block_by_func(self.on_tb_mytrophies_clicked)      
-            self.tb_opportunities.handler_block_by_func(self.on_tb_opportunities_clicked) 
-            self.tb_mytrophies.set_active(False) 
-            self.tb_opportunities.set_active(True)
-            self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
-            self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
-            
-			self._update_opportunities_view()
-			self.notebook.set_current_page(2)
 
+
+        # Finally, pass refreshing/rerendering to specialised functions
+        if self.display_mode is DISPLAY_MODE_DETAILS:
+            self._accomplishment_info(accomID)
+        elif self.display_mode is DISPLAY_MODE_TROPHIES:
+            self._update_mytrophy_view()
+        elif self.display_mode is DISPLAY_MODE_OPPORTUNITIES:
+            self._update_opportunities_view()
+            
     def _update_mytrophy_view(self):
         # Causes the treemodel to call visible_func for all rows.
         # It also hides/shows boxes depending on whether they are empty.
