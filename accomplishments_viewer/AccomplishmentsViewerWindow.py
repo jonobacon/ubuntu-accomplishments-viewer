@@ -67,6 +67,7 @@ COL_LOCKED = 3
 COL_COLLECTION = 4
 COL_ID = 5
 COL_DATE_ACCOMPLISHED = 6
+COL_CATEGORIES = 7
 
 MYTROPHIES_FILTER_UNSPECIFIED = 0
 MYTROPHIES_FILTER_ALL = 1
@@ -197,7 +198,7 @@ class AccomplishmentsViewerWindow(Window):
 
         # Create stores and corelated filters
 
-        self.oppstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str, str) # title, icon, accomplished, locked, col, accomplishment, date-accomplished
+        self.oppstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str, str, str) # title, icon, accomplished, locked, col, accomplishment, date-accomplished, categories
         self.oppstore.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
         self.oppstore_filtered = self.oppstore.filter_new()
         # The following sets the function for tree model filter. That function has
@@ -205,7 +206,7 @@ class AccomplishmentsViewerWindow(Window):
         # which opportunities are displayed, and which are not.
         self.oppstore_filtered.set_visible_func(self.opp_visible_func)
             
-        self.trophiesstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str, str) # title, icon, accomplished, locked, col, accomplishment, date-accomplished
+        self.trophiesstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str, str, str) # title, icon, accomplished, locked, col, accomplishment, date-accomplished, categories
         self.trophiesstore.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
         self.trophiesstore_filter_today = self.trophiesstore.filter_new()
         self.trophiesstore_filter_today.set_visible_func(self.trophy_recent_visible_func,TROPHIES_FILTER_TODAY)
@@ -543,56 +544,8 @@ class AccomplishmentsViewerWindow(Window):
         self.subcats_back.set_sensitive(True)
         self.subcats_forward.set_sensitive(True)
 
-    def subcats_show(self, col, cat):                    
-        tempcats = []
-        if cat == "everything":
-            self.subcats_container.hide()
-        else:
-            # set up the subcats
-            cats = self.libaccom.get_collection_categories(col)
-            for c in cats:
-                if c == cat:
-                    tempcats = cats[c]
-
-            finalcats = []
-            
-            for s in tempcats:
-                for i in self.accomdb:
-                    if i["collection"] == col and i["categories"][0] == cat + ":" + s and i["accomplished"] == False:
-                        finalcats.append(s)
-
-            # convert to a set to remove dupes
-            finalcats = set(finalcats)            
-            
-            # remove previous buttons from the button box
-            for b in self.subcats_buttonbox.get_children():
-                self.subcats_buttonbox.remove(b)
-
-            # Add 'All' button
-            button = Gtk.Button(_("All"))
-            button.props.relief = Gtk.ReliefStyle.NONE
-            button.connect("clicked", self.subcat_clicked, cat)
-            self.subcats_buttonbox.add(button)
-            button.show()
-            
-            # fill the button box with the sub categories
-            for s in finalcats:
-                button = Gtk.Button(s)
-                button.props.relief = Gtk.ReliefStyle.NONE
-                button.connect("clicked", self.subcat_clicked, cat)
-                self.subcats_buttonbox.add(button)
-                button.show()
-            
-            if len(finalcats) > 0:
-                self.subcats_buttonbox.show_all()
-                self.subcats_container.show()
-            else:
-                self.subcats_container.hide()
-                
-
-    def _subcat_clicked(self, button, data):
-        self.subcat = button.get_label()
-        self.update_views(None)
+    def subcat_clicked(self, button, data):
+        self.set_display(filter_subcat = data)
 
     def subcats_back_button(self, widget):
         h = self.subcats_scroll.get_hadjustment()
@@ -751,6 +704,8 @@ class AccomplishmentsViewerWindow(Window):
         self.additional_ubuntu1.set_visible(True)
 
     def on_window_resized(self,widget):
+        """
+        Since there is no more need to recalculate data when resized, the following is no more needed.
         # get the new size
         new_width = widget.get_size()[0]
         new_height = widget.get_size()[1]
@@ -770,7 +725,9 @@ class AccomplishmentsViewerWindow(Window):
                 # and therefore connection is yet to be made. Passing here will
                 # avoid errors about not-existing libaccom.
                 pass
-                      
+        """
+        pass
+        
     def populate_opp_combos(self):
         temp = []
 
@@ -961,9 +918,9 @@ class AccomplishmentsViewerWindow(Window):
         for acc in self.accomdb:
             icon = GdkPixbuf.Pixbuf.new_from_file_at_size(str(acc["iconpath"]), 90, 90)
             if str(acc["accomplished"]) != '1':
-                self.oppstore.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"], acc["date-accomplished"]])
+                self.oppstore.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"], acc["date-accomplished"], '|'.join(acc["categories"])])
             else:
-                self.trophiesstore.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"], acc["date-accomplished"]])
+                self.trophiesstore.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"], acc["date-accomplished"], '|'.join(acc["categories"])])
         # Prepare latest trophies iconviews
         if len(self.mytrophies_box_latest.get_children()) == 0:
             self.add_mytrophies_view(self.mytrophies_box_latest,("Today"), self.trophiesstore_filter_today)
@@ -1025,6 +982,10 @@ class AccomplishmentsViewerWindow(Window):
 		"""
 		Switches display mode as specified in arguments. It takes care about flipping notebook pages, hiding unnecessary UI pieces etc.
 		"""
+        # The ordering of following IF statements *IS* important!
+        # For example, passing both collection and category to this function
+        # may not result in skipping some of these data as they get cleared
+        # later on. Therefore hierarhical order is desired.
 		if mode is not DISPLAY_MODE_UNSPECIFIED:
 			self.display_mode = mode
         if trophies_mode is not MYTROPHIES_FILTER_UNSPECIFIED:
@@ -1041,8 +1002,6 @@ class AccomplishmentsViewerWindow(Window):
                 self.opp_combo_cat.set_sensitive(False)
             else:
                 cats = self.libaccom.get_collection_categories(filter_collection)
-                #for i in cats:
-                #    catlist.add(i)
                 self.opp_cat_store.clear()
                 self.opp_cat_store.append(["", _("everything")])
                 for i in sorted(cats):
@@ -1055,8 +1014,16 @@ class AccomplishmentsViewerWindow(Window):
             self.opp_combo_cat.set_active(0)
             self.opp_combo_cat.handler_unblock_by_func(self.on_filter_category_changed)
         
+            # It is likely that we need to update the subcategories.
+            # A special case is when it needs to be hidden after collection change.
+            self._update_subcats()
+            
         if filter_category is not DISPLAY_FILTER_CATEGORY_UNSPECIFIED:
             self.display_filter_category = filter_category
+            
+            # Changing category, therefore we should display the subcats bar too.
+            self._update_subcats()
+            
         if filter_subcat is not DISPLAY_FILTER_SUBCAT_UNSPECIFIED:
 			self.display_filter_subcat = filter_subcat
 		if search_query is not DISPLAY_FILTER_SEARCH_UNSPECIFIED:
@@ -1133,8 +1100,17 @@ class AccomplishmentsViewerWindow(Window):
         # If we ale looking for a certain collection:
         if (self.display_filter_collection != "") and (self.display_filter_collection != model.get_value(iterator,COL_COLLECTION)):
             return False
+        # If we ale looking for a certain category...
+        if (self.display_filter_category != ""):
+            #...and a subcategory
+            if (self.display_filter_subcat != ""):
+                q = self.display_filter_category + ":" + self.display_filter_subcat
+                if not (q in model.get_value(iterator,COL_CATEGORIES)):
+                    return False
+            if not (self.display_filter_category in model.get_value(iterator,COL_CATEGORIES)):
+                return False
         # If there is a search term and this row does not match the query:
-        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).lower()):
+        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).split("/")[1].lower()):
 			return False
         return True
 
@@ -1188,7 +1164,7 @@ class AccomplishmentsViewerWindow(Window):
                 return False
                 
         # If there is a search term and this row does not match the query:
-        if (self.display_filter_search != "") and not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).lower()):
+        if (self.display_filter_search != "") and not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).split("/")[1].lower()):
 			return False
             
         return True
@@ -1205,37 +1181,56 @@ class AccomplishmentsViewerWindow(Window):
         if (collection != model.get_value(iterator,COL_COLLECTION)):
             return False
         # If there is a search term and this row does not match the query:
-        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).lower()):
+        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).split("/")[1].lower()):
 			return False
         return True
 
-    def _____update_mytrophy_filter(self):
-        
-        kids = self.mytrophies_mainbox.get_children()
-        
-        if len(kids) > 0:
-            for k in kids:
-                self.mytrophies_mainbox.remove(k)
-                
-        if (self.display_mytrophies_filtermode == MYTROPHIES_FILTER_ALL):
-            collections = self.libaccom.list_collections()
+    def _update_subcats(self):                    
+        tempcats = []
+        if self.display_filter_category == "" or self.display_filter_collection == "":
+            self.subcats_container.hide()
+        else:
+            # set up the subcats
+            cats = self.libaccom.get_collection_categories(self.display_filter_collection)
+            for c in cats:
+                if c == self.display_filter_category:
+                    tempcats = cats[c]
+
+            finalcats = []
             
-            for c in collections:
-                ls = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
-                ls.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
-                ls.clear()
-                collectionhuman = ""
-                for i in self.mytrophies_store_all:
-                    if i[0]["collection"] == c:
-                        collectionhuman = i[0]["collection-human"]
-                        ls.append([i[0]["title"], i[0]["icon"], i[0]["accomplished"], i[0]["locked"], i[0]["collection"], i[0]["id"]])
+            for s in tempcats:
+                for i in self.accomdb:
+                    if i["collection"] == self.display_filter_collection and i["categories"][0] == self.display_filter_category + ":" + s and i["accomplished"] == False:
+                        finalcats.append(s)
 
-                if len(ls) > 0:
-                    self.add_mytrophies_view(collectionhuman, ls)
-        elif (self.display_mytrophies_filtermode == MYTROPHIES_FILTER_LATEST):
-            pass
-    
+            # convert to a set to remove dupes
+            finalcats = set(finalcats)
+            
+            # remove previous buttons from the button box
+            for b in self.subcats_buttonbox.get_children():
+                self.subcats_buttonbox.remove(b)
 
+            if len(finalcats) > 1:
+                # Add 'All' button
+                button = Gtk.Button(_("All"))
+                button.props.relief = Gtk.ReliefStyle.NONE
+                button.connect("clicked", self.subcat_clicked, "")
+                self.subcats_buttonbox.add(button)
+                button.show()
+                
+                # fill the button box with the sub categories
+                for s in finalcats:
+                    button = Gtk.Button(s)
+                    button.props.relief = Gtk.ReliefStyle.NONE
+                    button.connect("clicked", self.subcat_clicked, s)
+                    self.subcats_buttonbox.add(button)
+                    button.show()
+                    
+                self.subcats_buttonbox.show_all()
+                self.subcats_container.show()
+            else:
+                self.subcats_container.hide()
+            
     def _____update_views(self, widget):
         """Update all of the views to reflect the current state of Trophies and Opportunities."""
 
