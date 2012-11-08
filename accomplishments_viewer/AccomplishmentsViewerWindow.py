@@ -120,7 +120,7 @@ class AccomplishmentsViewerWindow(Window):
         self.display_filter_subcat = ""
         self.display_filter_search = ""
         
-        self.mytrophies_store_all = []
+        self.trophies_collection_filters = []
         # Code for other initialization actions should be added here.
 
         
@@ -179,6 +179,7 @@ class AccomplishmentsViewerWindow(Window):
         self.mytrophies_box_all = self.builder.get_object("mytrophies_box_all")
         self.mytrophies_box_latest_window = self.builder.get_object("mytrophies_box_latest_window")
         self.mytrophies_box_all_window = self.builder.get_object("mytrophies_box_all_window")
+        self.mytrophies_notebook = self.builder.get_object("mytrophies_notebook")
 
         # don't display the sub-cats scrollbars
         sb_h = self.subcats_scroll.get_hscrollbar()
@@ -963,7 +964,7 @@ class AccomplishmentsViewerWindow(Window):
                 self.oppstore.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"], acc["date-accomplished"]])
             else:
                 self.trophiesstore.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"], acc["date-accomplished"]])
-        # Prepare latest iconviews
+        # Prepare latest trophies iconviews
         if len(self.mytrophies_box_latest.get_children()) == 0:
             self.add_mytrophies_view(self.mytrophies_box_latest,("Today"), self.trophiesstore_filter_today)
             self.add_mytrophies_view(self.mytrophies_box_latest,_("This Week"), self.trophiesstore_filter_week)
@@ -971,6 +972,19 @@ class AccomplishmentsViewerWindow(Window):
             self.add_mytrophies_view(self.mytrophies_box_latest,_("Last Six Months"), self.trophiesstore_filter_sixmonths)
             self.add_mytrophies_view(self.mytrophies_box_latest,_("Earlier"), self.trophiesstore_filter_earlier)
             
+        # Prepare all trophies iconviews
+        kids = self.mytrophies_box_all.get_children()
+        for kid in kids:
+            self.mytrophies_box_all.remove(k)
+        for f in self.trophies_collection_filters:
+            del f
+        self.trophies_collection_filters = []
+        collections = self.libaccom.list_collections()
+        for c in collections:
+            new_filter = self.trophiesstore.filter_new()
+            new_filter.set_visible_func(self.trophy_all_visible_func,c)
+            self.trophies_collection_filters.append(new_filter)
+            self.add_mytrophies_view(self.mytrophies_box_all, self.libaccom.get_collection_name(c), new_filter)
         
     def add_mytrophies_view(self, parent, section, model):
         outerbox = Gtk.VBox()
@@ -1061,14 +1075,7 @@ class AccomplishmentsViewerWindow(Window):
 				
 		elif self.display_mode is DISPLAY_MODE_TROPHIES:
 			#Display the list of trophies
-					
-            if self.display_mytrophies_filtermode is MYTROPHIES_FILTER_ALL:
-                self.mytrophies_box_all_window.show()
-                self.mytrophies_box_latest.hide()
-            elif self.display_mytrophies_filtermode is MYTROPHIES_FILTER_LATEST:
-                self.mytrophies_box_all_window.hide()
-                self.mytrophies_box_latest.show()
-				
+            
             # Set togglable buttons to reflect current state
             self.tb_mytrophies.handler_block_by_func(self.on_tb_mytrophies_clicked)      
             self.tb_opportunities.handler_block_by_func(self.on_tb_opportunities_clicked) 
@@ -1076,7 +1083,13 @@ class AccomplishmentsViewerWindow(Window):
             self.tb_opportunities.set_active(False)
             self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
             self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
-            
+					
+            # Show/hide appropriate iconview
+            if self.display_mytrophies_filtermode is MYTROPHIES_FILTER_ALL:
+                self.mytrophies_notebook.set_current_page(0)
+            elif self.display_mytrophies_filtermode is MYTROPHIES_FILTER_LATEST:
+                self.mytrophies_notebook.set_current_page(1)
+				
 			self._update_mytrophy_view()
 			self.notebook.set_current_page(1)
 		   
@@ -1094,11 +1107,14 @@ class AccomplishmentsViewerWindow(Window):
 			self.notebook.set_current_page(2)
 
     def _update_mytrophy_view(self):
+        # Causes the treemodel to call visible_func for all rows.
         self.trophiesstore_filter_earlier.refilter()
         self.trophiesstore_filter_sixmonths.refilter()
         self.trophiesstore_filter_month.refilter()
         self.trophiesstore_filter_week.refilter()
         self.trophiesstore_filter_today.refilter()
+        for f in self.trophies_collection_filters:
+            f.refilter()
 
     def _update_opportunities_view(self):
         # Causes the treemodel to call visible_func for all rows.
@@ -1175,6 +1191,22 @@ class AccomplishmentsViewerWindow(Window):
         if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()):
 			return False
             
+        return True
+        
+    def trophy_all_visible_func(self,model,iterator,collection):
+        """
+        This function is crucial for filtering mytrophies. It is called
+        by some internal GTK callbacks, whenever the treemodel changes.
+        It has to return True/False, which states whether the given row
+        should be displayed or not.
+        The @data argument specifies filtered collection.
+        """
+        # If row's collection matches the desired for this filter
+        if (collection != model.get_value(iterator,COL_COLLECTION)):
+            return False
+        # If there is a search term and this row does not match the query:
+        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()):
+			return False
         return True
 
     def _____update_mytrophy_filter(self):
