@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-10-20 21:15-0600\n"
-"PO-Revision-Date: 2012-08-31 18:55+0000\n"
-"Last-Translator: Thiago Abreu <Unknown>\n"
+"PO-Revision-Date: 2012-11-07 16:35+0000\n"
+"Last-Translator: Rafael Neri <Unknown>\n"
 "Language-Team: Português <joao.abo.santana@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-22 04:56+0000\n"
-"X-Generator: Launchpad (build 16165)\n"
+"X-Launchpad-Export-Date: 2012-11-08 05:18+0000\n"
+"X-Generator: Launchpad (build 16232)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:69
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:102
@@ -71,7 +71,7 @@ msgstr ""
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>"
-msgstr ""
+msgstr "Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>"
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:2
 msgid ""
@@ -157,12 +157,12 @@ msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:304
 msgid "Reloading accomplishments collections..."
-msgstr ""
+msgstr "Recarregando coleções de conquistas"
 
 #. apparently as that process daemonizes it will not get killed when one closes the client
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:465
 msgid "Starting the daemon..."
-msgstr ""
+msgstr "Iniciando o serviço (daemon)"
 
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:571
