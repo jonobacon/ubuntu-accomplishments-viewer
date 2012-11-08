@@ -122,6 +122,7 @@ class AccomplishmentsViewerWindow(Window):
         self.display_filter_search = ""
         
         self.trophies_collection_filters = []
+        self.mytrophies_latest_boxes = []
         # Code for other initialization actions should be added here.
 
         
@@ -204,20 +205,20 @@ class AccomplishmentsViewerWindow(Window):
         # The following sets the function for tree model filter. That function has
         # to return true if a given row has to be visible. This way we can control
         # which opportunities are displayed, and which are not.
-        self.oppstore_filtered.set_visible_func(self.opp_visible_func)
+        self.oppstore_filtered.set_visible_func(self._opp_visible_func)
             
         self.trophiesstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str, str, str) # title, icon, accomplished, locked, col, accomplishment, date-accomplished, categories
         self.trophiesstore.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
         self.trophiesstore_filter_today = self.trophiesstore.filter_new()
-        self.trophiesstore_filter_today.set_visible_func(self.trophy_recent_visible_func,TROPHIES_FILTER_TODAY)
+        self.trophiesstore_filter_today.set_visible_func(self._trophy_recent_visible_func,TROPHIES_FILTER_TODAY)
         self.trophiesstore_filter_week = self.trophiesstore.filter_new()
-        self.trophiesstore_filter_week.set_visible_func(self.trophy_recent_visible_func,TROPHIES_FILTER_WEEK)
+        self.trophiesstore_filter_week.set_visible_func(self._trophy_recent_visible_func,TROPHIES_FILTER_WEEK)
         self.trophiesstore_filter_month = self.trophiesstore.filter_new()
-        self.trophiesstore_filter_month.set_visible_func(self.trophy_recent_visible_func,TROPHIES_FILTER_MONTH)
+        self.trophiesstore_filter_month.set_visible_func(self._trophy_recent_visible_func,TROPHIES_FILTER_MONTH)
         self.trophiesstore_filter_sixmonths = self.trophiesstore.filter_new()
-        self.trophiesstore_filter_sixmonths.set_visible_func(self.trophy_recent_visible_func,TROPHIES_FILTER_SIXMONTHS)
+        self.trophiesstore_filter_sixmonths.set_visible_func(self._trophy_recent_visible_func,TROPHIES_FILTER_SIXMONTHS)
         self.trophiesstore_filter_earlier = self.trophiesstore.filter_new()
-        self.trophiesstore_filter_earlier.set_visible_func(self.trophy_recent_visible_func,TROPHIES_FILTER_EARLIER)
+        self.trophiesstore_filter_earlier.set_visible_func(self._trophy_recent_visible_func,TROPHIES_FILTER_EARLIER)
         
         self.opp_icon.set_model(self.oppstore_filtered)
         self.opp_icon.set_text_column(COL_TITLE)
@@ -923,25 +924,31 @@ class AccomplishmentsViewerWindow(Window):
                 self.trophiesstore.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"], acc["date-accomplished"], '|'.join(acc["categories"])])
         # Prepare latest trophies iconviews
         if len(self.mytrophies_box_latest.get_children()) == 0:
-            self.add_mytrophies_view(self.mytrophies_box_latest,("Today"), self.trophiesstore_filter_today)
-            self.add_mytrophies_view(self.mytrophies_box_latest,_("This Week"), self.trophiesstore_filter_week)
-            self.add_mytrophies_view(self.mytrophies_box_latest,_("This Month"), self.trophiesstore_filter_month)
-            self.add_mytrophies_view(self.mytrophies_box_latest,_("Last Six Months"), self.trophiesstore_filter_sixmonths)
-            self.add_mytrophies_view(self.mytrophies_box_latest,_("Earlier"), self.trophiesstore_filter_earlier)
+            self.mytrophies_latest_boxes = []
+            box = self.add_mytrophies_view(self.mytrophies_box_latest,_("Today"), self.trophiesstore_filter_today)
+            self.mytrophies_latest_boxes.append([self.trophiesstore_filter_today,box])
+            box = self.add_mytrophies_view(self.mytrophies_box_latest,_("This Week"), self.trophiesstore_filter_week)
+            self.mytrophies_latest_boxes.append([self.trophiesstore_filter_week,box])
+            box = self.add_mytrophies_view(self.mytrophies_box_latest,_("This Month"), self.trophiesstore_filter_month)
+            self.mytrophies_latest_boxes.append([self.trophiesstore_filter_month,box])
+            box = self.add_mytrophies_view(self.mytrophies_box_latest,_("Last Six Months"), self.trophiesstore_filter_sixmonths)
+            self.mytrophies_latest_boxes.append([self.trophiesstore_filter_sixmonths,box])
+            box = self.add_mytrophies_view(self.mytrophies_box_latest,_("Earlier"), self.trophiesstore_filter_earlier)
+            self.mytrophies_latest_boxes.append([self.trophiesstore_filter_earlier,box])
             
         # Prepare all trophies iconviews
         kids = self.mytrophies_box_all.get_children()
         for kid in kids:
             self.mytrophies_box_all.remove(k)
         for f in self.trophies_collection_filters:
-            del f
+            del f[0] #Remove the filter!
         self.trophies_collection_filters = []
         collections = self.libaccom.list_collections()
         for c in collections:
             new_filter = self.trophiesstore.filter_new()
-            new_filter.set_visible_func(self.trophy_all_visible_func,c)
-            self.trophies_collection_filters.append(new_filter)
-            self.add_mytrophies_view(self.mytrophies_box_all, self.libaccom.get_collection_name(c), new_filter)
+            new_filter.set_visible_func(self._trophy_all_visible_func,c)
+            box = self.add_mytrophies_view(self.mytrophies_box_all, self.libaccom.get_collection_name(c), new_filter)
+            self.trophies_collection_filters.append([new_filter,box])
         
     def add_mytrophies_view(self, parent, section, model):
         outerbox = Gtk.VBox()
@@ -969,6 +976,7 @@ class AccomplishmentsViewerWindow(Window):
         outerbox.show_all()
         
         parent.add(outerbox)
+        return outerbox
 
 	def set_display(self, 
                     mode              = DISPLAY_MODE_UNSPECIFIED,
@@ -1075,19 +1083,24 @@ class AccomplishmentsViewerWindow(Window):
 
     def _update_mytrophy_view(self):
         # Causes the treemodel to call visible_func for all rows.
-        self.trophiesstore_filter_earlier.refilter()
-        self.trophiesstore_filter_sixmonths.refilter()
-        self.trophiesstore_filter_month.refilter()
-        self.trophiesstore_filter_week.refilter()
-        self.trophiesstore_filter_today.refilter()
-        for f in self.trophies_collection_filters:
-            f.refilter()
+        # It also hides/shows boxes depending on whether they are empty.
+        if self.display_mytrophies_filtermode is MYTROPHIES_FILTER_ALL:
+            filterlist = self.trophies_collection_filters
+        elif self.display_mytrophies_filtermode is MYTROPHIES_FILTER_LATEST:
+            filterlist = self.mytrophies_latest_boxes
+            
+        for f in filterlist:
+            f[0].refilter()
+            if len(f[0]) is 0:
+                f[1].hide()
+            else:
+                f[1].show()
 
     def _update_opportunities_view(self):
         # Causes the treemodel to call visible_func for all rows.
         self.oppstore_filtered.refilter()
         
-    def opp_visible_func(self, model, iterator, data):
+    def _opp_visible_func(self, model, iterator, data):
         """
         This function is crucial for filtering opportunities. It is called
         by some internal GTK callbacks, whenever the treemodel changes.
@@ -1114,7 +1127,7 @@ class AccomplishmentsViewerWindow(Window):
 			return False
         return True
 
-    def trophy_recent_visible_func(self,model,iterator,data):
+    def _trophy_recent_visible_func(self,model,iterator,data):
         """
         This function is crucial for filtering recently awarded trophies. It is called
         by some internal GTK callbacks, whenever the treemodel changes.
@@ -1169,7 +1182,7 @@ class AccomplishmentsViewerWindow(Window):
             
         return True
         
-    def trophy_all_visible_func(self,model,iterator,collection):
+    def _trophy_all_visible_func(self,model,iterator,collection):
         """
         This function is crucial for filtering mytrophies. It is called
         by some internal GTK callbacks, whenever the treemodel changes.
@@ -1231,120 +1244,6 @@ class AccomplishmentsViewerWindow(Window):
             else:
                 self.subcats_container.hide()
             
-    def _____update_views(self, widget):
-        """Update all of the views to reflect the current state of Trophies and Opportunities."""
-
-        self.mytrophies_store_all = []
-        
-        #trophymodel = self.trophy_icon.get_model()
-        oppmodel = self.opp_icon.get_model()
-
-        # clear the models
-        oppmodel.clear()
-        self.mytrophies_filter_today.clear()
-        self.mytrophies_filter_week.clear()
-        self.mytrophies_filter_month.clear()
-        self.mytrophies_filter_sixmonths.clear()
-        self.mytrophies_filter_earlier.clear()
-        """
-        coltree_iter = self.opp_combo_col.get_active_iter()
-        colmodel = self.opp_combo_col.get_model()
-
-        if coltree_iter == None:
-            col = ""
-            colname = ""
-        else:
-            col, colname = colmodel[coltree_iter][:2]
-        
-        col_active_item = self.opp_combo_col.get_active()
-        
-        if col_active_item == 0:
-            self.opp_combo_cat.set_sensitive(False)
-        else:
-            self.opp_combo_cat.set_sensitive(True)
-
-        cattree_iter = self.opp_combo_cat.get_active_iter()
-        catmodel = self.opp_combo_cat.get_model()
-
-        if cattree_iter == None:
-            cat = ""
-            catname = ""
-        else:
-            cat, catname = catmodel[cattree_iter][:2]
-
-        if cat == "":
-            self.subcats_container.hide()
-        else:
-            self.subcats_show(col, cat)
-        """
-        
-        # update opportunities
-        for acc in self.accomdb:
-            icon = GdkPixbuf.Pixbuf.new_from_file_at_size(str(acc["iconpath"]), 90, 90)
-
-            if str(acc["accomplished"]) == '1':
-                #self.mytrophies_filter_all = testlist.append( { acc["collection-human"] : [acc["title"], icon, bool(acc["accomplished"]), acc["locked"], acc["collection"], acc["id"]] } )
-                self.mytrophies_store_all.append([{ "title" : acc["title"], "icon" : icon, "accomplished" : bool(acc["accomplished"]), "locked" : acc["locked"], "collection" : acc["collection"], "id" : acc["id"], "collection-human" : acc["collection-human"] }])
-
-                today = datetime.date.today()
-                margin_today = datetime.timedelta(days = 1)
-                margin_week = datetime.timedelta(days = 7)
-                margin_month = datetime.timedelta(days = 31)
-                margin_sixmonths = datetime.timedelta(days = 180)
-
-                match = False
-
-                if str(acc["date-accomplished"]) == "None":
-                    pass
-                else:
-                    year = int(acc["date-accomplished"].split("-")[0])
-                    month = int(acc["date-accomplished"].split("-")[1])
-                    day = int(acc["date-accomplished"].split("-")[2].split(" ")[0])
-
-                    if (today - margin_today <= datetime.date(year, month, day) <= today + margin_today) == True:
-                        self.mytrophies_filter_today.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    elif (today - margin_week <= datetime.date(year, month, day) <= today + margin_week) == True:
-                        self.mytrophies_filter_week.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    elif (today - margin_month <= datetime.date(year, month, day) <= today + margin_month) == True:
-                        self.mytrophies_filter_month.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    elif (today - margin_sixmonths <= datetime.date(year, month, day) <= today + margin_sixmonths) == True:                        
-                        self.mytrophies_filter_sixmonths.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    #else:
-                    #    self.mytrophies_filter_earlier.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                
-            else:
-                subcat = ""
-                thiscat = ""
-
-                c = [i for i in acc["categories"] if i == cat]
-                if len(c) is not 0:
-                    thiscat = c[0]
-                else:
-                    thiscat = ""                    
-                
-
-                if self.subcat is not None:
-                    subcat = str(cat) + ":" + str(self.subcat)
-                    if self.subcat == "All":
-                        if acc["collection"] == col and cat in list(acc["categories"])[0]:
-                            if not acc["locked"] or show_locked:
-                                oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    else:
-                        if acc["collection"] == col and list(acc["categories"])[0] == subcat:
-                            if not acc["locked"] or show_locked:
-                                oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                else:
-                    if acc["collection"] == col and cat in list(acc["categories"])[0]:
-                        if not acc["locked"] or show_locked:
-                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    elif col == "" and cat == "":
-                        if not acc["locked"] or show_locked:
-                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    elif acc["collection"] == col and cat == "":
-                        if not acc["locked"] or show_locked:
-                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-  
-
     def _accomplishment_info(self, accomID):
         """Display information about the selected accomplishment."""
         data = []
