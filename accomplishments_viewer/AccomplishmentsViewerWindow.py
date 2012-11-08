@@ -108,10 +108,10 @@ class AccomplishmentsViewerWindow(Window):
         self.display_mytrophies_filtermode = MYTROPHIES_FILTER_ALL
         self.display_mode = DISPLAY_MODE_OPPORTUNITIES
         self.display_filter_locked = DISPLAY_FILTER_LOCKED_SHOW
-        self.display_filter_collection = DISPLAY_FILTER_COLLECTION_UNSPECIFIED
-        self.display_filter_category = DISPLAY_FILTER_CATEGORY_UNSPECIFIED
-        self.display_filter_subcat = DISPLAY_FILTER_SUBCAT_UNSPECIFIED
-        self.display_filter_search = DISPLAY_FILTER_SEARCH_UNSPECIFIED
+        self.display_filter_collection = ""
+        self.display_filter_category = ""
+        self.display_filter_subcat = ""
+        self.display_filter_search = ""
         
         self.mytrophies_store_all = []
         # Code for other initialization actions should be added here.
@@ -842,6 +842,10 @@ class AccomplishmentsViewerWindow(Window):
 		else:
 			self.set_display(filter_locked=DISPLAY_FILTER_LOCKED_HIDE)
     
+    def on_search_changed(self,widget):
+		value = widget.get_text()
+		self.set_display(search_query=value)
+    
     def check_accomplishments(self, widget):
         """Called when Check Accomplishments is selected in the interface."""
         self.libaccom.run_scripts(True)
@@ -988,7 +992,9 @@ class AccomplishmentsViewerWindow(Window):
                     trophies_mode     = MYTROPHIES_FILTER_UNSPECIFIED,
                     filter_locked     = DISPLAY_FILTER_LOCKED_UNSPECIFIED,
                     filter_collection = DISPLAY_FILTER_COLLECTION_UNSPECIFIED,
-                    filter_category   = DISPLAY_FILTER_CATEGORY_UNSPECIFIED):
+                    filter_category   = DISPLAY_FILTER_CATEGORY_UNSPECIFIED,
+                    filter_subcat     = DISPLAY_FILTER_SUBCAT_UNSPECIFIED,
+                    search_query      = DISPLAY_FILTER_SEARCH_UNSPECIFIED):
 		"""
 		Switches display mode as specified in arguments. It takes care about flipping notebook pages, hiding unnecessary UI pieces etc.
 		"""
@@ -1022,6 +1028,12 @@ class AccomplishmentsViewerWindow(Window):
         
         if filter_category is not DISPLAY_FILTER_CATEGORY_UNSPECIFIED:
             self.display_filter_category = filter_category
+        if filter_subcat is not DISPLAY_FILTER_SUBCAT_UNSPECIFIED:
+			self.display_filter_subcat = filter_subcat
+		
+		if search_query is not DISPLAY_FILTER_SEARCH_UNSPECIFIED:
+			self.display_filter_search = search_query
+        
         
 		if self.display_mode is DISPLAY_MODE_DETAILS:
 			#Displaying details for an accomplishment
@@ -1082,6 +1094,8 @@ class AccomplishmentsViewerWindow(Window):
         # If we ale looking for a certain collection:
         if (self.display_filter_collection != "") and (self.display_filter_collection != model.get_value(iterator,COL_COLLECTION)):
             return False
+        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()):
+			return False
         return True
 
     def _____update_mytrophy_filter(self):

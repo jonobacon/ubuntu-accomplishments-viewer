@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-requires accomplishments_viewer_window 1.0 -->
+  <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-local-resource-path ../media -->
   <object class="AccomplishmentsViewerWindow" id="accomplishments_viewer_window">
     <property name="height_request">270</property>
@@ -190,6 +190,69 @@
               </object>
               <packing>
                 <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkToolItem" id="toolbutton1">
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="use_action_appearance">False</property>
+                <child>
+                  <object class="GtkBox" id="box12">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="box13">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkEntry" id="entry1">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="invisible_char">•</property>
+                            <signal name="changed" handler="on_search_changed" swapped="no"/>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="pack_type">end</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="label9">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="label" translatable="yes">Search:</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="pack_type">end</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="pack_type">end</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
                 <property name="homogeneous">True</property>
               </packing>
             </child>
@@ -882,6 +945,15 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                                 <property name="can_focus">False</property>
                                 <property name="orientation">vertical</property>
                                 <property name="column_homogeneous">True</property>
+                                <child>
+                                  <placeholder/>
+                                </child>
+                                <child>
+                                  <placeholder/>
+                                </child>
+                                <child>
+                                  <placeholder/>
+                                </child>
                                 <child>
                                   <placeholder/>
                                 </child>
