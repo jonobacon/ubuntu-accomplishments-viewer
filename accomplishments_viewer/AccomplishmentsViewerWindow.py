@@ -183,7 +183,7 @@ class AccomplishmentsViewerWindow(Window):
         self.mytrophies_box_latest_window = self.builder.get_object("mytrophies_box_latest_window")
         self.mytrophies_box_all_window = self.builder.get_object("mytrophies_box_all_window")
         self.mytrophies_notebook = self.builder.get_object("mytrophies_notebook")
-        self.searchbar = self.builder.get_object("searchbar")
+        self.searchentry = self.builder.get_object("searchentry")
         self.searchbar_box = self.builder.get_object("searchbar_box")
 
         # don't display the sub-cats scrollbars
@@ -774,9 +774,6 @@ class AccomplishmentsViewerWindow(Window):
     def on_search_changed(self,widget):
 		value = widget.get_text()
 		self.set_display(search_query=value)
-
-    def on_search_clear_clicked(self,widget,icon,data):
-        self.searchbar.set_text("")
     
     def check_accomplishments(self, widget):
         """Called when Check Accomplishments is selected in the interface."""
@@ -1036,7 +1033,10 @@ class AccomplishmentsViewerWindow(Window):
                 self.tb_opportunities.set_active(False)
                 self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
                 self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
-                        
+                
+                # Select all characters in searchbar
+                self.searchentry.grab_focus()
+                
                 self.notebook.set_current_page(1)
                 self.searchbar_box.show()
                
@@ -1049,6 +1049,9 @@ class AccomplishmentsViewerWindow(Window):
                 self.tb_opportunities.set_active(True)
                 self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
                 self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
+                
+                # Select all characters in searchbar
+                self.searchentry.grab_focus()
                 
                 self.notebook.set_current_page(2)
                 self.searchbar_box.show()
