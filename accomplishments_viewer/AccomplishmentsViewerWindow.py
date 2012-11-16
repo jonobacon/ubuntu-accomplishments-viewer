@@ -68,6 +68,7 @@ COL_COLLECTION = 4
 COL_ID = 5
 COL_DATE_ACCOMPLISHED = 6
 COL_CATEGORIES = 7
+COL_KEYWORDS = 8
 
 MYTROPHIES_FILTER_UNSPECIFIED = 0
 MYTROPHIES_FILTER_ALL = 1
@@ -202,7 +203,7 @@ class AccomplishmentsViewerWindow(Window):
 
         # Create stores and corelated filters
 
-        self.oppstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str, str, str) # title, icon, accomplished, locked, col, accomplishment, date-accomplished, categories
+        self.oppstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str, str, str, str) # title, icon, accomplished, locked, col, accomplishment, date-accomplished, categories, keywords
         self.oppstore.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
         self.oppstore_filtered = self.oppstore.filter_new()
         # The following sets the function for tree model filter. That function has
@@ -210,7 +211,7 @@ class AccomplishmentsViewerWindow(Window):
         # which opportunities are displayed, and which are not.
         self.oppstore_filtered.set_visible_func(self._opp_visible_func)
             
-        self.trophiesstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str, str, str) # title, icon, accomplished, locked, col, accomplishment, date-accomplished, categories
+        self.trophiesstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str, str, str, str) # title, icon, accomplished, locked, col, accomplishment, date-accomplished, categories, keywords
         self.trophiesstore.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
         self.trophiesstore_filter_today = self.trophiesstore.filter_new()
         self.trophiesstore_filter_today.set_visible_func(self._trophy_recent_visible_func,TROPHIES_FILTER_TODAY)
@@ -904,9 +905,9 @@ class AccomplishmentsViewerWindow(Window):
         for acc in self.accomdb:
             icon = GdkPixbuf.Pixbuf.new_from_file_at_size(str(acc["iconpath"]), 90, 90)
             if str(acc["accomplished"]) != '1':
-                self.oppstore.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"], acc["date-accomplished"], '|'.join(acc["categories"])])
+                self.oppstore.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"], acc["date-accomplished"], '|'.join(acc["categories"]), '|'.join(acc["keywords"])])
             else:
-                self.trophiesstore.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"], acc["date-accomplished"], '|'.join(acc["categories"])])
+                self.trophiesstore.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"], acc["date-accomplished"], '|'.join(acc["categories"]), '|'.join(acc["keywords"])])
         # Prepare latest trophies iconviews
         if len(self.mytrophies_box_latest.get_children()) == 0:
             self.mytrophies_latest_boxes = []
@@ -1139,7 +1140,7 @@ class AccomplishmentsViewerWindow(Window):
             if not (self.display_filter_category in model.get_value(iterator,COL_CATEGORIES)):
                 return False
         # If there is a search term and this row does not match the query:
-        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).split("/")[1].lower()):
+        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_KEYWORDS).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).split("/")[1].lower()):
 			return False
         return True
 
@@ -1193,7 +1194,7 @@ class AccomplishmentsViewerWindow(Window):
                 return False
                 
         # If there is a search term and this row does not match the query:
-        if (self.display_filter_search != "") and not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).split("/")[1].lower()):
+        if (self.display_filter_search != "") and not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_KEYWORDS).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).split("/")[1].lower()):
 			return False
             
         return True
