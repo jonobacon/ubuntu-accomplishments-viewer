@@ -22,6 +22,7 @@ Next Version Target: 0.4
    * Added search feature (LP: #1076561)
    * Significantly improved filtering performance and responsivness (LP: #1076574)
    * Reorganised code that filters trophies, now using GtkTreeModelFilters.
+   * Added support for 'keywords' fieldk (LP: #1076555)
 
    [Matt Fischer]
    * Fix lintian issues
