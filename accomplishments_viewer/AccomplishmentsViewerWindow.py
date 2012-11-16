@@ -66,9 +66,32 @@ COL_ACCOMPLISHED = 2
 COL_LOCKED = 3
 COL_COLLECTION = 4
 COL_ID = 5
+COL_DATE_ACCOMPLISHED = 6
+COL_CATEGORIES = 7
 
-MYTROPHIES_FILTER_ALL = 0
-MYTROPHIES_FILTER_LATEST = 1
+MYTROPHIES_FILTER_UNSPECIFIED = 0
+MYTROPHIES_FILTER_ALL = 1
+MYTROPHIES_FILTER_LATEST = 2
+
+DISPLAY_MODE_UNSPECIFIED = 0
+DISPLAY_MODE_DETAILS = 1
+DISPLAY_MODE_TROPHIES = 2
+DISPLAY_MODE_OPPORTUNITIES = 3
+
+DISPLAY_FILTER_LOCKED_UNSPECIFIED = 0
+DISPLAY_FILTER_LOCKED_SHOW = 1
+DISPLAY_FILTER_LOCKED_HIDE = 2
+
+DISPLAY_FILTER_COLLECTION_UNSPECIFIED = 0
+DISPLAY_FILTER_CATEGORY_UNSPECIFIED = 0
+DISPLAY_FILTER_SUBCAT_UNSPECIFIED = 0
+DISPLAY_FILTER_SEARCH_UNSPECIFIED = 0
+
+TROPHIES_FILTER_TODAY = 1
+TROPHIES_FILTER_WEEK = 2
+TROPHIES_FILTER_MONTH = 3
+TROPHIES_FILTER_SIXMONTHS = 4
+TROPHIES_FILTER_EARLIER = 100
 
 TROPHY_GALLERY_URL = 'http://213.138.100.229:8000'
 
@@ -88,9 +111,19 @@ class AccomplishmentsViewerWindow(Window):
         self.EditExtraDialog.parent = self
         self.curr_height = 0
         self.curr_width = 0
-        self.do_not_react_on_cat_changes = False
-        self.mytrophies_filtermode = MYTROPHIES_FILTER_ALL
-        self.mytrophies_store_all = []
+        
+        # Following variables store current display settings.
+        self.display_mytrophies_filtermode = MYTROPHIES_FILTER_ALL
+        self.display_mode = DISPLAY_MODE_OPPORTUNITIES
+        self.display_filter_locked = DISPLAY_FILTER_LOCKED_SHOW
+        self.display_filter_collection = ""
+        self.display_filter_category = ""
+        self.display_filter_subcat = ""
+        self.display_filter_search = ""
+        
+        # These two store list of pairs [filter, iconview] for all accomplishment groups in mytrophies view.
+        self.trophies_collection_filters = []
+        self.mytrophies_latest_boxes = []
         # Code for other initialization actions should be added here.
 
         
@@ -142,10 +175,16 @@ class AccomplishmentsViewerWindow(Window):
         self.subcats_forward = self.builder.get_object("subcats_forward")
         self.subcats_buttonbox = self.builder.get_object("subcats_buttonbox")
         self.subcats_container = self.builder.get_object("subcats_container")
-        self.mytrophies_mainbox = self.builder.get_object("mytrophies_mainbox")
         self.mytrophies_filter_latest = self.builder.get_object("mytrophies_filter_latest")
         self.mytrophies_filter_all = self.builder.get_object("mytrophies_filter_all")
         self.opp_frame = self.builder.get_object("opp_frame")
+        self.mytrophies_box_latest = self.builder.get_object("mytrophies_box_latest")
+        self.mytrophies_box_all = self.builder.get_object("mytrophies_box_all")
+        self.mytrophies_box_latest_window = self.builder.get_object("mytrophies_box_latest_window")
+        self.mytrophies_box_all_window = self.builder.get_object("mytrophies_box_all_window")
+        self.mytrophies_notebook = self.builder.get_object("mytrophies_notebook")
+        self.searchbar = self.builder.get_object("searchbar")
+        self.searchbar_box = self.builder.get_object("searchbar_box")
 
         # don't display the sub-cats scrollbars
         sb_h = self.subcats_scroll.get_hscrollbar()
@@ -161,38 +200,34 @@ class AccomplishmentsViewerWindow(Window):
         context = self.toolbar.get_style_context()
         context.add_class(Gtk.STYLE_CLASS_PRIMARY_TOOLBAR)
 
-        # create the stores used by the IconViews in the Latest View
+        # Create stores and corelated filters
 
-        self.mytrophies_filter_today = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
-        self.mytrophies_filter_today.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
-
-        self.mytrophies_filter_week = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
-        self.mytrophies_filter_week.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
-
-        self.mytrophies_filter_month = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
-        self.mytrophies_filter_month.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
-
-        self.mytrophies_filter_sixmonths = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
-        self.mytrophies_filter_sixmonths.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
-
-        self.mytrophies_filter_earlier = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
-        self.mytrophies_filter_earlier.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
-
-
-        self.oppstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon, accomplished, locked, col, accomplishment
+        self.oppstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str, str, str) # title, icon, accomplished, locked, col, accomplishment, date-accomplished, categories
         self.oppstore.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
-        self.opp_icon.set_model(self.oppstore)
-
-        #self.trophy_icon.set_text_column(COL_TITLE)
-        #self.trophy_icon.set_pixbuf_column(COL_PIXBUF)
-
+        self.oppstore_filtered = self.oppstore.filter_new()
+        # The following sets the function for tree model filter. That function has
+        # to return true if a given row has to be visible. This way we can control
+        # which opportunities are displayed, and which are not.
+        self.oppstore_filtered.set_visible_func(self._opp_visible_func)
+            
+        self.trophiesstore = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str, str, str) # title, icon, accomplished, locked, col, accomplishment, date-accomplished, categories
+        self.trophiesstore.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
+        self.trophiesstore_filter_today = self.trophiesstore.filter_new()
+        self.trophiesstore_filter_today.set_visible_func(self._trophy_recent_visible_func,TROPHIES_FILTER_TODAY)
+        self.trophiesstore_filter_week = self.trophiesstore.filter_new()
+        self.trophiesstore_filter_week.set_visible_func(self._trophy_recent_visible_func,TROPHIES_FILTER_WEEK)
+        self.trophiesstore_filter_month = self.trophiesstore.filter_new()
+        self.trophiesstore_filter_month.set_visible_func(self._trophy_recent_visible_func,TROPHIES_FILTER_MONTH)
+        self.trophiesstore_filter_sixmonths = self.trophiesstore.filter_new()
+        self.trophiesstore_filter_sixmonths.set_visible_func(self._trophy_recent_visible_func,TROPHIES_FILTER_SIXMONTHS)
+        self.trophiesstore_filter_earlier = self.trophiesstore.filter_new()
+        self.trophiesstore_filter_earlier.set_visible_func(self._trophy_recent_visible_func,TROPHIES_FILTER_EARLIER)
+        
+        self.opp_icon.set_model(self.oppstore_filtered)
         self.opp_icon.set_text_column(COL_TITLE)
         self.opp_icon.set_pixbuf_column(COL_PIXBUF)
 
-        #self.opp_icon.show()
-        
         # set up webkit
-
         self.webview = WebKit.WebView()
         self.scrolledwindow.add(self.webview)
         self.webview.props.settings.props.enable_default_context_menu = False
@@ -257,7 +292,7 @@ class AccomplishmentsViewerWindow(Window):
         # IMPORTANT: This function should do no initialisations that depend
         # on having the daemon running. This is because if the daemon is not 
         # yet started it will take some time to connect to it. Such 
-        # initialistions should land in appropriate place in run_daemon_timeout(...).
+        # initialistions should land in appropriate place in finalise_daemon_connection(...).
 
         self.datapath = get_data_path()
 
@@ -285,6 +320,7 @@ class AccomplishmentsViewerWindow(Window):
     def on_reload_accomplishments_clicked(self, widget):
         self.additional_no_collections.set_visible(False)
         self.reload_accomplishments()
+        self.set_display(DISPLAY_MODE_OPPORTUNITIES)
         
     def reload_accomplishments(self):
         if not self.connected:
@@ -295,10 +331,9 @@ class AccomplishmentsViewerWindow(Window):
         self.libaccom.reload_accom_database()
         self.statusbar_reload_msg_stop()
         
-        self.populate_opp_combos()
+        self._load_accomplishments()
         if len(self.accomdb) == 0:
             self.add_no_collections_installed()
-        self.update_views(None)
             
     def statusbar_reload_msg_start(self):
         self.statusbar.set_text(_("Reloading accomplishments collections..."))
@@ -324,7 +359,9 @@ class AccomplishmentsViewerWindow(Window):
         
         # run this to refresh our accomplishments list
         self._load_accomplishments()
-        self.update_views(None)
+        
+        #XXX: It would be MUCH faster if we determined the new accomID and added just it, not recreating whole trees!
+        self.prepare_models()
         
         # set the Launcher icon to be urgent and show new trophy count
         self.launcher.set_property("urgent", True)
@@ -334,9 +371,6 @@ class AccomplishmentsViewerWindow(Window):
             self.launcher.set_property("count_visible", True)
         else:
             self.launcher.set_property("count_visible", False)
-        
-        if not self.notebook.get_current_page() == 0:
-            self.on_tb_mytrophies_clicked(None)
 
     def on_help_askubuntu_activate(self, widget):
         webbrowser.open("http://askubuntu.com/questions/ask?tags=accomplishments", True)
@@ -360,33 +394,6 @@ class AccomplishmentsViewerWindow(Window):
         if bool(self.has_u1) is True and bool(self.has_verif) is True:
             self.check_for_extra_info_required()
 
-    def add_mytrophies_view(self, section, liststore):
-        outerbox = Gtk.VBox()
-        header = Gtk.Label("<span font_family='Ubuntu' size='18000' weight='light'>" + section + "</span>")
-        header.set_use_markup(True)
-        header.set_property("xalign", 0)
-        header.set_property("margin_left", 10)
-        header.set_property("margin_top", 5)
-        header.set_property("margin_bottom", 2)
-        separator = Gtk.Separator()
-        separator.set_property("margin_left", 10)
-        separator.set_property("margin_right", 10)
-        
-        iconview = Gtk.IconView()
-        iconview.set_model(liststore)
-        iconview.set_text_column(COL_TITLE)
-        iconview.set_pixbuf_column(COL_PIXBUF)
-        iconview.set_item_width(120)
-        iconview.set_columns(-1)
-        iconview.connect("selection-changed",self.mytrophy_clicked)
-
-        outerbox.pack_start(header, False, False, 0)
-        outerbox.pack_start(separator, False, False, 0)
-        outerbox.pack_start(iconview, False, False, 0)
-        outerbox.show_all()
-        
-        self.mytrophies_mainbox.add(outerbox)
-            
     def connect_to_daemon(self):
         """Tries to connect to the daemon"""
         
@@ -496,13 +503,12 @@ class AccomplishmentsViewerWindow(Window):
 
     def finalise_daemon_connection(self):
         self.libaccom.create_all_trophy_icons()
+        self._load_accomplishments()
+        self.prepare_models()
         self.populate_opp_combos()
         if len(self.accomdb) == 0:
             self.add_no_collections_installed()
-        self.update_views(None)
-        self.check_and_ask_for_info()
-        self.notebook.set_current_page(2)
-        self.tb_opportunities.set_active(1)
+        self.set_display(DISPLAY_MODE_OPPORTUNITIES)
         
 
     def update_widgets_sensitivity(self):
@@ -542,56 +548,8 @@ class AccomplishmentsViewerWindow(Window):
         self.subcats_back.set_sensitive(True)
         self.subcats_forward.set_sensitive(True)
 
-    def subcats_show(self, col, cat):                    
-        tempcats = []
-        if cat == "everything":
-            self.subcats_container.hide()
-        else:
-            # set up the subcats
-            cats = self.libaccom.get_collection_categories(col)
-            for c in cats:
-                if c == cat:
-                    tempcats = cats[c]
-
-            finalcats = []
-            
-            for s in tempcats:
-                for i in self.accomdb:
-                    if i["collection"] == col and i["categories"][0] == cat + ":" + s and i["accomplished"] == False:
-                        finalcats.append(s)
-
-            # convert to a set to remove dupes
-            finalcats = set(finalcats)            
-            
-            # remove previous buttons from the button box
-            for b in self.subcats_buttonbox.get_children():
-                self.subcats_buttonbox.remove(b)
-
-            # Add 'All' button
-            button = Gtk.Button(_("All"))
-            button.props.relief = Gtk.ReliefStyle.NONE
-            button.connect("clicked", self.subcat_clicked, cat)
-            self.subcats_buttonbox.add(button)
-            button.show()
-            
-            # fill the button box with the sub categories
-            for s in finalcats:
-                button = Gtk.Button(s)
-                button.props.relief = Gtk.ReliefStyle.NONE
-                button.connect("clicked", self.subcat_clicked, cat)
-                self.subcats_buttonbox.add(button)
-                button.show()
-            
-            if len(finalcats) > 0:
-                self.subcats_buttonbox.show_all()
-                self.subcats_container.show()
-            else:
-                self.subcats_container.hide()
-                
-
     def subcat_clicked(self, button, data):
-        self.subcat = button.get_label()
-        self.update_views(None)
+        self.set_display(filter_subcat = data)
 
     def subcats_back_button(self, widget):
         h = self.subcats_scroll.get_hadjustment()
@@ -662,7 +620,7 @@ class AccomplishmentsViewerWindow(Window):
 
         if uri.startswith('accomplishment:'):
             id = uri[17:]
-            self.accomplishment_info(id)
+            self.set_display(DISPLAY_MODE_DETAILS,accomID=id)
             return True
 
         pol_dec.ignore()
@@ -750,288 +708,67 @@ class AccomplishmentsViewerWindow(Window):
         self.additional_ubuntu1.set_visible(True)
 
     def on_window_resized(self,widget):
-        # get the new size
-        new_width = widget.get_size()[0]
-        new_height = widget.get_size()[1]
-        # if the size has changed...
-        if(new_width != self.curr_width or new_height != self.curr_height):
-            # remember new size
-            self.curr_width = new_width
-            self.curr_height = new_height
-            # and refill iconviews with icons to adjust columns number
-            if self.connected:
-                self.update_views(widget)
-                self.update_mytrophy_filter()
-            else:
-                # Control flow may reach here if the daemon is not yet running 
-                # and therefore connection is yet to be made. Passing here will
-                # avoid errors about not-existing libaccom.
-                pass
-                
-
-    def update_views(self, widget):
-        """Update all of the views to reflect the current state of Trophies and Opportunities."""
-        status_trophies = 0
-        status_opps = 0
-
-        show_locked = True
-
-        if self.opp_showlocked.get_active():
-            show_locked = True
-        else:
-            show_locked = False
-
-        self.mytrophies_store_all = []
-        
-        #trophymodel = self.trophy_icon.get_model()
-        oppmodel = self.opp_icon.get_model()
-
-        # clear the models
-        oppmodel.clear()
-        self.mytrophies_filter_today.clear()
-        self.mytrophies_filter_week.clear()
-        self.mytrophies_filter_month.clear()
-        self.mytrophies_filter_sixmonths.clear()
-        self.mytrophies_filter_earlier.clear()
-
-        coltree_iter = self.opp_combo_col.get_active_iter()
-        colmodel = self.opp_combo_col.get_model()
-
-        if coltree_iter == None:
-            col = ""
-            colname = ""
-        else:
-            col, colname = colmodel[coltree_iter][:2]
-        
-        col_active_item = self.opp_combo_col.get_active()
-        
-        if col_active_item == 0:
-            self.opp_combo_cat.set_sensitive(False)
-        else:
-            self.opp_combo_cat.set_sensitive(True)
-
-        cattree_iter = self.opp_combo_cat.get_active_iter()
-        catmodel = self.opp_combo_cat.get_model()
-
-        if cattree_iter == None:
-            cat = ""
-            catname = ""
-        else:
-            cat, catname = catmodel[cattree_iter][:2]
-
-        if cat == "":
-            self.subcats_container.hide()
-        else:
-            self.subcats_show(col, cat)
-
-        # update opportunities
-        for acc in self.accomdb:
-            icon = None
-            icon = GdkPixbuf.Pixbuf.new_from_file_at_size(str(acc["iconpath"]), 90, 90)
-
-            if str(acc["accomplished"]) == '1':
-                #self.mytrophies_filter_all = testlist.append( { acc["collection-human"] : [acc["title"], icon, bool(acc["accomplished"]), acc["locked"], acc["collection"], acc["id"]] } )
-                self.mytrophies_store_all.append([{ "title" : acc["title"], "icon" : icon, "accomplished" : bool(acc["accomplished"]), "locked" : acc["locked"], "collection" : acc["collection"], "id" : acc["id"], "collection-human" : acc["collection-human"] }])
-
-                today = datetime.date.today()
-                margin_today = datetime.timedelta(days = 1)
-                margin_week = datetime.timedelta(days = 7)
-                margin_month = datetime.timedelta(days = 31)
-                margin_sixmonths = datetime.timedelta(days = 180)
-
-                match = False
-
-                if str(acc["date-accomplished"]) == "None":
-                    pass
-                else:
-                    year = int(acc["date-accomplished"].split("-")[0])
-                    month = int(acc["date-accomplished"].split("-")[1])
-                    day = int(acc["date-accomplished"].split("-")[2].split(" ")[0])
-
-                    if (today - margin_today <= datetime.date(year, month, day) <= today + margin_today) == True:
-                        self.mytrophies_filter_today.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    elif (today - margin_week <= datetime.date(year, month, day) <= today + margin_week) == True:
-                        self.mytrophies_filter_week.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    elif (today - margin_month <= datetime.date(year, month, day) <= today + margin_month) == True:
-                        self.mytrophies_filter_month.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    elif (today - margin_sixmonths <= datetime.date(year, month, day) <= today + margin_sixmonths) == True:                        
-                        self.mytrophies_filter_sixmonths.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    #else:
-                    #    self.mytrophies_filter_earlier.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                
-                status_trophies = status_trophies + 1
-            else:
-                subcat = ""
-                thiscat = ""
-
-                c = [i for i in acc["categories"] if i == cat]
-                if len(c) is not 0:
-                    thiscat = c[0]
-                else:
-                    thiscat = ""                    
-                
-                status_opps = status_opps + 1
-
-                if self.subcat is not None:
-                    subcat = str(cat) + ":" + str(self.subcat)
-                    if self.subcat == "All":
-                        if acc["collection"] == col and cat in list(acc["categories"])[0]:
-                            if not acc["locked"] or show_locked:
-                                oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    else:
-                        if acc["collection"] == col and list(acc["categories"])[0] == subcat:
-                            if not acc["locked"] or show_locked:
-                                oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                else:
-                    if acc["collection"] == col and cat in list(acc["categories"])[0]:
-                        if not acc["locked"] or show_locked:
-                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    elif col == "" and cat == "":
-                        if not acc["locked"] or show_locked:
-                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
-                    elif acc["collection"] == col and cat == "":
-                        if not acc["locked"] or show_locked:
-                            oppmodel.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"]])
+		# Workaround for GtkIconView bug in precise
+		if self.display_mode is DISPLAY_MODE_OPPORTUNITIES:
+			self._update_opportunities_view()
+		elif self.display_mode is DISPLAY_MODE_TROPHIES:
+			self._update_mytrophy_view()
         
     def populate_opp_combos(self):
-
-        # grab data
-        self._load_accomplishments()
-
         temp = []
-
         for i in self.accomdb:
             temp.append({i["collection"] : i["collection-human"] })
-
         # uniqify the values
         result = [dict(tupleized) for tupleized in set(tuple(item.items()) for item in temp)]
-
+        
         # set up app
         self.opp_col_store.append(["", "All"])
-
         for i in sorted(result):
             self.opp_col_store.append([i.keys()[0], i.values()[0]])
-
         self.opp_combo_col.set_model(self.opp_col_store)
-
         self.opp_combo_col.set_active(0)
         self.opp_combo_col.show()
 
-        # set up cat
-
+        # Prepare categories combo
         self.opp_combo_cat.set_model(self.opp_cat_store)
-        
         self.opp_combo_cat.show()
       
-
-    def opp_app_updated(self, widget):
-        self.do_not_react_on_cat_changes = True
-        catlist = set()
+    def on_filter_collection_changed(self,widget):
         tree_iter = widget.get_active_iter()
         model = widget.get_model()
-        col, name = model[tree_iter][:2]
+        collection, name = model[tree_iter][:2]
+        self.set_display(filter_collection = collection)
 
-        if col == "":
-            self.opp_cat_store.clear()
-            self.opp_cat_store.append(["", _("everything")])
-            
-            self.subcat = None
+    def on_filter_category_changed(self, widget):
+        tree_iter = widget.get_active_iter()
+        if tree_iter == None: # Special case if the categories combo is not sensitive
+            return
+        model = widget.get_model()
+        category, name = model[tree_iter][:2]
+        self.set_display(filter_category = category)
+    
+    def on_filter_show_locked_clicked(self, widget):
+		if widget.get_active():
+			self.set_display(filter_locked=DISPLAY_FILTER_LOCKED_SHOW)
+		else:
+			self.set_display(filter_locked=DISPLAY_FILTER_LOCKED_HIDE)
+    
+    def on_search_changed(self,widget):
+		value = widget.get_text()
+		self.set_display(search_query=value)
 
-            self.update_views(None)
-        else:
-            cats = self.libaccom.get_collection_categories(col)
-
-            for i in cats:
-                catlist.add(i)
-
-            self.opp_cat_store.clear()
-
-            self.opp_cat_store.append(["", _("everything")])
-
-            for i in sorted(catlist):
-                self.opp_cat_store.append([i, i])
-
-            self.do_not_react_on_cat_changes = False
-            self.opp_combo_cat.set_active(0)
-            
-            self.subcats_container.hide()
-            # Following does not have to be done, because using
-            # opp_combo_cat.set_active will cause opp_cat_updated
-            # to run update_views
-            #self.update_views(None)
-
+    def on_search_clear_clicked(self,widget,icon,data):
+        self.searchbar.set_text("")
+    
     def check_accomplishments(self, widget):
         """Called when Check Accomplishments is selected in the interface."""
-        
         self.libaccom.run_scripts(True)
-        #self.notebook.set_current_page(2)
-
-    def opp_cat_updated(self, widget):
-        if self.do_not_react_on_cat_changes:
-            return
-
-        cattree_iter = self.opp_combo_cat.get_active_iter()
-        catmodel = self.opp_combo_cat.get_model()
-
-        if cattree_iter == None:
-            cat = ""
-            catname = ""
-        else:
-            cat, catname = catmodel[cattree_iter][:2]
-            
-        self.subcat = None
-
-        self.update_views(None)
-    
-    def update_mytrophy_filter(self):
         
-        kids = self.mytrophies_mainbox.get_children()
-        
-        if len(kids) > 0:
-            for k in kids:
-                self.mytrophies_mainbox.remove(k)
-                
-        if (self.mytrophies_filtermode == MYTROPHIES_FILTER_ALL):
-            collections = self.libaccom.list_collections()
-            
-            for c in collections:
-                ls = Gtk.ListStore(str, GdkPixbuf.Pixbuf, bool, bool, str, str) # title, icon accomplished, locked, col, accomplishment
-                ls.set_sort_column_id(COL_TITLE, Gtk.SortType.ASCENDING)
-                ls.clear()
-                collectionhuman = ""
-                for i in self.mytrophies_store_all:
-                    if i[0]["collection"] == c:
-                        collectionhuman = i[0]["collection-human"]
-                        ls.append([i[0]["title"], i[0]["icon"], i[0]["accomplished"], i[0]["locked"], i[0]["collection"], i[0]["id"]])
-
-                if len(ls) > 0:
-                    self.add_mytrophies_view(collectionhuman, ls)
-        elif (self.mytrophies_filtermode == MYTROPHIES_FILTER_LATEST):
-            if len(self.mytrophies_filter_today) > 0:
-                self.add_mytrophies_view(_("Today"), self.mytrophies_filter_today)
-            
-            if len(self.mytrophies_filter_week) > 0:
-                self.add_mytrophies_view(_("This Week"), self.mytrophies_filter_week)
-            
-            if len(self.mytrophies_filter_month) > 0:
-                self.add_mytrophies_view(_("This Month"), self.mytrophies_filter_month)
-            
-            if len(self.mytrophies_filter_sixmonths) > 0:
-                self.add_mytrophies_view(_("Last Six Months"), self.mytrophies_filter_sixmonths)
-            
-            if len(self.mytrophies_filter_earlier) > 0:
-                self.add_mytrophies_view(_("Earlier"), self.mytrophies_filter_earlier)
-            
-        
-    
     def on_mytrophies_filter_latest_toggled(self, widget):
-        self.mytrophies_filtermode = MYTROPHIES_FILTER_LATEST
-        self.update_mytrophy_filter()
-
+		self.set_display(trophies_mode=MYTROPHIES_FILTER_LATEST)
 
     def on_mytrophies_filter_all_toggled(self, widget):   
-        self.mytrophies_filtermode = MYTROPHIES_FILTER_ALL
-        self.update_mytrophy_filter()     
+		self.set_display(trophies_mode=MYTROPHIES_FILTER_ALL)
 
     def on_tb_mytrophies_clicked(self, widget):
         """Called when the My Trophies button is clicked."""
@@ -1040,14 +777,9 @@ class AccomplishmentsViewerWindow(Window):
         opportunities_toggled = self.tb_opportunities.get_active()
         
         if mytrophies_toggled == True:
-            self.tb_opportunities.handler_block_by_func(self.on_tb_opportunities_clicked)
-            self.tb_opportunities.set_active(False) 
-            self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
-            self.mytrophies_filter_all.set_active(True)
-            self.on_mytrophies_filter_all_toggled(None)
-            self.notebook.set_current_page(1)
+            self.set_display(DISPLAY_MODE_TROPHIES)
         else:
-            self.tb_mytrophies.set_active(True)
+            self.tb_mytrophies.set_active(True) # This also fires the signal handler
 
     def on_tb_opportunities_clicked(self, widget):
         """Called when the Opportunities button is clicked."""
@@ -1060,12 +792,9 @@ class AccomplishmentsViewerWindow(Window):
         opportunities_toggled = self.tb_opportunities.get_active()
         
         if opportunities_toggled == True:
-            self.tb_mytrophies.handler_block_by_func(self.on_tb_mytrophies_clicked)       
-            self.tb_mytrophies.set_active(False) 
-            self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
-            self.notebook.set_current_page(2)
+            self.set_display(DISPLAY_MODE_OPPORTUNITIES)
         else:
-            self.tb_opportunities.set_active(True)
+            self.tb_opportunities.set_active(True) # This also fires the signal handler
 
     def menu_prefs_clicked(self,widget):
         """Display the preferences window."""
@@ -1143,7 +872,7 @@ class AccomplishmentsViewerWindow(Window):
         widget.unselect_path(item)
         model = widget.get_model()
         accomID = model[item][COL_ID]
-        self.accomplishment_info(accomID)
+        self.set_display(DISPLAY_MODE_DETAILS,accomID=accomID)
 
     def mytrophy_clicked(self, widget):
         selection = widget.get_selected_items()
@@ -1153,7 +882,7 @@ class AccomplishmentsViewerWindow(Window):
         widget.unselect_path(item)
         model = widget.get_model()
         accomID = model[item][COL_ID]
-        self.accomplishment_info(accomID)
+        self.set_display(DISPLAY_MODE_DETAILS,accomID=accomID)
 
     def optparse_accomplishment(self, accom_id):
         """Process the -a command line option"""
@@ -1162,9 +891,379 @@ class AccomplishmentsViewerWindow(Window):
             print "There is no accomplishment with this ID."
             return
                 
-        self.accomplishment_info(accom_id)
+        self.set_display(DISPLAY_MODE_DETAILS,accomID=accom_id)
 
-    def accomplishment_info(self, accomID):
+    def prepare_models(self):
+        """
+        This function is the only one that clears liststores and fills them with data.
+        It also prepares some of filters - these which are used in mytrophies view.
+        """
+        self.oppstore.clear()
+        self.trophiesstore.clear()
+        # Fill in the opportunities tree
+        for acc in self.accomdb:
+            icon = GdkPixbuf.Pixbuf.new_from_file_at_size(str(acc["iconpath"]), 90, 90)
+            if str(acc["accomplished"]) != '1':
+                self.oppstore.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"], acc["date-accomplished"], '|'.join(acc["categories"])])
+            else:
+                self.trophiesstore.append([acc["title"], icon, bool(acc["accomplished"]), bool(acc["locked"]), acc["collection"], acc["id"], acc["date-accomplished"], '|'.join(acc["categories"])])
+        # Prepare latest trophies iconviews
+        if len(self.mytrophies_box_latest.get_children()) == 0:
+            self.mytrophies_latest_boxes = []
+            box = self.add_mytrophies_view(self.mytrophies_box_latest,_("Today"), self.trophiesstore_filter_today)
+            self.mytrophies_latest_boxes.append([self.trophiesstore_filter_today,box])
+            box = self.add_mytrophies_view(self.mytrophies_box_latest,_("This Week"), self.trophiesstore_filter_week)
+            self.mytrophies_latest_boxes.append([self.trophiesstore_filter_week,box])
+            box = self.add_mytrophies_view(self.mytrophies_box_latest,_("This Month"), self.trophiesstore_filter_month)
+            self.mytrophies_latest_boxes.append([self.trophiesstore_filter_month,box])
+            box = self.add_mytrophies_view(self.mytrophies_box_latest,_("Last Six Months"), self.trophiesstore_filter_sixmonths)
+            self.mytrophies_latest_boxes.append([self.trophiesstore_filter_sixmonths,box])
+            box = self.add_mytrophies_view(self.mytrophies_box_latest,_("Earlier"), self.trophiesstore_filter_earlier)
+            self.mytrophies_latest_boxes.append([self.trophiesstore_filter_earlier,box])
+            
+        # Prepare all trophies iconviews
+        kids = self.mytrophies_box_all.get_children()
+        for kid in kids:
+            self.mytrophies_box_all.remove(k)
+        for f in self.trophies_collection_filters:
+            del f[0] #Remove the filter!
+        self.trophies_collection_filters = []
+        collections = self.libaccom.list_collections()
+        for c in collections:
+            new_filter = self.trophiesstore.filter_new()
+            new_filter.set_visible_func(self._trophy_all_visible_func,c)
+            box = self.add_mytrophies_view(self.mytrophies_box_all, self.libaccom.get_collection_name(c), new_filter)
+            self.trophies_collection_filters.append([new_filter,box])
+        
+    def add_mytrophies_view(self, parent, section, model):
+        """
+        This function is used for adding a new group of accomplishments in mytrophies view.
+        It creates unified UI elements, packs them and adds to @parent. The @section argument
+        will be the header of the section. The @model argument should be the treemodel of this
+        new iconview (prefferably a treemodelfilter).
+        """
+        outerbox = Gtk.VBox()
+        header = Gtk.Label("<span font_family='Ubuntu' size='18000' weight='light'>" + section + "</span>")
+        header.set_use_markup(True)
+        header.set_property("xalign", 0)
+        header.set_property("margin_left", 10)
+        header.set_property("margin_top", 5)
+        header.set_property("margin_bottom", 2)
+        separator = Gtk.Separator()
+        separator.set_property("margin_left", 10)
+        separator.set_property("margin_right", 10)
+        
+        iconview = Gtk.IconView()
+        iconview.set_model(model)
+        iconview.set_text_column(COL_TITLE)
+        iconview.set_pixbuf_column(COL_PIXBUF)
+        iconview.set_item_width(120)
+        iconview.set_columns(-1)
+        iconview.connect("selection-changed",self.mytrophy_clicked)
+
+        outerbox.pack_start(header, False, False, 0)
+        outerbox.pack_start(separator, False, False, 0)
+        outerbox.pack_start(iconview, False, False, 0)
+        outerbox.show_all()
+        
+        parent.add(outerbox)
+        return outerbox
+
+	def set_display(self, 
+                    mode              = DISPLAY_MODE_UNSPECIFIED,
+                    accomID           = "",
+                    trophies_mode     = MYTROPHIES_FILTER_UNSPECIFIED,
+                    filter_locked     = DISPLAY_FILTER_LOCKED_UNSPECIFIED,
+                    filter_collection = DISPLAY_FILTER_COLLECTION_UNSPECIFIED,
+                    filter_category   = DISPLAY_FILTER_CATEGORY_UNSPECIFIED,
+                    filter_subcat     = DISPLAY_FILTER_SUBCAT_UNSPECIFIED,
+                    search_query      = DISPLAY_FILTER_SEARCH_UNSPECIFIED):
+		"""
+		Switches display mode as specified in arguments.
+        It takes care about flipping notebook pages, hiding unnecessary UI pieces etc.
+        This function shouldn't be called with many arguments, pass only these that you want to override.
+		"""
+        # The ordering of following IF statements *IS* important!
+        # For example, passing both collection and category to this function
+        # may not result in skipping some of these data as they get cleared
+        # later on. Therefore hierarhical order is desired.
+		if mode is not DISPLAY_MODE_UNSPECIFIED:
+			self.display_mode = mode
+            # Reflect changes in the UI
+            if self.display_mode is DISPLAY_MODE_DETAILS:
+                #Displaying details for an accomplishment
+                
+                if accomID == "":
+                    print "Unable to display details view, you probably forgot the accomID argument."
+                    return
+                    
+                # Set togglable buttons to reflect current state
+                self.tb_mytrophies.handler_block_by_func(self.on_tb_mytrophies_clicked)      
+                self.tb_opportunities.handler_block_by_func(self.on_tb_opportunities_clicked) 
+                self.tb_mytrophies.set_active(False) 
+                self.tb_opportunities.set_active(False)
+                self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
+                self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
+                
+                # Select all characters in searchbar
+                self.searchbar.grab_focus()
+                
+                self.notebook.set_current_page(0)
+                self.searchbar_box.hide()
+                    
+            elif self.display_mode is DISPLAY_MODE_TROPHIES:
+                #Display the list of trophies
+                
+                # Set togglable buttons to reflect current state
+                self.tb_mytrophies.handler_block_by_func(self.on_tb_mytrophies_clicked)      
+                self.tb_opportunities.handler_block_by_func(self.on_tb_opportunities_clicked) 
+                self.tb_mytrophies.set_active(True) 
+                self.tb_opportunities.set_active(False)
+                self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
+                self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
+                
+                # Select all characters in searchbar
+                self.searchbar.grab_focus()
+                        
+                self.notebook.set_current_page(1)
+                self.searchbar_box.show()
+               
+            elif self.display_mode is DISPLAY_MODE_OPPORTUNITIES:
+                
+                # Set togglable buttons to reflect current state
+                self.tb_mytrophies.handler_block_by_func(self.on_tb_mytrophies_clicked)      
+                self.tb_opportunities.handler_block_by_func(self.on_tb_opportunities_clicked) 
+                self.tb_mytrophies.set_active(False) 
+                self.tb_opportunities.set_active(True)
+                self.tb_mytrophies.handler_unblock_by_func(self.on_tb_mytrophies_clicked)
+                self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
+                
+                self.notebook.set_current_page(2)
+                self.searchbar_box.show()
+                
+        if trophies_mode is not MYTROPHIES_FILTER_UNSPECIFIED:
+            self.display_mytrophies_filtermode = trophies_mode
+            # Show/hide appropriate iconview
+            if self.display_mytrophies_filtermode is MYTROPHIES_FILTER_ALL:
+                self.mytrophies_notebook.set_current_page(0)
+            elif self.display_mytrophies_filtermode is MYTROPHIES_FILTER_LATEST:
+                self.mytrophies_notebook.set_current_page(1)
+                
+        if filter_locked is not DISPLAY_FILTER_LOCKED_UNSPECIFIED:
+            self.display_filter_locked = filter_locked
+        if filter_collection is not DISPLAY_FILTER_COLLECTION_UNSPECIFIED:
+            self.display_filter_collection = filter_collection
+            
+            # As the requested collection changed, we need to update the categories combo.
+            if filter_collection == "":
+                self.opp_cat_store.clear()
+                self.opp_cat_store.append(["", _("everything")])
+                self.opp_combo_cat.set_sensitive(False)
+            else:
+                cats = self.libaccom.get_collection_categories(filter_collection)
+                self.opp_cat_store.clear()
+                self.opp_cat_store.append(["", _("everything")])
+                for i in sorted(cats):
+                    self.opp_cat_store.append([i, i])
+                self.opp_combo_cat.set_sensitive(True)
+                    
+            # Set the active item to "everything".
+            self.display_filter_category = ""
+            self.opp_combo_cat.handler_block_by_func(self.on_filter_category_changed)
+            self.opp_combo_cat.set_active(0)
+            self.opp_combo_cat.handler_unblock_by_func(self.on_filter_category_changed)
+        
+            # It is likely that we need to update the subcategories.
+            # A special case is when it needs to be hidden after collection change.
+            self._update_subcats()
+            
+        if filter_category is not DISPLAY_FILTER_CATEGORY_UNSPECIFIED:
+            self.display_filter_category = filter_category
+            
+            # Changing category, therefore we should display the subcats bar too.
+            self._update_subcats()
+            
+        if filter_subcat is not DISPLAY_FILTER_SUBCAT_UNSPECIFIED:
+			self.display_filter_subcat = filter_subcat
+		if search_query is not DISPLAY_FILTER_SEARCH_UNSPECIFIED:
+			self.display_filter_search = search_query
+
+
+        # Finally, pass refreshing/rerendering to specialised functions
+        if self.display_mode is DISPLAY_MODE_DETAILS:
+            self._accomplishment_info(accomID)
+        elif self.display_mode is DISPLAY_MODE_TROPHIES:
+            self._update_mytrophy_view()
+        elif self.display_mode is DISPLAY_MODE_OPPORTUNITIES:
+            self._update_opportunities_view()
+            
+    def _update_mytrophy_view(self):
+        # Causes the treemodel to call visible_func for all rows.
+        # It also hides/shows boxes depending on whether they are empty.
+        if self.display_mytrophies_filtermode is MYTROPHIES_FILTER_ALL:
+            filterlist = self.trophies_collection_filters
+        elif self.display_mytrophies_filtermode is MYTROPHIES_FILTER_LATEST:
+            filterlist = self.mytrophies_latest_boxes
+            
+        for f in filterlist:
+            f[0].refilter()
+            if len(f[0]) is 0:
+                f[1].hide()
+            else:
+                f[1].show()
+
+    def _update_opportunities_view(self):
+        # Causes the treemodel to call visible_func for all rows.
+        self.oppstore_filtered.refilter()
+        
+    def _opp_visible_func(self, model, iterator, data):
+        """
+        This function is crucial for filtering opportunities. It is called
+        by some internal GTK callbacks, whenever the treemodel changes.
+        It has to return True/False, which states whether the given row
+        should be displayed or not.
+        """
+        # If we are hiding locked accoms:
+        if (self.display_filter_locked is DISPLAY_FILTER_LOCKED_HIDE) and model.get_value(iterator,COL_LOCKED):
+            return False
+        # If we ale looking for a certain collection:
+        if (self.display_filter_collection != "") and (self.display_filter_collection != model.get_value(iterator,COL_COLLECTION)):
+            return False
+        # If we ale looking for a certain category...
+        if (self.display_filter_category != ""):
+            #...and a subcategory
+            if (self.display_filter_subcat != ""):
+                q = self.display_filter_category + ":" + self.display_filter_subcat
+                if not (q in model.get_value(iterator,COL_CATEGORIES)):
+                    return False
+            if not (self.display_filter_category in model.get_value(iterator,COL_CATEGORIES)):
+                return False
+        # If there is a search term and this row does not match the query:
+        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).split("/")[1].lower()):
+			return False
+        return True
+
+    def _trophy_recent_visible_func(self,model,iterator,data):
+        """
+        This function is crucial for filtering recently awarded trophies. It is called
+        by some internal GTK callbacks, whenever the treemodel changes.
+        It has to return True/False, which states whether the given row
+        should be displayed or not.
+        The @data argument specifies which box's filter it actually is,
+        be it "today" or "last month"
+        """
+
+        #XXX: Making these constants global might save some filtering time.
+        today = datetime.date.today()
+        margin_today = datetime.timedelta(days = 1)
+        margin_week = datetime.timedelta(days = 7)
+        margin_month = datetime.timedelta(days = 31)
+        margin_sixmonths = datetime.timedelta(days = 180)
+        
+        when = model.get_value(iterator,COL_DATE_ACCOMPLISHED)
+        if when == "None":
+            return False
+        year, month, day = when.split("-")
+        when = datetime.date(int(year), int(month), int(day.split(" ")[0]))
+            
+        if (today - margin_today <= when <= today + margin_today):
+            if data is TROPHIES_FILTER_TODAY:
+                pass #proceed to further filtering
+            else:
+                return False
+        elif (today - margin_week <= when <= today + margin_week):
+            if data is TROPHIES_FILTER_WEEK:
+                pass #proceed to further filtering
+            else:
+                return False
+        elif (today - margin_month <= when <= today + margin_month):
+            if data is TROPHIES_FILTER_MONTH:
+                pass #proceed to further filtering
+            else:
+                return False
+        elif (today - margin_sixmonths <= when <= today + margin_sixmonths):
+            if data is TROPHIES_FILTER_SIXMONTHS:
+                pass #proceed to further filtering
+            else:
+                return False
+        else:
+            if data is TROPHIES_FILTER_EARLIER:
+                pass #proceed to further filtering
+            else:
+                return False
+                
+        # If there is a search term and this row does not match the query:
+        if (self.display_filter_search != "") and not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).split("/")[1].lower()):
+			return False
+            
+        return True
+        
+    def _trophy_all_visible_func(self,model,iterator,collection):
+        """
+        This function is crucial for filtering mytrophies. It is called
+        by some internal GTK callbacks, whenever the treemodel changes.
+        It has to return True/False, which states whether the given row
+        should be displayed or not.
+        The @data argument specifies filtered collection.
+        """
+        # If row's collection matches the desired for this filter
+        if (collection != model.get_value(iterator,COL_COLLECTION)):
+            return False
+        # If there is a search term and this row does not match the query:
+        if (self.display_filter_search != "") and  not (self.display_filter_search.lower() in model.get_value(iterator,COL_TITLE).lower()) and not (self.display_filter_search.lower() in model.get_value(iterator,COL_ID).split("/")[1].lower()):
+			return False
+        return True
+
+    def _update_subcats(self):  
+        """
+        This function creates the buttons for subcategories, requesting required data from the daemon.
+        """
+        tempcats = []
+        if self.display_filter_category == "" or self.display_filter_collection == "":
+            self.subcats_container.hide()
+        else:
+            # set up the subcats
+            cats = self.libaccom.get_collection_categories(self.display_filter_collection)
+            for c in cats:
+                if c == self.display_filter_category:
+                    tempcats = cats[c]
+
+            finalcats = []
+            
+            for s in tempcats:
+                for i in self.accomdb:
+                    if i["collection"] == self.display_filter_collection and i["categories"][0] == self.display_filter_category + ":" + s and i["accomplished"] == False:
+                        finalcats.append(s)
+
+            # convert to a set to remove dupes
+            finalcats = set(finalcats)
+            
+            # remove previous buttons from the button box
+            for b in self.subcats_buttonbox.get_children():
+                self.subcats_buttonbox.remove(b)
+
+            if len(finalcats) > 1:
+                # Add 'All' button
+                button = Gtk.Button(_("All"))
+                button.props.relief = Gtk.ReliefStyle.NONE
+                button.connect("clicked", self.subcat_clicked, "")
+                self.subcats_buttonbox.add(button)
+                button.show()
+                
+                # fill the button box with the sub categories
+                for s in finalcats:
+                    button = Gtk.Button(s)
+                    button.props.relief = Gtk.ReliefStyle.NONE
+                    button.connect("clicked", self.subcat_clicked, s)
+                    self.subcats_buttonbox.add(button)
+                    button.show()
+                    
+                self.subcats_buttonbox.show_all()
+                self.subcats_container.show()
+            else:
+                self.subcats_container.hide()
+            
+    def _accomplishment_info(self, accomID):
         """Display information about the selected accomplishment."""
         data = []
         
@@ -1428,6 +1527,5 @@ var el = document.getElementById('accomDetails');
             </html>"
 
         self.webview.load_html_string(html, "file:///")
-        self.notebook.set_current_page(0)
         self.webview.show()
 

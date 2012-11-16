@@ -18,6 +18,11 @@ Add items using the following format:
 
 Next Version Target: 0.4
 
+   [Rafał Cieślak]
+   * Added search feature (LP: #1076561)
+   * Significantly improved filtering performance and responsivness (LP: #1076574)
+   * Reorganised code that filters trophies, now using GtkTreeModelFilters.
+
    [Matt Fischer]
    * Fix lintian issues
    * Added a manpage (LP: #1069264)
