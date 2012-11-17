@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-10-20 21:15-0600\n"
-"PO-Revision-Date: 2012-09-12 09:35+0000\n"
+"PO-Revision-Date: 2012-11-16 18:36+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-22 04:56+0000\n"
-"X-Generator: Launchpad (build 16165)\n"
+"X-Launchpad-Export-Date: 2012-11-17 05:07+0000\n"
+"X-Generator: Launchpad (build 16278)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:69
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:102
@@ -46,7 +46,7 @@ msgstr "Visor de logros"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "Ubuntu Accomplishments Viewer"
-msgstr "Visor de Logros de Ubuntu"
+msgstr "Visor de logros de Ubuntu"
 
 #: ../accomplishments-viewer.desktop.in.h:3
 msgid "Accomplishments Viewer Application"
@@ -190,19 +190,19 @@ msgstr "Hoy"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1014
 msgid "This Week"
-msgstr "Esta Semana"
+msgstr "Esta semana"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1017
 msgid "This Month"
-msgstr "Este Mes"
+msgstr "Este mes"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1020
 msgid "Last Six Months"
-msgstr "Últimos Seis Meses"
+msgstr "Últimos seis meses"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1023
 msgid "Earlier"
-msgstr "más temprano"
+msgstr "Anteriores"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1218
 msgid "Opportunity Information"
@@ -311,7 +311,7 @@ msgstr "_Editar"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "_Reload accomplishments collections..."
-msgstr "_Actualizar colecciones logros"
+msgstr "_Recargar colecciones de logros…"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "_Identification..."
@@ -362,16 +362,16 @@ msgid ""
 "href=\"https://wiki.ubuntu.com/Accomplishments/DesktopAppDocs/NoCollections\""
 ">Learn More</a>"
 msgstr ""
-"<b>Para utilizar Ubuntu Logros debe tener al menos one logros colección "
-"instalado.</b>\n"
+"<b>Para utilizar Logros de Ubuntu, necesita tener al menos una colección de "
+"logros instalada.</b>\n"
 "\n"
 "<a "
 "href=\"https://wiki.ubuntu.com/Accomplishments/DesktopAppDocs/NoCollections\""
-">Más información</a>"
+">Aprenda más</a>"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid "No Collections Installed"
-msgstr "No Hay Colecciones Instaladas"
+msgstr "No hay colecciones instaladas"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
 msgid ""
@@ -452,7 +452,7 @@ msgstr "Empezar"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:37
 msgid "Latest"
-msgstr "Lo Más Recientes"
+msgstr "Más recientes"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:38
 msgid "Show me"
