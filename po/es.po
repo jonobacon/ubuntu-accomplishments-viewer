@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-10-20 21:15-0600\n"
-"PO-Revision-Date: 2012-11-16 18:36+0000\n"
+"PO-Revision-Date: 2012-11-18 00:23+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-11-17 05:07+0000\n"
+"X-Launchpad-Export-Date: 2012-11-18 04:56+0000\n"
 "X-Generator: Launchpad (build 16278)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:69
@@ -69,7 +69,7 @@ msgstr ""
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>"
-msgstr ""
+msgstr "Copyright © 2012 Jono Bacon <jono@ubuntu.com>"
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:2
 msgid ""
@@ -153,12 +153,12 @@ msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:304
 msgid "Reloading accomplishments collections..."
-msgstr ""
+msgstr "Recargando las colecciones de logros…"
 
 #. apparently as that process daemonizes it will not get killed when one closes the client
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:465
 msgid "Starting the daemon..."
-msgstr ""
+msgstr "Iniciando el demonio…"
 
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:571
@@ -169,7 +169,7 @@ msgstr "Todo"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:614
 #, python-format
 msgid "I've just got the trophy '%s' in #ubuntu accomplishments!"
-msgstr ""
+msgstr "¡Acabo de obtener el trofeo «%s» en los logros de #ubuntu!"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:635
 msgid "Your trophies are not yet published"
