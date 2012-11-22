@@ -429,8 +429,8 @@ class AccomplishmentsViewerWindow(Window):
                 dbus_interface="org.ubuntu.accomplishments", arg0="Hello")
         
         except dbus.DBusException:
+            print "DBus exception when connecting to daemon."
             traceback.print_exc()
-            print usage
             return False
 
         bus.add_signal_receiver(self.trophy_received,
@@ -464,22 +464,30 @@ class AccomplishmentsViewerWindow(Window):
         
     def run_daemon(self):
         """Starts the daemon process"""                
-
-        command = os.path.join(daemon_exec_dir, "accomplishments-daemon") + " --start &"
+	
+		# Not importing this globally, as it will be very rarely used.
+		import subprocess
+		import threading
+		
+		# Starting the daemon is realised in a separete thread, it can
+		# wait for launcher to exit without blocking gtk main event loop.
+		def run_in_thread_and_call_when_done(args,onexit):
+			launcher_process = subprocess.Popen(args.split(" "))
+			launcher_process.wait()
+			GObject.idle_add(onexit)
+			return
+        command = os.path.join(daemon_exec_dir, "accomplishments-daemon") + " --start"
         print ("Starting the daemon using command `%s`" % command)
-        os.system(command)
-        #apparently as that process daemonizes it will not get killed when one closes the client
+        th = threading.Thread(target=run_in_thread_and_call_when_done,args=(command, self.run_daemon_continue))
+        th.start()
         
         self.statusbar.set_text(_("Starting the daemon..."))
         self.spinner.start()
         self.spinner.show()
         self.statusbox.show()
-        
-        #try connecting to the daemon after having waited 1,5 sec
-        GObject.timeout_add(1000,self.run_daemon_timeout)
 
-    def run_daemon_timeout(self):
-        """Called from run_daemon on timeout.
+    def run_daemon_continue(self):
+        """Called from run_daemon when the daemon launcher exits.
            Finishes what run_daemon would do"""
     
         self.connect_to_daemon()

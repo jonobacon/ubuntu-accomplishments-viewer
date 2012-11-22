@@ -23,7 +23,7 @@ locale.bindtextdomain('accomplishments-viewer', locale_dir)
 gettext.bindtextdomain('accomplishments-viewer',locale_dir)
 locale.textdomain('accomplishments-viewer')
 
-from gi.repository import Gtk # pylint: disable=E0611
+from gi.repository import Gtk, GObject # pylint: disable=E0611
 
 from accomplishments_viewer import AccomplishmentsViewerWindow
 
@@ -45,6 +45,7 @@ def parse_options():
 
 def main():
     'constructor for your class instances'
+    GObject.threads_init()
     options = parse_options()
 
     # Run the application.    
