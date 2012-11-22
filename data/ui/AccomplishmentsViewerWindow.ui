@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires accomplishments_viewer_window 1.0 -->
   <!-- interface-requires gtk+ 3.0 -->
+  <!-- interface-requires accomplishments_viewer_window 1.0 -->
   <!-- interface-local-resource-path ../media -->
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-help</property>
+  </object>
+  <object class="GtkImage" id="image4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">../media/opportunities.png</property>
+  </object>
   <object class="AccomplishmentsViewerWindow" id="accomplishments_viewer_window">
     <property name="height_request">270</property>
     <property name="can_focus">False</property>
@@ -22,6 +32,7 @@
             <property name="can_focus">False</property>
             <child>
               <object class="GtkMenuItem" id="mnu_file">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">_File</property>
@@ -33,6 +44,7 @@
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_check_acc">
                         <property name="label" translatable="yes">Check Accomplishments</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_stock">False</property>
@@ -46,6 +58,7 @@
             </child>
             <child>
               <object class="GtkMenuItem" id="mnu_edit">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">_Edit</property>
@@ -57,6 +70,7 @@
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_preferences">
                         <property name="label">gtk-preferences</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>
@@ -66,6 +80,7 @@
                     </child>
                     <child>
                       <object class="GtkMenuItem" id="mnu_edit_reload_accoms">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Reload accomplishments collections...</property>
@@ -76,6 +91,7 @@
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_edit_ident">
                         <property name="label" translatable="yes">_Identification...</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>
@@ -90,6 +106,7 @@
             </child>
             <child>
               <object class="GtkMenuItem" id="mnu_help">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">_Help</property>
@@ -101,6 +118,7 @@
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_contents">
                         <property name="label" translatable="yes">Contents</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="image">image2</property>
@@ -110,6 +128,7 @@
                     </child>
                     <child>
                       <object class="GtkMenuItem" id="help_askubuntu">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Ask a question...</property>
@@ -127,6 +146,7 @@
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_about">
                         <property name="label">gtk-about</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>
@@ -152,8 +172,10 @@
             <property name="toolbar_style">both</property>
             <child>
               <object class="GtkToggleToolButton" id="tb_mytrophies">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">My Trophies</property>
                 <property name="use_underline">True</property>
                 <property name="icon_widget">image9</property>
@@ -165,10 +187,12 @@
             </child>
             <child>
               <object class="GtkToggleToolButton" id="tb_opportunities">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="has_focus">True</property>
                 <property name="is_focus">True</property>
+                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">Opportunities</property>
                 <property name="use_underline">True</property>
                 <property name="icon_widget">image4</property>
@@ -180,8 +204,10 @@
             </child>
             <child>
               <object class="GtkToolItem" id="toolbutton1">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="use_action_appearance">False</property>
                 <child>
                   <object class="GtkBox" id="box12">
                     <property name="visible">True</property>
@@ -254,109 +280,180 @@
             <property name="can_focus">False</property>
             <property name="orientation">vertical</property>
             <child>
-              <placeholder/>
-            </child>
-            <child>
-              <object class="GtkFrame" id="add_daemon_session">
+              <object class="GtkInfoBar" id="add_daemon_session">
+                <property name="app_paintable">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_left">5</property>
-                <property name="margin_right">5</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <property name="label_xalign">0</property>
-                <property name="shadow_type">in</property>
-                <child>
-                  <object class="GtkAlignment" id="alignment5">
-                    <property name="visible">True</property>
+                <child internal-child="content_area">
+                  <object class="GtkBox" id="infobar-content_area1">
                     <property name="can_focus">False</property>
-                    <property name="valign">start</property>
-                    <property name="left_padding">12</property>
+                    <property name="border_width">8</property>
+                    <property name="spacing">16</property>
                     <child>
-                      <object class="GtkBox" id="box1">
+                      <object class="GtkLabel" id="label2">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="valign">start</property>
-                        <property name="orientation">vertical</property>
-                        <child>
-                          <object class="GtkBox" id="box11">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="valign">end</property>
-                            <property name="margin_left">5</property>
-                            <property name="margin_right">5</property>
-                            <property name="margin_top">5</property>
-                            <property name="margin_bottom">5</property>
-                            <property name="orientation">vertical</property>
-                            <child>
-                              <object class="GtkLabel" id="label2">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="margin_left">5</property>
-                                <property name="margin_right">5</property>
-                                <property name="margin_top">5</property>
-                                <property name="margin_bottom">5</property>
-                                <property name="label" translatable="yes">&lt;b&gt;The Accomplishments background service will be started when you log in. This is so your computer can check for accomplishments automatically.&lt;/b&gt;
+                        <property name="margin_left">5</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="label" translatable="yes">&lt;b&gt;The Accomplishments background service will be started when you log in. This is so your computer can check for accomplishments automatically.&lt;/b&gt;
 
 You can disable this in &lt;i&gt;Edit&lt;/i&gt; -&gt; &lt;i&gt;Preferences&lt;/i&gt; if required.</property>
-                                <property name="use_markup">True</property>
-                                <property name="wrap">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkButtonBox" id="buttonbox3">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="margin_right">5</property>
-                            <property name="margin_top">5</property>
-                            <property name="layout_style">end</property>
-                            <child>
-                              <object class="GtkButton" id="button3">
-                                <property name="label">gtk-ok</property>
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="receives_default">True</property>
-                                <property name="margin_right">10</property>
-                                <property name="use_stock">True</property>
-                                <signal name="clicked" handler="daemon_session_ok" swapped="no"/>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">True</property>
-                            <property name="padding">5</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
+                        <property name="use_markup">True</property>
+                        <property name="wrap">True</property>
                       </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
                     </child>
                   </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
                 </child>
-                <child type="label">
-                  <object class="GtkLabel" id="label14">
-                    <property name="visible">True</property>
+                <action-widgets>
+                  <action-widget response="0">button3</action-widget>
+                </action-widgets>
+                <child internal-child="action_area">
+                  <object class="GtkButtonBox" id="infobar-action_area1">
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Accomplishments Service</property>
-                    <property name="use_markup">True</property>
+                    <property name="border_width">5</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">6</property>
+                    <property name="layout_style">end</property>
+                    <child>
+                      <object class="GtkButton" id="button3">
+                        <property name="label">gtk-ok</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="margin_right">10</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="use_stock">True</property>
+                        <signal name="clicked" handler="daemon_session_ok" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
                   </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
                 </child>
+                <action-widgets>
+                  <action-widget response="0">button3</action-widget>
+                </action-widgets>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkInfoBar" id="add_no_collections">
+                <property name="app_paintable">True</property>
+                <property name="can_focus">False</property>
+                <property name="message_type">error</property>
+                <child internal-child="content_area">
+                  <object class="GtkBox" id="infobar-content_area2">
+                    <property name="can_focus">False</property>
+                    <property name="border_width">8</property>
+                    <property name="spacing">16</property>
+                    <child>
+                      <object class="GtkLabel" id="label5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="margin_left">5</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="yalign">0.49000000953674316</property>
+                        <property name="label" translatable="yes">&lt;b&gt;To use Ubuntu Accomplishments you need to have at least one accomplishments collection installed.&lt;/b&gt;
+
+&lt;a href="https://wiki.ubuntu.com/Accomplishments/DesktopAppDocs/NoCollections"&gt;Learn More&lt;/a&gt;</property>
+                        <property name="use_markup">True</property>
+                        <property name="wrap">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <action-widgets>
+                  <action-widget response="0">add_no_collections_scan</action-widget>
+                  <action-widget response="0">add_no_collections_quit</action-widget>
+                </action-widgets>
+                <child internal-child="action_area">
+                  <object class="GtkButtonBox" id="infobar-action_area2">
+                    <property name="can_focus">False</property>
+                    <property name="border_width">5</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">6</property>
+                    <property name="layout_style">end</property>
+                    <child>
+                      <object class="GtkButton" id="add_no_collections_scan">
+                        <property name="label">Scan Again</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="margin_right">10</property>
+                        <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="on_reload_accomplishments_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="add_no_collections_quit">
+                        <property name="label">gtk-quit</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="margin_right">10</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="use_stock">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <action-widgets>
+                  <action-widget response="0">add_no_collections_scan</action-widget>
+                  <action-widget response="0">add_no_collections_quit</action-widget>
+                </action-widgets>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -365,56 +462,31 @@ You can disable this in &lt;i&gt;Edit&lt;/i&gt; -&gt; &lt;i&gt;Preferences&lt;/i
               </packing>
             </child>
             <child>
-              <object class="GtkFrame" id="add_no_collections">
+              <object class="GtkInfoBar" id="add_info_req">
+                <property name="app_paintable">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_left">5</property>
-                <property name="margin_right">5</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <property name="label_xalign">0</property>
-                <property name="shadow_type">in</property>
-                <child>
-                  <object class="GtkAlignment" id="alignment2">
-                    <property name="visible">True</property>
+                <child internal-child="content_area">
+                  <object class="GtkBox" id="infobar-content_area3">
                     <property name="can_focus">False</property>
-                    <property name="valign">start</property>
-                    <property name="left_padding">12</property>
+                    <property name="border_width">8</property>
+                    <property name="spacing">16</property>
                     <child>
-                      <object class="GtkBox" id="box2">
+                      <object class="GtkBox" id="box4">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="valign">start</property>
-                        <property name="orientation">vertical</property>
+                        <property name="spacing">10</property>
                         <child>
-                          <object class="GtkBox" id="box9">
+                          <object class="GtkImage" id="image5">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="valign">end</property>
-                            <property name="margin_left">5</property>
-                            <property name="margin_right">5</property>
-                            <property name="margin_top">5</property>
-                            <property name="margin_bottom">5</property>
-                            <property name="orientation">vertical</property>
-                            <child>
-                              <object class="GtkLabel" id="label5">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="margin_left">5</property>
-                                <property name="margin_right">5</property>
-                                <property name="margin_top">5</property>
-                                <property name="margin_bottom">5</property>
-                                <property name="label" translatable="yes">&lt;b&gt;To use Ubuntu Accomplishments you need to have at least one accomplishments collection installed.&lt;/b&gt;
-
-&lt;a href="https://wiki.ubuntu.com/Accomplishments/DesktopAppDocs/NoCollections"&gt;Learn More&lt;/a&gt;</property>
-                                <property name="use_markup">True</property>
-                                <property name="wrap">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
+                            <property name="margin_left">10</property>
+                            <property name="margin_right">10</property>
+                            <property name="margin_top">10</property>
+                            <property name="margin_bottom">10</property>
+                            <property name="pixbuf">../media/speechbubble.png</property>
+                            <property name="pixel_size">32</property>
+                            <property name="icon-size">3</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -423,62 +495,92 @@ You can disable this in &lt;i&gt;Edit&lt;/i&gt; -&gt; &lt;i&gt;Preferences&lt;/i
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButtonBox" id="buttonbox5">
+                          <object class="GtkLabel" id="label10">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="margin_right">5</property>
-                            <property name="margin_top">5</property>
-                            <property name="layout_style">end</property>
-                            <child>
-                              <object class="GtkButton" id="add_no_collections_scan">
-                                <property name="label">Scan Again</property>
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="receives_default">True</property>
-                                <property name="margin_right">10</property>
-                                <signal name="clicked" handler="on_reload_accomplishments_clicked" swapped="no"/>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkButton" id="add_no_collections_quit">
-                                <property name="label">gtk-quit</property>
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="receives_default">True</property>
-                                <property name="margin_right">10</property>
-                                <property name="use_stock">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
+                            <property name="margin_right">10</property>
+                            <property name="xalign">0</property>
+                            <property name="label" translatable="yes">&lt;b&gt;Some opportunities need additional information to verify their completion.&lt;/b&gt;
+
+You can edit this data anytime later using: &lt;i&gt;Edit-&gt;Identification...&lt;/i&gt;</property>
+                            <property name="use_markup">True</property>
+                            <property name="wrap">True</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
                             <property name="fill">True</property>
-                            <property name="padding">5</property>
                             <property name="position">1</property>
                           </packing>
                         </child>
                       </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
                     </child>
                   </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
                 </child>
-                <child type="label">
-                  <object class="GtkLabel" id="label6">
-                    <property name="visible">True</property>
+                <action-widgets>
+                  <action-widget response="0">button1</action-widget>
+                  <action-widget response="0">button4</action-widget>
+                </action-widgets>
+                <child internal-child="action_area">
+                  <object class="GtkButtonBox" id="infobar-action_area3">
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">No Collections Installed</property>
-                    <property name="use_markup">True</property>
+                    <property name="border_width">5</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">6</property>
+                    <property name="layout_style">end</property>
+                    <child>
+                      <object class="GtkButton" id="button1">
+                        <property name="label" translatable="yes">Edit credentials</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                        <signal name="clicked" handler="edit_auth_info" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button4">
+                        <property name="label" translatable="yes">Later</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="image_position">right</property>
+                        <signal name="clicked" handler="edit_auth_info_cancel" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
                   </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
                 </child>
+                <action-widgets>
+                  <action-widget response="0">button1</action-widget>
+                  <action-widget response="0">button4</action-widget>
+                </action-widgets>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -487,251 +589,39 @@ You can disable this in &lt;i&gt;Edit&lt;/i&gt; -&gt; &lt;i&gt;Preferences&lt;/i
               </packing>
             </child>
             <child>
-              <object class="GtkFrame" id="add_info_req">
+              <object class="GtkInfoBar" id="add_ubu1">
+                <property name="app_paintable">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_left">5</property>
-                <property name="margin_right">5</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <property name="label_xalign">0</property>
-                <property name="shadow_type">in</property>
-                <child>
-                  <object class="GtkAlignment" id="alignment3">
-                    <property name="visible">True</property>
+                <property name="orientation">vertical</property>
+                <property name="message_type">warning</property>
+                <child internal-child="content_area">
+                  <object class="GtkBox" id="infobar-content_area4">
                     <property name="can_focus">False</property>
-                    <property name="valign">start</property>
-                    <property name="top_padding">10</property>
-                    <property name="left_padding">10</property>
+                    <property name="border_width">8</property>
+                    <property name="spacing">16</property>
                     <child>
-                      <object class="GtkBox" id="box3">
+                      <object class="GtkBox" id="box6">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <property name="valign">end</property>
+                        <property name="margin_left">5</property>
+                        <property name="margin_right">5</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
                         <property name="orientation">vertical</property>
                         <child>
-                          <object class="GtkBox" id="box4">
+                          <object class="GtkLabel" id="label16">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="valign">start</property>
-                            <property name="spacing">10</property>
-                            <child>
-                              <object class="GtkImage" id="image5">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="margin_left">10</property>
-                                <property name="margin_right">10</property>
-                                <property name="margin_top">10</property>
-                                <property name="margin_bottom">10</property>
-                                <property name="pixbuf">../media/speechbubble.png</property>
-                                <property name="pixel_size">32</property>
-                                <property name="icon-size">3</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="label10">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="margin_right">10</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">&lt;b&gt;Some opportunities need additional information to verify their completion.&lt;/b&gt;
-
-You can edit this data anytime later using: &lt;i&gt;Edit-&gt;Identification...&lt;/i&gt;</property>
-                                <property name="use_markup">True</property>
-                                <property name="wrap">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkButtonBox" id="buttonbox1">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="margin_right">5</property>
-                            <property name="margin_top">5</property>
-                            <property name="layout_style">end</property>
-                            <child>
-                              <object class="GtkButton" id="button1">
-                                <property name="label" translatable="yes">Edit credentials</property>
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="receives_default">True</property>
-                                <property name="margin_right">10</property>
-                                <signal name="clicked" handler="edit_auth_info" swapped="no"/>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkButton" id="button4">
-                                <property name="label" translatable="yes">Later</property>
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="receives_default">True</property>
-                                <property name="image_position">right</property>
-                                <signal name="clicked" handler="edit_auth_info_cancel" swapped="no"/>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">True</property>
-                            <property name="padding">5</property>
-                            <property name="position">2</property>
-                          </packing>
-                        </child>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-                <child type="label">
-                  <object class="GtkLabel" id="label12">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="margin_right">10</property>
-                    <property name="label" translatable="yes">Additional information required...</property>
-                    <property name="use_markup">True</property>
-                  </object>
-                </child>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">3</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkFrame" id="add_ubu1">
-                <property name="can_focus">False</property>
-                <property name="margin_left">5</property>
-                <property name="margin_right">5</property>
-                <property name="margin_top">5</property>
-                <property name="margin_bottom">5</property>
-                <property name="label_xalign">0</property>
-                <property name="shadow_type">in</property>
-                <child>
-                  <object class="GtkAlignment" id="alignment4">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="valign">start</property>
-                    <property name="left_padding">12</property>
-                    <child>
-                      <object class="GtkBox" id="box5">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="valign">start</property>
-                        <property name="orientation">vertical</property>
-                        <child>
-                          <object class="GtkBox" id="box6">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="valign">end</property>
                             <property name="margin_left">5</property>
                             <property name="margin_right">5</property>
                             <property name="margin_top">5</property>
                             <property name="margin_bottom">5</property>
-                            <property name="orientation">vertical</property>
-                            <child>
-                              <object class="GtkLabel" id="label16">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="margin_left">5</property>
-                                <property name="margin_right">5</property>
-                                <property name="margin_top">5</property>
-                                <property name="margin_bottom">5</property>
-                                <property name="label" translatable="yes">&lt;b&gt;Some opportunities require verification when completed. To do this you will need an Ubuntu One account and agree to have those opportunities verified.&lt;/b&gt;
+                            <property name="label" translatable="yes">&lt;b&gt;Some opportunities require verification when completed. To do this you will need an Ubuntu One account and agree to have those opportunities verified.&lt;/b&gt;
 
 Press the button below to check if you have an Ubuntu One account. If you don't, we will take a second to sign-up; the account is free.</property>
-                                <property name="use_markup">True</property>
-                                <property name="wrap">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkExpander" id="expander1">
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="margin_left">14</property>
-                                <child>
-                                  <object class="GtkBox" id="box8">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <child>
-                                      <object class="GtkImage" id="image6">
-                                        <property name="visible">True</property>
-                                        <property name="can_focus">False</property>
-                                        <property name="margin_left">15</property>
-                                        <property name="stock">gtk-info</property>
-                                      </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">True</property>
-                                        <property name="position">0</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <object class="GtkLabel" id="label18">
-                                        <property name="visible">True</property>
-                                        <property name="can_focus">False</property>
-                                        <property name="halign">start</property>
-                                        <property name="margin_left">5</property>
-                                        <property name="margin_right">5</property>
-                                        <property name="margin_top">5</property>
-                                        <property name="margin_bottom">4</property>
-                                        <property name="label" translatable="yes">Ubuntu One is a online service that is Free to use for syncing files and other features. It is neatly integrated into your Ubuntu desktop.
-
-When Ubuntu Accomplishments detects you have accomplished something new the trophy will be sent to a verification server using Ubuntu one. This is simple, safe to use, and the only information that is shared with the server is the information you can see in Edit -&gt; Identification - this information is not shared with others or given to companies.</property>
-                                        <property name="use_markup">True</property>
-                                        <property name="wrap">True</property>
-                                      </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">True</property>
-                                        <property name="position">1</property>
-                                      </packing>
-                                    </child>
-                                  </object>
-                                </child>
-                                <child type="label">
-                                  <object class="GtkLabel" id="label17">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="valign">start</property>
-                                    <property name="label" translatable="yes">Learn more...</property>
-                                  </object>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
+                            <property name="use_markup">True</property>
+                            <property name="wrap">True</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -740,44 +630,57 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButtonBox" id="buttonbox2">
+                          <object class="GtkExpander" id="expander1">
                             <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="valign">start</property>
-                            <property name="margin_left">5</property>
-                            <property name="margin_right">5</property>
-                            <property name="margin_top">5</property>
-                            <property name="margin_bottom">10</property>
-                            <property name="layout_style">spread</property>
+                            <property name="can_focus">True</property>
+                            <property name="margin_left">14</property>
                             <child>
-                              <object class="GtkBox" id="verif_box">
+                              <object class="GtkBox" id="box8">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <child>
-                                  <placeholder/>
+                                  <object class="GtkImage" id="image6">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="margin_left">15</property>
+                                    <property name="stock">gtk-info</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="label18">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="halign">start</property>
+                                    <property name="margin_left">5</property>
+                                    <property name="margin_right">5</property>
+                                    <property name="margin_top">5</property>
+                                    <property name="margin_bottom">4</property>
+                                    <property name="label" translatable="yes">Ubuntu One is a online service that is Free to use for syncing files and other features. It is neatly integrated into your Ubuntu desktop.
+
+When Ubuntu Accomplishments detects you have accomplished something new the trophy will be sent to a verification server using Ubuntu one. This is simple, safe to use, and the only information that is shared with the server is the information you can see in Edit -&gt; Identification - this information is not shared with others or given to companies.</property>
+                                    <property name="use_markup">True</property>
+                                    <property name="wrap">True</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
                                 </child>
                               </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
                             </child>
-                            <child>
-                              <object class="GtkButton" id="button2">
-                                <property name="label" translatable="yes">Don't Use Ubuntu One</property>
+                            <child type="label">
+                              <object class="GtkLabel" id="label17">
                                 <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="receives_default">True</property>
+                                <property name="can_focus">False</property>
                                 <property name="valign">start</property>
-                                <property name="yalign">0.46000000834465027</property>
-                                <signal name="clicked" handler="cancel_register_with_u1" swapped="no"/>
+                                <property name="label" translatable="yes">Learn more...</property>
                               </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
                             </child>
                           </object>
                           <packing>
@@ -787,23 +690,68 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                           </packing>
                         </child>
                       </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
                     </child>
                   </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
                 </child>
-                <child type="label">
-                  <object class="GtkLabel" id="label13">
-                    <property name="visible">True</property>
+                <action-widgets>
+                  <action-widget response="0">button2</action-widget>
+                </action-widgets>
+                <child internal-child="action_area">
+                  <object class="GtkButtonBox" id="verif_box">
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Ubuntu One account required</property>
-                    <property name="use_markup">True</property>
+                    <property name="border_width">5</property>
+                    <property name="spacing">6</property>
+                    <property name="layout_style">end</property>
+                    <child>
+                      <object class="GtkButton" id="button2">
+                        <property name="label" translatable="yes">Don't Use Ubuntu One</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="valign">start</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="yalign">0.46000000834465027</property>
+                        <signal name="clicked" handler="cancel_register_with_u1" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
                   </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
                 </child>
+                <action-widgets>
+                  <action-widget response="0">button2</action-widget>
+                </action-widgets>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">4</property>
+                <property name="position">3</property>
               </packing>
+            </child>
+            <child>
+              <placeholder/>
             </child>
           </object>
           <packing>
@@ -861,9 +809,11 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                         <child>
                           <object class="GtkRadioButton" id="mytrophies_filter_all">
                             <property name="label" translatable="yes">All</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="xalign">0</property>
                             <property name="active">True</property>
                             <property name="draw_indicator">False</property>
@@ -877,9 +827,11 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                         <child>
                           <object class="GtkRadioButton" id="mytrophies_filter_latest">
                             <property name="label" translatable="yes">Latest</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="xalign">0</property>
                             <property name="active">True</property>
                             <property name="draw_indicator">False</property>
@@ -1139,10 +1091,12 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                                     <child>
                                       <object class="GtkCheckButton" id="opp_showlocked">
                                         <property name="label" translatable="yes">Show Locked</property>
+                                        <property name="use_action_appearance">False</property>
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="receives_default">False</property>
                                         <property name="margin_left">5</property>
+                                        <property name="use_action_appearance">False</property>
                                         <property name="xalign">0</property>
                                         <property name="active">True</property>
                                         <property name="draw_indicator">True</property>
@@ -1181,9 +1135,11 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                         <property name="can_focus">False</property>
                         <child>
                           <object class="GtkButton" id="subcats_back">
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="relief">none</property>
                             <signal name="clicked" handler="subcats_back_button" swapped="no"/>
                             <child>
@@ -1237,9 +1193,11 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
                         </child>
                         <child>
                           <object class="GtkButton" id="subcats_forward">
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="relief">none</property>
                             <signal name="clicked" handler="subcats_forward_button" swapped="no"/>
                             <child>
@@ -1376,16 +1334,6 @@ When Ubuntu Accomplishments detects you have accomplished something new the trop
         </child>
       </object>
     </child>
-  </object>
-  <object class="GtkImage" id="image2">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-help</property>
-  </object>
-  <object class="GtkImage" id="image4">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="pixbuf">../media/opportunities.png</property>
   </object>
   <object class="GtkImage" id="image9">
     <property name="visible">True</property>
