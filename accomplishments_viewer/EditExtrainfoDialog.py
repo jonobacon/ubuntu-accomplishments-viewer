@@ -233,7 +233,6 @@ class EditExtrainfoDialog(Gtk.Dialog):
                 #print "value " + f + " changed"
                 anything_changed = True
                 self.libaccom.write_extra_information_file(f,newvalue)
-                self.libaccom.invalidate_extra_information(f)
                 
         if anything_changed:
             self.libaccom.run_scripts(True)
