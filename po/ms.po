@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-10-20 21:15-0600\n"
-"PO-Revision-Date: 2012-08-30 09:33+0000\n"
+"PO-Revision-Date: 2012-11-25 03:07+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-22 04:56+0000\n"
-"X-Generator: Launchpad (build 16165)\n"
+"X-Launchpad-Export-Date: 2012-11-25 06:51+0000\n"
+"X-Generator: Launchpad (build 16293)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:69
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:102
@@ -46,11 +46,11 @@ msgstr "Pelihat Pencapaian"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "Ubuntu Accomplishments Viewer"
-msgstr ""
+msgstr "Pelihat Pencapaian Ubuntu"
 
 #: ../accomplishments-viewer.desktop.in.h:3
 msgid "Accomplishments Viewer Application"
-msgstr ""
+msgstr "Aplikasi Pelihat Pencapaian"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
@@ -69,7 +69,7 @@ msgstr ""
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>"
-msgstr ""
+msgstr "Hakcipta (C) 2012 Jono Bacon <jono@ubuntu.com>"
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:2
 msgid ""
@@ -87,6 +87,19 @@ msgid ""
 "# You should have received a copy of the GNU General Public License along \n"
 "# with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
 msgstr ""
+"# Hakcipta (C) 2012 Jono Bacon <jono@ubuntu.com>\n"
+"# Program ini merupakan perisian bebas: anda boleh edar semula ia dan/atau "
+"ubahsuai\n"
+"# ia dibawah terma Lesen Awam Am GNU versi 3, sepertimana yang diterbitkan \n"
+"# oleh Free Software Foundation.\n"
+"# \n"
+"# Program ini diedar dengan harapa ia akan berguna, tetapi \n"
+"# TANPA SEBARANG JAMINAN; tanpa jaminan terhadap  KESESUAIAN DIPASARKAN\n"
+"# JAMINAN KUALITI, atau JAMINAN APA JUA SEBAB. \n"
+"# Rujuk Lesen Awam Am GNU untuk maklumat lanjut.\n"
+"# \n"
+"# Anda seharusnya menerima satu salinan Lesen Awam Am GNU bersama-sama \n"
+"# dengan program ini. Jika tidak, rujuk <http://www.gnu.org/licenses/>.\n"
 
 #: ../accomplishments_viewer/__init__.py:37
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
@@ -153,12 +166,12 @@ msgstr ""
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:304
 msgid "Reloading accomplishments collections..."
-msgstr ""
+msgstr "Memuat semula koleksi pencapaian..."
 
 #. apparently as that process daemonizes it will not get killed when one closes the client
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:465
 msgid "Starting the daemon..."
-msgstr ""
+msgstr "Memulakan daemon..."
 
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:571
@@ -169,7 +182,7 @@ msgstr "Semua"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:614
 #, python-format
 msgid "I've just got the trophy '%s' in #ubuntu accomplishments!"
-msgstr ""
+msgstr "Saya baru mendapat trofi '%s' dalam pencapaian #ubuntu!"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:635
 msgid "Your trophies are not yet published"
@@ -309,7 +322,7 @@ msgstr "_Sunting"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "_Reload accomplishments collections..."
-msgstr ""
+msgstr "_Muat semula koleksi pencapaian..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "_Identification..."
@@ -361,6 +374,12 @@ msgid ""
 "href=\"https://wiki.ubuntu.com/Accomplishments/DesktopAppDocs/NoCollections\""
 ">Learn More</a>"
 msgstr ""
+"<b>Untuk menggunakan Pencapaian Ubuntu anda perlu miliki sekurang-kurangnya "
+"satu koleksi pencapaian terpasang.</b>\n"
+"\n"
+"<a "
+"href=\"https://wiki.ubuntu.com/Accomplishments/DesktopAppDocs/NoCollections\""
+">Ketahui Lebih Lanjut</a>"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
 msgid "No Collections Installed"
