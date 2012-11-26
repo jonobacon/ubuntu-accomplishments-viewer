@@ -1,16 +1,16 @@
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 ### BEGIN LICENSE
 # Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>
-# This program is free software: you can redistribute it and/or modify it 
-# under the terms of the GNU General Public License version 3, as published 
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 3, as published
 # by the Free Software Foundation.
-# 
-# This program is distributed in the hope that it will be useful, but 
-# WITHOUT ANY WARRANTY; without even the implied warranties of 
-# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR 
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranties of
+# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
 # PURPOSE.  See the GNU General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License along 
+#
+# You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 ### END LICENSE
 
@@ -25,10 +25,11 @@ from . Builder import Builder
 
 from locale import gettext as _
 
+
 def get_builder(builder_file_name):
-    """Return a fully-instantiated Gtk.Builder instance from specified ui 
+    """Return a fully-instantiated Gtk.Builder instance from specified ui
     file
-    
+
     :param builder_file_name: The name of the builder file, without extension.
         Assumed to be in the 'ui' directory under the data path.
     """
@@ -49,11 +50,13 @@ def get_media_file(media_file_name):
     if not os.path.exists(media_filename):
         media_filename = None
 
-    return "file:///"+media_filename
+    return "file:///" + media_filename
+
 
 class NullHandler(logging.Handler):
     def emit(self, record):
         pass
+
 
 def set_up_logging(opts):
     # add a handler to prevent basicConfig
@@ -80,6 +83,7 @@ def set_up_logging(opts):
     if opts.verbose > 1:
         lib_logger.setLevel(logging.DEBUG)
 
+
 def get_help_uri(page=None):
     # help_uri from source tree - default language
     here = os.path.dirname(__file__)
@@ -95,10 +99,12 @@ def get_help_uri(page=None):
 
     return help_uri
 
+
 def show_uri(parent, link):
-    from gi.repository import Gtk # pylint: disable=E0611
+    from gi.repository import Gtk  # pylint: disable=E0611
     screen = parent.get_screen()
     Gtk.show_uri(screen, link, Gtk.get_current_event_time())
+
 
 def alias(alternative_function_name):
     '''see http://www.drdobbs.com/web-development/184406073#l9'''
