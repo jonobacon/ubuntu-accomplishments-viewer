@@ -1,16 +1,16 @@
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 ### BEGIN LICENSE
 # Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>
-# This program is free software: you can redistribute it and/or modify it 
-# under the terms of the GNU General Public License version 3, as published 
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 3, as published
 # by the Free Software Foundation.
-# 
-# This program is distributed in the hope that it will be useful, but 
-# WITHOUT ANY WARRANTY; without even the implied warranties of 
-# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR 
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranties of
+# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
 # PURPOSE.  See the GNU General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License along 
+#
+# You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 ### END LICENSE
 
@@ -18,7 +18,7 @@
 
 '''Enhances builder connections, provides object to access glade objects'''
 
-from gi.repository import GObject, Gtk # pylint: disable=E0611
+from gi.repository import GObject, Gtk  # pylint: disable=E0611
 
 import inspect
 import functools
@@ -54,8 +54,7 @@ class Builder(Gtk.Builder):
 
 # pylint: disable=R0201
 # this is a method so that a subclass of Builder can redefine it
-    def default_handler(self,
-        handler_name, filename, *args, **kwargs):
+    def default_handler(self, handler_name, filename, *args, **kwargs):
         '''helps the apprentice guru
 
     glade defined handlers that do not exist come here instead.
@@ -108,7 +107,8 @@ class Builder(Gtk.Builder):
         ele_signals = tree.getiterator("signal")
         for ele_signal in ele_signals:
             self.glade_handler_dict.update(
-            {ele_signal.attrib["handler"]: None})
+                {ele_signal.attrib["handler"]: None}
+            )
 
     def connect_signals(self, callback_obj):
         '''connect the handlers defined in glade
@@ -129,8 +129,7 @@ class Builder(Gtk.Builder):
                 connection_dict[item[0]] = handler
 
                 # replace the run time warning
-                logger.warn("expected handler '%s' in %s",
-                 item[0], filename)
+                logger.warn("expected handler '%s' in %s", item[0], filename)
 
         # connect glade define handlers
         Gtk.Builder.connect_signals(self, connection_dict)
@@ -139,7 +138,7 @@ class Builder(Gtk.Builder):
         for connection in self.connections:
             widget_name, signal_name, handler_name = connection
             logger.debug("connect builder by design '%s', '%s', '%s'",
-             widget_name, signal_name, handler_name)
+                         widget_name, signal_name, handler_name)
 
     def get_ui(self, callback_obj=None, by_name=True):
         '''Creates the ui object with widgets as attributes
@@ -175,7 +174,7 @@ class UiFactory():
         cannot_message = """cannot bind ui.%s, name already exists
         consider using a pythonic name instead of design name '%s'"""
         consider_message = """consider using a pythonic name instead of design name '%s'"""
-        
+
         for (widget_name, widget) in widget_dict.items():
             pyname = make_pyname(widget_name)
             if pyname != widget_name:
@@ -201,14 +200,14 @@ def make_pyname(name):
     pyname = ''
     for character in name:
         if (character.isalpha() or character == '_' or
-            (pyname and character.isdigit())):
+                (pyname and character.isdigit())):
             pyname += character
         else:
             pyname += '_'
     return pyname
 
 
-# Until bug https://bugzilla.gnome.org/show_bug.cgi?id=652127 is fixed, we 
+# Until bug https://bugzilla.gnome.org/show_bug.cgi?id=652127 is fixed, we
 # need to reimplement inspect.getmembers.  GObject introspection doesn't
 # play nice with it.
 def getmembers(obj, check):
@@ -285,13 +284,13 @@ def auto_connect_by_name(callback_obj, builder):
                 handler_names.append("on_%s" % sig)
 
             do_connect(item, sig, handler_names,
-             callback_handler_dict, builder.connections)
+                       callback_handler_dict, builder.connections)
 
     log_unconnected_functions(callback_handler_dict, builder.connections)
 
 
 def do_connect(item, signal_name, handler_names,
-        callback_handler_dict, connections):
+               callback_handler_dict, connections):
     '''connect this signal to an unused handler'''
     widget_name, widget = item
 
@@ -304,7 +303,7 @@ def do_connect(item, signal_name, handler_names,
             connections.append(connection)
 
             logger.debug("connect builder by name '%s','%s', '%s'",
-             widget_name, signal_name, handler_name)
+                         widget_name, signal_name, handler_name)
 
 
 def log_unconnected_functions(callback_handler_dict, connections):

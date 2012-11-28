@@ -6,7 +6,7 @@ Please add items to this changelog that are:
 Add items using the following format:
 
    [Name]
-   * What you did 
+   * What you did
    * If a bug (LP: #BUGNUMBER)
 
    For example:
@@ -31,4 +31,6 @@ Next Version Target: 0.4
    * Fix lintian issues
    * Added a manpage (LP: #1069264)
 
+   [Robin Gloster]
+   * Fixed most PEP8 issues
 -------------------------------------------------------------------------
