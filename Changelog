@@ -25,6 +25,7 @@ Next Version Target: 0.4
    * Added support for 'keywords' fieldk (LP: #1076555)
    * Fixed viewer's confusing behavior if the daemon starts for the first time since user logged in (LP: #1046430)
    * Fixed: viewer using deprecated interface: invalidate_extra_information() (LP: #1036468)
+   * Fixed: Subcategories filter does not get re-set (LP: #1084058)
 
    [Matt Fischer]
    * Fix lintian issues

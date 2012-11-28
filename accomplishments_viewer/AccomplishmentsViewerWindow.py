@@ -1088,7 +1088,7 @@ class AccomplishmentsViewerWindow(Window):
             
         if filter_category is not DISPLAY_FILTER_CATEGORY_UNSPECIFIED:
             self.display_filter_category = filter_category
-            
+            self.display_filter_subcat = ""
             # Changing category, therefore we should display the subcats bar too.
             self._update_subcats()
             
