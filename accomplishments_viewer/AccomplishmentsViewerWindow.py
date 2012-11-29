@@ -509,6 +509,7 @@ class AccomplishmentsViewerWindow(Window):
         return False
 
     def finalise_daemon_connection(self):
+        self.libaccom.create_all_trophy_icons()
         self._load_accomplishments()
         self.prepare_models()
         self.populate_opp_combos()
