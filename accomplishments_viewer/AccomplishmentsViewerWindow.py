@@ -1313,7 +1313,7 @@ class AccomplishmentsViewerWindow(Window):
         
         html_tmp = ''
         
-        html_template_file = open( os.path.join(self.datapath, "html", "templates", "trophy_details.html") , 'r')
+        html_template_file = open( os.path.join(self.datapath, "html", "trophy_details_template.html") , 'r')
         
         html =  html_template_file.read()
 
