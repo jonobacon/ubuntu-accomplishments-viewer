@@ -1342,7 +1342,7 @@ class AccomplishmentsViewerWindow(Window):
            html = html.replace('{ACCOM_ID_DIV_STYLE}', 'display: none')
         
         # Accomplishment icon
-        html = html.replace('{ICON_PATH}', iconpath)
+        html = html.replace('{ICON_PATH}', str(iconpath))
         
         # Opportunity inf
         html = html.replace('{OPP_INF}', _("Opportunity Information").decode('utf-8'))
