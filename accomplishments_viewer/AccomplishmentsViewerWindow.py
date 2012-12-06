@@ -1409,7 +1409,7 @@ class AccomplishmentsViewerWindow(Window):
            html = html.replace('{VERIFY_ICON}', os.path.join(self.datapath, "media", "verify-icon.png"))
            if "date-accomplished" in trophydata:
               date = trophydata["date-accomplished"]
-              html = html.replace('{TROPHY_INFOS_DATE}', _("on") + " " + date)
+              html = html.replace('{TROPHY_INFOS_DATE}', _("on").decode('utf-8') + " " + date)
            else:
               html = html.replace('{TROPHY_INFOS_DATE}', '')
            
