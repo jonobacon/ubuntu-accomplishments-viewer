@@ -47,7 +47,7 @@ class AboutAccomplishmentsViewerDialog(AboutDialog):
 
         for col in self.libaccom.list_collections():
             authors.append(" ")
-            authors.append("'" + self.libaccom.get_collection_name(col) + "' " + _("Collection Authors:"))
+            authors.append("'" + self.libaccom.get_collection_name(col) + "' " + _("Collection Authors:").decode('utf-8'))
             authors.append(" ")
 
             tempauthors = []
