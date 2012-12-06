@@ -33,4 +33,7 @@ Next Version Target: 0.4
 
    [Robin Gloster]
    * Fixed most PEP8 issues
+
+   [Hubert Jarosz]
+   * Changed HTML embeded within python into HTML template (LP: #1079638)
 -------------------------------------------------------------------------

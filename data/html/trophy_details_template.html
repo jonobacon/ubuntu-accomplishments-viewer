@@ -1,0 +1,164 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <link href="file://{INFORMATION_CSS}" rel="stylesheet" type="text/css" />
+  <link href="file://{FONT_CSS}" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="container_8" background="{BODY_BKG}">
+
+<div style="{TITLE_DIV_STYLE}" id="header" class="grid_8">
+  <h1>{TITLE}</h1>
+</div>
+
+<!-- HEADER -->
+<div id="accomplishment" class="grid_8 clearfix">
+
+ <!-- BADGE -->
+ <div id="accomplishment-badge" class="grid_8 clearfix">
+
+    <div id="social-share" style="{ACCOM_ID_DIV_STYLE}">
+      <a href="gwibber-share?accomID={ACCOM_ID}" id="gwibber-share">{GWIBBER_SHARE}</a>
+    </div>
+    
+    <img class="icon" src="{ICON_PATH}" /> 
+    
+    <div class="grid_3 block"> 
+      <h4>{OPP_INF}</h4> 
+      <ul class="none"> 
+        <li>
+          {OPP_DESC}
+        </li>
+      </ul>
+    </div>
+    
+    <div style="{HELP_DIV_STYLE}" class="grid_3 block">
+      <h4>{GET_HELP}</h4>
+      <ul class="none">
+        {HELP}
+      </ul>
+    </div>
+    
+ </div>
+  
+ <!-- CONDITIONS -->
+ <div id="accomplishment-conditions" class="grid_8">
+ 
+    <ul class="none">
+    
+      <div style="{OPP_LOCK_DIV_STYLE}">
+        <li><i class="icon-key icon-large"></i>{OPP_LOCK}</li>
+        {NEED_MORE_OPP}
+      </div>
+      
+      <div style="{ACHIEVED_DIV_STYLE}">
+      
+        <li>
+          <img src="{VERIFY_ICON}" height="20" />
+          {TROPHY_INFOS_DATE} <!-- Date + Needs | Some HTML in Python code, but it must be like that :(-->
+          {TROPHY_INFOS_NEEDS}
+        </li>
+        
+        <div style="{VERIFY_DIV_STYLE}">
+          <li>
+            <img src="{VERIFY_ICON}" height="20" />
+            {TROPHY_VERIFIED}
+          </li>
+        </div>
+        
+      </div>
+      
+     <div style="{NOT_ACHIEVED_DIV_STYLE}">
+       
+       <li><i class="icon-trophy icon-large"></i>{REQ_VERIFY}</li><!-- That <i> displays image. -->
+       
+     </div>
+     
+   </ul>
+   
+ </div>
+
+</div>  
+
+
+<!-- JS -->
+<script language="JavaScript">
+function ShwHid(divId){
+var el = document.getElementById('accomDetails');
+    if(document.getElementById(divId).style.display == 'none'){
+        document.getElementById(divId).style.display='block';
+        el.innerHTML = "{ACCOM_DET_M}";
+    }else{
+        document.getElementById(divId).style.display='none';
+                el.innerHTML = "{ACCOM_DET_P}";
+    }
+}
+</script>
+
+<div style="{JS_TRIGGER_DIV_STYLE}">
+ <a id="accomDetails" onclick="javascript:ShwHid('acc_body')" href="javascript:;" class="grid_3" style="outline: none">{ACCOM_DET}</a>
+</div>
+
+
+<!-- BODY -->
+<div id="acc_body" style="{ACC_BODY_DIV_STYLE}">
+
+ <div style="{ACC_SUMMARY_DIV_STYLE}" id="accompilshment-info" class="grid_8">
+    {ACC_SUMMARY}
+ </div>
+
+ <div id='accomplishment-more'  class='grid_8'>
+  
+    <div style="{HOWTO_DIV_STYLE}" id='howto' class='grid_8'>
+      <i class='icon-list'></i>
+      <h2>{HOWTO}</h2>
+      <ol>
+      {HOWTO_STEPS}
+      </ol>
+    </div>
+    
+    <div style="{SHOW_TIPS_DIV_STYLE}" id="tipspitfalls" class="grid_8 clearfix">
+    
+      <div class="grid_4 block left" id="tips">     
+        <h2>{T_N_T}</h2>
+        <ul>
+          
+          {TIPS}
+          
+        </ul>    
+      </div>
+      
+      <div id="divider" class="left">&nbsp;</div>
+      
+      <div class="grid_3 block left" id="pitfals">
+        <h2>{TO_AVOID}</h2>
+        <ul>
+          
+          {AVOID}
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+    
+    <div style="{LINKS_DIV_STYLE}" id="furtherreading" class="grid_8">
+      <h2>{FURTHER_READ}</h2>
+      <ul>
+        
+        {LINKS}
+        
+      </ul>
+    </div>
+    
+  
+ </div>
+
+</div>
+
+
+</body>
+</html>
+
