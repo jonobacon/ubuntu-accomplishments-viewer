@@ -1320,16 +1320,16 @@ class AccomplishmentsViewerWindow(Window):
 
 
         # CSS
-        html = html.replace('{INFORMATION_CSS}', str(os.path.join(self.datapath, "css", "information.txt")))
-        html = html.replace('{FONT_CSS}', str(os.path.join(self.datapath, "css", "font.txt")))
+        html = html.replace('{INFORMATION_CSS}', os.path.join(self.datapath, "css", "information.txt"))
+        html = html.replace('{FONT_CSS}', os.path.join(self.datapath, "css", "font.txt"))
         
         # <body> bkg
-        html = html.replace('{BODY_BKG}', str(os.path.join(self.datapath, "media", "home-bkg.gif")))
+        html = html.replace('{BODY_BKG}', os.path.join(self.datapath, "media", "home-bkg.gif"))
         
         # Title
         if "title" in data:
            html = html.replace('{TITLE_DIV_STYLE}', '')
-           html = html.replace('{TITLE}', str(data['title'])) 
+           html = html.replace('{TITLE}', data['title']) 
         else:
            html = html.replace('{TITLE_DIV_STYLE}', 'display: none')
         
@@ -1342,12 +1342,12 @@ class AccomplishmentsViewerWindow(Window):
            html = html.replace('{ACCOM_ID_DIV_STYLE}', 'display: none')
         
         # Accomplishment icon
-        html = html.replace('{ICON_PATH}', str(iconpath))
+        html = html.replace('{ICON_PATH}', iconpath)
         
         # Opportunity inf
         html = html.replace('{OPP_INF}', _("Opportunity Information").decode('utf-8'))
         if "description" in data:
-           html = html.replace('{OPP_DESC}', str(data["description"]))   
+           html = html.replace('{OPP_DESC}', data["description"])   
         else:
            html = html.replace('{OPP_DESC}', _("No information available.").decode('utf-8'))
         
@@ -1366,7 +1366,7 @@ class AccomplishmentsViewerWindow(Window):
                       html_tmp = html_tmp + "<li>" + l + "</li>"
                   else:
                       html_tmp = html_tmp + "<li>" + l + "</li>"
-              html = html.replace('{HELP}', str(html_tmp))
+              html = html.replace('{HELP}', html_tmp)
               html_tmp = ''
               # print help # "None" bug
            else:
@@ -1392,7 +1392,7 @@ class AccomplishmentsViewerWindow(Window):
                     for d in depstatus:
                        if d["accomplished"] == False:
                           html_tmp = html_tmp + "<li class='deps_child'><a href='accomplishment://" + d["id"] + "'><strong>" + d["title"] + "</strong></a> " + _("from").decode('utf-8') +" <strong>" + d["collection-human"] + "</strong></li>"
-                    html = html.replace('{NEED_MORE_OPP}',str(html_tmp))
+                    html = html.replace('{NEED_MORE_OPP}',html_tmp)
                     html_tmp = ''     
                 
               else:
@@ -1406,7 +1406,7 @@ class AccomplishmentsViewerWindow(Window):
         if achieved:
            html = html.replace('{NOT_ACHIEVED_DIV_STYLE}', 'display:none')
            html = html.replace('{ACHIEVED_DIV_STYLE}', '')
-           html = html.replace('{VERIFY_ICON}', str(os.path.join(self.datapath, "media", "verify-icon.png")))
+           html = html.replace('{VERIFY_ICON}', os.path.join(self.datapath, "media", "verify-icon.png"))
            if "date-accomplished" in trophydata:
               date = trophydata["date-accomplished"]
               html = html.replace('{TROPHY_INFOS_DATE}', _("on") + " " + date)
@@ -1421,14 +1421,14 @@ class AccomplishmentsViewerWindow(Window):
                  e = self.libaccom.get_extra_information(accomID.split("/")[0],i)
                  html_tmp = html_tmp + "<li>" + e[0]["label"] + ": " + trophydata[i] + "</li>"
               html_tmp = html_tmp + "</ul>"
-              html = html.replace('{TROPHY_INFOS_NEEDS}', str(html_tmp))
+              html = html.replace('{TROPHY_INFOS_NEEDS}', html_tmp)
               html_tmp = ''
            else:
               html = html.replace('{TROPHY_INFOS_NEEDS}', '')
               
            if "needs-signing" in data:
               if data["needs-signing"] == "true" or data["needs-signing"] == "True":
-                 html = html.replace('{VERIFY_ICON}', str(os.path.join(self.datapath, "media", "verify-icon.png")))
+                 html = html.replace('{VERIFY_ICON}', os.path.join(self.datapath, "media", "verify-icon.png"))
                  html = html.replace('{TROPHY_VERIFIED}', _("This trophy has been verified").decode('utf-8'))
                  html = html.replace('{VERIFY_DIV_STYLE}', '')
               else:
@@ -1468,7 +1468,7 @@ class AccomplishmentsViewerWindow(Window):
            html_tmp = ''
            for l in summary.split('\n'):
               html_tmp = html_tmp  + "<p>" + l + "</p>"
-           html = html.replace('{ACC_SUMMARY}', str(html_tmp))
+           html = html.replace('{ACC_SUMMARY}', html_tmp)
            html_tmp = ''
            html = html.replace('{ACC_SUMMARY_DIV_STYLE}', '')
         else:
@@ -1481,7 +1481,7 @@ class AccomplishmentsViewerWindow(Window):
            html_tmp = ''
            for l in steps.split('\n'):
               html_tmp = html_tmp + "<li class='icon-pushpin'>" + l + "</li>"
-           html = html.replace('{HOWTO_STEPS}', str(html_tmp))
+           html = html.replace('{HOWTO_STEPS}', html_tmp)
            html_tmp = ''
            html = html.replace('{HOWTO_DIV_STYLE}', '')
         else:
@@ -1527,7 +1527,7 @@ class AccomplishmentsViewerWindow(Window):
               html_tmp = ''
               for t in tips.split('\n'):
                  html_tmp = html_tmp + "<li class='icon-ok'>" + t + "</li>"   
-              html = html.replace('{TIPS}', str(html_tmp))
+              html = html.replace('{TIPS}', html_tmp)
               html_tmp = ''
               
               
@@ -1544,7 +1544,7 @@ class AccomplishmentsViewerWindow(Window):
               html_tmp = ''
               for p in pitfalls.split('\n'):
                  html_tmp = html_tmp + "<li class='icon-remove'>" + p + "</li>"   
-              html = html.replace('{AVOID}', str(html_tmp))
+              html = html.replace('{AVOID}', html_tmp)
               html_tmp = ''
                       
         else:
@@ -1560,7 +1560,7 @@ class AccomplishmentsViewerWindow(Window):
            html_tmp = ''
            for l in links.split('\n'):
               html_tmp = html_tmp + "<li><a href='" + l + "'><i class='icon-external-link icon-large'></i>" + l + "</a></li>"           
-           html = html.replace('{LINKS}', str(html_tmp))
+           html = html.replace('{LINKS}', html_tmp)
            html_tmp = ''
         else:
            html = html.replace('{LINKS_DIV_STYLE}', 'display:none')
