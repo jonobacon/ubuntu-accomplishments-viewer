@@ -96,7 +96,7 @@ TROPHIES_FILTER_MONTH = 3
 TROPHIES_FILTER_SIXMONTHS = 4
 TROPHIES_FILTER_EARLIER = 100
 
-TROPHY_GALLERY_URL = 'http://213.138.100.229:8000'
+TROPHY_GALLERY_URL = 'http://91.189.93.66'
 
 
 # See accomplishments_viewer_lib.Window.py for more details about how this class works
