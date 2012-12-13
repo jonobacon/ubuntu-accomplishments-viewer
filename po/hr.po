@@ -1,0 +1,422 @@
+# Croatian translation for ubuntu-accomplishments-viewer
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the ubuntu-accomplishments-viewer package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubuntu-accomplishments-viewer\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-10-20 21:15-0600\n"
+"PO-Revision-Date: 2012-12-12 23:37+0000\n"
+"Last-Translator: freedomrun <freedomrun@yandex.com>\n"
+"Language-Team: Croatian <hr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2012-12-13 05:12+0000\n"
+"X-Generator: Launchpad (build 16361)\n"
+
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:69
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:102
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:8
+msgid "Publish..."
+msgstr "Objavi..."
+
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:71
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:96
+msgid "Stop Publishing"
+msgstr ""
+
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:95
+msgid "Please see your web browser to continue..."
+msgstr ""
+
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:101
+msgid "Trophies are no longer published."
+msgstr ""
+
+#: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:48
+msgid "Collection Authors:"
+msgstr ""
+
+#: ../accomplishments-viewer.desktop.in.h:1
+msgid "Accomplishments Viewer"
+msgstr "Preglednik Dostignuća"
+
+#: ../accomplishments-viewer.desktop.in.h:2
+msgid "Ubuntu Accomplishments Viewer"
+msgstr "Ubuntu Preglednik Dostignuća"
+
+#: ../accomplishments-viewer.desktop.in.h:3
+msgid "Accomplishments Viewer Application"
+msgstr "Preglednik Dostignuća Aplikacija"
+
+#: ../data/ui/EditExtrainfoDialog.ui.h:1
+msgid "Extra information required..."
+msgstr ""
+
+#: ../data/ui/EditExtrainfoDialog.ui.h:2
+msgid ""
+"<b>The following information is required to verify your "
+"accomplishments.</b>\n"
+"\n"
+"Please ensure that this data is accurate and up to date."
+msgstr ""
+
+#: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
+msgid "Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>"
+msgstr "Autorsko pravo (C) 2012 Jono Bacon <jono@ubuntu.com>"
+
+#: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:2
+msgid ""
+"# Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>\n"
+"# This program is free software: you can redistribute it and/or modify it \n"
+"# under the terms of the GNU General Public License version 3, as published "
+"\n"
+"# by the Free Software Foundation.\n"
+"# \n"
+"# This program is distributed in the hope that it will be useful, but \n"
+"# WITHOUT ANY WARRANTY; without even the implied warranties of \n"
+"# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR \n"
+"# PURPOSE.  See the GNU General Public License for more details.\n"
+"# \n"
+"# You should have received a copy of the GNU General Public License along \n"
+"# with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
+msgstr ""
+
+#: ../accomplishments_viewer/__init__.py:37
+msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
+msgstr ""
+
+#: ../accomplishments_viewer/__init__.py:40
+msgid ""
+"Display information about the provided accomplishment ID (e.g. 'ubuntu-"
+"community/registered-on-launchpad')"
+msgstr ""
+
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
+msgid "Accomplishments Preferences"
+msgstr "Postavke Dostignuća"
+
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:2
+msgid "Start background service on log in (recommended)"
+msgstr ""
+
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:3
+msgid "<b>Accomplishments Background Service</b>"
+msgstr ""
+
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:4
+msgid "Hide Ubuntu One file upload notifications (recommended)"
+msgstr ""
+
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:5
+msgid "<b>Notification Bubbles</b>"
+msgstr "<b>Mjehurići sa Obavijestima</b>"
+
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:6
+msgid ""
+"To publish your trophies online for others to see, click the <i>Publish</i> "
+"button.\n"
+"You can <i>Unpublish</i> later if you want to."
+msgstr ""
+
+#: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
+msgid "<b>Publish Trophies Online</b>"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:209
+msgid "Share Trophy"
+msgstr "Podijelite Trofej"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:215
+msgid ""
+"<b>Always add the link to your trophy on the web when sharing a trophy.</b>\n"
+"This link works as a <b>proof</b> that you have really accomplished this "
+"trophy."
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:304
+msgid "Reloading accomplishments collections..."
+msgstr ""
+
+#. apparently as that process daemonizes it will not get killed when one closes the client
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:465
+msgid "Starting the daemon..."
+msgstr ""
+
+#. Add 'All' button
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:571
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:36
+msgid "All"
+msgstr "Sve"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:614
+#, python-format
+msgid "I've just got the trophy '%s' in #ubuntu accomplishments!"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:635
+msgid "Your trophies are not yet published"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:636
+msgid "You can do it from Edit->Preferences menu."
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:949
+msgid "everything"
+msgstr "sve"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1011
+msgid "Today"
+msgstr "Danas"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1014
+msgid "This Week"
+msgstr "Ovaj Tjedan"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1017
+msgid "This Month"
+msgstr "Ovaj Mjesec"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1020
+msgid "Last Six Months"
+msgstr "Zadnjih Šest Mjeseci"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1023
+msgid "Earlier"
+msgstr "Ranije"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1218
+msgid "Opportunity Information"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1226
+msgid "No information available."
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1236
+msgid "Getting Help"
+msgstr "Dobivanje Pomoći"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1250
+msgid "No help available."
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1265
+msgid "This opportunity is locked. You need to complete"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1265
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1270
+msgid "from"
+msgstr "od"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1265
+msgid "first"
+msgstr "prvi"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1267
+msgid ""
+"This opportunity is locked. You need to complete the following opportunities "
+"first:"
+msgstr ""
+
+#. achieved
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1274
+msgid "This trophy <strong>was awarded</strong>"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1278
+msgid "on"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1282
+msgid "using the following credentials"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1292
+msgid "This trophy has been verified"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1299
+msgid "This opportunity requires verification"
+msgstr ""
+
+#. script for showing details...
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1311
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1314
+msgid "Accomplishment Details [-]"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1319
+msgid "Accomplishment Details [+]"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1341
+msgid "How to accomplish this opportunity"
+msgstr ""
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1376
+msgid "Tips and Tricks"
+msgstr "Savjeti i Trikovi"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1386
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1406
+msgid "None."
+msgstr "Nijedno."
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1396
+msgid "Pitfalls To Avoid"
+msgstr "Zamke Koje Treba Izbjeći"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1419
+msgid "Further Reading"
+msgstr "Daljnje Čitanje"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:1
+msgid "Accomplishment Information"
+msgstr "Informacija od Dostignuću"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:2
+msgid "_File"
+msgstr "_Datoteka"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
+msgid "Check Accomplishments"
+msgstr "Provjera Dostignuća"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
+msgid "_Edit"
+msgstr "_Uredi"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
+msgid "_Reload accomplishments collections..."
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
+msgid "_Identification..."
+msgstr "_Identifikacija..."
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
+msgid "_Help"
+msgstr "_Pomoć"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:8
+msgid "Contents"
+msgstr "Sadržaji"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:9
+msgid "Ask a question..."
+msgstr "Pitajte..."
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:10
+msgid "My Trophies"
+msgstr "Moji Trofeji"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:11
+msgid "Opportunities"
+msgstr "Prilike"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:12
+msgid ""
+"<b>The Accomplishments background service will be started when you log in. "
+"This is so your computer can check for accomplishments automatically.</b>\n"
+"\n"
+"You can disable this in <i>Edit</i> -> <i>Preferences</i> if required."
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
+msgid "Accomplishments Service"
+msgstr "Usluga Dostignuća"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
+msgid ""
+"<b>To use Ubuntu Accomplishments you need to have at least one "
+"accomplishments collection installed.</b>\n"
+"\n"
+"<a "
+"href=\"https://wiki.ubuntu.com/Accomplishments/DesktopAppDocs/NoCollections\""
+">Learn More</a>"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
+msgid "No Collections Installed"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
+msgid ""
+"<b>Some opportunities need additional information to verify their "
+"completion.</b>\n"
+"\n"
+"You can edit this data anytime later using: <i>Edit->Identification...</i>"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
+msgid "Edit credentials"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
+msgid "Later"
+msgstr "Kasnije"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
+msgid "Additional information required..."
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
+msgid ""
+"<b>Some opportunities require verification when completed. To do this you "
+"will need an Ubuntu One account and agree to have those opportunities "
+"verified.</b>\n"
+"\n"
+"Press the button below to check if you have an Ubuntu One account. If you "
+"don't, we will take a second to sign-up; the account is free."
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
+msgid ""
+"Ubuntu One is a online service that is Free to use for syncing files and "
+"other features. It is neatly integrated into your Ubuntu desktop.\n"
+"\n"
+"When Ubuntu Accomplishments detects you have accomplished something new the "
+"trophy will be sent to a verification server using Ubuntu one. This is "
+"simple, safe to use, and the only information that is shared with the server "
+"is the information you can see in Edit -> Identification - this information "
+"is not shared with others or given to companies."
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
+msgid "Learn more..."
+msgstr "Saznajte više..."
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
+msgid "Don't Use Ubuntu One"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:34
+msgid "Ubuntu One account required"
+msgstr "Potreban je Ubuntu One račun"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:35
+msgid "Get Started"
+msgstr "Počnite"
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:37
+msgid "Latest"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:38
+msgid "Show me"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:39
+msgid "opportunities for"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:40
+msgid "Show Locked"
+msgstr ""
