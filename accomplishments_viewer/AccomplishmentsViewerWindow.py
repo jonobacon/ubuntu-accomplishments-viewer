@@ -187,7 +187,6 @@ class AccomplishmentsViewerWindow(Window):
         self.mytrophies_box_all_window = self.builder.get_object("mytrophies_box_all_window")
         self.mytrophies_notebook = self.builder.get_object("mytrophies_notebook")
         self.searchbar = self.builder.get_object("searchbar")
-        self.searchbar_box = self.builder.get_object("searchbar_box")
 
         # don't display the sub-cats scrollbars
         sb_h = self.subcats_scroll.get_hscrollbar()
@@ -1015,7 +1014,7 @@ class AccomplishmentsViewerWindow(Window):
                 self.searchbar.grab_focus()
 
                 self.notebook.set_current_page(0)
-                self.searchbar_box.hide()
+                self.searchbar.hide()
 
             elif self.display_mode is DISPLAY_MODE_TROPHIES:
                 #Display the list of trophies
@@ -1045,7 +1044,7 @@ class AccomplishmentsViewerWindow(Window):
                 self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
 
                 self.notebook.set_current_page(2)
-                self.searchbar_box.show()
+                self.searchbar.show()
 
         if trophies_mode is not MYTROPHIES_FILTER_UNSPECIFIED:
             self.display_mytrophies_filtermode = trophies_mode
