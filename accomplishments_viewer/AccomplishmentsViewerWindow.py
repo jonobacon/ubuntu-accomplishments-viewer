@@ -1031,7 +1031,7 @@ class AccomplishmentsViewerWindow(Window):
                 self.searchbar.grab_focus()
 
                 self.notebook.set_current_page(1)
-                self.searchbar_box.show()
+                self.searchbarshow()
 
             elif self.display_mode is DISPLAY_MODE_OPPORTUNITIES:
 
