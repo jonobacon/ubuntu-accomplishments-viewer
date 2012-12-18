@@ -36,4 +36,8 @@ Next Version Target: 0.4
 
    [Hubert Jarosz]
    * Changed HTML embeded within python into HTML template (LP: #1079638)
+
+   [Alessandro Losavio]
+   * Fix the icon size issue in the launcher and install icons to a common
+   location (LP: 1090872)
 -------------------------------------------------------------------------
