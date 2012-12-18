@@ -1,0 +1,3 @@
+#!/bin/sh
+
+mv /usr/share/accomplishments-viewer/media/accomplishments-viewer.svg /usr/share/pixmaps/
