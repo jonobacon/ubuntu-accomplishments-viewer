@@ -1245,9 +1245,7 @@ class AccomplishmentsViewerWindow(Window):
 
             for s in tempcats:
                 for i in self.accomdb:
-                    if i["collection"] == self.display_filter_collection \
-                            and i["categories"][0] == self.display_filter_category + ":" + s \
-                            and i["accomplished"] is False:
+                    if i["collection"] == self.display_filter_collection and i["categories"][0] == self.display_filter_category + ":" + s and i["accomplished"] == False:
                         finalcats.append(s)
 
             # convert to a set to remove dupes
