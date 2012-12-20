@@ -187,7 +187,6 @@ class AccomplishmentsViewerWindow(Window):
         self.mytrophies_box_all_window = self.builder.get_object("mytrophies_box_all_window")
         self.mytrophies_notebook = self.builder.get_object("mytrophies_notebook")
         self.searchbar = self.builder.get_object("searchbar")
-        self.searchbar_box = self.builder.get_object("searchbar_box")
 
         # don't display the sub-cats scrollbars
         sb_h = self.subcats_scroll.get_hscrollbar()
@@ -1015,7 +1014,7 @@ class AccomplishmentsViewerWindow(Window):
                 self.searchbar.grab_focus()
 
                 self.notebook.set_current_page(0)
-                self.searchbar_box.hide()
+                self.searchbar.hide()
 
             elif self.display_mode is DISPLAY_MODE_TROPHIES:
                 #Display the list of trophies
@@ -1032,7 +1031,7 @@ class AccomplishmentsViewerWindow(Window):
                 self.searchbar.grab_focus()
 
                 self.notebook.set_current_page(1)
-                self.searchbar_box.show()
+                self.searchbar.show()
 
             elif self.display_mode is DISPLAY_MODE_OPPORTUNITIES:
 
@@ -1045,7 +1044,7 @@ class AccomplishmentsViewerWindow(Window):
                 self.tb_opportunities.handler_unblock_by_func(self.on_tb_opportunities_clicked)
 
                 self.notebook.set_current_page(2)
-                self.searchbar_box.show()
+                self.searchbar.show()
 
         if trophies_mode is not MYTROPHIES_FILTER_UNSPECIFIED:
             self.display_mytrophies_filtermode = trophies_mode
@@ -1310,185 +1309,181 @@ class AccomplishmentsViewerWindow(Window):
         html = None
 
         iconpath = self.libaccom.get_accom_icon_path(accomID)
-        
+
         html_tmp = ''
-        
-        html_template_file = open( os.path.join(self.datapath, "html", "trophy_details_template.html") , 'r')
-        
-        html =  html_template_file.read()
 
+        html_template_file = open(os.path.join(self.datapath, "html", "trophy_details_template.html"), 'r')
 
+        html = html_template_file.read()
 
         # CSS
         html = html.replace('{INFORMATION_CSS}', os.path.join(self.datapath, "css", "information.txt"))
         html = html.replace('{FONT_CSS}', os.path.join(self.datapath, "css", "font.txt"))
-        
+
         # <body> bkg
         html = html.replace('{BODY_BKG}', os.path.join(self.datapath, "media", "home-bkg.gif"))
-        
+
         # Title
         if "title" in data:
-           html = html.replace('{TITLE_DIV_STYLE}', '')
-           html = html.replace('{TITLE}', data['title']) 
+            html = html.replace('{TITLE_DIV_STYLE}', '')
+            html = html.replace('{TITLE}', data['title'])
         else:
-           html = html.replace('{TITLE_DIV_STYLE}', 'display: none')
-        
+            html = html.replace('{TITLE_DIV_STYLE}', 'display: none')
+
         # Social share
         if achieved and GWIBBER_OK:
-           html = html.replace('{ACCOM_ID_DIV_STYLE}', '')
-           html = html.replace('{ACCOM_ID}', 'accomID')
-           html = html.replace('{GWIBBER_SHARE}', _('+SHARE').decode('utf-8'))
+            html = html.replace('{ACCOM_ID_DIV_STYLE}', '')
+            html = html.replace('{ACCOM_ID}', 'accomID')
+            html = html.replace('{GWIBBER_SHARE}', _('+SHARE').decode('utf-8'))
         else:
-           html = html.replace('{ACCOM_ID_DIV_STYLE}', 'display: none')
-        
+            html = html.replace('{ACCOM_ID_DIV_STYLE}', 'display: none')
+
         # Accomplishment icon
         html = html.replace('{ICON_PATH}', str(iconpath))
-        
+
         # Opportunity inf
         html = html.replace('{OPP_INF}', _("Opportunity Information").decode('utf-8'))
         if "description" in data:
-           html = html.replace('{OPP_DESC}', data["description"])   
+            html = html.replace('{OPP_DESC}', data["description"])
         else:
-           html = html.replace('{OPP_DESC}', _("No information available.").decode('utf-8'))
-        
+            html = html.replace('{OPP_DESC}', _("No information available.").decode('utf-8'))
+
         # Help
         if not achieved:
-           html = html.replace('{GET_HELP}', _("Getting Help").decode('utf-8'))
-           html = html.replace('{HELP_DIV_STYLE}', '')
+            html = html.replace('{GET_HELP}', _("Getting Help").decode('utf-8'))
+            html = html.replace('{HELP_DIV_STYLE}', '')
 
-           if "help" in data: # "help" always exists, even as "None" :(
-              help = data["help"]
-              html_tmp = '' 
-              for l in help.split('\n'):
-                  channelName = l[l.find("#")+1:l.find(" ")]
-                  if l.startswith( '#'+channelName ):
-                      l = "<a style='color:#FFF' href='http://webchat.freenode.net/?channels="+channelName+"'>"+'#'+channelName+" on freenode</a>"                 
-                      html_tmp = html_tmp + "<li>" + l + "</li>"
-                  else:
-                      html_tmp = html_tmp + "<li>" + l + "</li>"
-              html = html.replace('{HELP}', html_tmp)
-              html_tmp = ''
+            if "help" in data:  # "help" always exists, even as "None" :(
+                help = data["help"]
+                html_tmp = ''
+                for l in help.split('\n'):
+                    channelName = l[l.find("#") + 1:l.find(" ")]
+                    if l.startswith('#' + channelName):
+                        l = "<a style='color:#FFF' href='http://webchat.freenode.net/?channels=" + channelName + "'>" + '#' + channelName + " on freenode</a>"
+                        html_tmp = html_tmp + "<li>" + l + "</li>"
+                    else:
+                        html_tmp = html_tmp + "<li>" + l + "</li>"
+                html = html.replace('{HELP}', html_tmp)
+                html_tmp = ''
               # print help # "None" bug
-           else:
-              html = html.replace('{HELP}', _("No help available.").decode('utf-8')) 
-                 
+            else:
+                html = html.replace('{HELP}', _("No help available.").decode('utf-8'))
+
         else:
-           html = html.replace('{HELP_DIV_STYLE}', 'display:none')
-        
-        
+            html = html.replace('{HELP_DIV_STYLE}', 'display:none')
+
         # 'Locked accomplishment' info
         if "depends" in data:
            # check if it is locked
-           if not self.libaccom.get_accom_is_unlocked(accomID):
-              if len(depstatus) > 0:
-                 html = html.replace('{OPP_LOCK_DIV_STYLE}', '')
-                 if len(depstatus) == 1:
-                    html = html.replace('{OPP_LOCK}', _("This opportunity is locked. You need to complete").decode('utf-8') + " <a href='accomplishment://" + depstatus[0]["id"] + "'><strong>" + depstatus[0]["title"] + "</strong></a> " + _("from").decode('utf-8') +" <strong>" + depstatus[0]["collection-human"] + "</strong> " + _("first").decode('utf-8') + '.')
-                    html = html.replace('{NEED_MORE_OPP}', '')
+            if not self.libaccom.get_accom_is_unlocked(accomID):
+                if len(depstatus) > 0:
+                    html = html.replace('{OPP_LOCK_DIV_STYLE}', '')
+                    if len(depstatus) == 1:
+                        html = html.replace('{OPP_LOCK}', _("This opportunity is locked. You need to complete").decode('utf-8') + " <a href='accomplishment://" + depstatus[0]["id"] + "'><strong>" + depstatus[0]["title"] + "</strong></a> " + _("from").decode('utf-8') + " <strong>" + depstatus[0]["collection-human"] + "</strong> " + _("first").decode('utf-8') + '.')
+                        html = html.replace('{NEED_MORE_OPP}', '')
 
-                 else:
-                    html = html.replace('{OPP_LOCK}', _("This opportunity is locked. You need to complete the following opportunities first:").decode('utf-8'))  
-                    html_tmp = '' 
-                    for d in depstatus:
-                       if d["accomplished"] == False:
-                          html_tmp = html_tmp + "<li class='deps_child'><a href='accomplishment://" + d["id"] + "'><strong>" + d["title"] + "</strong></a> " + _("from").decode('utf-8') +" <strong>" + d["collection-human"] + "</strong></li>"
-                    html = html.replace('{NEED_MORE_OPP}',html_tmp)
-                    html_tmp = ''     
-                
-              else:
-                 html = html.replace('{OPP_LOCK_DIV_STYLE}', 'display:none')
-           else:
-              html = html.replace('{OPP_LOCK_DIV_STYLE}', 'display:none')
+                    else:
+                        html = html.replace('{OPP_LOCK}', _("This opportunity is locked. You need to complete the following opportunities first:").decode('utf-8'))
+                        html_tmp = ''
+                        for d in depstatus:
+                            if d["accomplished"] is False:
+                                html_tmp = html_tmp + "<li class='deps_child'><a href='accomplishment://" + d["id"] + "'><strong>" + d["title"] + "</strong></a> " + _("from").decode('utf-8') + " <strong>" + d["collection-human"] + "</strong></li>"
+                        html = html.replace('{NEED_MORE_OPP}', html_tmp)
+                        html_tmp = ''
+
+                else:
+                    html = html.replace('{OPP_LOCK_DIV_STYLE}', 'display:none')
+            else:
+                html = html.replace('{OPP_LOCK_DIV_STYLE}', 'display:none')
         else:
-           html = html.replace('{OPP_LOCK_DIV_STYLE}', 'display:none')
-        
+            html = html.replace('{OPP_LOCK_DIV_STYLE}', 'display:none')
+
         #Achieved
         if achieved:
-           html = html.replace('{NOT_ACHIEVED_DIV_STYLE}', 'display:none')
-           html = html.replace('{ACHIEVED_DIV_STYLE}', '')
-           html = html.replace('{VERIFY_ICON}', os.path.join(self.datapath, "media", "verify-icon.png"))
-           if "date-accomplished" in trophydata:
-              date = trophydata["date-accomplished"]
-              html = html.replace('{TROPHY_INFOS_DATE}', _("on").decode('utf-8') + " " + date)
-           else:
-              html = html.replace('{TROPHY_INFOS_DATE}', '')
-           
-           if "needs-information" in trophydata:
-              extrainfo = trophydata["needs-information"].split(" ")
-              html_tmp = ''
-              html_tmp = html_tmp + ", " + _("using the following credentials").decode('utf-8') + ":</li><li><ul class='big'>"
-              for i in extrainfo:
-                 e = self.libaccom.get_extra_information(accomID.split("/")[0],i)
-                 html_tmp = html_tmp + "<li>" + e[0]["label"] + ": " + trophydata[i] + "</li>"
-              html_tmp = html_tmp + "</ul>"
-              html = html.replace('{TROPHY_INFOS_NEEDS}', html_tmp)
-              html_tmp = ''
-           else:
-              html = html.replace('{TROPHY_INFOS_NEEDS}', '')
-              
-           if "needs-signing" in data:
-              if data["needs-signing"] == "true" or data["needs-signing"] == "True":
-                 html = html.replace('{VERIFY_ICON}', os.path.join(self.datapath, "media", "verify-icon.png"))
-                 html = html.replace('{TROPHY_VERIFIED}', _("This trophy has been verified").decode('utf-8'))
-                 html = html.replace('{VERIFY_DIV_STYLE}', '')
-              else:
-                 html = html.replace('{VERIFY_DIV_STYLE}', 'display:none')
-           else:
-              html = html.replace('{VERIFY_DIV_STYLE}', 'display:none')
-           
+            html = html.replace('{NOT_ACHIEVED_DIV_STYLE}', 'display:none')
+            html = html.replace('{ACHIEVED_DIV_STYLE}', '')
+            html = html.replace('{VERIFY_ICON}', os.path.join(self.datapath, "media", "verify-icon.png"))
+            if "date-accomplished" in trophydata:
+                date = trophydata["date-accomplished"]
+                html = html.replace('{TROPHY_INFOS_DATE}', _("on").decode('utf-8') + " " + date)
+            else:
+                html = html.replace('{TROPHY_INFOS_DATE}', '')
+
+            if "needs-information" in trophydata:
+                extrainfo = trophydata["needs-information"].split(" ")
+                html_tmp = ''
+                html_tmp = html_tmp + ", " + _("using the following credentials").decode('utf-8') + ":</li><li><ul class='big'>"
+                for i in extrainfo:
+                    e = self.libaccom.get_extra_information(accomID.split("/")[0], i)
+                    html_tmp = html_tmp + "<li>" + e[0]["label"] + ": " + trophydata[i] + "</li>"
+                html_tmp = html_tmp + "</ul>"
+                html = html.replace('{TROPHY_INFOS_NEEDS}', html_tmp)
+                html_tmp = ''
+            else:
+                html = html.replace('{TROPHY_INFOS_NEEDS}', '')
+
+            if "needs-signing" in data:
+                if data["needs-signing"] == "true" or data["needs-signing"] == "True":
+                    html = html.replace('{VERIFY_ICON}', os.path.join(self.datapath, "media", "verify-icon.png"))
+                    html = html.replace('{TROPHY_VERIFIED}', _("This trophy has been verified").decode('utf-8'))
+                    html = html.replace('{VERIFY_DIV_STYLE}', '')
+                else:
+                    html = html.replace('{VERIFY_DIV_STYLE}', 'display:none')
+            else:
+                html = html.replace('{VERIFY_DIV_STYLE}', 'display:none')
+
         else:
-           html = html.replace('{TROPHY_INFOS_DATE}', '')
-           html = html.replace('{TROPHY_INFOS_NEEDS}', '')
-           html = html.replace('{ACHIEVED_DIV_STYLE}', 'display:none')
-           if "needs-signing" in data:
-              if data["needs-signing"] == "true" or data["needs-signing"] == "True":
-                 # Here in HTML code is displaying images via CSS.
-                 html = html.replace('{REQ_VERIFY}', _("This opportunity requires verification").decode('utf-8'))
-                 html = html.replace('{NOT_ACHIEVED_DIV_STYLE}', '')
-              else:
-                 html = html.replace('{NOT_ACHIEVED_DIV_STYLE}', 'display:none')
-           else:
-              html = html.replace('{NOT_ACHIEVED_DIV_STYLE}', 'display:none')
-        
+            html = html.replace('{TROPHY_INFOS_DATE}', '')
+            html = html.replace('{TROPHY_INFOS_NEEDS}', '')
+            html = html.replace('{ACHIEVED_DIV_STYLE}', 'display:none')
+            if "needs-signing" in data:
+                if data["needs-signing"] == "true" or data["needs-signing"] == "True":
+                    # Here in HTML code is displaying images via CSS.
+                    html = html.replace('{REQ_VERIFY}', _("This opportunity requires verification").decode('utf-8'))
+                    html = html.replace('{NOT_ACHIEVED_DIV_STYLE}', '')
+                else:
+                    html = html.replace('{NOT_ACHIEVED_DIV_STYLE}', 'display:none')
+            else:
+                html = html.replace('{NOT_ACHIEVED_DIV_STYLE}', 'display:none')
+
         # JS
         html = html.replace('{ACCOM_DET_M}', _("Accomplishment Details [-]").decode('utf-8'))
         html = html.replace('{ACCOM_DET_P}', _("Accomplishment Details [+]").decode('utf-8'))
-        
+
         if achieved:
-           html = html.replace('{ACC_BODY_DIV_STYLE}', 'display:none')
-           html = html.replace('{ACCOM_DET}', _("Accomplishment Details [+]").decode('utf-8'))
-           html = html.replace('{JS_TRIGGER_DIV_STYLE}', '')
+            html = html.replace('{ACC_BODY_DIV_STYLE}', 'display:none')
+            html = html.replace('{ACCOM_DET}', _("Accomplishment Details [+]").decode('utf-8'))
+            html = html.replace('{JS_TRIGGER_DIV_STYLE}', '')
         else:
-           html = html.replace('{JS_TRIGGER_DIV_STYLE}', 'display:none')
-           html = html.replace('{ACC_BODY_DIV_STYLE}', '')
-                
+            html = html.replace('{JS_TRIGGER_DIV_STYLE}', 'display:none')
+            html = html.replace('{ACC_BODY_DIV_STYLE}', '')
+
         # Summary
         if "summary" in data:
-           summary = data["summary"]
-           html_tmp = ''
-           for l in summary.split('\n'):
-              html_tmp = html_tmp  + "<p>" + l + "</p>"
-           html = html.replace('{ACC_SUMMARY}', html_tmp)
-           html_tmp = ''
-           html = html.replace('{ACC_SUMMARY_DIV_STYLE}', '')
+            summary = data["summary"]
+            html_tmp = ''
+            for l in summary.split('\n'):
+                html_tmp = html_tmp + "<p>" + l + "</p>"
+            html = html.replace('{ACC_SUMMARY}', html_tmp)
+            html_tmp = ''
+            html = html.replace('{ACC_SUMMARY_DIV_STYLE}', '')
         else:
-           html = html.replace('{ACC_SUMMARY_DIV_STYLE}', 'display:none')
-        
+            html = html.replace('{ACC_SUMMARY_DIV_STYLE}', 'display:none')
+
         #Steps
         if "steps" in data:
-           html = html.replace('{HOWTO}', _("How to accomplish this opportunity").decode('utf-8'))           
-           steps = data["steps"]
-           html_tmp = ''
-           for l in steps.split('\n'):
-              html_tmp = html_tmp + "<li class='icon-pushpin'>" + l + "</li>"
-           html = html.replace('{HOWTO_STEPS}', html_tmp)
-           html_tmp = ''
-           html = html.replace('{HOWTO_DIV_STYLE}', '')
+            html = html.replace('{HOWTO}', _("How to accomplish this opportunity").decode('utf-8'))
+            steps = data["steps"]
+            html_tmp = ''
+            for l in steps.split('\n'):
+                html_tmp = html_tmp + "<li class='icon-pushpin'>" + l + "</li>"
+            html = html.replace('{HOWTO_STEPS}', html_tmp)
+            html_tmp = ''
+            html = html.replace('{HOWTO_DIV_STYLE}', '')
         else:
-           html = html.replace('{HOWTO_DIV_STYLE}', 'display:none')
+            html = html.replace('{HOWTO_DIV_STYLE}', 'display:none')
 
-
-        # Tips N' Tricks              
+        # Tips N' Tricks
         showtipspitfalls = False
         haspitfalls = False
         hastips = False
@@ -1500,74 +1495,65 @@ class AccomplishmentsViewerWindow(Window):
                     hastips = True
             except:
                 hastips = False
-                
+
             try:
                 if not data["pitfalls"] == "None":
-                    showtipspitfalls = True                                       
+                    showtipspitfalls = True
                     haspitfalls = True
             except:
                 haspitfalls = False
-                
+
+        if showtipspitfalls is True:
+            html = html.replace('{SHOW_TIPS_DIV_STYLE}', '')
+            html = html.replace('{T_N_T}', _("Tips and Tricks").decode('utf-8') + ":")
+
+            if hastips is True:
+                tips = data["tips"]
+            else:
+                tips = None
+
+            if tips is None:
+                html = html.replace('{TIPS}', "<li class='icon-ok'>" + _("None.").decode('utf-8') + "</li>")
+            else:
+                html_tmp = ''
+                for t in tips.split('\n'):
+                    html_tmp = html_tmp + "<li class='icon-ok'>" + t + "</li>"
+                html = html.replace('{TIPS}', html_tmp)
+                html_tmp = ''
+
+            html = html.replace('{TO_AVOID}', _("Pitfalls To Avoid").decode('utf-8') + ":")
+
+            if haspitfalls is True:
+                pitfalls = data["pitfalls"]
+            else:
+                pitfalls = None
+
+            if pitfalls is None:
+                html = html.replace('{AVOID}', "<li class='icon-remove'>" + _("None.").decode('utf-8') + "</li>")
+            else:
+                html_tmp = ''
+                for p in pitfalls.split('\n'):
+                    html_tmp = html_tmp + "<li class='icon-remove'>" + p + "</li>"
+                html = html.replace('{AVOID}', html_tmp)
+                html_tmp = ''
+
         else:
-            showtipspitfalls == False
-            
-            
-        if showtipspitfalls == True:
-           html = html.replace('{SHOW_TIPS_DIV_STYLE}', '')
-           html = html.replace('{T_N_T}', _("Tips and Tricks").decode('utf-8')+":")
-           
-           if hastips == True:
-              tips = data["tips"]
-           else:
-              tips = None
-            
-           if tips == None:
-              html = html.replace('{TIPS}', "<li class='icon-ok'>" + _("None.").decode('utf-8') + "</li>")
-           else:
-              html_tmp = ''
-              for t in tips.split('\n'):
-                 html_tmp = html_tmp + "<li class='icon-ok'>" + t + "</li>"   
-              html = html.replace('{TIPS}', html_tmp)
-              html_tmp = ''
-              
-              
-           html = html.replace('{TO_AVOID}', _("Pitfalls To Avoid").decode('utf-8')+":")
-           
-           if haspitfalls == True:
-              pitfalls = data["pitfalls"]
-           else:
-              pitfalls = None
-           
-           if pitfalls == None:
-              html = html.replace('{AVOID}', "<li class='icon-remove'>" + _("None.").decode('utf-8') + "</li>")
-           else:
-              html_tmp = ''
-              for p in pitfalls.split('\n'):
-                 html_tmp = html_tmp + "<li class='icon-remove'>" + p + "</li>"   
-              html = html.replace('{AVOID}', html_tmp)
-              html_tmp = ''
-                      
-        else:
-           html = html.replace('{SHOW_TIPS_DIV_STYLE}', 'display:none')
-        
-        
+            html = html.replace('{SHOW_TIPS_DIV_STYLE}', 'display:none')
+
         # Links
         if "links" in data:
-           html = html.replace('{LINKS_DIV_STYLE}', '')
-           links = data["links"]
-           html = html.replace('{FURTHER_READ}', _("Further Reading").decode('utf-8'))
-           
-           html_tmp = ''
-           for l in links.split('\n'):
-              html_tmp = html_tmp + "<li><a href='" + l + "'><i class='icon-external-link icon-large'></i>" + l + "</a></li>"           
-           html = html.replace('{LINKS}', html_tmp)
-           html_tmp = ''
-        else:
-           html = html.replace('{LINKS_DIV_STYLE}', 'display:none')
-        
-        
-    # End HTML template
+            html = html.replace('{LINKS_DIV_STYLE}', '')
+            links = data["links"]
+            html = html.replace('{FURTHER_READ}', _("Further Reading").decode('utf-8'))
 
-       
+            html_tmp = ''
+            for l in links.split('\n'):
+                html_tmp = html_tmp + "<li><a href='" + l + "'><i class='icon-external-link icon-large'></i>" + l + "</a></li>"
+            html = html.replace('{LINKS}', html_tmp)
+            html_tmp = ''
+        else:
+            html = html.replace('{LINKS_DIV_STYLE}', 'display:none')
+
+    # End HTML template
         self.webview.load_html_string(html, "file:///")
         self.webview.show()

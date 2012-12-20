@@ -98,8 +98,8 @@ class Builder(Gtk.Builder):
 
             connections = [
                 (name,
-                ele_signal.attrib['name'],
-                ele_signal.attrib['handler']) for ele_signal in ele_signals]
+                 ele_signal.attrib['name'],
+                 ele_signal.attrib['handler']) for ele_signal in ele_signals]
 
             if connections:
                 self.connections.extend(connections)

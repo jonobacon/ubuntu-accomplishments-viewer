@@ -7,36 +7,36 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-10-20 21:15-0600\n"
+"POT-Creation-Date: 2012-12-18 13:43-0700\n"
 "PO-Revision-Date: 2012-09-22 00:33+0000\n"
 "Last-Translator: Pavel Ivanov <ivpavig@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-06 05:03+0000\n"
-"X-Generator: Launchpad (build 16341)\n"
+"X-Launchpad-Export-Date: 2012-12-19 05:37+0000\n"
+"X-Generator: Launchpad (build 16378)\n"
 
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:69
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:102
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:66
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:99
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:8
 msgid "Publish..."
 msgstr "Опубликовать"
 
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:71
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:96
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:68
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:93
 msgid "Stop Publishing"
 msgstr "Прекратить публикацию"
 
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:95
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:92
 msgid "Please see your web browser to continue..."
 msgstr "Пожалуйста, откройте ваш браузер чтобы продолжить"
 
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:101
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:98
 msgid "Trophies are no longer published."
 msgstr "Трофеи больше не публикуются"
 
-#: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:48
+#: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:50
 msgid "Collection Authors:"
 msgstr "Авторы коллекции:"
 
@@ -88,13 +88,13 @@ msgid ""
 "# with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
 msgstr ""
 
-#: ../accomplishments_viewer/__init__.py:37
+#: ../accomplishments_viewer/__init__.py:39
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
 msgstr ""
 "Показывать сообщения отладки (-vv показывает также сообщения "
 "accomplishments_daemon_lib)"
 
-#: ../accomplishments_viewer/__init__.py:40
+#: ../accomplishments_viewer/__init__.py:42
 msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad')"
@@ -136,11 +136,11 @@ msgstr ""
 msgid "<b>Publish Trophies Online</b>"
 msgstr "<b>Опубликовать трофеи онлайн</b>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:209
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:246
 msgid "Share Trophy"
 msgstr "Поделиться трофеями"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:215
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:252
 msgid ""
 "<b>Always add the link to your trophy on the web when sharing a trophy.</b>\n"
 "This link works as a <b>proof</b> that you have really accomplished this "
@@ -151,89 +151,93 @@ msgstr ""
 "Эта ссылка является <b>доказательством</b> того, что вы действительно "
 "получили данный трофей."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:304
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:338
 msgid "Reloading accomplishments collections..."
 msgstr ""
 
-#. apparently as that process daemonizes it will not get killed when one closes the client
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:465
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:481
 msgid "Starting the daemon..."
 msgstr ""
 
-#. Add 'All' button
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:571
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:36
-msgid "All"
-msgstr "Все"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:614
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:577
 #, python-format
 msgid "I've just got the trophy '%s' in #ubuntu accomplishments!"
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:635
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:598
 msgid "Your trophies are not yet published"
 msgstr "Ваши трофеи еще не опубликованны"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:636
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:599
 msgid "You can do it from Edit->Preferences menu."
 msgstr "Вы можете сделать это из меню Правка->Настройки"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:949
-msgid "everything"
-msgstr ""
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1011
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:918
 msgid "Today"
 msgstr "Сегодня"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1014
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:920
 msgid "This Week"
 msgstr "На этой неделе"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1017
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:922
 msgid "This Month"
 msgstr "В этом месяце"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1020
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:924
 msgid "Last Six Months"
 msgstr "Последние 6 месяцев"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1023
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
 msgid "Earlier"
 msgstr "раньше"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1218
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1065
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1070
+msgid "everything"
+msgstr ""
+
+#. Add 'All' button
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1262
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
+msgid "All"
+msgstr "Все"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1339
+msgid "+SHARE"
+msgstr ""
+
+#. Opportunity inf
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1347
 msgid "Opportunity Information"
 msgstr "Информация о возможностях"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1226
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1351
 msgid "No information available."
 msgstr "Информация недоступна."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1236
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1355
 msgid "Getting Help"
 msgstr "Получение помощи"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1250
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1372
 msgid "No help available."
 msgstr "Помощь недоступна."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1265
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1385
 msgid "This opportunity is locked. You need to complete"
 msgstr "Эта возможность заблокирована. Вам необходимо завершить"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1265
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1270
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1385
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1393
 msgid "from"
 msgstr "от"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1265
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1385
 msgid "first"
 msgstr "первые"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1267
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1389
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
@@ -241,55 +245,51 @@ msgstr ""
 "Данная возможность заблокирована. Вам нужно сначала закончить следующие "
 "возможности"
 
-#. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1274
-msgid "This trophy <strong>was awarded</strong>"
-msgstr "Этот трофей <strong>был получен</strong>"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1278
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1411
 msgid "on"
 msgstr "на"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1282
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1418
 msgid "using the following credentials"
 msgstr "используя следующие данные входа"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1292
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1431
 msgid "This trophy has been verified"
 msgstr "Этот трофей уже проверен"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1299
+#. Here in HTML code is displaying images via CSS.
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1445
 msgid "This opportunity requires verification"
 msgstr "Необходима проверка этой возможности"
 
-#. script for showing details...
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1311
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1314
+#. JS
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1453
 msgid "Accomplishment Details [-]"
 msgstr "Подробности [-]"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1319
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1454
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1458
 msgid "Accomplishment Details [+]"
 msgstr "Подробности [+]"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1341
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1478
 msgid "How to accomplish this opportunity"
 msgstr "Как исполнить эту возможность"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1376
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1516
 msgid "Tips and Tricks"
 msgstr "Полезные советы"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1386
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1406
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1524
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1541
 msgid "None."
 msgstr "Нет."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1396
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1533
 msgid "Pitfalls To Avoid"
 msgstr "Чтобы избежать ошибок"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1419
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1557
 msgid "Further Reading"
 msgstr "Дополнительная информация"
 
@@ -350,10 +350,6 @@ msgstr ""
 "Вы можете отключить это здесь: <i>Правка</i> -> <i>Параметры</i>."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
-msgid "Accomplishments Service"
-msgstr ""
-
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
 msgid ""
 "<b>To use Ubuntu Accomplishments you need to have at least one "
 "accomplishments collection installed.</b>\n"
@@ -369,11 +365,7 @@ msgstr ""
 "href=\"https://wiki.ubuntu.com/Accomplishments/DesktopAppDocs/NoCollections\""
 ">Узнать больше</a>"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
-msgid "No Collections Installed"
-msgstr "Отсутствуют установленные коллекции достижений"
-
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid ""
 "<b>Some opportunities need additional information to verify their "
 "completion.</b>\n"
@@ -385,19 +377,15 @@ msgstr ""
 "\n"
 "Вы можете отредактировать это позже: <i>Правка->Идентификация…</i>"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
 msgid "Edit credentials"
 msgstr "Редактирование данных входа"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "Later"
 msgstr "Позже"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
-msgid "Additional information required..."
-msgstr "Необходима дополнительная информация…"
-
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid ""
 "<b>Some opportunities require verification when completed. To do this you "
 "will need an Ubuntu One account and agree to have those opportunities "
@@ -412,7 +400,7 @@ msgstr ""
 "нажмите на кнопку ниже для проверки наличия аккаунта Ubuntu One.Если у вас "
 "нет аккаунта, то это займет секунду для регистрации.Аккаунт бесплатен"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
 msgid ""
 "Ubuntu One is a online service that is Free to use for syncing files and "
 "other features. It is neatly integrated into your Ubuntu desktop.\n"
@@ -432,34 +420,38 @@ msgstr ""
 "Правка→Идентификация. Эта информация не становится публичной и не "
 "раскрывается другим людям или компаниям."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid "Learn more..."
 msgstr "Узнать больше..."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:30
 msgid "Don't Use Ubuntu One"
 msgstr "Не используйте Ubuntu One"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:34
-msgid "Ubuntu One account required"
-msgstr "Необходим аккаунт Ubuntu One"
-
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:35
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
 msgid "Get Started"
 msgstr "Начнём!"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:37
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
 msgid "Latest"
 msgstr "Последние"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:38
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:34
+msgid "page 1"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:35
+msgid "page 2"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:36
 msgid "Show me"
 msgstr "Показать"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:39
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:37
 msgid "opportunities for"
 msgstr "возможности для"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:40
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:38
 msgid "Show Locked"
 msgstr "Показать заблокированные"

@@ -7,44 +7,44 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-10-20 21:15-0600\n"
+"POT-Creation-Date: 2012-12-18 13:43-0700\n"
 "PO-Revision-Date: 2012-08-02 18:55+0000\n"
 "Last-Translator: Shahnoor Ashraf <kaziweb1@gmail.com>\n"
 "Language-Team: Bengali <bn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-06 05:03+0000\n"
-"X-Generator: Launchpad (build 16341)\n"
+"X-Launchpad-Export-Date: 2012-12-19 05:37+0000\n"
+"X-Generator: Launchpad (build 16378)\n"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
 msgid "<b>Publish Trophies Online</b>"
 msgstr "<b>ট্রফিগুলো অনলাইনে প্রকাশ করুন</b>"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:209
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:246
 msgid "Share Trophy"
 msgstr "ট্রফি শেয়ার করুন"
 
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:69
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:102
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:66
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:99
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:8
 msgid "Publish..."
 msgstr "প্রকাশ করুন..."
 
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:71
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:96
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:68
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:93
 msgid "Stop Publishing"
 msgstr "প্রকাশ করা বন্ধ করুন"
 
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:95
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:92
 msgid "Please see your web browser to continue..."
 msgstr "আপনার ওয়েব ব্রাউজার দেখুন..."
 
-#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:101
+#: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:98
 msgid "Trophies are no longer published."
 msgstr "আর কোন ট্রফি প্রকাশিত হয় নাই."
 
-#: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:48
+#: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:50
 msgid "Collection Authors:"
 msgstr "লেখক সংগ্রহ:"
 
@@ -96,11 +96,11 @@ msgid ""
 "# with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
 msgstr ""
 
-#: ../accomplishments_viewer/__init__.py:37
+#: ../accomplishments_viewer/__init__.py:39
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
 msgstr "ডিবাগ বার্তাগুলি দেখান (-vv debugs accomplishments_viewer_lib also)"
 
-#: ../accomplishments_viewer/__init__.py:40
+#: ../accomplishments_viewer/__init__.py:42
 msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad')"
@@ -138,7 +138,7 @@ msgstr ""
 "ক্লিক করুন.\n"
 "আপনি <i>অপ্রকাশ</ i> করতে পারেন পরে যদি আপনি চান."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:215
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:252
 msgid ""
 "<b>Always add the link to your trophy on the web when sharing a trophy.</b>\n"
 "This link works as a <b>proof</b> that you have really accomplished this "
@@ -149,144 +149,144 @@ msgstr ""
 "আপনি সত্যই ট্রফিটি নিষ্পাদন করেছেন তার <b>প্রমাণ</b> হিসাবে এই লিংকটি কাজ "
 "করে."
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:304
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:338
 msgid "Reloading accomplishments collections..."
 msgstr ""
 
-#. apparently as that process daemonizes it will not get killed when one closes the client
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:465
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:481
 msgid "Starting the daemon..."
 msgstr ""
 
-#. Add 'All' button
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:571
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:36
-msgid "All"
-msgstr "সবগুলো"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:614
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:577
 #, python-format
 msgid "I've just got the trophy '%s' in #ubuntu accomplishments!"
 msgstr ""
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:635
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:598
 msgid "Your trophies are not yet published"
 msgstr "আপনার ট্রফিগুলো এখনও প্রকাশ করা হয়নি"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:636
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:599
 msgid "You can do it from Edit->Preferences menu."
 msgstr "Edit->Preference মেন্যু থেকে কাজটি করতে পারেন।"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:936
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:949
-msgid "everything"
-msgstr "সবকিছু"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1011
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:918
 msgid "Today"
 msgstr "আজ"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1014
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:920
 msgid "This Week"
 msgstr "এই সপ্তাহে"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1017
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:922
 msgid "This Month"
 msgstr "এই মাসে"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1020
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:924
 msgid "Last Six Months"
 msgstr "গত ছয় মাসে"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1023
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
 msgid "Earlier"
 msgstr "আগে"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1218
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1065
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1070
+msgid "everything"
+msgstr "সবকিছু"
+
+#. Add 'All' button
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1262
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
+msgid "All"
+msgstr "সবগুলো"
+
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1339
+msgid "+SHARE"
+msgstr ""
+
+#. Opportunity inf
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1347
 msgid "Opportunity Information"
 msgstr "সুযোগ তথ্য"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1226
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1351
 msgid "No information available."
 msgstr "কোন তথ্য নাই"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1236
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1355
 msgid "Getting Help"
 msgstr "সহায়তা নিন"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1250
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1372
 msgid "No help available."
 msgstr "কোন সহায়তা নাই"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1265
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1385
 msgid "This opportunity is locked. You need to complete"
 msgstr "এই সুযোগটি বন্ধ. আপনার শেষ করা প্রোয়োজন"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1265
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1270
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1385
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1393
 msgid "from"
 msgstr "থেকে"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1265
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1385
 msgid "first"
 msgstr "প্রথম"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1267
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1389
 msgid ""
 "This opportunity is locked. You need to complete the following opportunities "
 "first:"
 msgstr ""
 "এই সুযোগ তালাবদ্ধ. আপনার প্রথমে নিম্নলিখিত সুযোগগুলি সম্পূর্ণ করা প্রয়োজন."
 
-#. achieved
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1274
-msgid "This trophy <strong>was awarded</strong>"
-msgstr "এই ট্রফিটি <strong>পুরস্কৃত হয়েছে</strong>"
-
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1278
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1411
 msgid "on"
 msgstr "সচল"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1282
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1418
 msgid "using the following credentials"
 msgstr "নিম্নলিখিত প্রমাণপ্রত্রাদি ব্যবহার করে"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1292
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1431
 msgid "This trophy has been verified"
 msgstr "এই ট্রফি যাচাই করা হয়েছে"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1299
+#. Here in HTML code is displaying images via CSS.
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1445
 msgid "This opportunity requires verification"
 msgstr "এই সুযোগ যাচাই প্রয়োজন"
 
-#. script for showing details...
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1311
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1314
+#. JS
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1453
 msgid "Accomplishment Details [-]"
 msgstr "নিষ্পাদন বিবরণ [-]"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1319
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1454
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1458
 msgid "Accomplishment Details [+]"
 msgstr "নিষ্পাদন বিবরণ [+]"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1341
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1478
 msgid "How to accomplish this opportunity"
 msgstr "কিভাবে এই সুযোগ নিষ্পাদন করা যায়"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1376
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1516
 msgid "Tips and Tricks"
 msgstr "পরামর্শ এবং কৌশলগুলি"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1386
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1406
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1524
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1541
 msgid "None."
 msgstr "কোনটাই না"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1396
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1533
 msgid "Pitfalls To Avoid"
 msgstr "ভ্রান্তি এড়ানোর জন্য"
 
-#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1419
+#: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1557
 msgid "Further Reading"
 msgstr "আরও পড়তে"
 
@@ -348,10 +348,6 @@ msgstr ""
 "নিষ্ক্রিয় করতে সক্ষম হবেন  ."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:15
-msgid "Accomplishments Service"
-msgstr "নিষ্পাদন পরিষেবা"
-
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:16
 msgid ""
 "<b>To use Ubuntu Accomplishments you need to have at least one "
 "accomplishments collection installed.</b>\n"
@@ -361,11 +357,7 @@ msgid ""
 ">Learn More</a>"
 msgstr ""
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:19
-msgid "No Collections Installed"
-msgstr ""
-
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:20
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid ""
 "<b>Some opportunities need additional information to verify their "
 "completion.</b>\n"
@@ -377,19 +369,15 @@ msgstr ""
 "<i>Edit->সনাক্তকরণ...</i> : ব্যবহার করে আপনি এই তথ্য পরবর্তিতে যেকোন সময় "
 "পরিবর্তন করতে পারবেন."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
 msgid "Edit credentials"
 msgstr "প্রমাণপ্রত্রাদি সম্পাদনা করুন"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:24
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "Later"
 msgstr "পরবর্তীতে"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:25
-msgid "Additional information required..."
-msgstr "অতিরিক্ত তথ্য প্রয়োজন..."
-
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid ""
 "<b>Some opportunities require verification when completed. To do this you "
 "will need an Ubuntu One account and agree to have those opportunities "
@@ -405,7 +393,7 @@ msgstr ""
 "আপনার একটি উবুন্টু একাউন্ট থাকলে নিচের বোতামটিতে টিক দিন. যদি আপনার না থাকে, "
 "আমরা এক সেকেন্ড নিব;  একাউন্টটি বিনামূল্যের."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
 msgid ""
 "Ubuntu One is a online service that is Free to use for syncing files and "
 "other features. It is neatly integrated into your Ubuntu desktop.\n"
@@ -426,34 +414,38 @@ msgstr ""
 "শুধুমাত্র সেই তথ্য সার্ভারের সাথে বিনিময় করা হয় - এই তথ্য অন্য কারো সাথে "
 "অথবা কোন কোম্পানির সাথে বিনিময় হয় না."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid "Learn more..."
 msgstr "আরও জানুন..."
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:30
 msgid "Don't Use Ubuntu One"
 msgstr "উবুন্টু ওয়ান ব্যবহার করবেন না"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:34
-msgid "Ubuntu One account required"
-msgstr "উবুন্টু ওয়ান অ্যাকাউন্টের প্রয়োজন"
-
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:35
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
 msgid "Get Started"
 msgstr "শুরু করুন"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:37
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
 msgid "Latest"
 msgstr "সাম্প্রতিকতম"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:38
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:34
+msgid "page 1"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:35
+msgid "page 2"
+msgstr ""
+
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:36
 msgid "Show me"
 msgstr "আমাকে দেখান"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:39
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:37
 msgid "opportunities for"
 msgstr "সুযোগের"
 
-#: ../data/ui/AccomplishmentsViewerWindow.ui.h:40
+#: ../data/ui/AccomplishmentsViewerWindow.ui.h:38
 msgid "Show Locked"
 msgstr "বন্ধ দেখান"

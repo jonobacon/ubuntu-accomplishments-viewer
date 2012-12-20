@@ -5,6 +5,6 @@ _X-GNOME-FullName=Ubuntu Accomplishments Viewer
 _Comment=Accomplishments Viewer Application
 Categories=Utility;
 Exec=accomplishments-viewer
-Icon=/opt/accomplishments/share/accomplishments-viewer/media/accomplishments-viewer.svg
+Icon=accomplishments-viewer
 Terminal=false
 Type=Application

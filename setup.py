@@ -2,16 +2,16 @@
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 ### BEGIN LICENSE
 # Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>
-# This program is free software: you can redistribute it and/or modify it 
-# under the terms of the GNU General Public License version 3, as published 
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 3, as published
 # by the Free Software Foundation.
-# 
-# This program is distributed in the hope that it will be useful, but 
-# WITHOUT ANY WARRANTY; without even the implied warranties of 
-# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR 
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranties of
+# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
 # PURPOSE.  See the GNU General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License along 
+#
+# You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 ### END LICENSE
 
@@ -27,7 +27,8 @@ except ImportError:
     sys.exit(1)
 assert DistUtilsExtra.auto.__version__ >= '2.18', 'needs DistUtilsExtra.auto >= 2.18'
 
-def update_config(libdir, values = {}):
+
+def update_config(libdir, values={}):
 
     filename = os.path.join(libdir, 'accomplishments_viewer_lib/accomplishments_viewerconfig.py')
     oldvalues = {}
@@ -36,7 +37,7 @@ def update_config(libdir, values = {}):
         fout = file(filename + '.new', 'w')
 
         for line in fin:
-            fields = line.split(' = ') # Separate variable from value
+            fields = line.split(' = ')  # Separate variable from value
             if fields[0] in values:
                 oldvalues[fields[0]] = fields[1].strip()
                 line = "%s = %s\n" % (fields[0], values[fields[0]])
@@ -46,7 +47,7 @@ def update_config(libdir, values = {}):
         fout.close()
         fin.close()
         os.rename(fout.name, fin.name)
-    except (OSError, IOError), e:
+    except (OSError, IOError):
         print ("ERROR: Can't find %s" % filename)
         sys.exit(1)
     return oldvalues
@@ -80,6 +81,7 @@ def move_desktop_file(root, target_data, prefix):
 
     return desktop_file
 
+
 def update_desktop_file(filename, target_pkgdata, target_scripts):
 
     try:
@@ -88,7 +90,7 @@ def update_desktop_file(filename, target_pkgdata, target_scripts):
 
         for line in fin:
             if 'Icon=' in line:
-                line = "Icon=%s\n" % (target_pkgdata + 'media/accomplishments-viewer.svg')
+                line = "Icon=%s\n" % ('accomplishments-viewer')
             elif 'Exec=' in line:
                 cmd = line.split("=")[1].split(None, 1)
                 line = "Exec=%s" % (target_scripts + 'accomplishments-viewer')
@@ -100,9 +102,10 @@ def update_desktop_file(filename, target_pkgdata, target_scripts):
         fout.close()
         fin.close()
         os.rename(fout.name, fin.name)
-    except (OSError, IOError), e:
+    except (OSError, IOError):
         print ("ERROR: Can't find %s" % filename)
         sys.exit(1)
+
 
 def compile_schemas(root, target_data):
     if target_data == '/usr/':
@@ -129,7 +132,7 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
         update_desktop_file(desktop_file, target_pkgdata, target_scripts)
         compile_schemas(self.root, target_data)
 
-        
+
 ##################################################################################
 ###################### YOU SHOULD MODIFY ONLY WHAT IS BELOW ######################
 ##################################################################################
@@ -144,5 +147,4 @@ DistUtilsExtra.auto.setup(
     long_description='Ubuntu Accomplishments opportunities and trophies viewer.',
     url='https://launchpad.net/ubuntu-accomplishments-viewer',
     cmdclass={'install': InstallAndUpdateDataDirectory}
-    )
-
+)
