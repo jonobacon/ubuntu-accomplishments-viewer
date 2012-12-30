@@ -8,33 +8,33 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-12-18 13:43-0700\n"
-"PO-Revision-Date: 2012-05-25 01:53+0000\n"
+"PO-Revision-Date: 2012-12-30 01:58+0000\n"
 "Last-Translator: Xuacu Saturio <xuacusk8@gmail.com>\n"
 "Language-Team: Asturian <ast@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-19 05:37+0000\n"
+"X-Launchpad-Export-Date: 2012-12-30 05:32+0000\n"
 "X-Generator: Launchpad (build 16378)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:66
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:99
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:8
 msgid "Publish..."
-msgstr ""
+msgstr "Espublizar..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:68
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:93
 msgid "Stop Publishing"
-msgstr ""
+msgstr "Dexar d'espublizar"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:92
 msgid "Please see your web browser to continue..."
-msgstr ""
+msgstr "Por favor, mira'l to navegador pa siguir..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:98
 msgid "Trophies are no longer published."
-msgstr ""
+msgstr "Los trofeos yá nun s'espublicen"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:50
 msgid "Collection Authors:"
@@ -46,11 +46,11 @@ msgstr "Visor de llogros"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "Ubuntu Accomplishments Viewer"
-msgstr ""
+msgstr "Visor de llogros d'Ubuntu"
 
 #: ../accomplishments-viewer.desktop.in.h:3
 msgid "Accomplishments Viewer Application"
-msgstr ""
+msgstr "Aplicación Visor de llogros"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
@@ -69,7 +69,7 @@ msgstr ""
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>"
-msgstr ""
+msgstr "Copyright © 2012 Jono Bacon <jono@ubuntu.com>"
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:2
 msgid ""
@@ -99,6 +99,8 @@ msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad')"
 msgstr ""
+"Amuesa información tocante a la ID del llogru dau (p.ex. «ubuntu-"
+"community/registered-on-launchpad»)"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
@@ -126,14 +128,17 @@ msgid ""
 "button.\n"
 "You can <i>Unpublish</i> later if you want to."
 msgstr ""
+"Pa espublizar los trofeos en llinia y q'otros los vean, calca nel botón "
+"<i>Espublizar</i>.\n"
+"Si quies, más sero podrás <i>Desaniciar l'espublizamientu</i>."
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
 msgid "<b>Publish Trophies Online</b>"
-msgstr ""
+msgstr "<b>Espublizar Trofeos en llinia</b>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:246
 msgid "Share Trophy"
-msgstr ""
+msgstr "Compartir troféu"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:252
 msgid ""
@@ -141,62 +146,66 @@ msgid ""
 "This link works as a <b>proof</b> that you have really accomplished this "
 "trophy."
 msgstr ""
+"<b>Amiesta siempres l'enllaz al troféu na web cuando compartas un "
+"troféu.</b>\n"
+"L'enllaz funciona como <b>prueba</b> de que consiguisti realmente esti "
+"troféu."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:338
 msgid "Reloading accomplishments collections..."
-msgstr ""
+msgstr "Recargando les coleiciones de llogros…"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:481
 msgid "Starting the daemon..."
-msgstr ""
+msgstr "Aniciando'l demoniu…"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:577
 #, python-format
 msgid "I've just got the trophy '%s' in #ubuntu accomplishments!"
-msgstr ""
+msgstr "¡Consiguí de recién el troféu «%s» nos llogros d'#ubuntu!"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:598
 msgid "Your trophies are not yet published"
-msgstr ""
+msgstr "Entá nun s'espublizaron los tos trofeos"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:599
 msgid "You can do it from Edit->Preferences menu."
-msgstr ""
+msgstr "Pues facelo dende'l menú Editar ‣ Preferencies."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:918
 msgid "Today"
-msgstr ""
+msgstr "Güei"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:920
 msgid "This Week"
-msgstr ""
+msgstr "Esta selmana"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:922
 msgid "This Month"
-msgstr ""
+msgstr "Esti mes"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:924
 msgid "Last Six Months"
-msgstr ""
+msgstr "Caberos seis meses"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
 msgid "Earlier"
-msgstr ""
+msgstr "Primero"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1065
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1070
 msgid "everything"
-msgstr ""
+msgstr "too"
 
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1262
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
 msgid "All"
-msgstr ""
+msgstr "Toos"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1339
 msgid "+SHARE"
-msgstr ""
+msgstr "+COMPARTIR"
 
 #. Opportunity inf
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1347
@@ -256,12 +265,12 @@ msgstr "Esta oportunidá necesita comprobación"
 #. JS
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1453
 msgid "Accomplishment Details [-]"
-msgstr ""
+msgstr "Detalles del llogru [−]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1454
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1458
 msgid "Accomplishment Details [+]"
-msgstr ""
+msgstr "Detalles del llogru [+]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1478
 msgid "How to accomplish this opportunity"
@@ -294,7 +303,7 @@ msgstr "_Ficheru"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "Check Accomplishments"
-msgstr ""
+msgstr "Comprobar llogros"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Edit"
@@ -302,11 +311,11 @@ msgstr "_Editar"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "_Reload accomplishments collections..."
-msgstr ""
+msgstr "_Recargar coleiciones de llogros…"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "_Identification..."
-msgstr ""
+msgstr "_Identificación..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "_Help"
@@ -318,7 +327,7 @@ msgstr "Conteníu"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:9
 msgid "Ask a question..."
-msgstr ""
+msgstr "Facer una entruga..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:10
 msgid "My Trophies"
@@ -356,11 +365,11 @@ msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
 msgid "Edit credentials"
-msgstr ""
+msgstr "Editar credenciales"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "Later"
-msgstr ""
+msgstr "Más sero"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:23
 msgid ""
@@ -386,36 +395,36 @@ msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:29
 msgid "Learn more..."
-msgstr ""
+msgstr "Saber más..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:30
 msgid "Don't Use Ubuntu One"
-msgstr ""
+msgstr "Nun usar Ubuntu One"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
 msgid "Get Started"
-msgstr ""
+msgstr "Primeros pasos"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
 msgid "Latest"
-msgstr ""
+msgstr "Últimu"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:34
 msgid "page 1"
-msgstr ""
+msgstr "páxina 1"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:35
 msgid "page 2"
-msgstr ""
+msgstr "páxina 2"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:36
 msgid "Show me"
-msgstr ""
+msgstr "Amosame"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:37
 msgid "opportunities for"
-msgstr ""
+msgstr "oportunidaes pa"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:38
 msgid "Show Locked"
-msgstr ""
+msgstr "Amosar bloquiaos"
