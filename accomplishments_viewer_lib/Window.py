@@ -127,4 +127,3 @@ class Window(Gtk.Window):
         logger.debug('on_preferences_dialog_destroyed')
         # to determine whether to create or present preferences_dialog
         self.preferences_dialog = None
-
