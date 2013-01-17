@@ -8,49 +8,49 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-12-18 13:43-0700\n"
-"PO-Revision-Date: 2012-05-29 11:43+0000\n"
-"Last-Translator: Anders Etzerodt Salling Pedersen <Unknown>\n"
+"PO-Revision-Date: 2013-01-17 02:22+0000\n"
+"Last-Translator: Steffen Christensen <steffenchr@damnitmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-01-13 04:52+0000\n"
-"X-Generator: Launchpad (build 16420)\n"
+"X-Launchpad-Export-Date: 2013-01-17 05:26+0000\n"
+"X-Generator: Launchpad (build 16430)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:66
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:99
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:8
 msgid "Publish..."
-msgstr ""
+msgstr "Udgiv..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:68
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:93
 msgid "Stop Publishing"
-msgstr ""
+msgstr "Stop Udgivelse"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:92
 msgid "Please see your web browser to continue..."
-msgstr ""
+msgstr "Se venligst din web browser for at forsætte..."
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:98
 msgid "Trophies are no longer published."
-msgstr ""
+msgstr "Trofæer er ikke længere ydgivet"
 
 #: ../accomplishments_viewer/AboutAccomplishmentsViewerDialog.py:50
 msgid "Collection Authors:"
-msgstr ""
+msgstr "Samling Forfatterer:"
 
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
-msgstr "Bedriftsviser"
+msgstr "Bedrift Viser"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "Ubuntu Accomplishments Viewer"
-msgstr ""
+msgstr "Ubuntu Bedrift Viser"
 
 #: ../accomplishments-viewer.desktop.in.h:3
 msgid "Accomplishments Viewer Application"
-msgstr ""
+msgstr "Bedrift Viser Applikation"
 
 #: ../data/ui/EditExtrainfoDialog.ui.h:1
 msgid "Extra information required..."
@@ -69,7 +69,7 @@ msgstr ""
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:1
 msgid "Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>"
-msgstr ""
+msgstr "Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>"
 
 #: ../data/ui/AboutAccomplishmentsViewerDialog.ui.h:2
 msgid ""
@@ -87,6 +87,21 @@ msgid ""
 "# You should have received a copy of the GNU General Public License along \n"
 "# with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
 msgstr ""
+"# Copyright (C) 2012 Jono Bacon <jono@ubuntu.com>\n"
+"# Dette program er gratis programmel: Du kan redistribuere det og/eller "
+"ændre det\n"
+"# under vilkår af GNU General Public Licens version 2, som udgivet\n"
+"# af The Free Software Foundation\n"
+"# \n"
+"# Dette programmel er distribueret i håbet om at vil være brugbart, men \n"
+"# UDEN NOGEN FORM FOR REKLAMATIONSRET; selv uden underforstået "
+"reklamationsretter af\n"
+"#  SALGSBARHED, TILFREDSSTILLENDE KVALITET, eller EGENELSE TIL ET BESTEMT "
+"FORMÅL\n"
+"# PURPOSE.  Se GNU General Public Licens for flere detajler\n"
+"# \n"
+"# Du skulle have modtaget dit kopu af GNU General Public Licens sammen\n"
+"# med dette programmel, hvis ikke, se <http://www.gnu.org/licenses/>.\n"
 
 #: ../accomplishments_viewer/__init__.py:39
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
@@ -98,6 +113,8 @@ msgid ""
 "Display information about the provided accomplishment ID (e.g. 'ubuntu-"
 "community/registered-on-launchpad')"
 msgstr ""
+"Vis information om den givne bedrift ID (f.eks. 'ubuntu-community/registered-"
+"on-launchpad')"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
@@ -125,14 +142,17 @@ msgid ""
 "button.\n"
 "You can <i>Unpublish</i> later if you want to."
 msgstr ""
+"For at udgiv dine trofæer online så andre kan se dem, klik på <i>Udgiv</i> "
+"knappen.\n"
+"Du kan <i>Tilbage træk</i> senere hvis du ønsker."
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
 msgid "<b>Publish Trophies Online</b>"
-msgstr ""
+msgstr "<b>Udgiv Trofæer Online</b>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:246
 msgid "Share Trophy"
-msgstr ""
+msgstr "Del Trofæ"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:252
 msgid ""
@@ -140,62 +160,65 @@ msgid ""
 "This link works as a <b>proof</b> that you have really accomplished this "
 "trophy."
 msgstr ""
+"<b>Tilføj altid et link til dine trofæer på internettet når du deler et "
+"trofæ</b>\n"
+"Dette link fungerer som et <b>bevis</b> på at du har gennemført dette trofæ."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:338
 msgid "Reloading accomplishments collections..."
-msgstr ""
+msgstr "Genindlæs bedrift samling"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:481
 msgid "Starting the daemon..."
-msgstr ""
+msgstr "Starter tjeneste..."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:577
 #, python-format
 msgid "I've just got the trophy '%s' in #ubuntu accomplishments!"
-msgstr ""
+msgstr "Jeg har fået trofæet '%s' i #ubuntu bedrifter!"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:598
 msgid "Your trophies are not yet published"
-msgstr ""
+msgstr "Dine trofæer er ikke udgivet endnu"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:599
 msgid "You can do it from Edit->Preferences menu."
-msgstr ""
+msgstr "Du kan gøre det fra Rediger->Præferencer menuen"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:918
 msgid "Today"
-msgstr ""
+msgstr "I dag"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:920
 msgid "This Week"
-msgstr ""
+msgstr "Denne Uge"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:922
 msgid "This Month"
-msgstr ""
+msgstr "Denne Måned"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:924
 msgid "Last Six Months"
-msgstr ""
+msgstr "De Sidste Seks Måneder"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
 msgid "Earlier"
-msgstr ""
+msgstr "Tidligere"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1065
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1070
 msgid "everything"
-msgstr ""
+msgstr "alt"
 
 #. Add 'All' button
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1262
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:32
 msgid "All"
-msgstr ""
+msgstr "Alle"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1339
 msgid "+SHARE"
-msgstr ""
+msgstr "+DEL"
 
 #. Opportunity inf
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1347
@@ -221,7 +244,7 @@ msgstr "Denne mulighed er låst. Du skal færdiggøre"
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1385
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1393
 msgid "from"
-msgstr "fra"
+msgstr "Fra"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1385
 msgid "first"
@@ -254,12 +277,12 @@ msgstr "Denne mulighed kræver bekræftelse"
 #. JS
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1453
 msgid "Accomplishment Details [-]"
-msgstr ""
+msgstr "Bedrift detajler [-]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1454
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1458
 msgid "Accomplishment Details [+]"
-msgstr ""
+msgstr "Bedrift detajler [+]"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1478
 msgid "How to accomplish this opportunity"
@@ -292,7 +315,7 @@ msgstr "_Filer"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:3
 msgid "Check Accomplishments"
-msgstr ""
+msgstr "Tjek Bedrifter"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:4
 msgid "_Edit"
@@ -300,11 +323,11 @@ msgstr "_Redigér"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:5
 msgid "_Reload accomplishments collections..."
-msgstr ""
+msgstr "_Genindlæs bedrift samlinger"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:6
 msgid "_Identification..."
-msgstr ""
+msgstr "_Identifikation"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:7
 msgid "_Help"
@@ -316,7 +339,7 @@ msgstr "Indhold"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:9
 msgid "Ask a question..."
-msgstr ""
+msgstr "Stil et spørgsmål"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:10
 msgid "My Trophies"
@@ -346,6 +369,11 @@ msgid ""
 "href=\"https://wiki.ubuntu.com/Accomplishments/DesktopAppDocs/NoCollections\""
 ">Learn More</a>"
 msgstr ""
+"<b>For at bruge Ubuntu Bedrifter skal du have mindt én bedrift samling "
+"installeret</b>\n"
+" <a "
+"href=\"https://wiki.ubuntu.com/Accomplishments/DesktopAppDocs/NoCollections\""
+">Lær Mere</a>"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:18
 msgid ""
@@ -377,6 +405,11 @@ msgid ""
 "Press the button below to check if you have an Ubuntu One account. If you "
 "don't, we will take a second to sign-up; the account is free."
 msgstr ""
+"<b>Nogle muligheder kræver verifikation når udført. For at gøre dette skal "
+"du bruge en Ubuntu One konto for at få disse muligheder verificeret</b>\n"
+"\n"
+"Tryk på knappen herunder for at tjekke om du har en Ubuntu One konto. Hvis "
+"du ikke har, vil vi bruge et sekundt på at sætte en op; det er helt gratis."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:26
 msgid ""
@@ -404,7 +437,7 @@ msgstr "Lær mere..."
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:30
 msgid "Don't Use Ubuntu One"
-msgstr ""
+msgstr "Benyt ikke Ubuntu One"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:31
 msgid "Get Started"
@@ -412,15 +445,15 @@ msgstr "Kom i gang"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:33
 msgid "Latest"
-msgstr ""
+msgstr "Seneste"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:34
 msgid "page 1"
-msgstr ""
+msgstr "Side 1"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:35
 msgid "page 2"
-msgstr ""
+msgstr "side 2"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:36
 msgid "Show me"
