@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ubuntu-accomplishments-viewer\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-12-18 13:43-0700\n"
-"PO-Revision-Date: 2013-01-19 22:37+0000\n"
-"Last-Translator: ldmpub <ldmpub@gmail.com>\n"
+"PO-Revision-Date: 2013-03-26 07:27+0000\n"
+"Last-Translator: Nicolas DERIVE <kalon33@ubuntu.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-01-20 04:58+0000\n"
-"X-Generator: Launchpad (build 16430)\n"
+"X-Launchpad-Export-Date: 2013-03-27 05:24+0000\n"
+"X-Generator: Launchpad (build 16540)\n"
 
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:66
 #: ../accomplishments_viewer/PreferencesAccomplishmentsViewerDialog.py:99
@@ -42,7 +42,7 @@ msgstr "Auteurs de la collection :"
 
 #: ../accomplishments-viewer.desktop.in.h:1
 msgid "Accomplishments Viewer"
-msgstr "Visualisateur des Réalisations"
+msgstr "Visionneur de réalisations"
 
 #: ../accomplishments-viewer.desktop.in.h:2
 msgid "Ubuntu Accomplishments Viewer"
@@ -105,8 +105,8 @@ msgstr ""
 #: ../accomplishments_viewer/__init__.py:39
 msgid "Show debug messages (-vv debugs accomplishments_viewer_lib also)"
 msgstr ""
-"Afficher les messages de débogage (-vv debugs accomplishments_viewer_lib "
-"aussi)"
+"Afficher les informations de débogage (-vv débogue également "
+"accomplishments_viewer_lib)"
 
 #: ../accomplishments_viewer/__init__.py:42
 msgid ""
@@ -118,7 +118,7 @@ msgstr ""
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:1
 msgid "Accomplishments Preferences"
-msgstr "Préférences des Réalisations"
+msgstr "Préférences des réalisations"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:2
 msgid "Start background service on log in (recommended)"
@@ -135,7 +135,7 @@ msgstr "Masquer les notifications d'upload de fichiers d'Ubuntu One"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:5
 msgid "<b>Notification Bubbles</b>"
-msgstr "Bulles de notification"
+msgstr "<b>Bulles de notification</b>"
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:6
 msgid ""
@@ -149,11 +149,11 @@ msgstr ""
 
 #: ../data/ui/PreferencesAccomplishmentsViewerDialog.ui.h:9
 msgid "<b>Publish Trophies Online</b>"
-msgstr "<b>Publier les Trophées en Ligne</b>"
+msgstr "<b>Publier les trophées en ligne</b>"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:246
 msgid "Share Trophy"
-msgstr "Partager Trophée"
+msgstr "Partager un trophée"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:252
 msgid ""
@@ -176,7 +176,7 @@ msgstr "Démarrage du processus..."
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:577
 #, python-format
 msgid "I've just got the trophy '%s' in #ubuntu accomplishments!"
-msgstr "Je viens de recevoir le trophée '%s' dans #réalisations ubuntu!"
+msgstr "Je viens de recevoir le trophée '%s' dans réalisations #ubuntu !"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:598
 msgid "Your trophies are not yet published"
@@ -184,7 +184,7 @@ msgstr "Vos trophées ne sont pas encore publiés"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:599
 msgid "You can do it from Edit->Preferences menu."
-msgstr "Vous pouvez le faire à partir du menu Modifier-> Préférences."
+msgstr "Vous pouvez le faire à partir du menu Éditer -> Préférences."
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:918
 msgid "Today"
@@ -196,7 +196,7 @@ msgstr "Cette Semaine"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:922
 msgid "This Month"
-msgstr "Ce Mois"
+msgstr "Ce mois-ci"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:924
 msgid "Last Six Months"
@@ -204,7 +204,7 @@ msgstr "Ces Derniers Six Mois"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:926
 msgid "Earlier"
-msgstr "Précédent"
+msgstr "Précédemment"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1065
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1070
@@ -219,7 +219,7 @@ msgstr "Tous"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1339
 msgid "+SHARE"
-msgstr ""
+msgstr "+Partager"
 
 #. Opportunity inf
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1347
@@ -265,7 +265,7 @@ msgstr "activé"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1418
 msgid "using the following credentials"
-msgstr "utilisant les informations d'identification suivantes"
+msgstr "en utilisant les informations d'identification suivantes"
 
 #: ../accomplishments_viewer/AccomplishmentsViewerWindow.py:1431
 msgid "This trophy has been verified"
@@ -396,7 +396,7 @@ msgstr ""
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:21
 msgid "Edit credentials"
-msgstr "Editer les informations d'identification"
+msgstr "Éditer les informations d'identification"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:22
 msgid "Later"
@@ -430,9 +430,9 @@ msgid ""
 "is the information you can see in Edit -> Identification - this information "
 "is not shared with others or given to companies."
 msgstr ""
-"Ubuntu One est un service en ligne qui est Gratuit à utiliser pour la "
-"synchronisation des fichiers  et autres fonctionnalités. Il est bien intégré "
-"à votre bureau de travail Ubuntu.\n"
+"Ubuntu One est un service en ligne qui est gratuit pour la synchronisation "
+"des fichiers  et autres fonctionnalités. Il est bien intégré à votre bureau "
+"de travail Ubuntu.\n"
 "\n"
 "Quand l'application \"Ubuntu Accomplishments\" détecte que vous avez "
 "accompli quelque chose de nouveau, le trophée sera envoyé à un serveur de "
@@ -475,4 +475,4 @@ msgstr "opportunités pour"
 
 #: ../data/ui/AccomplishmentsViewerWindow.ui.h:38
 msgid "Show Locked"
-msgstr "Afficher ceux qui sont vérouillés"
+msgstr "Afficher ceux qui sont verrouillés"
